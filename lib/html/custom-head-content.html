@@ -1,0 +1,178 @@
+<!-- 过防盗链 -->
+<meta name="referrer" content="no-referrer" />
+<script>
+    // 添加元素
+    var targetElement = document.querySelector('div.webpage-container.workspace');
+    if (targetElement) {
+        waveFillColor1 = "rgba(115,148,181,0.3)";
+        waveFillColor2 = "rgba(49,133,216,0.5)";
+        waveFillColor3 = "rgba(120,178,237,0.3)";
+        waveFillColor4 = "rgba(237,245,253,0.2)"; /* 更浅的蓝色 */
+        // 创建一个新的 div 元素
+        var newDiv = document.createElement('div');
+        // 添加类名
+        newDiv.classList.add('new-div');
+        // 设置 div 内部的 HTML 内容
+        newDiv.innerHTML = `
+        <div class="waves-container">
+            <!--
+                    xmlns:SVG命名看见URI
+                    viewBox:定义当前视口（viewbox）中绘制区域的位置大小
+                    preserveeAspectRatio：定义了绘制区域在视口中的对齐方式
+                    shape-rendering：定义了形状的渲染方式（如何呈现头像的锯齿效果）
+                -->
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <!-- 定义一个defs元素，用于存储各种元素的定义，可以被其他元素引用。
+                        在defs元素中定义了一个名为“gentle-wave”的路径元素，用于描述波浪形状
+                        改路径秒苏联一系列二次贝塞尔曲线的控制点坐标，从而实现了波浪形状 -->
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <!-- 定义一个g元素，用于将多个图形组合在一起，并应用一些样式
+                        在g元素中使用use元素多次引用了赚钱定义的名为gentle-wave的路径元素
+                        通过设置不同的x，y坐标和填充颜色，实现了波浪形状和渐变效果 -->
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="${waveFillColor1}" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="${waveFillColor2}" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="${waveFillColor3}" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="${waveFillColor4}" />
+                </g>
+
+            </svg>
+        </div>
+        <div class="status-bar" style="z-index: 9999">
+            <div class="cmdr status-bar-item clickable-icon" aria-label-position="top" aria-label="打开主页" style="color: inherit"
+                onclick="loadDocument('index.html', !0, !0);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="svg-icon lucide-home">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+            </div>
+            <div class="status-bar-item">
+                <span class="status-bar-item-segment">build by Lzy</span>
+            </div>
+            <div class="status-bar-item">
+                <span class="status-bar-item-segment">@2024-2024</span>
+            </div>
+        </div>
+        `;
+        // 将新创建的 div 设置为绝对定位
+        newDiv.style.position = 'absolute';
+        // 将新创建的 div 追加到目标元素下
+        targetElement.appendChild(newDiv);
+        console.log('新元素已添加到目标元素div.webpage-container.workspace下');
+    } else {
+        console.log('目标元素div.webpage-container.workspace不存在');
+    }
+</script>
+
+
+<style>
+    /* 右下角信息栏 */
+    .status-bar {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        background-color: #ffffffbd;
+        /* 更改背景颜色 */
+        padding: 8px;
+        /* 调整内边距 */
+        border-radius: 5px;
+        /* 调整圆角 */
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        /* 调整阴影效果 */
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        /* 垂直居中 */
+        margin: 0;
+        /* 重置margin */
+        z-index: 9999;
+        pointer-events: auto;
+    }
+
+    .status-bar-item {
+        margin-right: 8px;
+        /* 调整项目之间的间距 */
+        display: flex;
+        /* 使用flex布局 */
+        align-items: center;
+        /* 垂直居中 */
+    }
+
+    .status-bar-item:last-child {
+        margin-right: 0;
+        /* 最后一个项目不需要右边距 */
+    }
+
+    .status-bar-item svg {
+        width: 20px;
+        /* 调整图标大小 */
+        height: 20px;
+        /* 调整图标大小 */
+        margin-right: 5px;
+        /* 调整图标与文字之间的间距 */
+    }
+
+
+
+    /* 动态海浪 */
+    .waves {
+        position: relative;
+        width: 100%;
+        height: 15vh;
+        margin-bottom: -7px;
+        min-height: 100px;
+        max-height: 150px;
+    }
+
+    .parallax>use {
+        /* 使use元素执行move-forever动画 */
+        animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+    }
+
+    .parallax>use:nth-child(1) {
+        /* 延迟2秒启动动画  */
+        animation-delay: -2s;
+        /* 设置动画持续时间为7秒 */
+        animation-duration: 7s;
+    }
+
+    .parallax>use:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 10s;
+    }
+
+    .parallax>use:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+    }
+
+    .parallax>use:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 20s;
+    }
+
+    .new-div {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+        pointer-events: none;
+        /* 让点击事件穿透到底层元素 */
+    }
+
+    @keyframes move-forever {
+        0% {
+            transform: translate3d(-90px, 0, 0);
+        }
+
+        100% {
+            transform: translate3d(85px, 0, 0);
+        }
+    }
+</style>

@@ -1,0 +1,9 @@
+{
+    "regions": [
+        "hkg1"
+    ],
+    "redirects": [{
+        "source": "/lib/rss.xml",
+        "destination": "https://blog.cytl2.eu.org/lib/rss.xml"
+    }]
+}

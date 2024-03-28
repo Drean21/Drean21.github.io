@@ -1,0 +1,316 @@
+<!DOCTYPE html> <html><head>
+<title>DOM结点和事件</title>
+<base href="../..">
+<meta id="root-path" root-path="../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - DOM结点和事件">
+<meta property="og:title" content="DOM结点和事件">
+<meta property="og:description" content="尘影迹痕 - DOM结点和事件">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/前端/dom结点和事件.html">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/09a8fee0a03983e754c83638626b5482688545001.png">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="DOM结点和事件"><p>DOM结点和事件</p></h1><div class="heading-wrapper"><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="DOM结点" class="heading" id="DOM结点"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>DOM结点</h2><div class="heading-children"><div class="heading-wrapper"><h3 data-heading="DOM树" class="heading" id="DOM树"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>DOM树</h3><div class="heading-children"><div><p>整个文档是文档节点<br>
+每个 HTML 元素是元素节点<br>
+HTML 元素内的文本是文本节点<br>
+每个 HTML 属性是属性节点<br>
+所有注释是注释节点</p></div><div><p><img src="https://i0.hdslb.com/bfs/article/09a8fee0a03983e754c83638626b5482688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>有了 HTML DOM，节点树中的所有节点都能通过 JavaScript 访问。</p></div><div><p>能够创建新节点，还可以修改和删除所有节点。</p></div><div class="heading-wrapper"><h4 data-heading="Browser BOM" class="heading" id="Browser_BOM"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Browser BOM</h4><div class="heading-children"><div><p>参考文档：<a data-tooltip-position="top" aria-label="https://blog.csdn.net/biheyu828/article/details/104619455" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/biheyu828/article/details/104619455" target="_self">前端web之JavaScript DOM(5)_达西布鲁斯的博客-CSDN博客</a></p></div><div><p>获取浏览器的地址栏其实有两种方法：</p></div><div><ul>
+<li data-line="0">loacation.serch()</li>
+<li data-line="1">其实docunment.url()也是可以的</li>
+</ul></div><div><p>Window 对象、Screen 对象、location 对象、history对象...还有</p></div><div><ul>
+<li data-line="0">Document</li>
+<li data-line="1"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Window——【该属性可省略不写】
+<ul>
+<li data-line="2">setTimeout("执行的语句",时间s)——延时执行（一次）</li>
+<li data-line="3">clearTimeout(setTimeout函数得到的对象)——停止执行【关闭计时器对象】</li>
+<li data-line="4">setInterval("执行的语句",时间s)——每隔一段时间就执行</li>
+<li data-line="5">clearInterval(setInterval函数得到的对象)——停止执行【关闭计时器对象】</li>
+</ul>
+</li>
+<li data-line="6"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Date
+<ul>
+<li data-line="7">有参：指定时间</li>
+<li data-line="8">无参：当前时间</li>
+<li data-line="9"><a data-tooltip-position="top" aria-label="https://blog.csdn.net/BUG_Jia/article/details/123820598" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/BUG_Jia/article/details/123820598" target="_self">JS处理日期时间补0_BUG_Jia的博客-CSDN博客_js时间补0</a></li>
+<li data-line="10"><a data-tooltip-position="top" aria-label="https://wenku.baidu.com/view/c84d1303be64783e0912a21614791711cd797948.html" rel="noopener" class="external-link is-unresolved" href="https://wenku.baidu.com/view/c84d1303be64783e0912a21614791711cd797948.html" target="_self">JS获取星期几的四种写法 - 百度文库 (baidu.com)</a></li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="附：节点类型" class="heading" id="附：节点类型"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>附：节点类型</h4><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>元素类型</th>
+<th>节点类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>元素element</td>
+<td>1</td>
+</tr>
+<tr>
+<td>属性attr</td>
+<td>2</td>
+</tr>
+<tr>
+<td>文本text</td>
+<td>3</td>
+</tr>
+<tr>
+<td>注释 comments</td>
+<td>8</td>
+</tr>
+<tr>
+<td>文档document</td>
+<td>9</td>
+</tr>
+</tbody>
+</table></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="DOM结点对象的属性" class="heading" id="DOM结点对象的属性"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>DOM结点对象的属性</h3><div class="heading-children"><div><p><a data-tooltip-position="top" aria-label="http://www.wjhsh.net/starstarstar-p-8875565.html" rel="noopener" class="external-link is-unresolved" href="http://www.wjhsh.net/starstarstar-p-8875565.html" target="_self">DOM中的节点属性 (wjhsh.net)</a></p></div><div><p><a data-tooltip-position="top" aria-label="https://blog.csdn.net/weixin_44714325/article/details/122427866" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/weixin_44714325/article/details/122427866" target="_self">【javascript】Dom节点操作属性和方法_头发超多的程序媛的博客-CSDN博客_js 设置dom节点属性</a></p></div><div><p>基本属性：根据结点的类型，其值也不一样</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>nodeName:
+<ul>
+<li data-line="1">nodeName 是<strong>只读的</strong></li>
+<li data-line="2">元素节点的 nodeName 等同于标签名</li>
+<li data-line="3">属性节点的 nodeName 是属性名称</li>
+<li data-line="4">文本节点的 nodeName 总是 <code>#text</code></li>
+<li data-line="5">文档节点的 nodeName 总是 <code>#document</code></li>
+</ul>
+</li>
+<li data-line="6"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>nodeValue:
+<ul>
+<li data-line="7">元素节点的 nodeValue 是 undefined</li>
+<li data-line="8">文本节点的 nodeValue 是文本文本</li>
+<li data-line="9">属性节点的 nodeValue 是属性值</li>
+</ul>
+</li>
+<li data-line="10"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>nodeType:
+<ul>
+<li data-line="11"><code>nodeType</code> 属性返回节点的类型。<code>nodeType</code> 是<strong>只读的</strong></li>
+</ul>
+</li>
+</ul></div><div><p>但其实以上的属性都是不太实用的，如果我们需要获取结点的值，推荐用</p></div><div><ul>
+<li data-line="0">textContent</li>
+<li data-line="1">inner——不仅仅是获取还能修改结点的html内容</li>
+</ul></div></div></div><div class="heading-wrapper"><h3 data-heading="DOM结点操作" class="heading" id="DOM结点操作"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>DOM结点操作</h3><div class="heading-children"><div><p>待整理：</p></div><div><ul>
+<li data-line="0"><a data-tooltip-position="top" aria-label="https://blog.csdn.net/weixin_26886855/article/details/117941080" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/weixin_26886855/article/details/117941080" target="_self">javascript 去掉html标签,js怎么去掉html标签_揭假求真的博客-CSDN博客</a></li>
+<li data-line="1"><a data-tooltip-position="top" aria-label="https://www.w3school.com.cn/js/js_htmldom_nodes.asp" rel="noopener" class="external-link is-unresolved" href="https://www.w3school.com.cn/js/js_htmldom_nodes.asp" target="_self">JavaScript HTML DOM 元素（节点） (w3school.com.cn)</a></li>
+</ul></div><div><p><a data-tooltip-position="top" aria-label="https://www.w3school.com.cn/js/js_htmldom_document.asp" rel="noopener" class="external-link is-unresolved" href="https://www.w3school.com.cn/js/js_htmldom_document.asp" target="_self">JavaScript HTML DOM 文档 (w3school.com.cn)</a></p></div><div><p><a data-tooltip-position="top" aria-label="https://www.w3school.com.cn/js/js_htmldom_html.asp" rel="noopener" class="external-link is-unresolved" href="https://www.w3school.com.cn/js/js_htmldom_html.asp" target="_self">JavaScript HTML DOM - 改变 HTML (w3school.com.cn)</a></p></div><div class="heading-wrapper"><h4 data-heading="属性操作" class="heading" id="属性操作"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>属性操作</h4><div class="heading-children"><div><p>参考文档：<a data-tooltip-position="top" aria-label="https://blog.csdn.net/zzvar/article/details/116106390" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/zzvar/article/details/116106390" target="_self">DOM节点的使用（常用方法+代码）_Yan Yang的博客-CSDN博客</a></p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>获取元素值
+<ul>
+<li data-line="1">元素对象[“属性名”]</li>
+<li data-line="2">元素对象.属性名</li>
+<li data-line="3">元素对象.getAttribute(“属性名”)；</li>
+</ul>
+</li>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>设置属性值
+<ul>
+<li data-line="5">元素对象[”属性名”] = 值</li>
+<li data-line="6">元素对象.属性名 = 值</li>
+<li data-line="7">元素对象.setAttribute(“属性名”, 值)</li>
+</ul>
+</li>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>删除某个属性值
+<ul>
+<li data-line="9">removeAttribute（name）</li>
+</ul>
+</li>
+</ul></div><div><p>区别：</p></div><div><ol>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>获取和设置<strong>自定义属性值</strong>只能通过 getAttribute() 和 setAttribute()
+<ol>
+<li data-line="1">getAttribute() 和 setAttribute()不能获取属性中的属性，比如style属性中的属性</li>
+</ol>
+</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>获取<strong>标签自带的属性</strong>值推荐使用
+<ol>
+<li data-line="3">元素对象[“属性名”]</li>
+<li data-line="4">元素对象.属性名</li>
+</ol>
+</li>
+</ol></div></div></div><div class="heading-wrapper"><h4 data-heading="样式操作" class="heading" id="样式操作"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>样式操作</h4><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>设置元素样式：元素.style.样式名=样式值</p>
+</li>
+<li data-line="1"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>读取元素样式：——读取到的样式只是值读的不能修改，如果先要<mark>修改必须通过Style</mark></p>
+<ul>
+<li data-line="3">通过currentStyle.样式名——<strong>只ie支持</strong></li>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>getComputerStyle（第一个：要获取样式的元素，第二个：可以传递一个伪元素，一般都传null）
+<ul>
+<li data-line="5">返回一个对象，再通过点调用</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div><div><blockquote>
+<p>(1)元素名.style.display首次获取元素（如果不通过相同的元素名.style.display方法访问赋值那么其值就是''）因为元素名.style.display主要是用来设置样式的</p>
+<p>(2)推荐：window.getComputedStyle(this.nextElementSibling).display，这个方法获取元素属性没有这种错误</p>
+<p><strong>推荐使用该方法读取DOM结点的样式</strong>——参数有两个（一个是要获取属性的DOM结点，一个是伪元素可以不理会（默认会传参））</p>
+</blockquote></div></div></div><div class="heading-wrapper"><h4 data-heading="增删改查" class="heading" id="增删改查"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>增删改查</h4><div class="heading-children"><div class="heading-wrapper"><h5 data-heading="创建添加" class="heading" id="创建添加"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>创建添加</h5><div class="heading-children"><div class="heading-wrapper"><h6 data-heading="创建节点/属性" class="heading" id="创建节点/属性"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>创建节点/属性</h6><div class="heading-children"><div><ul>
+<li data-line="0">document.createElement() //创建一个节点</li>
+<li data-line="1">document.createAttribute() //对某个节点创建属性</li>
+<li data-line="2">document.createTextNode() // 创建文本节点</li>
+</ul></div></div></div><div class="heading-wrapper"><h6 data-heading="添加结点" class="heading" id="添加结点"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>添加结点</h6><div class="heading-children"><div><ul>
+<li data-line="0">document.inseretBefore(nextNode,referenceNode) // 在某个节点前插入节点</li>
+<li data-line="1">parentNode.appendChild(newNode) // 给某个节点添加子节点</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h5 data-heading="删除结点" class="heading" id="删除结点"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>删除结点</h5><div class="heading-children"><div><ul>
+<li data-line="0">parentNode.removeChild（node） // 删除某个节点的子节点</li>
+</ul></div></div></div><div class="heading-wrapper"><h5 data-heading="修改结点" class="heading" id="修改结点"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>修改结点</h5><div class="heading-children"><div><ul>
+<li data-line="0">innerHTML</li>
+<li data-line="1">innerText</li>
+</ul></div></div></div><div class="heading-wrapper"><h5 data-heading="查找结点" class="heading" id="查找结点"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>查找结点</h5><div class="heading-children"><div class="heading-wrapper"><h6 data-heading="直接查找" class="heading" id="直接查找"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>直接查找</h6><div class="heading-children"><div><p>注意事项：</p></div><div><ul>
+<li data-line="0">
+<p>除了通过ID和querySelector查找返回的是一个元素外，其它无论匹配结果有多少元素返回的都是列表，而只有结点对象才能使用对象方法，所以需要<strong>遍历</strong></p>
+</li>
+<li data-line="2">
+<p>选择器查找不适用于 Internet Explorer 8 及其更早版本。</p>
+</li>
+</ul></div><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">document.getElementById(<em>id</em>)</td>
+<td align="left">通过元素 id 来查找元素</td>
+</tr>
+<tr>
+<td align="left">document.getElementsByTagName(<em>name</em>)</td>
+<td align="left">通过标签名来查找元素</td>
+</tr>
+<tr>
+<td align="left">document.getElementsByClassName(<em>name</em>)</td>
+<td align="left">通过类名来查找元素</td>
+</tr>
+<tr>
+<td align="left">document.getElementsByName(<em>name</em>)</td>
+<td align="left">通过 name 属性</td>
+</tr>
+<tr>
+<td align="left">document.querySelectorAll("p.intro");</td>
+<td align="left">通过选择器来查找元素（匹配多个）</td>
+</tr>
+<tr>
+<td align="left">document.querySelector("p.intro");</td>
+<td align="left">同上，只是<strong>只匹配一个</strong></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="heading-wrapper"><h6 data-heading="DOM导航" class="heading" id="DOM导航"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>DOM导航</h6><div class="heading-children"><div><p>参考文档：<a rel="noopener" class="external-link is-unresolved" href="https://www.w3school.com.cn/js/js_htmldom_navigation.asp" target="_self">https://www.w3school.com.cn/js/js_htmldom_navigation.asp</a></p></div><div><p><img src="https://i0.hdslb.com/bfs/article/3567524ed7ae7128b5896d61d71fea05688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>通过 JavaScript，您可以使用以下节点属性在节点之间导航：</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>向上父级
+<ul>
+<li data-line="1">parentNode</li>
+</ul>
+</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>向下子级
+<ul>
+<li data-line="3">.firstChild // 获取第一个子节点</li>
+<li data-line="4">.firstElementChild // 获取第一个元素节点</li>
+<li data-line="5">.lastChild // 获取最后一个子节点</li>
+<li data-line="6">.lastElementChild // 获取最后一个元素节点</li>
+<li data-line="7">.childNodes // 获取节点的所有子节点</li>
+</ul>
+</li>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>前后导航
+<ul>
+<li data-line="9">previousElementSibling</li>
+<li data-line="10">nextElementSibling</li>
+<li data-line="11">previousSibling</li>
+<li data-line="12">nextSibling</li>
+</ul>
+</li>
+</ul></div><div><p><mark>注意事项：</mark>结点之间导航的时候可以看到有些方法加了Element的描述有些没有，这是子节点和元素节点的区别（元素节点可以理解为标签结点——&gt;<strong>推荐使用Element，方便定位</strong>，子节点还包含文本、属性和注释等结点）</p></div></div></div></div></div></div></div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="事件" class="heading" id="事件"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>事件</h2><div class="heading-children"><div><p>下面是一些常见的 HTML 事件：</p></div><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th align="left">事件</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">onchange</td>
+<td align="left">HTML 元素已被改变</td>
+</tr>
+<tr>
+<td align="left">onclick</td>
+<td align="left">用户点击了 HTML 元素</td>
+</tr>
+<tr>
+<td align="left">onmouseover</td>
+<td align="left">用户把鼠标移动到 HTML 元素上</td>
+</tr>
+<tr>
+<td align="left">onmouseout</td>
+<td align="left">用户把鼠标移开 HTML 元素</td>
+</tr>
+<tr>
+<td align="left">onkeydown</td>
+<td align="left">用户按下键盘按键</td>
+</tr>
+<tr>
+<td align="left">onload</td>
+<td align="left">浏览器已经完成页面加载</td>
+</tr>
+</tbody>
+</table></div><div><p>更完整的列表：<a data-tooltip-position="top" aria-label="https://www.w3school.com.cn/js/js_examples_events.asp" rel="noopener" class="external-link is-unresolved" href="https://www.w3school.com.cn/js/js_examples_events.asp" target="_self">JavaScript HTML 事件实例 (w3school.com.cn)</a></p></div><div><p>准确的说<code>on</code>是个关键词，on后的才是事件名</p></div><div class="heading-wrapper"><h3 data-heading="绑定事件" class="heading" id="绑定事件"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>绑定事件</h3><div class="heading-children"><div><p>参考文档：<a data-tooltip-position="top" aria-label="https://blog.csdn.net/qq_52977867/article/details/123096915" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/qq_52977867/article/details/123096915" target="_self">js绑定事件的三种方法_王宏涛01的博客-CSDN博客_js 绑定事件</a></p></div><div><p>分析文档：<a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/38014145" rel="noopener" class="external-link is-unresolved" href="https://zhuanlan.zhihu.com/p/38014145" target="_self">js中事件处理函数调用方法对比 - 知乎 (zhihu.com)</a></p></div><div class="heading-wrapper"><h4 data-heading="传统DOM方式" class="heading" id="传统DOM方式"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>传统DOM方式</h4><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>行内绑定</p>
+<pre class="language-javascript" tabindex="0"><code class="language-javascript is-loaded">    <span class="token operator">&lt;</span>div onclick<span class="token operator">=</span><span class="token string">"cli1()"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="8">
+<p>通过元素绑定</p>
+<pre class="language-javascript" tabindex="0"><code class="language-javascript is-loaded"> div_<span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'通过元素绑定事件 绑定事件2'</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="通过事件监听【推荐】" class="heading" id="通过事件监听【推荐】"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>通过事件监听【推荐】</h4><div class="heading-children"><div><pre class="language-javascript" tabindex="0"><code class="language-javascript is-loaded">div_<span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'通过事件监听绑定事件'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>本质上是<strong>函数定义与具体调用事件的解耦，实现了同一事件可以调用多个函数，同一函数可以被多个事件调用，推荐使用</strong>。分为需事件对象属性/方法及不需要两种：</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>函数不需要传入事件对象属性或方法：</p>
+<ul>
+<li data-line="1">定义：function functionname(arg) {}，</li>
+<li data-line="2">调用：element.addEventListener('event',function() {functionname(arg)},false);</li>
+<li data-line="3">这种情况下，如果函数本身不需要任何arg，调用可以简化为：element.addEventListener('event',functionname,false)</li>
+</ul>
+</li>
+<li data-line="5"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>函数需要传入事件对象的属性或方法：</p>
+<ul>
+<li data-line="6">定义：function functionname(e,arg) {},</li>
+<li data-line="7">调用：element.addeventListener('event',function(e) {functionname(e,arg)},false).其中，'e'代表事件对象，在函数定义中可以以e.target代表事件对应的dom元素，例如e.target.id即事件对象元素的id。</li>
+</ul>
+</li>
+</ul></div><div><p>在事件监听下，可以对单个事件绑定多个事件处理函数，按绑定顺序执行。</p></div><div><p>Tip：不能在函数里进行事件监听【待验证】</p></div><div class="heading-wrapper"><h5 data-heading="删除事件监听" class="heading" id="删除事件监听"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>删除事件监听</h5><div class="heading-children"><div><pre class="language-javascript" tabindex="0"><code class="language-javascript is-loaded"> <span class="token comment">/* 
+    给dom元素删除事件监听
+    el_obj.removerEventListener(1,2);
+    1: 要删除的事件名
+    2：相关的事件处理函数（注意：该函数需要时一个外部处理函数）
+    */</span>
+    btn_2<span class="token punctuation">.</span><span class="token method function property-access">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> fn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="给伪元素添加事件的方式" class="heading" id="给伪元素添加事件的方式"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>给伪元素添加事件的方式</h3><div class="heading-children"><div><p>参考文档：<a data-tooltip-position="top" aria-label="https://www.gxlsystem.com/qianduan-16326.html" rel="noopener" class="external-link is-unresolved" href="https://www.gxlsystem.com/qianduan-16326.html" target="_self">HTML标签伪元素绑定事件的三种方式 (gxlsystem.com)</a></p></div><div><p>基本分析：</p></div><div><ol>
+<li data-line="0">
+<p>给元素设置pointer-events:none.然后给伪元素的pointer-events：auto；此时我们把点击元素的事件就取消了 点击伪元素的时候，就可以绑定相应的事件了</p>
+</li>
+<li data-line="2">
+<p>第二种是：通过子元素的<a data-tooltip-position="top" aria-label="https://so.csdn.net/so/search?q=事件冒泡&amp;spm=1001.2101.3001.7020" rel="noopener" class="external-link is-unresolved" href="https://so.csdn.net/so/search?q=%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1&amp;spm=1001.2101.3001.7020" target="_self">事件冒泡</a>原理，在子元素事件处理结束后return false，告知父元素事件处理完毕。这样只就屏蔽了父元素接收事件，然后:after伪元素是悬浮在子元素上面的，故点击伪元素的时候触发父元素事件。</p>
+</li>
+</ol></div></div></div><div class="heading-wrapper"><h3 data-heading="通过js触发自定义事件" class="heading" id="通过js触发自定义事件"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>通过js触发自定义事件</h3><div class="heading-children"><div><p>参考文章：<a data-tooltip-position="top" aria-label="https://www.csdn.net/tags/NtjaAg3sOTMyMDUtYmxvZwO0O0OO0O0O.html" rel="noopener" class="external-link is-unresolved" href="https://www.csdn.net/tags/NtjaAg3sOTMyMDUtYmxvZwO0O0OO0O0O.html" target="_self">(45条消息) js 自动触发change事件 - CSDN</a></p></div><div><pre class="language-javascript" tabindex="0"><code class="language-javascript is-loaded"><span class="token keyword">var</span> btn <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'#txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> event <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+btn<span class="token punctuation">.</span><span class="token method function property-access">dispatchEvent</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>小结：</p></div><div><ul>
+<li data-line="0">先new出指定类型的事件对象</li>
+<li data-line="1">再往对象的dispatchEvent方法传入该事件对象作为参数</li>
+<li data-line="2">若对象存在该事件则执行</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="常用事件的设置思想小结" class="heading" id="常用事件的设置思想小结"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>常用事件的设置思想小结</h2><div class="heading-children"><div><ol>
+<li data-line="0"><a data-tooltip-position="top" aria-label="https://blog.csdn.net/qq_43029797/article/details/114262932" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/qq_43029797/article/details/114262932" target="_self">为元素添加点击切换事件<em>冬雨小姐姐的博客-CSDN博客</em>为元素添加点击事件</a></li>
+<li data-line="1"><a data-tooltip-position="top" aria-label="https://blog.csdn.net/u011350550/article/details/86714953?utm_term=js原生左右滑动&amp;utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-3-86714953-null-null&amp;spm=3001.4430" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/u011350550/article/details/86714953?utm_term=js%E5%8E%9F%E7%94%9F%E5%B7%A6%E5%8F%B3%E6%BB%91%E5%8A%A8&amp;utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-3-86714953-null-null&amp;spm=3001.4430" target="_self">原生js实现移动端点击、长按、左滑、右滑、上滑、下滑等事件模拟_xubaodian的博客-CSDN博客</a></li>
+</ol></div><div class="mod-footer"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#DOM结点和事件" data-path="#DOM结点和事件"><div class="tree-item-inner heading-link" heading-name="DOM结点和事件">DOM结点和事件</div></a><div class="tree-item-children"><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#DOM结点" data-path="#DOM结点"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="DOM结点">DOM结点</div></a><div class="tree-item-children"><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#DOM树" data-path="#DOM树"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="DOM树">DOM树</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#Browser_BOM" data-path="#Browser_BOM"><div class="tree-item-inner heading-link" heading-name="Browser BOM">Browser BOM</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#附：节点类型" data-path="#附：节点类型"><div class="tree-item-inner heading-link" heading-name="附：节点类型">附：节点类型</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#DOM结点对象的属性" data-path="#DOM结点对象的属性"><div class="tree-item-inner heading-link" heading-name="DOM结点对象的属性">DOM结点对象的属性</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#DOM结点操作" data-path="#DOM结点操作"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="DOM结点操作">DOM结点操作</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#属性操作" data-path="#属性操作"><div class="tree-item-inner heading-link" heading-name="属性操作">属性操作</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#样式操作" data-path="#样式操作"><div class="tree-item-inner heading-link" heading-name="样式操作">样式操作</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="4"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#增删改查" data-path="#增删改查"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="增删改查">增删改查</div></a><div class="tree-item-children"><div class="tree-item mod-collapsible" data-depth="5"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#创建添加" data-path="#创建添加"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="创建添加">创建添加</div></a><div class="tree-item-children"><div class="tree-item" data-depth="6"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#创建节点/属性" data-path="#创建节点/属性"><div class="tree-item-inner heading-link" heading-name="创建节点/属性">创建节点/属性</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="6"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#添加结点" data-path="#添加结点"><div class="tree-item-inner heading-link" heading-name="添加结点">添加结点</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="5"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#删除结点" data-path="#删除结点"><div class="tree-item-inner heading-link" heading-name="删除结点">删除结点</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#修改结点" data-path="#修改结点"><div class="tree-item-inner heading-link" heading-name="修改结点">修改结点</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="5"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#查找结点" data-path="#查找结点"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="查找结点">查找结点</div></a><div class="tree-item-children"><div class="tree-item" data-depth="6"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#直接查找" data-path="#直接查找"><div class="tree-item-inner heading-link" heading-name="直接查找">直接查找</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="6"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#DOM导航" data-path="#DOM导航"><div class="tree-item-inner heading-link" heading-name="DOM导航">DOM导航</div></a><div class="tree-item-children"></div></div></div></div></div></div></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#事件" data-path="#事件"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="事件">事件</div></a><div class="tree-item-children"><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#绑定事件" data-path="#绑定事件"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="绑定事件">绑定事件</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#传统DOM方式" data-path="#传统DOM方式"><div class="tree-item-inner heading-link" heading-name="传统DOM方式">传统DOM方式</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="4"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#通过事件监听【推荐】" data-path="#通过事件监听【推荐】"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="通过事件监听【推荐】">通过事件监听【推荐】</div></a><div class="tree-item-children"><div class="tree-item" data-depth="5"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#删除事件监听" data-path="#删除事件监听"><div class="tree-item-inner heading-link" heading-name="删除事件监听">删除事件监听</div></a><div class="tree-item-children"></div></div></div></div></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#给伪元素添加事件的方式" data-path="#给伪元素添加事件的方式"><div class="tree-item-inner heading-link" heading-name="给伪元素添加事件的方式">给伪元素添加事件的方式</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#通过js触发自定义事件" data-path="#通过js触发自定义事件"><div class="tree-item-inner heading-link" heading-name="通过js触发自定义事件">通过js触发自定义事件</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/dom结点和事件.html#常用事件的设置思想小结" data-path="#常用事件的设置思想小结"><div class="tree-item-inner heading-link" heading-name="常用事件的设置思想小结">常用事件的设置思想小结</div></a><div class="tree-item-children"></div></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

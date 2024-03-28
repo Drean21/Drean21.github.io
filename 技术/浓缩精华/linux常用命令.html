@@ -1,0 +1,389 @@
+<!DOCTYPE html> <html><head>
+<title>Linux常用命令</title>
+<base href="../..">
+<meta id="root-path" root-path="../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - Linux常用命令">
+<meta property="og:title" content="Linux常用命令">
+<meta property="og:description" content="尘影迹痕 - Linux常用命令">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/浓缩精华/linux常用命令.html">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/bc292e7aaf441efe655d6ca7a99fb2b6688545001.png">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="基础命令"><p>基础命令</p></h1><div class="heading-wrapper"><div class="heading-children"><div><p>退出交互：<code>Ctrl+C</code></p></div><div class="heading-wrapper"><h2 data-heading="文件授权" class="heading" id="文件授权"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>文件授权</h2><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">数字组规则</div></div><div class="callout-content">
+<ul>
+<li data-line="1">读取权限：4</li>
+<li data-line="2">写入权限：2</li>
+<li data-line="3">执行权限：1<br>
+<mark>要设置文件或目录的权限，可以将这些数字值相加来表示</mark>不同组用户（所有者、群组、其他用户）的权限。然后，将这些数字组合成一个三位数，其中：</li>
+<li data-line="5">第一位数表示所有者的权限</li>
+<li data-line="6">第二位数表示群组的权限</li>
+<li data-line="7">第三位数表示其他用户的权限</li>
+</ul>
+</div></div></div><div><p><strong>授予所有用户读、写、执行权限，用于文件</strong>：</p></div><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token function">chmod</span> <span class="token number">777</span> filename/directory
+</code><button class="copy-code-button">复制</button></pre></div><div><ul>
+<li data-line="0">这将文件 <code>filename</code> 的权限设置为所有用户（所有者、群组和其他用户）都具有读取、写入和执行权限。</li>
+<li data-line="1">这将目录 <code>directory</code> 的权限设置为所有用户都具有读取、写入和执行权限，以便他们可以在目录中执行任何操作。</li>
+</ul></div><div><p>如果想给文件设置所有者具有读取和写入权限，而群组和其他用户没有任何权限，可以使用以下命令（通常用于保护文件的隐私和安全性）：</p></div><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token function">chmod</span> <span class="token number">600</span> filename
+</code><button class="copy-code-button">复制</button></pre></div><div><p>这里的数字模式中：</p></div><div><ul>
+<li data-line="0">所有者权限为 6，因为读取权限（4）加上写入权限（2）等于 6。</li>
+<li data-line="1">群组和其他用户的权限都为 0，因为它们没有任何权限。</li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="编辑文件" class="heading" id="编辑文件"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>编辑文件</h2><div class="heading-children"><div><p><strong>vi/vim命令</strong>：vi是一种经典的文本编辑器，vim是vi的改进版本。它们都提供了丰富的编辑功能。</p></div><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token function">vi</span> filename
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在vi/vim中，可以使用以下命令进行保存和退出：</p></div><div><ul>
+<li data-line="0"><code>:</code> 进入命令模式。</li>
+<li data-line="1"><code>a</code> 进入编辑模式。</li>
+<li data-line="2"><code>wq</code> 保存并退出。</li>
+<li data-line="3"><code>!q</code> 强制退出（如果文件已更改）。</li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="查看文件" class="heading" id="查看文件"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>查看文件</h2><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">参数：</div></div><div class="callout-content">
+<ul>
+<li data-line="1"><code>-f</code>：实时追踪</li>
+</ul>
+</div></div></div><div><p>要查看文件的内容，可以使用以下命令：</p></div><div><ol>
+<li data-line="0"><strong>cat</strong>：适用于小型文件，它将整个文件内容输出到终端。</li>
+</ol></div><div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token function">cat</span> filename
+</code><button class="copy-code-button">复制</button></pre></div><div><ol start="2">
+<li data-line="0"><strong>less</strong>：适用于大型文件，它允许您按页查看文件内容，并允许在文件中进行搜索和浏览。</li>
+</ol></div><div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token function">less</span> filename
+</code><button class="copy-code-button">复制</button></pre></div><div><p>按下空格键向下翻页，按下 <code>b</code> 键向上翻页，按下 <code>/</code> 键进行搜索。</p></div><div><ol start="3">
+<li data-line="0"><strong>more</strong>：类似于 <code>less</code>，用于逐页查看文件内容，但功能较少。</li>
+</ol></div><div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token function">more</span> filename
+</code><button class="copy-code-button">复制</button></pre></div><div><p>按下空格键向下翻页，按下 <code>b</code> 键向上翻页。</p></div></div></div><div class="heading-wrapper"><h2 data-heading="文件解压缩" class="heading" id="文件解压缩"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>文件解压缩</h2><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">Tip</div></div><div class="callout-content">
+<ul>
+<li data-line="1">根据格式的含义再结合参数的含义，命令就出来了</li>
+<li data-line="2">zip用于跨平台传输，比如前端打包文件等文件夹很零碎先打包成zip再上传到服务器</li>
+</ul>
+</div></div></div><div class="heading-wrapper"><h3 data-heading="解压缩原理" class="heading" id="解压缩原理"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>解压缩原理</h3><div class="heading-children"><div><p>下面是关于常见的压缩格式以及相应解压缩参数的说明：</p></div><div><ol>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>tar 格式</strong>：</p>
+<ul>
+<li data-line="1"><strong>描述</strong>：<code>tar</code> 是一种归档文件格式，<mark>用于将多个文件打包成一个文件，但不进行压缩。</mark>通常与其他压缩工具（如 gzip、bzip2）一起使用来创建压缩文件。</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>解压缩参数</strong>：
+<ul>
+<li data-line="3"><code>-x</code>：解压缩操作。</li>
+<li data-line="4"><code>-v</code>：显示详细输出，列出解压缩的文件。</li>
+<li data-line="5"><code>-f</code>：指定要解压缩的文件。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="7"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>tar.gz 和 tar.bz2 格式</strong>：</p>
+<ul>
+<li data-line="8"><strong>描述</strong>：这两种格式是<mark>在 <code>tar</code> 打包后分别使用 gzip 和 bzip2 进行压缩的结果</mark>。<code>.tar.gz</code> 格式也称为 <code>.tgz</code>，<code>.tar.bz2</code> 格式也称为 <code>.tbz2</code>。</li>
+<li data-line="9"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>解压缩参数</strong>：
+<ul>
+<li data-line="10"><code>-x</code>：解压缩操作。</li>
+<li data-line="11"><code>-v</code>：显示详细输出，列出解压缩的文件。</li>
+<li data-line="12"><code>-z</code>（仅用于 <code>.tar.gz</code>）：使用 gzip 解压缩。</li>
+<li data-line="13"><code>-j</code>（仅用于 <code>.tar.bz2</code>）：使用 bzip2 解压缩。</li>
+<li data-line="14"><code>-f</code>：指定要解压缩的文件。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="16"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>zip 格式</strong>：</p>
+<ul>
+<li data-line="17"><strong>描述</strong>：zip 是一种流行的压缩格式，用于将多个文件和目录打包成一个文件，并进行压缩。<mark>它在 Windows 和跨平台环境中都有广泛的应用。</mark></li>
+<li data-line="18"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>解压缩参数</strong>：
+<ul>
+<li data-line="19">无需指定参数，直接使用 <code>unzip</code> 命令解压缩文件即可。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol></div><div><p>这些是常见的压缩格式以及相应的解压缩参数。使用正确的参数可以确保正确地解压缩文件并恢复原始文件或目录。</p></div></div></div><div class="heading-wrapper"><h3 data-heading="解压命令" class="heading" id="解压命令"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>解压命令</h3><div class="heading-children"><div><p><mark>在Linux下，文件的解压缩可以使用以下常见命令：</mark></p></div><div><ol>
+<li data-line="0">
+<p><strong>解压缩 <code>.tar</code> 文件</strong>：</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token function">tar</span> -xvf file.tar
+</code><button class="copy-code-button">复制</button></pre>
+<p>这会将 <code>file.tar</code> 解压缩到当前目录，并显示解压缩的过程。</p>
+</li>
+<li data-line="8">
+<p><strong>解压缩 <code>.tar.gz</code> 或 <code>.tgz</code> 文件</strong>：</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token function">tar</span> -xzvf file.tar.gz
+</code><button class="copy-code-button">复制</button></pre>
+<p>或者：</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token function">tar</span> -xzvf file.tgz
+</code><button class="copy-code-button">复制</button></pre>
+<p>这会将 <code>file.tar.gz</code> 或 <code>file.tgz</code> 解压缩到当前目录，并显示解压缩的过程。<code>-z</code> 选项告诉 <code>tar</code> 使用 gzip 压缩算法。</p>
+</li>
+<li data-line="22">
+<p><strong>解压缩 <code>.tar.bz2</code> 文件</strong>：</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token function">tar</span> -xjvf file.tar.bz2
+</code><button class="copy-code-button">复制</button></pre>
+<p>这会将 <code>file.tar.bz2</code> 解压缩到当前目录，并显示解压缩的过程。<code>-j</code> 选项告诉 <code>tar</code> 使用 bzip2 压缩算法。</p>
+</li>
+<li data-line="30">
+<p><strong>解压缩 <code>.zip</code> 文件</strong>：</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token function">unzip</span> file.zip
+</code><button class="copy-code-button">复制</button></pre>
+<p>这会将 <code>file.zip</code> 解压缩到当前目录，并显示解压缩的过程。</p>
+</li>
+</ol></div></div></div><div class="heading-wrapper"><h3 data-heading="打包压缩命令" class="heading" id="打包压缩命令"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>打包压缩命令</h3><div class="heading-children"><div><p><strong>tart打包压缩：</strong></p></div><div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token function">tar</span> -cvf output.tar inputfile1 inputfile2 inputfile3 <span class="token punctuation">..</span>.
+</code><button class="copy-code-button">复制</button></pre></div><div><p>这会将 <code>inputfile1</code>、<code>inputfile2</code>、<code>inputfile3</code> 等文件打包到名为 <code>output.tar</code> 的 tar 文件中。（目录同理）具体参数的含义如下：</p></div><div><ul>
+<li data-line="0"><code>-c</code>：创建一个新的 tar 文件。</li>
+<li data-line="1"><code>-v</code>：显示详细信息，列出打包的文件。</li>
+<li data-line="2"><code>-f</code>：指定打包文件的名称。</li>
+</ul></div><div><p>要注意的是，<mark>打包文件时，不会对文件进行压缩，只是将文件集合到一个单独的 tar 文件中。如果需要对文件进行压缩，可以使用额外的压缩参数（如 <code>-z</code> 或 <code>-j</code>）来在打包时进行压缩。</mark></p></div><div><p><strong>zip压缩：</strong><br>
+要将目录打包成 zip 文件，可以使用 <code>zip</code> 命令。下面是打包目录为 zip 文件的基本语法：</p></div><div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token function">zip</span> -r output.zip directory/
+</code><button class="copy-code-button">复制</button></pre></div><div><p>这会将名为 <code>directory</code> 的目录及其所有内容递归地打包到名为 <code>output.zip</code> 的 zip 文件中。<mark>注意参数<code>-r</code>：递归地将目录及其内容添加到 zip 文件中。</mark></p></div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="目录操作" class="heading" id="目录操作"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>目录操作</h2><div class="heading-children"><div><ul>
+<li data-line="0">打印当前目录：pwd</li>
+<li data-line="1"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>查看目录命令：
+<ul>
+<li data-line="2">ls：列出目录信息</li>
+<li data-line="3">ll：显示文件的详细列表，包括文件权限信息。</li>
+</ul>
+</li>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>创建路径&amp;文件
+<ul>
+<li data-line="5">mkdir -p /home/12306/logs</li>
+</ul>
+</li>
+<li data-line="6">切换：cd 路径</li>
+<li data-line="7"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>移动：
+<ul>
+<li data-line="8">移动：mv source_directory destination_directory</li>
+<li data-line="9">移动并重命名：mv source_directory /path/to/new_directory_name</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="进程查询" class="heading" id="进程查询"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>进程查询</h2><div class="heading-children"><div><ul>
+<li data-line="0">查看端口占用：sudo lsof -i:3306</li>
+<li data-line="1">使用 <code>ps</code> 命令查看当前正在运行的进程，看是否有 MySQL 相关的进程正在运行：ps aux | grep mysql</li>
+<li data-line="2">杀进程：sudo kill <code>&lt;PID&gt;</code></li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="重定向输出" class="heading" id="重定向输出"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>重定向输出</h2><div class="heading-children"><div><p>常用于日志写入文件，比如如果你想要实时监视日志并将其保存到文件中，你可以使用以下命令：</p></div><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded">journalctl -u your-service-name.service -f <span class="token operator">&gt;</span> your-service-log.txt
+</code><button class="copy-code-button">复制</button></pre></div><div><p>这个命令将实时监视指定服务的日志，并将输出附加到指定的文件中，使其不断更新。</p></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="系统服务" class="heading" id="系统服务">系统服务</h1><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">Tip</div></div><div class="callout-content">
+<p><code>service</code> 和 <code>systemctl</code> 是两个用于管理系统服务的命令，它们在不同的 Linux init 系统中起作用。</p>
+<ol>
+<li data-line="3"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>service</code> 命令：</p>
+<ul>
+<li data-line="4"><code>service</code> 命令用于启动、停止、重新加载或查询系统服务的状态。</li>
+<li data-line="5">在早期的 Linux 发行版中，如 CentOS 6、Ubuntu 14.04 以及其他使用 SysVinit 或 Upstart 的系统中，<code>service</code> 命令是管理系统服务的主要方式。</li>
+<li data-line="6">例如，要重新加载 cron 服务，可以使用 <code>service cron reload</code>。</li>
+</ul>
+</li>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>systemctl</code> 命令：</p>
+<ul>
+<li data-line="9"><code>systemctl</code> 命令用于控制 Systemd 初始化系统中的服务。</li>
+<li data-line="10">在较新的 Linux 发行版中，如 CentOS 7、Ubuntu 16.04 及更高版本，<code>systemctl</code> 已经成为管理系统服务的主要方式。</li>
+<li data-line="11">例如，要重新加载 cron 服务，可以使用 <code>systemctl reload cron</code>。</li>
+</ul>
+</li>
+</ol>
+</div></div></div><div class="heading-wrapper"><h2 data-heading="查阅系统服务" class="heading" id="查阅系统服务"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>查阅系统服务</h2><div class="heading-children"><div><p>要查看Linux上所有正在运行的系统服务，以及哪些服务将在开机时自动启动，可以使用以下命令：</p></div><div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded">systemctl list-unit-files --type<span class="token operator">=</span>service
+</code><button class="copy-code-button">复制</button></pre></div><div><p>这将列出所有已安装的服务以及它们的状态（启用或禁用），以及它们是否在启动时自动启动。 若要查看当前正在运行的服务，您可以运行：</p></div><div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded">systemctl list-units --type<span class="token operator">=</span>service
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h2 data-heading="查阅日志" class="heading" id="查阅日志"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>查阅日志</h2><div class="heading-children"><div><p>对于使用 Systemd 创建的服务，你可以通过以下方式来查看服务的日志：</p></div><div><ol>
+<li data-line="0">
+<p>使用 <code>journalctl</code> 命令：</p>
+<pre class="language-shell" tabindex="0"><code class="language-shell is-loaded">journalctl -u index12306-aggregation.service
+</code><button class="copy-code-button">复制</button></pre>
+<p>这会显示出与 <code>index12306-aggregation.service</code> 相关的日志信息，包括启动、停止、重启以及服务输出的日志内容。</p>
+</li>
+<li data-line="6">
+<p>如果你想要查看最新的日志信息，可以使用 <code>-f</code> 参数：</p>
+<pre class="language-shell" tabindex="0"><code class="language-shell is-loaded">journalctl -u index12306-aggregation.service -f
+</code><button class="copy-code-button">复制</button></pre>
+<p>这会持续显示最新的日志信息，直到你按下 <code>Ctrl + C</code> 停止。</p>
+</li>
+<li data-line="12">
+<p>若要查看特定时间范围内的日志，可以使用 <code>--since</code> 和 <code>--until</code> 参数：</p>
+<pre class="language-shell" tabindex="0"><code class="language-shell is-loaded">journalctl -u index12306-aggregation.service --since <span class="token string">"2024-03-13 00:00:00"</span> --until <span class="token string">"2024-03-14 00:00:00"</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>这会显示从指定时间范围内与 <code>index12306-aggregation.service</code> 相关的日志信息。</p>
+</li>
+<li data-line="18">
+<p>你也可以将日志输出到文件中以便稍后查看：</p>
+<pre class="language-shell" tabindex="0"><code class="language-shell is-loaded">journalctl -u index12306-aggregation.service <span class="token operator">&gt;</span> /path/to/logfile.txt
+</code><button class="copy-code-button">复制</button></pre>
+<p>将日志信息重定向到指定的文件中，方便日后查看。</p>
+</li>
+</ol></div></div></div><div class="heading-wrapper"><h2 data-heading="启动系统服务" class="heading" id="启动系统服务"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>启动系统服务</h2><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">Tip</div></div><div class="callout-content">
+<p>我们可以把所有启动任务都交给系统服务管理，服务单元结构文件如下：</p>
+<ol>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>[Unit]</code>：该部分包含服务单元的基本信息。</p>
+<ul>
+<li data-line="4"><code>Description</code>：描述服务的目的或功能。</li>
+<li data-line="5"><code>After</code>：指定服务应该在哪个目标之后启动。</li>
+</ul>
+</li>
+<li data-line="6"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>[Service]</code>：该部分包含了配置服务的具体参数。</p>
+<ul>
+<li data-line="8"><code>User</code>：指定服务运行的用户。</li>
+<li data-line="9"><code>WorkingDirectory</code>：指定服务的工作目录。</li>
+<li data-line="10"><code>ExecStart</code>：指定服务的启动命令和参数。</li>
+<li data-line="11"><code>StandardOutput</code>：指定服务的标准输出文件路径。</li>
+<li data-line="12"><code>StandardError</code>：指定服务的标准错误输出文件路径。</li>
+<li data-line="13"><code>Restart</code>：配置服务在意外退出时的行为。</li>
+</ul>
+</li>
+<li data-line="14"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><code>[Install]</code>：该部分包含了服务的安装相关信息。</p>
+<ul>
+<li data-line="16"><code>WantedBy</code>：指定服务所属的目标。</li>
+</ul>
+</li>
+</ol>
+<div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></div><div class="callout-title-inner">Warning</div></div><div class="callout-content">
+<ul>
+<li data-line="19">对于由 systemd 管理的服务，日志通常由 <code>journalctl</code> 管理。</li>
+<li data-line="20">你在服务单元文件中指定的日志输出到文件的方式可能不会生效，因为该服务的标准输出和标准错误输出可能已经被重定向到了 journalctl 中。</li>
+<li data-line="21">如果你想输出到指定文件，在服务单元文件中使用 <code>StandardOutput</code> 和 <code>StandardError</code> 选项指定日志输出到文件，而不是重定向到 journalctl。</li>
+</ul>
+</div></div>
+</div></div></div><div><p>对于启动 Gateway（Jar包） 的命令，也可以将其改造成一个 Systemd 服务单元文件，以便更加规范和方便地管理该服务。以下是改造步骤：</p></div><div><ol>
+<li data-line="0">
+<p>创建一个新的 Systemd 服务单元文件，比如 <code>index12306-gateway.service</code>：</p>
+<pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token function">sudo</span> <span class="token function">vi</span> /etc/systemd/system/index12306-gateway.service
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="6">
+<p>在该文件中输入以下内容：</p>
+<pre class="language-ini" tabindex="0"><code class="language-ini is-loaded"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Unit</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">Description</span><span class="token punctuation">=</span><span class="token value attr-value">Index 12306 Aggregation Service</span>
+<span class="token key attr-name">After</span><span class="token punctuation">=</span><span class="token value attr-value">network.target</span>
+
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Service</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">User</span><span class="token punctuation">=</span><span class="token value attr-value">root</span>
+<span class="token key attr-name">WorkingDirectory</span><span class="token punctuation">=</span><span class="token value attr-value">/home/12306</span>
+<span class="token key attr-name">ExecStart</span><span class="token punctuation">=</span><span class="token value attr-value">/usr/local/java/zulu17.44.53-ca-jdk17.0.8.1-linux_x64/bin/java \</span>
+-Xms1024m -Xmx1536m \
+<span class="token key attr-name">-Dunique-name</span><span class="token punctuation">=</span><span class="token value attr-value">-XXX \</span>
+<span class="token key attr-name">-Dframework.cache.redis.prefix</span><span class="token punctuation">=</span><span class="token value attr-value">XXX: \</span>
+<span class="token key attr-name">-Dspring.data.redis.password</span><span class="token punctuation">=</span><span class="token value attr-value">XXX \</span>
+<span class="token key attr-name">-Dspring.data.redis.port</span><span class="token punctuation">=</span><span class="token value attr-value">XXX \</span>
+<span class="token key attr-name">-Dspring.data.redis.host</span><span class="token punctuation">=</span><span class="token value attr-value">XXX \</span>
+<span class="token key attr-name">-Drocketmq.name-server</span><span class="token punctuation">=</span><span class="token value attr-value">XXX \</span>
+<span class="token key attr-name">-Dspring.cloud.nacos.discovery.server-addr</span><span class="token punctuation">=</span><span class="token value attr-value">XXX \</span>
+<span class="token key attr-name">-Dpay.alipay.notify-url</span><span class="token punctuation">=</span><span class="token value attr-value">http://XXX:9000/api/pay-service/callback/alipay \</span>
+-jar /home/12306/index12306-aggregation-service.jar
+<span class="token key attr-name">StandardOutput</span><span class="token punctuation">=</span><span class="token value attr-value">file:/home/12306/logs/index12306-gateway-service.log</span>
+<span class="token key attr-name">StandardError</span><span class="token punctuation">=</span><span class="token value attr-value">file:/home/12306/logs/index12306-gateway-service.log</span>
+<span class="token key attr-name">Restart</span><span class="token punctuation">=</span><span class="token value attr-value">always</span>
+
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Install</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">WantedBy</span><span class="token punctuation">=</span><span class="token value attr-value">multi-user.target</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="35">
+<p>保存并关闭文件。</p>
+</li>
+<li data-line="37">
+<p>重新加载 Systemd 管理器配置：</p>
+<pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token function">sudo</span> systemctl daemon-reload
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="41">
+<p>启动你的服务：</p>
+<pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token function">sudo</span> systemctl start index12306-gateway.service
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="46">
+<p>如果一切正常，设置开机自启动：</p>
+<pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> index12306-gateway.service
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+</ol></div><div><p>通过这种方式，你就可以使用 Systemd 来管理你的 Gateway 服务了，享受更好的管理和控制。</p></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="定时任务Crond" class="heading" id="定时任务Crond">定时任务Crond</h1><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="以定时清理内存为例" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">以定时清理内存为例</div></div></div></div><div><p>参考原文：<a data-tooltip-position="top" aria-label="https://blog.51cto.com/u_16175474/9324457" rel="noopener" class="external-link is-unresolved" href="https://blog.51cto.com/u_16175474/9324457" target="_self">云服务器定时清理内存怎么设置_mob649e815e258d的技术博客_51CTO博客</a><br>
+在云服务器上运行的应用程序通常会占用大量的内存资源，如果不及时清理内存，会导致服务器性能下降甚至崩溃。本项目方案旨在通过设置定时任务，定期清理云服务器的内存，提高服务器的稳定性和性能。<br>
+本项目将使用以下技术进行实现：</p></div><div><ul>
+<li data-line="0">服务器操作系统：Linux</li>
+<li data-line="1">定时任务工具：cron</li>
+<li data-line="2">编程语言：Shell脚本</li>
+</ul></div><div><p><strong>确定清理内存的方法：</strong> 在Linux系统中，可以使用<code>sync</code>、<code>echo 1 &gt; /proc/sys/vm/drop_caches</code>等命令来清理内存。</p></div><div><div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">Note</div></div><div class="callout-content">
+<ol>
+<li data-line="1"><strong>清空页缓存</strong>：写入1表示清空页面缓存。这将释放所有被内核缓存的文件系统上的页面缓存，但不清除已被使用的内存缓冲区（buffer）和目录项缓存（dentry cache）。</li>
+<li data-line="3"><strong>清空缓冲区</strong>：写入2表示清空内存缓冲区。这将释放所有被内核缓存的文件系统上的内存缓冲区，但不清除页缓存和目录项缓存。</li>
+<li data-line="5"><strong>清空目录项缓存和inode缓存</strong>：写入3表示清空目录项缓存和inode缓存。这将释放目录项缓存和inode缓存，但不清除页缓存和内存缓冲区。</li>
+</ol>
+</div></div></div><div><p><strong>编写清理内存的脚本：</strong> 首先，我们需要创建一个Shell脚本文件，用于执行清理内存的命令。创建一个名为<code>clean_memory.sh</code>的文件，并将以下代码复制到文件中：</p></div><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token shebang important">#!/bin/bash </span>
+<span class="token comment"># 清理内存 </span>
+<span class="token builtin class-name">echo</span> <span class="token number">1</span> <span class="token operator">&gt;</span> /proc/sys/vm/drop_caches 
+<span class="token builtin class-name">echo</span> <span class="token string">"Memory cleaned!"</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p><strong>设置定时任务：</strong><br>
+使用cron工具可以方便地设置定时任务。我们可以编辑cron表达式来指定定时任务的执行时间。执行以下命令来编辑cron表达式：</p></div><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token function">crontab</span> -e
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在打开的编辑器中，添加以下一行，表示每天凌晨1点执行清理内存的脚本：</p></div><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token number">0</span> <span class="token number">1</span> * * * /bin/bash /path/to/clean_memory.sh
+</code><button class="copy-code-button">复制</button></pre></div><div><p>请注意替换<code>/path/to/clean_memory.sh</code>为实际的脚本文件路径。</p></div><div><p>保存并退出编辑器。</p></div><div><p><strong>启用定时任务：</strong></p></div><div><div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></div><div class="callout-title-inner">Warning</div></div><div class="callout-content">
+<p>通常情况下，Linux系统中使用的是 <code>cron</code> 服务来管理定时任务，但有些系统可能使用了其他的服务名，如 <code>crond</code></p>
+</div></div></div><div><p>定时任务的设置已经完成，我们需要重新加载cron服务以使其生效。执行以下命令来重新加载cron服务：</p></div><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded">systemctl reload crond
+</code><button class="copy-code-button">复制</button></pre></div><div><p>至此，云服务器定时清理内存的设置已完成。<br>
+<strong>测试与验证：</strong><br>
+为了验证定时任务是否正常工作，您可以手动执行一次清理内存的脚本来测试。执行以下命令来手动执行脚本：</p></div><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded">/bin/bash /path/to/clean_memory.sh
+</code><button class="copy-code-button">复制</button></pre></div><div><p>如果一切正常，您将看到一条"Memory cleaned!"的输出。</p></div></div></div><div class="heading-wrapper"><h1 data-heading="内存监控htop" class="heading" id="内存监控htop">内存监控htop</h1><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">原生命令</div></div><div class="callout-content">
+<ul>
+<li data-line="1"><code>free -h</code>：这将以人类可读的方式显示内存占用情况</li>
+<li data-line="2">使用<code>top</code>命令可以实时查看系统中各个进程的内存占用情况</li>
+</ul>
+</div></div></div><div><p>虽然但是，Linux有一个非常强大的三方工具：<a data-tooltip-position="top" aria-label="https://github.com/htop-dev/htop" rel="noopener" class="external-link is-unresolved" href="https://github.com/htop-dev/htop" target="_self">htop-dev/htop：htop - 交互式进程查看器 --- htop-dev/htop: htop - an interactive process viewer (github.com)</a><br>
+怎么描述呢，就相当于Win系统任务管理器了！</p></div><div class="heading-wrapper"><h2 data-heading="安装" class="heading" id="安装"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>安装</h2><div class="heading-children"><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">htop</span>   <span class="token comment"># 如果你使用的是Debian/Ubuntu等系统 </span>
+<span class="token function">sudo</span> yum <span class="token function">install</span> <span class="token function">htop</span>   <span class="token comment"># 如果你使用的是CentOS/RHEL等系统 htop</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h2 data-heading="界面组成" class="heading" id="界面组成"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>界面组成</h2><div class="heading-children"><div><p><img alt="image.png" src="https://i0.hdslb.com/bfs/article/bc292e7aaf441efe655d6ca7a99fb2b6688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>htop 使用不同的颜色来标识不同的进程和资源使用情况，以提供更直观的视觉表示。以下是 htop 中使用的一些颜色及其含义：</p></div><div><ul>
+<li data-line="0"><strong>正常颜色</strong>：大多数进程以正常颜色显示，表示资源使用在正常范围内。</li>
+<li data-line="1"><strong>高亮颜色</strong>：某些特殊进程会以高亮颜色显示，以突出显示其重要性或特殊性。</li>
+<li data-line="2"><strong>低亮颜色</strong>：部分进程以低亮颜色显示，表示它们是休眠或睡眠状态。</li>
+<li data-line="3"><strong>加粗颜色</strong>：某些进程以加粗的形式显示，表示它们是当前活动进程。</li>
+<li data-line="4"><strong>紫色</strong>：紫色表示内核线程，即在内核空间中运行的线程。</li>
+<li data-line="5"><strong>蓝色</strong>：蓝色表示虚拟内存映射。</li>
+<li data-line="6"><strong>绿色</strong>：绿色表示用户级别的任务。</li>
+<li data-line="7"><strong>黄色</strong>：黄色表示系统级别的任务。</li>
+<li data-line="8"><strong>红色</strong>：红色表示内核级别的任务。</li>
+<li data-line="9"><strong>亮蓝色</strong>：亮蓝色表示 I/O 等待。</li>
+<li data-line="10"><strong>亮绿色</strong>：亮绿色表示 CPU 等待。</li>
+<li data-line="11"><strong>亮红色</strong>：亮红色表示虚拟内存交换。</li>
+<li data-line="12"><strong>灰色</strong>：灰色表示线程。</li>
+</ul></div><div><p>请注意，颜色显示可能会因终端设置、主题或配置文件而有所不同。您可以根据自己的喜好和需求进行定制。如果您希望禁用颜色显示，可以在启动 htop 时使用&nbsp;<code>--no-color</code>&nbsp;参数。</p></div><div><p><strong>表头含义：</strong></p></div><div><ul>
+<li data-line="0">PID – 描述进程的ID号</li>
+<li data-line="1">USER – 描述进程的所有者（谁跑的）</li>
+<li data-line="2">PRI – 描述Linux内核查看的进程优先级</li>
+<li data-line="3">NI – 描述由用户或root重置的进程优先级</li>
+<li data-line="4">VIR – 它描述进程正在使用的虚拟内存 （virtual memory）</li>
+<li data-line="5">RES – 描述进程正在消耗的物理内存（physical memory）</li>
+<li data-line="6">SHR – 描述进程正在使用的共享内存（shared memory）</li>
+<li data-line="7">S – 描述流程的当前状态 (state)</li>
+<li data-line="8">CPU％ – 描述每个进程消耗的CPU百分比</li>
+<li data-line="9">MEM％ – 描述每个进程消耗的内存百分比</li>
+<li data-line="10">TIME+ – 显示自流程开始执行以来的时间</li>
+<li data-line="11">Command –它与每个进程并行显示完整的命令执行 (比如/usr/lib/R)<br>
+<strong>菜单快捷键：</strong></li>
+<li data-line="13">F1: 查看<code>htop</code>的帮助文档，了解更多关于界面各项的详细信息。</li>
+<li data-line="14">F2: 进入设置菜单，可以进行一些全局设置，如排序方式、显示选项等。</li>
+<li data-line="15">F3: 在进程列表中进行搜索，输入关键字后会过滤显示匹配的进程。</li>
+<li data-line="16">F4: 进入筛选模式，可以按进程的特定属性进行过滤，如进程状态、用户等。</li>
+<li data-line="17">F5: 刷新界面，更新进程和系统资源的使用情况。</li>
+<li data-line="18">F6: 切换排序方式，按不同的列进行进程排序，如 CPU 使用率、内存占用等。</li>
+<li data-line="19">F7: 减少<code>htop</code>显示的进程列表，只显示部分进程。</li>
+<li data-line="20">F8: 增加<code>htop</code>显示的进程列表，显示更多进程。</li>
+<li data-line="21">F9: 发送信号给选定的进程，可以选择终止或发送其他信号。</li>
+<li data-line="22">F10: 退出<code>htop</code>命令，当然，按下键盘上的 q 键也可以顺利退出！！！</li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="杀死进程" class="heading" id="杀死进程"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>杀死进程</h2><div class="heading-children"><div><p>htop已经接近了任务管理器的功能了，可以通过鼠标点击 + 回车的方式，实现杀死进程，选择一个红色块内容后，点击F9，弹出红框，选择一个：9 SIGKILL</p></div><div><p><img src="https://developer.qcloudimg.com/http-save/yehe-6862050/5b55c8b1b9c91ac777376f6328806355.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>按下Enter是执行kill -9 XXXX。Esc是取消！</p></div></div></div><div class="heading-wrapper"><h2 data-heading="更换更好看的界面" class="heading" id="更换更好看的界面"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>更换更好看的界面</h2><div class="heading-children"><div><p><strong>干净的进程显示：</strong></p></div><div><div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">Tip</div></div><div class="callout-content">
+<p>隐藏重复进程：将 Hide kernel threads 和 Hide userland process thread 选项选中，这样做可以隐藏内核线程和用户空间线程，使进程列表更加清晰。</p>
+</div></div></div><div><p>使用 htop 的过程中会发现有很多同样的进程被标注了绿色大量显示。如下图所示。<br>
+<img alt="image.png" src="https://i0.hdslb.com/bfs/article/15c73bdb63da2d4ec0e56690bbf073e2688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>这使得在大量程序运行时想要找到需要观察的进程变的困难。如何省略这些重复现实的进程呢？</p></div><div><ol>
+<li data-line="0">输入 htop，显示出 htop 界面。</li>
+<li data-line="1">按下 F2 键，进入 Setup 模式</li>
+<li data-line="2">点击 Display options 选项，将 Hide kernel threads 和 Hide userland process thread 选中即可。<br>
+<img alt="image.png" src="https://i0.hdslb.com/bfs/article/8475a567f45240dfac0c9bfc960fab5e688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+</ol></div><div><p><strong>更换配色：</strong></p></div><div><p><img src="https://developer.qcloudimg.com/http-save/yehe-6862050/6a185b8efd0dfd9cec8a592c31218e0a.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="启用Swap分区" class="heading" id="启用Swap分区">启用Swap分区</h1><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">调优了下程序。内存够用了就不开了</div></div></div></div><div><p>参考文章：<a data-tooltip-position="top" aria-label="https://www.leftso.com/article/943.html" rel="noopener" class="external-link is-unresolved" href="https://www.leftso.com/article/943.html" target="_self">腾讯云服务器开启swap分区_Linux系统开启swap分区和配置——Swap文件方式-左搜 (leftso.com)</a></p></div></div></div><div class="heading-wrapper"><h1 data-heading="内存不足时如何保持SSH打开" class="heading" id="内存不足时如何保持SSH打开">内存不足时如何保持SSH打开</h1><div class="heading-children"><div><p>当服务器内存不足时，操作系统通常会使用 OOM Killer 杀死一些进程以释放内存。在某些情况下，这可能导致重要的进程被终止，例如 SSH 进程，从而导致服务器无法远程连接。为了避免这种情况，我们可以通过禁用 OOM Killer 来保护特定进程，例如 SSH 进程。</p></div><div><p>一种方法是使用 crontab 定时任务来定期禁用 OOM Killer。下面是实现这一目标的具体步骤：</p></div><div><ol>
+<li data-line="0">
+<p>编辑 crontab 文件：</p>
+<pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token function">crontab</span> -e
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="5">
+<p>添加以下行到 crontab 文件中：</p>
+<pre class="language-shell" tabindex="0"><code class="language-shell is-loaded">*/1 * * * * root pgrep -f <span class="token string">"/usr/sbin/sshd"</span> <span class="token operator">|</span> <span class="token keyword">while</span> <span class="token builtin class-name">read</span> PID<span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token builtin class-name">echo</span> -17 <span class="token operator">&gt;</span> /proc/<span class="token variable">$PID</span>/oom_adj<span class="token punctuation">;</span> <span class="token keyword">done</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>这个命令的含义是每分钟执行一次，并且会查找正在运行的名为 "/usr/sbin/sshd" 的进程，并为每个进程禁用 OOM Killer。</p>
+</li>
+<li data-line="12">
+<p>保存并退出 crontab 文件。</p>
+</li>
+</ol></div><div><p>通过执行以上步骤，我们成功地设置了一个定时任务，该任务会每分钟执行一次，并禁用正在运行的 SSH 进程的 OOM Killer。这样，在服务器内存不足时，SSH 进程将不会被意外终止，确保了服务器的可远程连接性。</p></div><div class="mod-footer"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#基础命令" data-path="#基础命令"><div class="tree-item-inner heading-link" heading-name="基础命令">基础命令</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#文件授权" data-path="#文件授权"><div class="tree-item-inner heading-link" heading-name="文件授权">文件授权</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#编辑文件" data-path="#编辑文件"><div class="tree-item-inner heading-link" heading-name="编辑文件">编辑文件</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#查看文件" data-path="#查看文件"><div class="tree-item-inner heading-link" heading-name="查看文件">查看文件</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#文件解压缩" data-path="#文件解压缩"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="文件解压缩">文件解压缩</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#解压缩原理" data-path="#解压缩原理"><div class="tree-item-inner heading-link" heading-name="解压缩原理">解压缩原理</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#解压命令" data-path="#解压命令"><div class="tree-item-inner heading-link" heading-name="解压命令">解压命令</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#打包压缩命令" data-path="#打包压缩命令"><div class="tree-item-inner heading-link" heading-name="打包压缩命令">打包压缩命令</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#目录操作" data-path="#目录操作"><div class="tree-item-inner heading-link" heading-name="目录操作">目录操作</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#进程查询" data-path="#进程查询"><div class="tree-item-inner heading-link" heading-name="进程查询">进程查询</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#重定向输出" data-path="#重定向输出"><div class="tree-item-inner heading-link" heading-name="重定向输出">重定向输出</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#系统服务" data-path="#系统服务"><div class="tree-item-inner heading-link" heading-name="系统服务">系统服务</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#查阅系统服务" data-path="#查阅系统服务"><div class="tree-item-inner heading-link" heading-name="查阅系统服务">查阅系统服务</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#查阅日志" data-path="#查阅日志"><div class="tree-item-inner heading-link" heading-name="查阅日志">查阅日志</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#启动系统服务" data-path="#启动系统服务"><div class="tree-item-inner heading-link" heading-name="启动系统服务">启动系统服务</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#定时任务Crond" data-path="#定时任务Crond"><div class="tree-item-inner heading-link" heading-name="定时任务Crond">定时任务Crond</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#内存监控htop" data-path="#内存监控htop"><div class="tree-item-inner heading-link" heading-name="内存监控htop">内存监控htop</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#安装" data-path="#安装"><div class="tree-item-inner heading-link" heading-name="安装">安装</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#界面组成" data-path="#界面组成"><div class="tree-item-inner heading-link" heading-name="界面组成">界面组成</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#杀死进程" data-path="#杀死进程"><div class="tree-item-inner heading-link" heading-name="杀死进程">杀死进程</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#更换更好看的界面" data-path="#更换更好看的界面"><div class="tree-item-inner heading-link" heading-name="更换更好看的界面">更换更好看的界面</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#启用Swap分区" data-path="#启用Swap分区"><div class="tree-item-inner heading-link" heading-name="启用Swap分区">启用Swap分区</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/浓缩精华/linux常用命令.html#内存不足时如何保持SSH打开" data-path="#内存不足时如何保持SSH打开"><div class="tree-item-inner heading-link" heading-name="内存不足时如何保持SSH打开">内存不足时如何保持SSH打开</div></a><div class="tree-item-children"></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

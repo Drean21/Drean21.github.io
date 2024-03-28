@@ -1,0 +1,968 @@
+<!DOCTYPE html> <html><head>
+<title>Mybatis练习</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - Mybatis练习">
+<meta property="og:title" content="Mybatis练习">
+<meta property="og:description" content="尘影迹痕 - Mybatis练习">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/后端/java/mybatis练习.html">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/4ee6691c8d648642344d230396fefc0d8a17603e.png">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="Mybatis练习"><p>Mybatis练习</p></h1><div class="heading-wrapper"><div class="heading-children"><div><p><strong>目标</strong></p></div><div><blockquote>
+<ul>
+<li data-line="0">能够使用映射配置文件实现CRUD操作</li>
+<li data-line="1">能够使用注解实现CRUD操作</li>
+</ul>
+</blockquote></div></div></div><div class="heading-wrapper"><h2 data-heading="1，配置文件实现CRUD" class="heading" id="1，配置文件实现CRUD"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1，配置文件实现CRUD</h2><div class="heading-children"><div><p><img alt="image-20210729111159534" src="https://i0.hdslb.com/bfs/album/4ee6691c8d648642344d230396fefc0d8a17603e.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>如上图所示产品原型，里面包含了品牌数据的 <code>查询</code> 、<code>按条件查询</code>、<code>添加</code>、<code>删除</code>、<code>批量删除</code>、<code>修改</code> 等功能，而这些功能其实就是对数据库表中的数据进行CRUD操作。接下来我们就使用Mybatis完成品牌数据的增删改查操作。以下是我们要完成功能列表：</p></div><div><blockquote>
+<ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>查询
+<ul>
+<li data-line="1">查询所有数据</li>
+<li data-line="2">查询详情</li>
+<li data-line="3">条件查询</li>
+</ul>
+</li>
+<li data-line="4">添加</li>
+<li data-line="5"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>修改
+<ul>
+<li data-line="6">修改全部字段</li>
+<li data-line="7">修改动态字段</li>
+</ul>
+</li>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>删除
+<ul>
+<li data-line="9">删除一个</li>
+<li data-line="10">批量删除</li>
+</ul>
+</li>
+</ul>
+</blockquote></div><div><p>我们先将必要的环境准备一下。</p></div><div class="heading-wrapper"><h3 data-heading="1.1  环境准备" class="heading" id="1.1__环境准备"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.1  环境准备</h3><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>数据库表（tb_brand）及数据准备</p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded"><span class="token comment">-- 删除tb_brand表</span>
+<span class="token keyword">drop</span> <span class="token keyword">table</span> <span class="token keyword">if</span> <span class="token keyword">exists</span> tb_brand<span class="token punctuation">;</span>
+<span class="token comment">-- 创建tb_brand表</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> tb_brand
+<span class="token punctuation">(</span>
+    <span class="token comment">-- id 主键</span>
+    id           <span class="token keyword">int</span> <span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token keyword">auto_increment</span><span class="token punctuation">,</span>
+    <span class="token comment">-- 品牌名称</span>
+    brand_name   <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">-- 企业名称</span>
+    company_name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">-- 排序字段</span>
+    ordered      <span class="token keyword">int</span><span class="token punctuation">,</span>
+    <span class="token comment">-- 描述信息</span>
+    description  <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">-- 状态：0：禁用  1：启用</span>
+    <span class="token keyword">status</span>       <span class="token keyword">int</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 添加数据</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> tb_brand <span class="token punctuation">(</span>brand_name<span class="token punctuation">,</span> company_name<span class="token punctuation">,</span> ordered<span class="token punctuation">,</span> description<span class="token punctuation">,</span> <span class="token keyword">status</span><span class="token punctuation">)</span>
+<span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'三只松鼠'</span><span class="token punctuation">,</span> <span class="token string">'三只松鼠股份有限公司'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'好吃不上火'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">'华为'</span><span class="token punctuation">,</span> <span class="token string">'华为技术有限公司'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token string">'华为致力于把数字世界带入每个人、每个家庭、每个组织，构建万物互联的智能世界'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">'小米'</span><span class="token punctuation">,</span> <span class="token string">'小米科技有限公司'</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token string">'are you ok'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="28">
+<p>实体类 Brand</p>
+<p>在 <code>com.itheima.pojo</code> 包下创建 Brand 实体类。</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Brand</span> <span class="token punctuation">{</span>
+    <span class="token comment">// id 主键</span>
+    <span class="token keyword">private</span> <span class="token class-name">Integer</span> id<span class="token punctuation">;</span>
+    <span class="token comment">// 品牌名称</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> brandName<span class="token punctuation">;</span>
+    <span class="token comment">// 企业名称</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> companyName<span class="token punctuation">;</span>
+    <span class="token comment">// 排序字段</span>
+    <span class="token keyword">private</span> <span class="token class-name">Integer</span> ordered<span class="token punctuation">;</span>
+    <span class="token comment">// 描述信息</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> description<span class="token punctuation">;</span>
+    <span class="token comment">// 状态：0：禁用  1：启用</span>
+    <span class="token keyword">private</span> <span class="token class-name">Integer</span> status<span class="token punctuation">;</span>
+    
+    <span class="token comment">//省略 setter and getter。自己写时要补全这部分代码</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="51">
+<p>编写测试用例</p>
+<p>测试代码需要在 <code>test/java</code> 目录下创建包及测试用例。项目结构如下：</p>
+<img style="zoom:80%;" alt="image-20210729112907106" src="https://i0.hdslb.com/bfs/album/fc1a22a96acc84abba521df612223dd565dd7204.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+</li>
+<li data-line="57"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>安装 MyBatisX 插件</p>
+<ul>
+<li data-line="59">
+<p>MybatisX 是一款基于 IDEA 的快速开发插件，为效率而生。</p>
+</li>
+<li data-line="61"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>主要功能</p>
+<ul>
+<li data-line="63">XML映射配置文件 和 接口方法 间相互跳转</li>
+<li data-line="64">根据接口方法生成 statement </li>
+</ul>
+</li>
+<li data-line="66">
+<p>安装方式</p>
+<p>点击 <code>file</code> ，选择 <code>settings</code> ，就能看到如下图所示界面</p>
+<img style="zoom:80%;" alt="image-20210729113304743" src="https://i0.hdslb.com/bfs/album/5bb537d5879f1fda6fb704bbdd7cf6945ed59826.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+<blockquote>
+<p>注意：安装完毕后需要重启IDEA</p>
+</blockquote>
+</li>
+<li data-line="74">
+<p>插件效果</p>
+<img style="zoom:70%;" alt="image-20210729164450524" src="https://i0.hdslb.com/bfs/album/247d340f9428e61ebf74bc7413376d072aaaa741.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+<p>红色头绳的表示映射配置文件，蓝色头绳的表示mapper接口。在mapper接口点击红色头绳的小鸟图标会自动跳转到对应的映射配置文件，在映射配置文件中点击蓝色头绳的小鸟图标会自动跳转到对应的mapper接口。也可以在mapper接口中定义方法，自动生成映射配置文件中的 <code>statement</code> ，如图所示</p>
+<p><img alt="image-20210729165337223" src="https://i0.hdslb.com/bfs/album/ec58da18c8acbf1b4d26073bfc6744743416cbb8.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h3 data-heading="1.2  查询所有数据" class="heading" id="1.2__查询所有数据"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.2  查询所有数据</h3><div class="heading-children"><div><img style="zoom:80%;" alt="image-20210729165724838" src="https://i0.hdslb.com/bfs/album/5c6beef93232a8129f698280911c31eb9c0fbccc.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></div><div><p>如上图所示就页面上展示的数据，而这些数据需要从数据库进行查询。接下来我们就来讲查询所有数据功能，而实现该功能我们分以下步骤进行实现：</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>编写接口方法：Mapper接口</p>
+<ul>
+<li data-line="2">
+<p>参数：无</p>
+<p>查询所有数据功能是不需要根据任何条件进行查询的，所以此方法不需要参数。</p>
+<img style="zoom:80%;" alt="image-20210729171208737" src="https://i0.hdslb.com/bfs/album/bcf9e95947e1d7b20fe1e5676e23754f8b4d11f3.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+</li>
+<li data-line="8">
+<p>结果：<code>List&lt;Brand&gt;</code></p>
+<p>我们会将查询出来的每一条数据封装成一个 <code>Brand</code> 对象，而多条数据封装多个 <code>Brand</code> 对象，需要将这些对象封装到List集合中返回。</p>
+<img style="zoom:80%;" alt="image-20210729171146911" src="https://i0.hdslb.com/bfs/album/8331c769be93260de0fe4c962753e17df8dbab86.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+</li>
+<li data-line="14">
+<p>执行方法、测试</p>
+</li>
+</ul>
+</li>
+</ul></div><div class="heading-wrapper"><h4 data-heading="1.2.1  编写接口方法" class="heading" id="1.2.1__编写接口方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.2.1  编写接口方法</h4><div class="heading-children"><div><p>在 <code>com.itheima.mapper</code> 包写创建名为 <code>BrandMapper</code> 的接口。并在该接口中定义 <code>List&lt;Brand&gt; selectAll()</code> 方法。</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">BrandMapper</span> <span class="token punctuation">{</span>
+
+    <span class="token doc-comment comment">/**
+     * 查询所有
+     */</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Brand</span><span class="token punctuation">&gt;</span></span> <span class="token function">selectAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="1.2.2  编写SQL语句" class="heading" id="1.2.2__编写SQL语句"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.2.2  编写SQL语句</h4><div class="heading-children"><div><p>在 <code>reources</code> 下创建 <code>com/itheima/mapper</code> 目录结构，并在该目录下创建名为 <code>BrandMapper.xml</code> 的映射配置文件</p></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">mapper</span>
+        <span class="token name">PUBLIC</span> <span class="token string">"-//mybatis.org//DTD Mapper 3.0//EN"</span>
+        <span class="token string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">namespace</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.itheima.mapper.BrandMapper<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectAll<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brand<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        select *
+        from tb_brand;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="1.2.3  编写测试方法" class="heading" id="1.2.3__编写测试方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.2.3  编写测试方法</h4><div class="heading-children"><div><p>在 <code>MybatisTest</code> 类中编写测试查询所有的方法</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+    <span class="token comment">//1. 获取SqlSessionFactory</span>
+    <span class="token class-name">String</span> resource <span class="token operator">=</span> <span class="token string">"mybatis-config.xml"</span><span class="token punctuation">;</span>
+    <span class="token class-name">InputStream</span> inputStream <span class="token operator">=</span> <span class="token class-name">Resources</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span>resource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">SqlSessionFactory</span> sqlSessionFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlSessionFactoryBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>inputStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//2. 获取SqlSession对象</span>
+    <span class="token class-name">SqlSession</span> sqlSession <span class="token operator">=</span> sqlSessionFactory<span class="token punctuation">.</span><span class="token function">openSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//3. 获取Mapper接口的代理对象</span>
+    <span class="token class-name">BrandMapper</span> brandMapper <span class="token operator">=</span> sqlSession<span class="token punctuation">.</span><span class="token function">getMapper</span><span class="token punctuation">(</span><span class="token class-name">BrandMapper</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//4. 执行方法</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Brand</span><span class="token punctuation">&gt;</span></span> brands <span class="token operator">=</span> brandMapper<span class="token punctuation">.</span><span class="token function">selectAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>brands<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//5. 释放资源</span>
+    sqlSession<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><blockquote>
+<p>注意：现在我们感觉测试这部分代码写起来特别麻烦，我们可以先忍忍。以后我们只会写上面的第3步的代码，其他的都不需要我们来完成。</p>
+</blockquote></div><div><p>执行测试方法结果如下：</p></div><div><p><img alt="image-20210729172544230" src="https://i0.hdslb.com/bfs/album/fded151bc01f944e7ceaec6c6a2ae1b7eebd69d3.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>从上面结果我们看到了问题，有些数据封装成功了，而有些数据并没有封装成功。为什么这样呢？</p></div><div><p>这个问题可以通过两种方式进行解决：</p></div><div><ul>
+<li data-line="0">给字段起别名</li>
+<li data-line="1">使用resultMap定义字段和属性的映射关系</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="1.2.4  起别名解决上述问题" class="heading" id="1.2.4__起别名解决上述问题"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.2.4  起别名解决上述问题</h4><div class="heading-children"><div><p>从上面结果可以看到 <code>brandName</code> 和 <code>companyName</code> 这两个属性的数据没有封装成功，查询 实体类 和 表中的字段 发现，在实体类中属性名是 <code>brandName</code> 和 <code>companyName</code> ，而表中的字段名为 <code>brand_name</code> 和 <code>company_name</code>，如下图所示 。那么我们只需要保持这两部分的名称一致这个问题就迎刃而解。</p></div><div><img style="zoom:80%;" alt="image-20210729173210433" src="https://i0.hdslb.com/bfs/album/1a5e8d5b55c034d8b928f935bb5b4046304049c3.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></div><div><p>我们可以在写sql语句时给这两个字段起别名，将别名定义成和属性名一致即可。</p></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectAll<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brand<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    select
+    id, brand_name as brandName, company_name as companyName, ordered, description, status
+    from tb_brand;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>而上面的SQL语句中的字段列表书写麻烦，如果表中还有更多的字段，同时其他的功能也需要查询这些字段时就显得我们的代码不够精炼。Mybatis提供了<code>sql</code> 片段可以提高sql的复用性。</p></div><div><p><strong>SQL片段：</strong></p></div><div><ul>
+<li data-line="0">
+<p>将需要复用的SQL片段抽取到 <code>sql</code> 标签中</p>
+<pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sql</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brand_column<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	id, brand_name as brandName, company_name as companyName, ordered, description, status
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sql</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>id属性值是唯一标识，引用时也是通过该值进行引用。</p>
+</li>
+<li data-line="10">
+<p>在原sql语句中进行引用</p>
+<p>使用 <code>include</code> 标签引用上述的 SQL 片段，而 <code>refid</code> 指定上述 SQL 片段的id值。</p>
+<pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectAll<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brand<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    select
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span> <span class="token attr-name">refid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brand_column<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    from tb_brand;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="1.2.5  使用resultMap解决上述问题" class="heading" id="1.2.5__使用resultMap解决上述问题"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.2.5  使用resultMap解决上述问题</h4><div class="heading-children"><div><p>起别名 + sql片段的方式可以解决上述问题，但是它也存在问题。如果还有功能只需要查询部分字段，而不是查询所有字段，那么我们就需要再定义一个 SQL 片段，这就显得不是那么灵活。</p></div><div><p>那么我们也可以使用resultMap来定义字段和属性的映射关系的方式解决上述问题。</p></div><div><ul>
+<li data-line="0">
+<p>在映射配置文件中使用resultMap定义 字段 和 属性 的映射关系</p>
+<pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resultMap</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandResultMap<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brand<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!--
+            id：完成主键字段的映射
+                column：表的列名
+                property：实体类的属性名
+            result：完成一般字段的映射
+                column：表的列名
+                property：实体类的属性名
+        --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>result</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brand_name<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandName<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>result</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>company_name<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>companyName<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resultMap</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre>
+<blockquote>
+<p>注意：在上面只需要定义 字段名 和 属性名 不一样的映射，而一样的则不需要专门定义出来。</p>
+</blockquote>
+</li>
+<li data-line="19">
+<p>SQL语句正常编写</p>
+<pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectAll<span class="token punctuation">"</span></span> <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandResultMap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    select *
+    from tb_brand;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="1.2.6  小结" class="heading" id="1.2.6__小结"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.2.6  小结</h4><div class="heading-children"><div><p>实体类属性名 和 数据库表列名 不一致，不能自动封装数据</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><mark>起别名：</mark>在SQL语句中，对不一样的列名起别名，别名和实体类属性名一样
+<ul>
+<li data-line="1">可以定义 <code>&lt;sql&gt;</code>片段，提升复用性 </li>
+</ul>
+</li>
+<li data-line="2"><mark>resultMap：</mark>定义<code>&lt;resultMap&gt;</code> 完成不一致的属性名和列名的映射</li>
+</ul></div><div><p>而我们最终选择使用 resultMap的方式。查询映射配置文件中查询所有的 statement 书写如下：</p></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resultMap</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandResultMap<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brand<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+     <span class="token comment">&lt;!--
+            id：完成主键字段的映射
+                column：表的列名
+                property：实体类的属性名
+            result：完成一般字段的映射
+                column：表的列名
+                property：实体类的属性名
+        --&gt;</span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>result</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brand_name<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandName<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>result</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>company_name<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>companyName<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resultMap</span><span class="token punctuation">&gt;</span></span>
+
+
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectAll<span class="token punctuation">"</span></span> <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandResultMap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    select *
+    from tb_brand;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="1.3  查询详情" class="heading" id="1.3__查询详情"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.3  查询详情</h3><div class="heading-children"><div><img style="zoom:80%;" alt="image-20210729180118287" src="https://i0.hdslb.com/bfs/album/53a77c87e8f0c0e80aa68efa1731f009ddf6e023.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></div><div><p>有些数据的属性比较多，在页面表格中无法全部实现，而只会显示部分，而其他属性数据的查询可以通过 <code>查看详情</code> 来进行查询，如上图所示。</p></div><div><p>查看详情功能实现步骤：</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>编写接口方法：Mapper接口</p>
+<img style="zoom:80%;" alt="image-20210729180604529" src="https://i0.hdslb.com/bfs/album/dae95f546698b00049477245e4956798a451513f.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+<ul>
+<li data-line="4">
+<p>参数：id</p>
+<p>查看详情就是查询某一行数据，所以需要根据id进行查询。而id以后是由页面传递过来。</p>
+</li>
+<li data-line="8">
+<p>结果：Brand</p>
+<p>根据id查询出来的数据只要一条，而将一条数据封装成一个Brand对象即可</p>
+</li>
+</ul>
+</li>
+<li data-line="12">
+<p>编写SQL语句：SQL映射文件</p>
+<img style="zoom:80%;" alt="image-20210729180709318" src="https://i0.hdslb.com/bfs/album/8b106e98c03c3421cb6b025e5e16843eff9ccb0c.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+</li>
+<li data-line="16">
+<p>执行方法、进行测试</p>
+</li>
+</ul></div><div class="heading-wrapper"><h4 data-heading="1.3.1  编写接口方法" class="heading" id="1.3.1__编写接口方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.3.1  编写接口方法</h4><div class="heading-children"><div><p>在 <code>BrandMapper</code> 接口中定义根据id查询数据的方法 </p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+  * 查看详情：根据Id查询
+  */</span>
+<span class="token class-name">Brand</span> <span class="token function">selectById</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="1.3.2  编写SQL语句" class="heading" id="1.3.2__编写SQL语句"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.3.2  编写SQL语句</h4><div class="heading-children"><div><p>在 <code>BrandMapper.xml</code> 映射配置文件中编写 <code>statement</code>，使用 <code>resultMap</code> 而不是使用 <code>resultType</code></p></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectById<span class="token punctuation">"</span></span>  <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandResultMap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    select *
+    from tb_brand where id = #{id};
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div><div><blockquote>
+<p>注意：上述SQL中的 #{id}先这样写，一会我们再详细讲解</p>
+</blockquote></div></div></div><div class="heading-wrapper"><h4 data-heading="1.3.3  编写测试方法" class="heading" id="1.3.3__编写测试方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.3.3  编写测试方法</h4><div class="heading-children"><div><p>在 <code>test/java</code> 下的 <code>com.itheima.mapper</code>  包下的 <code>MybatisTest类中</code> 定义测试方法</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"> <span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectById</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+    <span class="token comment">//接收参数，该id以后需要传递过来</span>
+    <span class="token keyword">int</span> id <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//1. 获取SqlSessionFactory</span>
+    <span class="token class-name">String</span> resource <span class="token operator">=</span> <span class="token string">"mybatis-config.xml"</span><span class="token punctuation">;</span>
+    <span class="token class-name">InputStream</span> inputStream <span class="token operator">=</span> <span class="token class-name">Resources</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span>resource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">SqlSessionFactory</span> sqlSessionFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlSessionFactoryBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>inputStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//2. 获取SqlSession对象</span>
+    <span class="token class-name">SqlSession</span> sqlSession <span class="token operator">=</span> sqlSessionFactory<span class="token punctuation">.</span><span class="token function">openSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//3. 获取Mapper接口的代理对象</span>
+    <span class="token class-name">BrandMapper</span> brandMapper <span class="token operator">=</span> sqlSession<span class="token punctuation">.</span><span class="token function">getMapper</span><span class="token punctuation">(</span><span class="token class-name">BrandMapper</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//4. 执行方法</span>
+    <span class="token class-name">Brand</span> brand <span class="token operator">=</span> brandMapper<span class="token punctuation">.</span><span class="token function">selectById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>brand<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//5. 释放资源</span>
+    sqlSession<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>执行测试方法结果如下：</p></div><div><img style="zoom:70%;" alt="image-20210729182223137" src="https://i0.hdslb.com/bfs/album/7d2f26bb11a952c0879f2dc56fd7ddd481674636.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></div></div></div><div class="heading-wrapper"><h4 data-heading="1.3.4  参数占位符" class="heading" id="1.3.4__参数占位符"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.3.4  参数占位符</h4><div class="heading-children"><div><p>查询到的结果很好理解就是id为1的这行数据。而这里我们需要看控制台显示的SQL语句，能看到使用？进行占位。说明我们在映射配置文件中的写的 <code>#{id}</code> 最终会被？进行占位。接下来我们就聊聊映射配置文件中的参数占位符。</p></div><div><p>mybatis提供了两种参数占位符：</p></div><div><ul>
+<li data-line="0">
+<p>#{} ：执行SQL时，会将 #{} 占位符替换为？，将来自动设置参数值。从上述例子可以看出使用#{} 底层使用的是 <code>PreparedStatement</code></p>
+</li>
+<li data-line="2">
+<p>${} ：拼接SQL。底层使用的是 <code>Statement</code>，会存在SQL注入问题。如下图将 映射配置文件中的 #{} 替换成 ${} 来看效果</p>
+<pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectById<span class="token punctuation">"</span></span>  <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandResultMap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    select *
+    from tb_brand where id = ${id};
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>重新运行查看结果如下：</p>
+<img style="zoom:70%;" alt="image-20210729184156019" src="https://i0.hdslb.com/bfs/album/6c4514bad2d57cb78767fbdc0a33882b3ac07a84.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+</li>
+</ul></div><div><blockquote>
+<p><mark>注意：</mark>从上面两个例子可以看出，以后开发我们使用 #{} 参数占位符。</p>
+</blockquote></div></div></div><div class="heading-wrapper"><h4 data-heading="1.3.5  parameterType使用" class="heading" id="1.3.5__parameterType使用"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.3.5  parameterType使用</h4><div class="heading-children"><div><p>对于有参数的mapper接口方法，我们在映射配置文件中应该配置 <code>ParameterType</code> 来指定参数类型。只不过该属性都可以省略。如下图：</p></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectById<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>int<span class="token punctuation">"</span></span> <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandResultMap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    select *
+    from tb_brand where id = ${id};
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="1.3.6  SQL语句中特殊字段处理" class="heading" id="1.3.6__SQL语句中特殊字段处理"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.3.6  SQL语句中特殊字段处理</h4><div class="heading-children"><div><p>以后肯定会在SQL语句中写一下特殊字符，比如某一个字段大于某个值，如下图</p></div><div><img style="zoom:80%;" alt="image-20210729184756094" src="https://i0.hdslb.com/bfs/album/f4cf043c0750d3a683856544804ffd63d67804f9.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></div><div><p>可以看出报错了，因为映射配置文件是xml类型的问题，而 &gt; &lt; 等这些字符在xml中有特殊含义，所以此时我们需要将这些符号进行转义，可以使用以下两种方式进行转义</p></div><div><ul>
+<li data-line="0">
+<p>转义字符</p>
+<p>下图的 <code>&amp;lt;</code> 就是 <code>&lt;</code> 的转义字符。</p>
+<img style="zoom:60%;" alt="image-20210729185128686" src="https://i0.hdslb.com/bfs/album/df7f462fda0dffb109450f1bfe9df1fbba371734.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+</li>
+<li data-line="6">
+
+<img style="zoom:60%;" alt="image-20210729185030318" src="https://i0.hdslb.com/bfs/album/2852adaddf630e8db0d780191182fd8d0650fdbe.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="1.4  多条件查询" class="heading" id="1.4__多条件查询"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.4  多条件查询</h3><div class="heading-children"><div><p><img alt="image-20210729203804276" src="https://i0.hdslb.com/bfs/album/dfcbd9495db7d72cda6393cd5338835de13d9987.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>我们经常会遇到如上图所示的多条件查询，将多条件查询的结果展示在下方的数据列表中。而我们做这个功能需要分析最终的SQL语句应该是什么样，思考两个问题</p></div><div><ul>
+<li data-line="0">条件表达式</li>
+<li data-line="1">如何连接</li>
+</ul></div><div><p>条件字段 <code>企业名称</code>  和 <code>品牌名称</code> 需要进行模糊查询，所以条件应该是：</p></div><div><img style="zoom:70%;" alt="image-20210729204458815" src="https://i0.hdslb.com/bfs/album/640a9ceecdedd4c73abae7a1d7c26855262b2b70.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></div><div><p>简单的分析后，我们来看功能实现的步骤：</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>编写接口方法</p>
+<ul>
+<li data-line="1">参数：所有查询条件</li>
+<li data-line="2">结果：<code>List&lt;Brand&gt;</code></li>
+</ul>
+</li>
+<li data-line="3">
+<p>在映射配置文件中编写SQL语句</p>
+</li>
+<li data-line="5">
+<p>编写测试方法并执行</p>
+</li>
+</ul></div><div class="heading-wrapper"><h4 data-heading="1.4.1  编写接口方法" class="heading" id="1.4.1__编写接口方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.4.1  编写接口方法</h4><div class="heading-children"><div><p>在 <code>BrandMapper</code> 接口中定义多条件查询的方法。</p></div><div><p>而该功能有三个参数，我们就需要考虑定义接口时，参数应该如何定义。Mybatis针对多参数有多种实现</p></div><div><ul>
+<li data-line="0">
+<p>使用 <code>@Param("参数名称")</code> 标记每一个参数，在映射配置文件中就需要使用 <code>#{参数名称}</code> 进行占位</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Brand</span><span class="token punctuation">&gt;</span></span> <span class="token function">selectByCondition</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">"status"</span><span class="token punctuation">)</span> <span class="token keyword">int</span> status<span class="token punctuation">,</span> <span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">"companyName"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> companyName<span class="token punctuation">,</span><span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">"brandName"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> brandName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="6">
+<p>将多个参数封装成一个 实体对象 ，将该实体对象作为接口的方法参数。该方式要求在映射配置文件的SQL中使用 <code>#{内容}</code> 时，里面的内容必须和实体类属性名保持一致。</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Brand</span><span class="token punctuation">&gt;</span></span> <span class="token function">selectByCondition</span><span class="token punctuation">(</span><span class="token class-name">Brand</span> brand<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="12">
+<p>将多个参数封装到map集合中，将map集合作为接口的方法参数。该方式要求在映射配置文件的SQL中使用 <code>#{内容}</code> 时，里面的内容必须和map集合中键的名称一致。</p>
+<pre><code>List&lt;Brand&gt; selectByCondition(Map map);
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="1.4.2  编写SQL语句" class="heading" id="1.4.2__编写SQL语句"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.4.2  编写SQL语句</h4><div class="heading-children"><div><p>在 <code>BrandMapper.xml</code> 映射配置文件中编写 <code>statement</code>，使用 <code>resultMap</code> 而不是使用 <code>resultType</code></p></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectByCondition<span class="token punctuation">"</span></span> <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandResultMap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    select *
+    from tb_brand
+    where status = #{status}
+    and company_name like #{companyName}
+    and brand_name like #{brandName}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="1.4.3  编写测试方法" class="heading" id="1.4.3__编写测试方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.4.3  编写测试方法</h4><div class="heading-children"><div><p>在 <code>test/java</code> 下的 <code>com.itheima.mapper</code>  包下的 <code>MybatisTest类中</code> 定义测试方法</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectByCondition</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+    <span class="token comment">//接收参数</span>
+    <span class="token keyword">int</span> status <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> companyName <span class="token operator">=</span> <span class="token string">"华为"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> brandName <span class="token operator">=</span> <span class="token string">"华为"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 处理参数</span>
+    companyName <span class="token operator">=</span> <span class="token string">"%"</span> <span class="token operator">+</span> companyName <span class="token operator">+</span> <span class="token string">"%"</span><span class="token punctuation">;</span>
+    brandName <span class="token operator">=</span> <span class="token string">"%"</span> <span class="token operator">+</span> brandName <span class="token operator">+</span> <span class="token string">"%"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//1. 获取SqlSessionFactory</span>
+    <span class="token class-name">String</span> resource <span class="token operator">=</span> <span class="token string">"mybatis-config.xml"</span><span class="token punctuation">;</span>
+    <span class="token class-name">InputStream</span> inputStream <span class="token operator">=</span> <span class="token class-name">Resources</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span>resource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">SqlSessionFactory</span> sqlSessionFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlSessionFactoryBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>inputStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//2. 获取SqlSession对象</span>
+    <span class="token class-name">SqlSession</span> sqlSession <span class="token operator">=</span> sqlSessionFactory<span class="token punctuation">.</span><span class="token function">openSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//3. 获取Mapper接口的代理对象</span>
+    <span class="token class-name">BrandMapper</span> brandMapper <span class="token operator">=</span> sqlSession<span class="token punctuation">.</span><span class="token function">getMapper</span><span class="token punctuation">(</span><span class="token class-name">BrandMapper</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//4. 执行方法</span>
+	<span class="token comment">//方式一 ：接口方法参数使用 @Param 方式调用的方法</span>
+    <span class="token comment">//List&lt;Brand&gt; brands = brandMapper.selectByCondition(status, companyName, brandName);</span>
+    <span class="token comment">//方式二 ：接口方法参数是 实体类对象 方式调用的方法</span>
+     <span class="token comment">//封装对象</span>
+    <span class="token comment">/* Brand brand = new Brand();
+        brand.setStatus(status);
+        brand.setCompanyName(companyName);
+        brand.setBrandName(brandName);*/</span>
+    
+    <span class="token comment">//List&lt;Brand&gt; brands = brandMapper.selectByCondition(brand);</span>
+    
+    <span class="token comment">//方式三 ：接口方法参数是 map集合对象 方式调用的方法</span>
+    <span class="token class-name">Map</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"status"</span> <span class="token punctuation">,</span> status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"companyName"</span><span class="token punctuation">,</span> companyName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"brandName"</span> <span class="token punctuation">,</span> brandName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Brand</span><span class="token punctuation">&gt;</span></span> brands <span class="token operator">=</span> brandMapper<span class="token punctuation">.</span><span class="token function">selectByCondition</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>brands<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//5. 释放资源</span>
+    sqlSession<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="1.4.4  动态SQL" class="heading" id="1.4.4__动态SQL"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.4.4  动态SQL</h4><div class="heading-children"><div><p>上述功能实现存在很大的问题。用户在输入条件时，肯定不会所有的条件都填写，这个时候我们的SQL语句就不能那样写的</p></div><div><p>例如用户只输入 当前状态 时，SQL语句就是</p></div><div><pre class="language-sql" tabindex="0"><code class="language-sql is-loaded"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> tb_brand <span class="token keyword">where</span> <span class="token keyword">status</span> <span class="token operator">=</span> <span class="token comment">#{status}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>而用户如果只输入企业名称时，SQL语句就是</p></div><div><pre class="language-sql" tabindex="0"><code class="language-sql is-loaded"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> tb_brand <span class="token keyword">where</span> company_name <span class="token operator">like</span> <span class="token comment">#{companName}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>而用户如果输入了 <code>当前状态</code> 和 <code>企业名称 </code> 时，SQL语句又不一样</p></div><div><pre class="language-sql" tabindex="0"><code class="language-sql is-loaded"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> tb_brand <span class="token keyword">where</span> <span class="token keyword">status</span> <span class="token operator">=</span> <span class="token comment">#{status} and company_name like #{companName}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>针对上述的需要，Mybatis对动态SQL有很强大的支撑：</p></div><div><blockquote>
+<ul>
+<li data-line="0">
+<p>if</p>
+</li>
+<li data-line="2">
+<p>choose (when, otherwise)</p>
+</li>
+<li data-line="4">
+<p>trim (where, set)</p>
+</li>
+<li data-line="6">
+<p>foreach</p>
+</li>
+</ul>
+</blockquote></div><div><p>我们先学习 if 标签和 where 标签：</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>if 标签：条件判断</p>
+<ul>
+<li data-line="2">test 属性：逻辑表达式</li>
+</ul>
+<pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectByCondition<span class="token punctuation">"</span></span> <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandResultMap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    select *
+    from tb_brand
+    where
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>status != null<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            and status = #{status}
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>companyName != null and companyName != <span class="token punctuation">'</span><span class="token punctuation">'</span> <span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            and company_name like #{companyName}
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandName != null and brandName != <span class="token punctuation">'</span><span class="token punctuation">'</span> <span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            and brand_name like #{brandName}
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>如上的这种SQL语句就会根据传递的参数值进行动态的拼接。如果此时status和companyName有值那么就会值拼接这两个条件。</p>
+<p>执行结果如下：</p>
+<p><img alt="image-20210729212510291" src="https://i0.hdslb.com/bfs/album/8408bb29f03857740aad6d56fc37fb08c7ca3e95.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+<p>但是它也存在问题，如果此时给的参数值是</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token class-name">Map</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// map.put("status" , status);</span>
+map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"companyName"</span><span class="token punctuation">,</span> companyName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"brandName"</span> <span class="token punctuation">,</span> brandName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>拼接的SQL语句就变成了</p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> tb_brand <span class="token keyword">where</span> <span class="token operator">and</span> company_name <span class="token operator">like</span> ? <span class="token operator">and</span> brand_name <span class="token operator">like</span> ?
+</code><button class="copy-code-button">复制</button></pre>
+<p>而上面的语句中 where 关键后直接跟 and 关键字，这就是一条错误的SQL语句。这个就可以使用 where 标签解决</p>
+</li>
+<li data-line="44"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>where 标签</p>
+<ul>
+<li data-line="46"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>作用：
+<ul>
+<li data-line="47">替换where关键字</li>
+<li data-line="48">会动态的去掉第一个条件前的 and </li>
+<li data-line="49">如果所有的参数没有值则不加where关键字</li>
+</ul>
+</li>
+</ul>
+<pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectByCondition<span class="token punctuation">"</span></span> <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandResultMap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    select *
+    from tb_brand
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>where</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>status != null<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            and status = #{status}
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>companyName != null and companyName != <span class="token punctuation">'</span><span class="token punctuation">'</span> <span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            and company_name like #{companyName}
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandName != null and brandName != <span class="token punctuation">'</span><span class="token punctuation">'</span> <span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            and brand_name like #{brandName}
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>where</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre>
+<blockquote>
+<p>注意：需要给每个条件前都加上 and 关键字。</p>
+</blockquote>
+</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="1.5 单个条件（动态SQL）" class="heading" id="1.5_单个条件（动态SQL）"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.5 单个条件（动态SQL）</h3><div class="heading-children"><div><img style="zoom:80%;" alt="image-20210729213613029" src="https://i0.hdslb.com/bfs/album/90a429c184f741f3e77f632c3e5962e7e2c80ea8.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></div><div><p>如上图所示，在查询时只能选择 <code>品牌名称</code>、<code>当前状态</code>、<code>企业名称</code> 这三个条件中的一个，但是用户到底选择哪儿一个，我们并不能确定。这种就属于单个条件的动态SQL语句。 </p></div><div><p>这种需求需要使用到  <code>choose（when，otherwise）标签</code>  实现，  而 <code>choose</code> 标签类似于Java 中的switch语句。</p></div><div><p>通过一个案例来使用这些标签</p></div><div class="heading-wrapper"><h4 data-heading="1.5.1  编写接口方法" class="heading" id="1.5.1__编写接口方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.5.1  编写接口方法</h4><div class="heading-children"><div><p>在 <code>BrandMapper</code> 接口中定义单条件查询的方法。</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+  * 单条件动态查询
+  * <span class="token keyword">@param</span> <span class="token parameter">brand</span>
+  * <span class="token keyword">@return</span>
+  */</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Brand</span><span class="token punctuation">&gt;</span></span> <span class="token function">selectByConditionSingle</span><span class="token punctuation">(</span><span class="token class-name">Brand</span> brand<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="1.5.2  编写SQL语句" class="heading" id="1.5.2__编写SQL语句"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.5.2  编写SQL语句</h4><div class="heading-children"><div><p>在 <code>BrandMapper.xml</code> 映射配置文件中编写 <code>statement</code>，使用 <code>resultMap</code> 而不是使用 <code>resultType</code></p></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectByConditionSingle<span class="token punctuation">"</span></span> <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandResultMap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    select *
+    from tb_brand
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>where</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>choose</span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!--相当于switch--&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>when</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>status != null<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!--相当于case--&gt;</span>
+                status = #{status}
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>when</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>when</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>companyName != null and companyName != <span class="token punctuation">'</span><span class="token punctuation">'</span> <span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!--相当于case--&gt;</span>
+                company_name like #{companyName}
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>when</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>when</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandName != null and brandName != <span class="token punctuation">'</span><span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!--相当于case--&gt;</span>
+                brand_name like #{brandName}
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>when</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>choose</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>where</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="1.5.3  编写测试方法" class="heading" id="1.5.3__编写测试方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.5.3  编写测试方法</h4><div class="heading-children"><div><p>在 <code>test/java</code> 下的 <code>com.itheima.mapper</code>  包下的 <code>MybatisTest类中</code> 定义测试方法</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectByConditionSingle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+    <span class="token comment">//接收参数</span>
+    <span class="token keyword">int</span> status <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> companyName <span class="token operator">=</span> <span class="token string">"华为"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> brandName <span class="token operator">=</span> <span class="token string">"华为"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 处理参数</span>
+    companyName <span class="token operator">=</span> <span class="token string">"%"</span> <span class="token operator">+</span> companyName <span class="token operator">+</span> <span class="token string">"%"</span><span class="token punctuation">;</span>
+    brandName <span class="token operator">=</span> <span class="token string">"%"</span> <span class="token operator">+</span> brandName <span class="token operator">+</span> <span class="token string">"%"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//封装对象</span>
+    <span class="token class-name">Brand</span> brand <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Brand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//brand.setStatus(status);</span>
+    brand<span class="token punctuation">.</span><span class="token function">setCompanyName</span><span class="token punctuation">(</span>companyName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//brand.setBrandName(brandName);</span>
+
+    <span class="token comment">//1. 获取SqlSessionFactory</span>
+    <span class="token class-name">String</span> resource <span class="token operator">=</span> <span class="token string">"mybatis-config.xml"</span><span class="token punctuation">;</span>
+    <span class="token class-name">InputStream</span> inputStream <span class="token operator">=</span> <span class="token class-name">Resources</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span>resource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">SqlSessionFactory</span> sqlSessionFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlSessionFactoryBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>inputStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//2. 获取SqlSession对象</span>
+    <span class="token class-name">SqlSession</span> sqlSession <span class="token operator">=</span> sqlSessionFactory<span class="token punctuation">.</span><span class="token function">openSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//3. 获取Mapper接口的代理对象</span>
+    <span class="token class-name">BrandMapper</span> brandMapper <span class="token operator">=</span> sqlSession<span class="token punctuation">.</span><span class="token function">getMapper</span><span class="token punctuation">(</span><span class="token class-name">BrandMapper</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 执行方法</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Brand</span><span class="token punctuation">&gt;</span></span> brands <span class="token operator">=</span> brandMapper<span class="token punctuation">.</span><span class="token function">selectByConditionSingle</span><span class="token punctuation">(</span>brand<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>brands<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//5. 释放资源</span>
+    sqlSession<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>执行测试方法结果如下：</p></div><div><img style="zoom:70%;" alt="image-20210729214548756" src="https://i0.hdslb.com/bfs/album/e660816c640d6f177b63f9d3de426d7ff9385dd3.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="1.6  添加数据" class="heading" id="1.6__添加数据"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.6  添加数据</h3><div class="heading-children"><div><img style="zoom:70%;" alt="image-20210729214917317" src="https://i0.hdslb.com/bfs/album/5fc622640a1da414a1f162450234032d8e622fdd.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></div><div><p>如上图是我们平时在添加数据时展示的页面，而我们在该页面输入想要的数据后添加 <code>提交</code> 按钮，就会将这些数据添加到数据库中。接下来我们就来实现添加数据的操作。</p></div><div><ul>
+<li data-line="0">
+<p>编写接口方法</p>
+<img style="zoom:80%;" alt="image-20210729215351651" src="https://i0.hdslb.com/bfs/album/390f8694dda73e5c3443346dc17588a94ef3837e.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+<p>参数：除了id之外的所有的数据。id对应的是表中主键值，而主键我们是 <mark>自动增长</mark> 生成的。</p>
+</li>
+<li data-line="6">
+<p>编写SQL语句</p>
+<img style="zoom:80%;" alt="image-20210729215537167" src="https://i0.hdslb.com/bfs/album/318dcc9778e08116fa703965f46806912d7eac43.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+</li>
+<li data-line="10">
+<p>编写测试方法并执行</p>
+</li>
+</ul></div><div><p>明确了该功能实现的步骤后，接下来我们进行具体的操作。</p></div><div class="heading-wrapper"><h4 data-heading="1.6.1  编写接口方法" class="heading" id="1.6.1__编写接口方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.6.1  编写接口方法</h4><div class="heading-children"><div><p>在 <code>BrandMapper</code> 接口中定义添加方法。</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"> <span class="token doc-comment comment">/**
+   * 添加
+   */</span>
+<span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">Brand</span> brand<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="1.6.2  编写SQL语句" class="heading" id="1.6.2__编写SQL语句"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.6.2  编写SQL语句</h4><div class="heading-children"><div><p>在 <code>BrandMapper.xml</code> 映射配置文件中编写添加数据的 <code>statement</code></p></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>insert</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>add<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    insert into tb_brand (brand_name, company_name, ordered, description, status)
+    values (#{brandName}, #{companyName}, #{ordered}, #{description}, #{status});
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>insert</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="1.6.3  编写测试方法" class="heading" id="1.6.3__编写测试方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.6.3  编写测试方法</h4><div class="heading-children"><div><p>在 <code>test/java</code> 下的 <code>com.itheima.mapper</code>  包下的 <code>MybatisTest类中</code> 定义测试方法</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+    <span class="token comment">//接收参数</span>
+    <span class="token keyword">int</span> status <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> companyName <span class="token operator">=</span> <span class="token string">"波导手机"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> brandName <span class="token operator">=</span> <span class="token string">"波导"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> description <span class="token operator">=</span> <span class="token string">"手机中的战斗机"</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> ordered <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//封装对象</span>
+    <span class="token class-name">Brand</span> brand <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Brand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    brand<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    brand<span class="token punctuation">.</span><span class="token function">setCompanyName</span><span class="token punctuation">(</span>companyName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    brand<span class="token punctuation">.</span><span class="token function">setBrandName</span><span class="token punctuation">(</span>brandName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    brand<span class="token punctuation">.</span><span class="token function">setDescription</span><span class="token punctuation">(</span>description<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    brand<span class="token punctuation">.</span><span class="token function">setOrdered</span><span class="token punctuation">(</span>ordered<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//1. 获取SqlSessionFactory</span>
+    <span class="token class-name">String</span> resource <span class="token operator">=</span> <span class="token string">"mybatis-config.xml"</span><span class="token punctuation">;</span>
+    <span class="token class-name">InputStream</span> inputStream <span class="token operator">=</span> <span class="token class-name">Resources</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span>resource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">SqlSessionFactory</span> sqlSessionFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlSessionFactoryBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>inputStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//2. 获取SqlSession对象</span>
+    <span class="token class-name">SqlSession</span> sqlSession <span class="token operator">=</span> sqlSessionFactory<span class="token punctuation">.</span><span class="token function">openSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//SqlSession sqlSession = sqlSessionFactory.openSession(true); //设置自动提交事务，这种情况不需要手动提交事务了</span>
+    <span class="token comment">//3. 获取Mapper接口的代理对象</span>
+    <span class="token class-name">BrandMapper</span> brandMapper <span class="token operator">=</span> sqlSession<span class="token punctuation">.</span><span class="token function">getMapper</span><span class="token punctuation">(</span><span class="token class-name">BrandMapper</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 执行方法</span>
+    brandMapper<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>brand<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//提交事务</span>
+    sqlSession<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//5. 释放资源</span>
+    sqlSession<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>执行结果如下：</p></div><div><p><img alt="image-20210729220348255" src="https://i0.hdslb.com/bfs/album/493f68986b15c384375f52e01b99301ed30cf7cf.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h4 data-heading="1.6.4  添加-主键返回" class="heading" id="1.6.4__添加-主键返回"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.6.4  添加-主键返回</h4><div class="heading-children"><div><p>在数据添加成功后，有时候需要获取插入数据库数据的主键（主键是自增长）。</p></div><div><p>比如：添加订单和订单项，如下图就是京东上的订单</p></div><div><img style="zoom:80%;" alt="image-20210729221207962" src="https://i0.hdslb.com/bfs/album/1f9aa2c50cab01fff6d1213ac5ad48c124c2c6af.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></div><div><p>订单数据存储在订单表中，订单项存储在订单项表中。</p></div><div><ul>
+<li data-line="0">
+<p>添加订单数据</p>
+<img style="zoom:80%;" alt="image-20210729221049462" src="https://i0.hdslb.com/bfs/album/6cef690e7bfd847cd0243ed066cee1f48b919ab6.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+</li>
+<li data-line="4">
+<p>添加订单项数据，订单项中需要设置所属订单的id</p>
+<img style="zoom:80%;" alt="image-20210729221058898" src="https://i0.hdslb.com/bfs/album/6cef690e7bfd847cd0243ed066cee1f48b919ab6.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+</li>
+</ul></div><div><p>明白了什么时候 <code>主键返回</code> 。接下来我们简单模拟一下，在添加完数据后打印id属性值，能打印出来说明已经获取到了。</p></div><div><p>我们将上面添加品牌数据的案例中映射配置文件里 <code>statement</code> 进行修改，如下</p></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>insert</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>add<span class="token punctuation">"</span></span> <span class="token attr-name">useGeneratedKeys</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">keyProperty</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    insert into tb_brand (brand_name, company_name, ordered, description, status)
+    values (#{brandName}, #{companyName}, #{ordered}, #{description}, #{status});
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>insert</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div><div><blockquote>
+<p>在 insert 标签上添加如下属性：</p>
+<ul>
+<li data-line="2">useGeneratedKeys：是够获取自动增长的主键值。true表示获取</li>
+<li data-line="3">keyProperty  ：指定将获取到的主键值封装到哪儿个属性里</li>
+</ul>
+</blockquote></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="1.7  修改" class="heading" id="1.7__修改"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.7  修改</h3><div class="heading-children"><div><img style="zoom:80%;" alt="image-20210729222642700" src="https://i0.hdslb.com/bfs/album/eb7941a70a96cbafef99b761367deba830fc3af4.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></div><div><p>如图所示是修改页面，用户在该页面书写需要修改的数据，点击 <code>提交</code> 按钮，就会将数据库中对应的数据进行修改。注意一点，如果哪儿个输入框没有输入内容，我们是将表中数据对应字段值替换为空白还是保留字段之前的值？答案肯定是保留之前的数据。</p></div><div><p>接下来我们就具体来实现</p></div><div class="heading-wrapper"><h4 data-heading="1.7.1  编写接口方法" class="heading" id="1.7.1__编写接口方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.7.1  编写接口方法</h4><div class="heading-children"><div><p>在 <code>BrandMapper</code> 接口中定义修改方法。</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"> <span class="token doc-comment comment">/**
+   * 修改
+   */</span>
+<span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token class-name">Brand</span> brand<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><blockquote>
+<p>上述方法参数 Brand 就是封装了需要修改的数据，而id肯定是有数据的，这也是和添加方法的区别。</p>
+</blockquote></div></div></div><div class="heading-wrapper"><h4 data-heading="1.7.2  编写SQL语句" class="heading" id="1.7.2__编写SQL语句"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.7.2  编写SQL语句</h4><div class="heading-children"><div><p>在 <code>BrandMapper.xml</code> 映射配置文件中编写修改数据的 <code>statement</code>。</p></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>update</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>update<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    update tb_brand
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandName != null and brandName != <span class="token punctuation">'</span><span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            brand_name = #{brandName},
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>companyName != null and companyName != <span class="token punctuation">'</span><span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            company_name = #{companyName},
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ordered != null<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            ordered = #{ordered},
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>description != null and description != <span class="token punctuation">'</span><span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            description = #{description},
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>status != null<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            status = #{status}
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">&gt;</span></span>
+    where id = #{id};
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>update</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div><div><blockquote>
+<p><em>set</em> 标签可以用于动态包含需要更新的列，忽略其它不更新的列。</p>
+</blockquote></div></div></div><div class="heading-wrapper"><h4 data-heading="1.7.3  编写测试方法" class="heading" id="1.7.3__编写测试方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.7.3  编写测试方法</h4><div class="heading-children"><div><p>在 <code>test/java</code> 下的 <code>com.itheima.mapper</code>  包下的 <code>MybatisTest类中</code> 定义测试方法</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+    <span class="token comment">//接收参数</span>
+    <span class="token keyword">int</span> status <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> companyName <span class="token operator">=</span> <span class="token string">"波导手机"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> brandName <span class="token operator">=</span> <span class="token string">"波导"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> description <span class="token operator">=</span> <span class="token string">"波导手机,手机中的战斗机"</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> ordered <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> id <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//封装对象</span>
+    <span class="token class-name">Brand</span> brand <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Brand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    brand<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//        brand.setCompanyName(companyName);</span>
+    <span class="token comment">//        brand.setBrandName(brandName);</span>
+    <span class="token comment">//        brand.setDescription(description);</span>
+    <span class="token comment">//        brand.setOrdered(ordered);</span>
+    brand<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//1. 获取SqlSessionFactory</span>
+    <span class="token class-name">String</span> resource <span class="token operator">=</span> <span class="token string">"mybatis-config.xml"</span><span class="token punctuation">;</span>
+    <span class="token class-name">InputStream</span> inputStream <span class="token operator">=</span> <span class="token class-name">Resources</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span>resource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">SqlSessionFactory</span> sqlSessionFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlSessionFactoryBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>inputStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//2. 获取SqlSession对象</span>
+    <span class="token class-name">SqlSession</span> sqlSession <span class="token operator">=</span> sqlSessionFactory<span class="token punctuation">.</span><span class="token function">openSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//SqlSession sqlSession = sqlSessionFactory.openSession(true);</span>
+    <span class="token comment">//3. 获取Mapper接口的代理对象</span>
+    <span class="token class-name">BrandMapper</span> brandMapper <span class="token operator">=</span> sqlSession<span class="token punctuation">.</span><span class="token function">getMapper</span><span class="token punctuation">(</span><span class="token class-name">BrandMapper</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 执行方法</span>
+    <span class="token keyword">int</span> count <span class="token operator">=</span> brandMapper<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>brand<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//提交事务</span>
+    sqlSession<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//5. 释放资源</span>
+    sqlSession<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>执行测试方法结果如下：</p></div><div><p><img alt="image-20210729224205522" src="https://i0.hdslb.com/bfs/album/5a39eb0d98da89b2ff589d0ff16516e792e10123.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>从结果中SQL语句可以看出，只修改了 <code>status</code>  字段值，因为我们给的数据中只给Brand实体对象的 <code>status</code> 属性设置值了。这就是 <code>set</code> 标签的作用。</p></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="1.8  删除一行数据" class="heading" id="1.8__删除一行数据"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.8  删除一行数据</h3><div class="heading-children"><div><p><img alt="image-20210729224549305" src="https://i0.hdslb.com/bfs/album/ed920f039aa4fab6c8a2f057ea7cedaea57a3b42.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>如上图所示，每行数据后面都有一个 <code>删除</code> 按钮，当用户点击了该按钮，就会将改行数据删除掉。那我们就需要思考，这种删除是根据什么进行删除呢？是通过主键id删除，因为id是表中数据的唯一标识。</p></div><div><p>接下来就来实现该功能。</p></div><div class="heading-wrapper"><h4 data-heading="1.8.1  编写接口方法" class="heading" id="1.8.1__编写接口方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.8.1  编写接口方法</h4><div class="heading-children"><div><p>在 <code>BrandMapper</code> 接口中定义根据id删除方法。</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+  * 根据id删除
+  */</span>
+<span class="token keyword">void</span> <span class="token function">deleteById</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="1.8.2  编写SQL语句" class="heading" id="1.8.2__编写SQL语句"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.8.2  编写SQL语句</h4><div class="heading-children"><div><p>在 <code>BrandMapper.xml</code> 映射配置文件中编写删除一行数据的 <code>statement</code></p></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>delete</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>deleteById<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    delete from tb_brand where id = #{id};
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>delete</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="1.8.3  编写测试方法" class="heading" id="1.8.3__编写测试方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.8.3  编写测试方法</h4><div class="heading-children"><div><p>在 <code>test/java</code> 下的 <code>com.itheima.mapper</code>  包下的 <code>MybatisTest类中</code> 定义测试方法</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"> <span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDeleteById</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+    <span class="token comment">//接收参数</span>
+    <span class="token keyword">int</span> id <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//1. 获取SqlSessionFactory</span>
+    <span class="token class-name">String</span> resource <span class="token operator">=</span> <span class="token string">"mybatis-config.xml"</span><span class="token punctuation">;</span>
+    <span class="token class-name">InputStream</span> inputStream <span class="token operator">=</span> <span class="token class-name">Resources</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span>resource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">SqlSessionFactory</span> sqlSessionFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlSessionFactoryBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>inputStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//2. 获取SqlSession对象</span>
+    <span class="token class-name">SqlSession</span> sqlSession <span class="token operator">=</span> sqlSessionFactory<span class="token punctuation">.</span><span class="token function">openSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//SqlSession sqlSession = sqlSessionFactory.openSession(true);</span>
+    <span class="token comment">//3. 获取Mapper接口的代理对象</span>
+    <span class="token class-name">BrandMapper</span> brandMapper <span class="token operator">=</span> sqlSession<span class="token punctuation">.</span><span class="token function">getMapper</span><span class="token punctuation">(</span><span class="token class-name">BrandMapper</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 执行方法</span>
+    brandMapper<span class="token punctuation">.</span><span class="token function">deleteById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//提交事务</span>
+    sqlSession<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//5. 释放资源</span>
+    sqlSession<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>运行过程只要没报错，直接到数据库查询数据是否还存在。</p></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="1.9  批量删除" class="heading" id="1.9__批量删除"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.9  批量删除</h3><div class="heading-children"><div><img style="zoom:70%;" alt="image-20210729225713894" src="https://i0.hdslb.com/bfs/album/efc7ebf7fb76ac457881873335bfa69186d4a762.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></div><div><p>如上图所示，用户可以选择多条数据，然后点击上面的 <code>删除</code> 按钮，就会删除数据库中对应的多行数据。</p></div><div class="heading-wrapper"><h4 data-heading="1.9.1  编写接口方法" class="heading" id="1.9.1__编写接口方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.9.1  编写接口方法</h4><div class="heading-children"><div><p>在 <code>BrandMapper</code> 接口中定义删除多行数据的方法。</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+  * 批量删除
+  */</span>
+<span class="token keyword">void</span> <span class="token function">deleteByIds</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> ids<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><blockquote>
+<p>参数是一个数组，数组中存储的是多条数据的id</p>
+</blockquote></div></div></div><div class="heading-wrapper"><h4 data-heading="1.9.2  编写SQL语句" class="heading" id="1.9.2__编写SQL语句"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.9.2  编写SQL语句</h4><div class="heading-children"><div><p>在 <code>BrandMapper.xml</code> 映射配置文件中编写删除多条数据的 <code>statement</code>。</p></div><div><p>编写SQL时需要遍历数组来拼接SQL语句。Mybatis 提供了 <code>foreach</code> 标签供我们使用</p></div><div><p><strong>foreach 标签</strong></p></div><div><p>用来迭代任何可迭代的对象（如数组，集合）。</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>collection 属性：
+<ul>
+<li data-line="1"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>mybatis会将数组参数，封装为一个Map集合。
+<ul>
+<li data-line="2">默认：array = 数组</li>
+<li data-line="3">使用@Param注解改变map集合的默认key的名称</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="4">item 属性：本次迭代获取到的元素。</li>
+<li data-line="5">separator 属性：集合项迭代之间的分隔符。<code>foreach</code> 标签不会错误地添加多余的分隔符。也就是最后一次迭代不会加分隔符。</li>
+<li data-line="6">open 属性：该属性值是在拼接SQL语句之前拼接的语句，只会拼接一次</li>
+<li data-line="7">close 属性：该属性值是在拼接SQL语句拼接后拼接的语句，只会拼接一次</li>
+</ul></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>delete</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>deleteByIds<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    delete from tb_brand where id
+    in
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>foreach</span> <span class="token attr-name">collection</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>array<span class="token punctuation">"</span></span> <span class="token attr-name">item</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span> <span class="token attr-name">separator</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>,<span class="token punctuation">"</span></span> <span class="token attr-name">open</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(<span class="token punctuation">"</span></span> <span class="token attr-name">close</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        #{id}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>foreach</span><span class="token punctuation">&gt;</span></span>
+    ;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>delete</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div><div><blockquote>
+<p>假如数组中的id数据是{1,2,3}，那么拼接后的sql语句就是：</p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded"><span class="token keyword">delete</span> <span class="token keyword">from</span> tb_brand <span class="token keyword">where</span> id <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+</blockquote></div></div></div><div class="heading-wrapper"><h4 data-heading="1.9.3  编写测试方法" class="heading" id="1.9.3__编写测试方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.9.3  编写测试方法</h4><div class="heading-children"><div><p>在 <code>test/java</code> 下的 <code>com.itheima.mapper</code>  包下的 <code>MybatisTest类中</code> 定义测试方法</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDeleteByIds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+    <span class="token comment">//接收参数</span>
+    <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> ids <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//1. 获取SqlSessionFactory</span>
+    <span class="token class-name">String</span> resource <span class="token operator">=</span> <span class="token string">"mybatis-config.xml"</span><span class="token punctuation">;</span>
+    <span class="token class-name">InputStream</span> inputStream <span class="token operator">=</span> <span class="token class-name">Resources</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span>resource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">SqlSessionFactory</span> sqlSessionFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlSessionFactoryBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>inputStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//2. 获取SqlSession对象</span>
+    <span class="token class-name">SqlSession</span> sqlSession <span class="token operator">=</span> sqlSessionFactory<span class="token punctuation">.</span><span class="token function">openSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//SqlSession sqlSession = sqlSessionFactory.openSession(true);</span>
+    <span class="token comment">//3. 获取Mapper接口的代理对象</span>
+    <span class="token class-name">BrandMapper</span> brandMapper <span class="token operator">=</span> sqlSession<span class="token punctuation">.</span><span class="token function">getMapper</span><span class="token punctuation">(</span><span class="token class-name">BrandMapper</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 执行方法</span>
+    brandMapper<span class="token punctuation">.</span><span class="token function">deleteByIds</span><span class="token punctuation">(</span>ids<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//提交事务</span>
+    sqlSession<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//5. 释放资源</span>
+    sqlSession<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="1.10  Mybatis参数传递" class="heading" id="1.10__Mybatis参数传递"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.10  Mybatis参数传递</h3><div class="heading-children"><div><p>Mybatis 接口方法中可以接收各种各样的参数，如下：</p></div><div><ul>
+<li data-line="0">多个参数</li>
+<li data-line="1"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>单个参数：单个参数又可以是如下类型
+<ul>
+<li data-line="2">POJO 类型</li>
+<li data-line="3">Map 集合类型</li>
+<li data-line="4">Collection 集合类型</li>
+<li data-line="5">List 集合类型</li>
+<li data-line="6">Array 类型</li>
+<li data-line="7">其他类型</li>
+</ul>
+</li>
+</ul></div><div class="heading-wrapper"><h4 data-heading="1.10.1  多个参数" class="heading" id="1.10.1__多个参数"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.10.1  多个参数</h4><div class="heading-children"><div><p>如下面的代码，就是接收两个参数，而接收多个参数需要使用 <code>@Param</code> 注解，那么为什么要加该注解呢？这个问题要弄明白就必须来研究Mybatis 底层对于这些参数是如何处理的。</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token class-name">User</span> <span class="token function">select</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> username<span class="token punctuation">,</span><span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>select<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	select *
+    from tb_user
+    where 
+    	username=#{username}
+    	and password=#{password}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>我们在接口方法中定义多个参数，Mybatis 会将这些参数封装成 Map 集合对象，值就是参数值，而键在没有使用 <code>@Param</code> 注解时有以下命名规则：</p></div><div><ul>
+<li data-line="0">
+<p>以 arg 开头  ：第一个参数就叫 arg0，第二个参数就叫 arg1，以此类推。如：</p>
+<blockquote>
+<p>map.put("arg0"，参数值1);</p>
+<p>map.put("arg1"，参数值2);</p>
+</blockquote>
+</li>
+<li data-line="6">
+<p>以 param 开头 ： 第一个参数就叫 param1，第二个参数就叫 param2，依次类推。如：</p>
+<blockquote>
+<p>map.put("param1"，参数值1);</p>
+<p>map.put("param2"，参数值2);</p>
+</blockquote>
+</li>
+</ul></div><div><p><strong>代码验证：</strong></p></div><div><ul>
+<li data-line="0">
+<p>在 <code>UserMapper</code> 接口中定义如下方法</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token class-name">User</span> <span class="token function">select</span><span class="token punctuation">(</span><span class="token class-name">String</span> username<span class="token punctuation">,</span><span class="token class-name">String</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="6">
+<p>在 <code>UserMapper.xml</code> 映射配置文件中定义SQL</p>
+<pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>select<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	select *
+    from tb_user
+    where 
+    	username=#{arg0}
+    	and password=#{arg1}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>或者</p>
+<pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>select<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	select *
+    from tb_user
+    where 
+    	username=#{param1}
+    	and password=#{param2}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="30">
+<p>运行代码结果如下</p>
+<img style="zoom:80%;" alt="image-20210805230303461" src="https://i0.hdslb.com/bfs/album/fae2cb5c8366a4fcb405df1f5d97bb2f1accc8fc.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+<p>在映射配合文件的SQL语句中使用用 <code>arg</code> 开头的和 <code>param</code> 书写，代码的可读性会变的特别差，此时可以使用 <code>@Param</code> 注解。</p>
+</li>
+</ul></div><div><p>在接口方法参数上使用 <code>@Param</code> 注解，Mybatis 会将 <code>arg</code> 开头的键名替换为对应注解的属性值。</p></div><div><p><strong>代码验证：</strong></p></div><div><ul>
+<li data-line="0">
+<p>在 <code>UserMapper</code> 接口中定义如下方法，在 <code>username</code> 参数前加上 <code>@Param</code> 注解</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token class-name">User</span> <span class="token function">select</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> username<span class="token punctuation">,</span> <span class="token class-name">String</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>Mybatis 在封装 Map 集合时，键名就会变成如下：</p>
+<blockquote>
+<p>map.put("username"，参数值1);</p>
+<p>map.put("arg1"，参数值2);</p>
+<p>map.put("param1"，参数值1);</p>
+<p>map.put("param2"，参数值2);</p>
+</blockquote>
+</li>
+<li data-line="16">
+<p>在 <code>UserMapper.xml</code> 映射配置文件中定义SQL</p>
+<pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>select<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	select *
+    from tb_user
+    where 
+    	username=#{username}
+    	and password=#{param2}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="28">
+<p>运行程序结果没有报错。而如果将 <code>#{}</code> 中的 <code>username</code> 还是写成  <code>arg0</code> </p>
+<pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>select<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	select *
+    from tb_user
+    where 
+    	username=#{arg0}
+    	and password=#{param2}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="40">
+<p>运行程序则可以看到错误</p>
+<p><img alt="image-20210805231727206" src="https://i0.hdslb.com/bfs/album/9242bc7099eafbe0190861354742a1238176ac43.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+</ul></div><div><p><mark>结论：以后接口参数是多个时，在每个参数上都使用 <code>@Param</code> 注解。这样代码的可读性更高。</mark></p></div></div></div><div class="heading-wrapper"><h4 data-heading="1.10.2  单个参数" class="heading" id="1.10.2__单个参数"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1.10.2  单个参数</h4><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>POJO 类型</p>
+<p>直接使用。要求 <code>属性名</code> 和 <code>参数占位符名称</code> 一致</p>
+</li>
+<li data-line="4">
+<p>Map 集合类型</p>
+<p>直接使用。要求 <code>map集合的键名</code> 和 <code>参数占位符名称</code> 一致</p>
+</li>
+<li data-line="8">
+<p>Collection 集合类型</p>
+<p>Mybatis 会将集合封装到 map 集合中，如下：</p>
+<blockquote>
+<p>map.put("arg0"，collection集合);</p>
+<p>map.put("collection"，collection集合;</p>
+</blockquote>
+<p><mark>可以使用 <code>@Param</code> 注解替换map集合中默认的 arg 键名。</mark></p>
+</li>
+<li data-line="18">
+<p>List 集合类型</p>
+<p>Mybatis 会将集合封装到 map 集合中，如下：</p>
+<blockquote>
+<p>map.put("arg0"，list集合);</p>
+<p>map.put("collection"，list集合);</p>
+<p>map.put("list"，list集合);</p>
+</blockquote>
+<p><mark>可以使用 <code>@Param</code> 注解替换map集合中默认的 arg 键名。</mark></p>
+</li>
+<li data-line="30">
+<p>Array 类型</p>
+<p>Mybatis 会将集合封装到 map 集合中，如下：</p>
+<blockquote>
+<p>map.put("arg0"，数组);</p>
+<p>map.put("array"，数组);</p>
+</blockquote>
+<p><mark>可以使用 <code>@Param</code> 注解替换map集合中默认的 arg 键名。</mark></p>
+</li>
+<li data-line="40">
+<p>其他类型</p>
+<p>比如int类型，<code>参数占位符名称</code> 叫什么都可以。尽量做到见名知意</p>
+</li>
+</ul></div></div></div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="2，注解实现CRUD" class="heading" id="2，注解实现CRUD"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>2，注解实现CRUD</h2><div class="heading-children"><div><p>使用注解开发会比配置文件开发更加方便。如下就是使用注解进行开发</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"select * from tb_user where id = #{id}"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">User</span> <span class="token function">select</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><blockquote>
+<p><mark>注意：</mark></p>
+<ul>
+<li data-line="2">注解是用来替换映射配置文件方式配置的，所以使用了注解，就不需要再映射配置文件中书写对应的 <code>statement</code></li>
+</ul>
+</blockquote></div><div><p>Mybatis 针对 CURD 操作都提供了对应的注解，已经做到见名知意。如下：</p></div><div><ul>
+<li data-line="0">查询 ：@Select</li>
+<li data-line="1">添加 ：@Insert</li>
+<li data-line="2">修改 ：@Update</li>
+<li data-line="3">删除 ：@Delete</li>
+</ul></div><div><p>接下来我们做一个案例来使用 Mybatis 的注解开发</p></div><div><p><strong>代码实现：</strong></p></div><div><ul>
+<li data-line="0">
+<p>将之前案例中 <code>UserMapper.xml</code> 中的 根据id查询数据 的 <code>statement</code> 注释掉</p>
+<img style="zoom:70%;" alt="image-20210805235229938" src="https://i0.hdslb.com/bfs/album/f9a9b4214ad676bd929a130867e0fdb81b847dcb.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+</li>
+<li data-line="4">
+<p>在 <code>UserMapper</code> 接口的 <code>selectById</code> 方法上添加注解</p>
+<img style="zoom:70%;" alt="image-20210805235405070" src="https://i0.hdslb.com/bfs/album/80284bed25d6819ccb5bf36e5ba8d48cf71e296d.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">
+</li>
+<li data-line="8">
+<p>运行测试程序也能正常查询到数据</p>
+</li>
+</ul></div><div><p>我们课程上只演示这一个查询的注解开发，其他的同学们下来可以自己实现，都是比较简单。</p></div><div><p><mark>注意：</mark>在官方文档中 <code>入门</code> 中有这样的一段话：</p></div><div><p><img alt="image-20210805234302849" src="https://i0.hdslb.com/bfs/album/2c6dc7dab6890402731ec96f1db2281fee91948a.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>所以，<mark>注解完成简单功能，配置文件完成复杂功能。</mark></p></div><div><p>而我们之前写的动态 SQL 就是复杂的功能，如果用注解使用的话，就需要使用到 Mybatis 提供的SQL构建器来完成，而对应的代码如下：</p></div><div><img style="zoom:70%;" alt="image-20210805234842497" src="https://i0.hdslb.com/bfs/album/1a8a79e8f8eb097af650651f6f5ffa74344d3311.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></div><div><p>上述代码将java代码和SQL语句融到了一块，使得代码的可读性大幅度降低。</p></div><div class="mod-footer"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#Mybatis练习" data-path="#Mybatis练习"><div class="tree-item-inner heading-link" heading-name="Mybatis练习">Mybatis练习</div></a><div class="tree-item-children"><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1，配置文件实现CRUD" data-path="#1，配置文件实现CRUD"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="1，配置文件实现CRUD">1，配置文件实现CRUD</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.1__环境准备" data-path="#1.1__环境准备"><div class="tree-item-inner heading-link" heading-name="1.1  环境准备">1.1  环境准备</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.2__查询所有数据" data-path="#1.2__查询所有数据"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="1.2  查询所有数据">1.2  查询所有数据</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.2.1__编写接口方法" data-path="#1.2.1__编写接口方法"><div class="tree-item-inner heading-link" heading-name="1.2.1  编写接口方法">1.2.1  编写接口方法</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.2.2__编写SQL语句" data-path="#1.2.2__编写SQL语句"><div class="tree-item-inner heading-link" heading-name="1.2.2  编写SQL语句">1.2.2  编写SQL语句</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.2.3__编写测试方法" data-path="#1.2.3__编写测试方法"><div class="tree-item-inner heading-link" heading-name="1.2.3  编写测试方法">1.2.3  编写测试方法</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.2.4__起别名解决上述问题" data-path="#1.2.4__起别名解决上述问题"><div class="tree-item-inner heading-link" heading-name="1.2.4  起别名解决上述问题">1.2.4  起别名解决上述问题</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.2.5__使用resultMap解决上述问题" data-path="#1.2.5__使用resultMap解决上述问题"><div class="tree-item-inner heading-link" heading-name="1.2.5  使用resultMap解决上述问题">1.2.5  使用resultMap解决上述问题</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.2.6__小结" data-path="#1.2.6__小结"><div class="tree-item-inner heading-link" heading-name="1.2.6  小结">1.2.6  小结</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.3__查询详情" data-path="#1.3__查询详情"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="1.3  查询详情">1.3  查询详情</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.3.1__编写接口方法" data-path="#1.3.1__编写接口方法"><div class="tree-item-inner heading-link" heading-name="1.3.1  编写接口方法">1.3.1  编写接口方法</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.3.2__编写SQL语句" data-path="#1.3.2__编写SQL语句"><div class="tree-item-inner heading-link" heading-name="1.3.2  编写SQL语句">1.3.2  编写SQL语句</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.3.3__编写测试方法" data-path="#1.3.3__编写测试方法"><div class="tree-item-inner heading-link" heading-name="1.3.3  编写测试方法">1.3.3  编写测试方法</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.3.4__参数占位符" data-path="#1.3.4__参数占位符"><div class="tree-item-inner heading-link" heading-name="1.3.4  参数占位符">1.3.4  参数占位符</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.3.5__parameterType使用" data-path="#1.3.5__parameterType使用"><div class="tree-item-inner heading-link" heading-name="1.3.5  parameterType使用">1.3.5  parameterType使用</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.3.6__SQL语句中特殊字段处理" data-path="#1.3.6__SQL语句中特殊字段处理"><div class="tree-item-inner heading-link" heading-name="1.3.6  SQL语句中特殊字段处理">1.3.6  SQL语句中特殊字段处理</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.4__多条件查询" data-path="#1.4__多条件查询"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="1.4  多条件查询">1.4  多条件查询</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.4.1__编写接口方法" data-path="#1.4.1__编写接口方法"><div class="tree-item-inner heading-link" heading-name="1.4.1  编写接口方法">1.4.1  编写接口方法</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.4.2__编写SQL语句" data-path="#1.4.2__编写SQL语句"><div class="tree-item-inner heading-link" heading-name="1.4.2  编写SQL语句">1.4.2  编写SQL语句</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.4.3__编写测试方法" data-path="#1.4.3__编写测试方法"><div class="tree-item-inner heading-link" heading-name="1.4.3  编写测试方法">1.4.3  编写测试方法</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.4.4__动态SQL" data-path="#1.4.4__动态SQL"><div class="tree-item-inner heading-link" heading-name="1.4.4  动态SQL">1.4.4  动态SQL</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.5_单个条件（动态SQL）" data-path="#1.5_单个条件（动态SQL）"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="1.5 单个条件（动态SQL）">1.5 单个条件（动态SQL）</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.5.1__编写接口方法" data-path="#1.5.1__编写接口方法"><div class="tree-item-inner heading-link" heading-name="1.5.1  编写接口方法">1.5.1  编写接口方法</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.5.2__编写SQL语句" data-path="#1.5.2__编写SQL语句"><div class="tree-item-inner heading-link" heading-name="1.5.2  编写SQL语句">1.5.2  编写SQL语句</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.5.3__编写测试方法" data-path="#1.5.3__编写测试方法"><div class="tree-item-inner heading-link" heading-name="1.5.3  编写测试方法">1.5.3  编写测试方法</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.6__添加数据" data-path="#1.6__添加数据"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="1.6  添加数据">1.6  添加数据</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.6.1__编写接口方法" data-path="#1.6.1__编写接口方法"><div class="tree-item-inner heading-link" heading-name="1.6.1  编写接口方法">1.6.1  编写接口方法</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.6.2__编写SQL语句" data-path="#1.6.2__编写SQL语句"><div class="tree-item-inner heading-link" heading-name="1.6.2  编写SQL语句">1.6.2  编写SQL语句</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.6.3__编写测试方法" data-path="#1.6.3__编写测试方法"><div class="tree-item-inner heading-link" heading-name="1.6.3  编写测试方法">1.6.3  编写测试方法</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.6.4__添加-主键返回" data-path="#1.6.4__添加-主键返回"><div class="tree-item-inner heading-link" heading-name="1.6.4  添加-主键返回">1.6.4  添加-主键返回</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.7__修改" data-path="#1.7__修改"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="1.7  修改">1.7  修改</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.7.1__编写接口方法" data-path="#1.7.1__编写接口方法"><div class="tree-item-inner heading-link" heading-name="1.7.1  编写接口方法">1.7.1  编写接口方法</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.7.2__编写SQL语句" data-path="#1.7.2__编写SQL语句"><div class="tree-item-inner heading-link" heading-name="1.7.2  编写SQL语句">1.7.2  编写SQL语句</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.7.3__编写测试方法" data-path="#1.7.3__编写测试方法"><div class="tree-item-inner heading-link" heading-name="1.7.3  编写测试方法">1.7.3  编写测试方法</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.8__删除一行数据" data-path="#1.8__删除一行数据"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="1.8  删除一行数据">1.8  删除一行数据</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.8.1__编写接口方法" data-path="#1.8.1__编写接口方法"><div class="tree-item-inner heading-link" heading-name="1.8.1  编写接口方法">1.8.1  编写接口方法</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.8.2__编写SQL语句" data-path="#1.8.2__编写SQL语句"><div class="tree-item-inner heading-link" heading-name="1.8.2  编写SQL语句">1.8.2  编写SQL语句</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.8.3__编写测试方法" data-path="#1.8.3__编写测试方法"><div class="tree-item-inner heading-link" heading-name="1.8.3  编写测试方法">1.8.3  编写测试方法</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.9__批量删除" data-path="#1.9__批量删除"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="1.9  批量删除">1.9  批量删除</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.9.1__编写接口方法" data-path="#1.9.1__编写接口方法"><div class="tree-item-inner heading-link" heading-name="1.9.1  编写接口方法">1.9.1  编写接口方法</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.9.2__编写SQL语句" data-path="#1.9.2__编写SQL语句"><div class="tree-item-inner heading-link" heading-name="1.9.2  编写SQL语句">1.9.2  编写SQL语句</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.9.3__编写测试方法" data-path="#1.9.3__编写测试方法"><div class="tree-item-inner heading-link" heading-name="1.9.3  编写测试方法">1.9.3  编写测试方法</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.10__Mybatis参数传递" data-path="#1.10__Mybatis参数传递"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="1.10  Mybatis参数传递">1.10  Mybatis参数传递</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.10.1__多个参数" data-path="#1.10.1__多个参数"><div class="tree-item-inner heading-link" heading-name="1.10.1  多个参数">1.10.1  多个参数</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#1.10.2__单个参数" data-path="#1.10.2__单个参数"><div class="tree-item-inner heading-link" heading-name="1.10.2  单个参数">1.10.2  单个参数</div></a><div class="tree-item-children"></div></div></div></div></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/mybatis练习.html#2，注解实现CRUD" data-path="#2，注解实现CRUD"><div class="tree-item-inner heading-link" heading-name="2，注解实现CRUD">2，注解实现CRUD</div></a><div class="tree-item-children"></div></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

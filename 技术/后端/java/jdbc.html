@@ -1,0 +1,1046 @@
+<!DOCTYPE html> <html><head>
+<title>JDBC</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - JDBC">
+<meta property="og:title" content="JDBC">
+<meta property="og:description" content="尘影迹痕 - JDBC">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/后端/java/jdbc.html">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/f842d861e73f56dc88fec572e3dcfb8c3a6fd670.png">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="JDBC"><p>JDBC</p></h1><div class="heading-wrapper"><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="什么是JDBC" class="heading" id="什么是JDBC"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>什么是JDBC</h2><div class="heading-children"><div><p>在开发中我们使用的是java语言，那么势必要通过java语言操作数据库中的数据。这就是接下来要学习的JDBC。</p></div><div class="heading-wrapper"><h3 data-heading="JDBC概念" class="heading" id="JDBC概念"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>JDBC概念</h3><div class="heading-children"><div><blockquote>
+<p>JDBC   就是使用Java语言操作关系型数据库的一套API</p>
+<p>全称：( <mark>J</mark>ava <mark>D</mark>ata<mark>B</mark>ase <mark>C</mark>onnectivity ) Java 数据库连接</p>
+</blockquote></div><div><p><img src="https://i0.hdslb.com/bfs/album/f842d861e73f56dc88fec572e3dcfb8c3a6fd670.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>我们开发的同一套Java代码是无法操作不同的关系型数据库，因为每一个关系型数据库的底层实现细节都不一样。如果这样，问题就很大了，在公司中可以在开发阶段使用的是MySQL数据库，而上线时公司最终选用oracle数据库，我们就需要对代码进行大批量修改，这显然并不是我们想看到的。我们要做到的是同一套Java代码操作不同的关系型数据库，而此时sun公司就指定了一套标准接口（JDBC），JDBC中定义了所有操作关系型数据库的规则。众所周知接口是无法直接使用的，我们需要使用接口的实现类，而这套实现类（称之为：驱动）就由各自的数据库厂商给出。</p></div></div></div><div class="heading-wrapper"><h3 data-heading="JDBC本质" class="heading" id="JDBC本质"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>JDBC本质</h3><div class="heading-children"><div><ul>
+<li data-line="0"><mark>官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口</mark></li>
+<li data-line="1">各个数据库厂商去实现这套接口，提供数据库驱动jar包</li>
+<li data-line="2"><mark>我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类</mark>【面向接口编程思想】</li>
+</ul></div></div></div><div class="heading-wrapper"><h3 data-heading="JDBC好处" class="heading" id="JDBC好处"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>JDBC好处</h3><div class="heading-children"><div><ul>
+<li data-line="0">各数据库厂商使用相同的接口，Java代码不需要针对不同数据库分别开发</li>
+<li data-line="1">可随时替换底层数据库，访问数据库的Java代码基本不变</li>
+</ul></div><div><p>以后编写操作数据库的代码只需要面向JDBC（接口），操作哪儿个关系型数据库就需要导入该数据库的驱动包，如需要操作MySQL数据库，就需要再项目中导入MySQL数据库的驱动包。</p></div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="JDBC快速入门" class="heading" id="JDBC快速入门"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>JDBC快速入门</h2><div class="heading-children"><div><p>先来看看通过Java操作数据库的流程<br>
+<img src="https://i0.hdslb.com/bfs/album/a91e545b005bd3cd0592c059abf74209f6f04e08.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>第一步：编写Java代码</p></div><div><p>第二步：Java代码将SQL发送到MySQL服务端</p></div><div><p>第三步：MySQL服务端接收到SQL语句并执行该SQL语句</p></div><div><p>第四步：将SQL语句执行的结果返回给Java代码</p></div><div class="heading-wrapper"><h3 data-heading="编写代码步骤" class="heading" id="编写代码步骤"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>编写代码步骤</h3><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>创建工程，导入驱动jar包</p>
+</li>
+<li data-line="1">
+<p>注册驱动</p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded">Class<span class="token punctuation">.</span>forName<span class="token punctuation">(</span><span class="token string">"com.mysql.jdbc.Driver"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="5">
+<p>获取连接</p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded">Connection conn <span class="token operator">=</span> DriverManager<span class="token punctuation">.</span>getConnection<span class="token punctuation">(</span>url<span class="token punctuation">,</span> username<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>Java代码需要发送SQL给MySQL服务端，就需要先建立连接</p>
+</li>
+<li data-line="10">
+<p>定义SQL语句</p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded">String <span class="token keyword">sql</span> <span class="token operator">=</span>  “<span class="token keyword">update</span>…” <span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="14">
+<p>获取执行SQL对象<br>
+执行SQL语句需要SQL执行对象，而这个执行对象就是Statement对象</p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded">Statement stmt <span class="token operator">=</span> conn<span class="token punctuation">.</span>createStatement<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="20">
+<p>执行SQL</p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded">stmt<span class="token punctuation">.</span>executeUpdate<span class="token punctuation">(</span><span class="token keyword">sql</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="24">
+<p>处理返回结果</p>
+</li>
+<li data-line="25">
+<p>释放资源</p>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h3 data-heading="参考代码" class="heading" id="参考代码"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>参考代码</h3><div class="heading-children"><div><pre class="language-sql" tabindex="0"><code class="language-sql is-loaded"><span class="token comment">/**
+ * JDBC快速入门
+ */</span>
+<span class="token keyword">public</span> class JDBCDemo {
+
+    <span class="token keyword">public</span> static void main<span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> throws Exception {
+        <span class="token comment">//1. 注册驱动</span>
+        <span class="token comment">//Class.forName("com.mysql.jdbc.Driver");</span>
+        <span class="token comment">//2. 获取连接</span>
+        String url <span class="token operator">=</span> <span class="token string">"jdbc:mysql://127.0.0.1:3306/db1"</span><span class="token punctuation">;</span>
+        String username <span class="token operator">=</span> <span class="token string">"root"</span><span class="token punctuation">;</span>
+        String password <span class="token operator">=</span> <span class="token string">"1234"</span><span class="token punctuation">;</span>
+        Connection conn <span class="token operator">=</span> DriverManager<span class="token punctuation">.</span>getConnection<span class="token punctuation">(</span>url<span class="token punctuation">,</span> username<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3. 定义sql</span>
+        String <span class="token keyword">sql</span> <span class="token operator">=</span> <span class="token string">"update account set money = 2000 where id = 1"</span><span class="token punctuation">;</span>
+        <span class="token comment">//4. 获取执行sql的对象 Statement</span>
+        Statement stmt <span class="token operator">=</span> conn<span class="token punctuation">.</span>createStatement<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//5. 执行sql</span>
+        <span class="token keyword">int</span> count <span class="token operator">=</span> stmt<span class="token punctuation">.</span>executeUpdate<span class="token punctuation">(</span><span class="token keyword">sql</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//受影响的行数</span>
+        <span class="token comment">//6. 处理结果</span>
+        System<span class="token punctuation">.</span><span class="token keyword">out</span><span class="token punctuation">.</span>println<span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//7. 释放资源</span>
+        stmt<span class="token punctuation">.</span><span class="token keyword">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        conn<span class="token punctuation">.</span><span class="token keyword">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    }
+}
+</code><button class="copy-code-button">复制</button></pre></div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="JDBC API详解" class="heading" id="JDBC_API详解"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>JDBC API详解</h2><div class="heading-children"><div class="heading-wrapper"><h3 data-heading="DriverManager" class="heading" id="DriverManager"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>DriverManager</h3><div class="heading-children"><div><p>DriverManager（驱动管理类）作用：</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>注册驱动<br>
+<img src="https://i0.hdslb.com/bfs/album/27ebcb6006ec486c9eb9e40aee7cc09e138768ba.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+registerDriver方法是用于注册驱动的，但是我们之前做的入门案例并不是这样写的。而是如下实现</p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded">Class<span class="token punctuation">.</span>forName<span class="token punctuation">(</span><span class="token string">"com.mysql.jdbc.Driver"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>  我们查询MySQL提供的Driver类，看它是如何实现的，源码如下：<br>
+<img src="https://i0.hdslb.com/bfs/album/cdb79afe9e98538caf4b2babe2a9a33a4f746cf1.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+<p>  在该类中的静态代码块中已经执行了 <code>DriverManager</code> 对象的 <code>registerDriver()</code> 方法进行驱动的注册了，那么我们只需要加载 <code>Driver</code> 类，该静态代码块就会执行。而 <code>Class.forName("com.mysql.jdbc.Driver");</code> 就可以加载 <code>Driver</code> 类。</p>
+<blockquote>
+<p><mark>提示：</mark></p>
+<ul>
+<li data-line="15">MySQL 5之后的驱动包，可以省略注册驱动的步骤</li>
+<li data-line="16">自动加载jar包中META-INF/services/java.sql.Driver文件中的驱动类</li>
+</ul>
+</blockquote>
+</li>
+<li data-line="18">
+<p>获取数据库连接<br>
+<img src="https://i0.hdslb.com/bfs/album/e0d646d7d723068ed0766546dd6da9db2e441168.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+参数说明：<br>
+</p>
+</li>
+<li data-line="22"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>url ： 连接路径</p>
+<blockquote>
+<p>语法：jdbc:mysql://ip地址(域名):端口号/数据库名称?参数键值对1&amp;参数键值对2…</p>
+<p>示例：jdbc:mysql://127.0.0.1:3306/db1</p>
+<p><mark>细节：</mark></p>
+<ul>
+<li data-line="30">
+<p>如果连接的是本机mysql服务器，并且mysql服务默认端口是3306，则url可以简写为：jdbc:mysql:///数据库名称?参数键值对</p>
+</li>
+<li data-line="32">
+<p>配置 useSSL=false 参数，禁用安全连接方式，解决警告提示【指的是禁用SSL连接方式】</p>
+</li>
+</ul>
+</blockquote>
+</li>
+<li data-line="34"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>user ：用户名</p>
+<ul>
+<li data-line="36">poassword ：密码</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h3 data-heading="Connection" class="heading" id="Connection"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Connection</h3><div class="heading-children"><div><p>Connection（数据库连接对象）作用：</p></div><div><ul>
+<li data-line="0">获取执行 SQL 的对象</li>
+<li data-line="1">管理事务</li>
+</ul></div><div class="heading-wrapper"><h4 data-heading="获取执行对象" class="heading" id="获取执行对象"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>获取执行对象</h4><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>普通执行SQL对象</p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded">Statement createStatement<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>入门案例中就是通过该方法获取的执行对象。</p>
+</li>
+<li data-line="8">
+<p>预编译SQL的执行SQL对象：防止SQL注入</p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded">PreparedStatement  prepareStatement<span class="token punctuation">(</span><span class="token keyword">sql</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>通过这种方式获取的 <code>PreparedStatement</code> SQL语句执行对象是我们一会重点要进行讲解的，它可以防止SQL注入。</p>
+</li>
+<li data-line="16">
+<p>执行存储过程的对象</p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded">CallableStatement prepareCall<span class="token punctuation">(</span><span class="token keyword">sql</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>通过这种方式获取的 <code>CallableStatement</code> 执行对象是用来执行存储过程的，而存储过程在MySQL中不常用，所以这个我们将不进行讲解。</p>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="事务管理" class="heading" id="事务管理"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>事务管理</h4><div class="heading-children"><div><p>先回顾一下MySQL事务管理的操作：</p></div><div><ul>
+<li data-line="0">开启事务 ： BEGIN; 或者 START TRANSACTION;</li>
+<li data-line="1">提交事务 ： COMMIT;</li>
+<li data-line="2">回滚事务 ： ROLLBACK;</li>
+</ul></div><div><blockquote>
+<p>MySQL默认是自动提交事务</p>
+</blockquote></div><div><p>接下来学习JDBC事务管理的方法。</p></div><div><p>Connection几口中定义了3个对应的方法：</p></div><div><ul>
+<li data-line="0">
+<p>开启事务<br>
+<img src="https://i0.hdslb.com/bfs/album/9ff82bf1612c50f8f037592342005d1b8e5abe14.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+<p>  参与autoCommit 表示是否自动提交事务，true表示自动提交事务，false表示手动提交事务。而开启事务需要将该参数设为为false。</p>
+</li>
+<li data-line="5">
+<p>提交事务</p>
+</li>
+</ul></div><div><p><img src="https://i0.hdslb.com/bfs/album/b4ad84496c9ab242ddda3dc4615ae6d78d5c17a3.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><ul>
+<li data-line="0">回滚事务</li>
+</ul></div><div><p><img src="https://i0.hdslb.com/bfs/album/5625d032e2779f07287f99a8e83b6a7517b89e40.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>具体代码实现如下：</p></div><div><pre class="language-sql" tabindex="0"><code class="language-sql is-loaded"><span class="token comment">/**
+ * JDBC API 详解：Connection
+ */</span>
+<span class="token keyword">public</span> class JDBCDemo3_Connection {
+
+    <span class="token keyword">public</span> static void main<span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> throws Exception {
+        <span class="token comment">//1. 注册驱动</span>
+        <span class="token comment">//Class.forName("com.mysql.jdbc.Driver");</span>
+        <span class="token comment">//2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写</span>
+        String url <span class="token operator">=</span> <span class="token string">"jdbc:mysql:///db1?useSSL=false"</span><span class="token punctuation">;</span>
+        String username <span class="token operator">=</span> <span class="token string">"root"</span><span class="token punctuation">;</span>
+        String password <span class="token operator">=</span> <span class="token string">"1234"</span><span class="token punctuation">;</span>
+        Connection conn <span class="token operator">=</span> DriverManager<span class="token punctuation">.</span>getConnection<span class="token punctuation">(</span>url<span class="token punctuation">,</span> username<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3. 定义sql</span>
+        String sql1 <span class="token operator">=</span> <span class="token string">"update account set money = 3000 where id = 1"</span><span class="token punctuation">;</span>
+        String sql2 <span class="token operator">=</span> <span class="token string">"update account set money = 3000 where id = 2"</span><span class="token punctuation">;</span>
+        <span class="token comment">//4. 获取执行sql的对象 Statement</span>
+        Statement stmt <span class="token operator">=</span> conn<span class="token punctuation">.</span>createStatement<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        try {
+            <span class="token comment">// ============开启事务==========</span>
+            conn<span class="token punctuation">.</span>setAutoCommit<span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//5. 执行sql</span>
+            <span class="token keyword">int</span> count1 <span class="token operator">=</span> stmt<span class="token punctuation">.</span>executeUpdate<span class="token punctuation">(</span>sql1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//受影响的行数</span>
+            <span class="token comment">//6. 处理结果</span>
+            System<span class="token punctuation">.</span><span class="token keyword">out</span><span class="token punctuation">.</span>println<span class="token punctuation">(</span>count1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">3</span><span class="token operator">/</span><span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token comment">//5. 执行sql</span>
+            <span class="token keyword">int</span> count2 <span class="token operator">=</span> stmt<span class="token punctuation">.</span>executeUpdate<span class="token punctuation">(</span>sql2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//受影响的行数</span>
+            <span class="token comment">//6. 处理结果</span>
+            System<span class="token punctuation">.</span><span class="token keyword">out</span><span class="token punctuation">.</span>println<span class="token punctuation">(</span>count2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// ============提交事务==========</span>
+            <span class="token comment">//程序运行到此处，说明没有出现任何问题，则需求提交事务</span>
+            conn<span class="token punctuation">.</span><span class="token keyword">commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        } catch <span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span> {
+            <span class="token comment">// ============回滚事务==========</span>
+            <span class="token comment">//程序在出现异常时会执行到这个地方，此时就需要回滚事务</span>
+            conn<span class="token punctuation">.</span><span class="token keyword">rollback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            e<span class="token punctuation">.</span>printStackTrace<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        }
+
+        <span class="token comment">//7. 释放资源</span>
+        stmt<span class="token punctuation">.</span><span class="token keyword">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        conn<span class="token punctuation">.</span><span class="token keyword">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    }
+}
+</code><button class="copy-code-button">复制</button></pre></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="Statement" class="heading" id="Statement"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Statement</h3><div class="heading-children"><div class="heading-wrapper"><h4 data-heading="概述" class="heading" id="概述"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>概述</h4><div class="heading-children"><div><p>Statement对象的作用就是用来执行SQL语句。而针对不同类型的SQL语句使用的方法也不一样。</p></div><div><ul>
+<li data-line="0">执行DDL、DML语句</li>
+</ul></div><div><p><img src="https://i0.hdslb.com/bfs/album/f43bcb980f5f97aadb0dd0eae879f7c3d6f766af.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><ul>
+<li data-line="0">执行DQL语句</li>
+</ul></div><div><p> <img src="https://i0.hdslb.com/bfs/album/0adae72472990ed4a5506b5d86f8084b25f212cb.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>  该方法涉及到了 <code>ResultSet</code> 对象，而这个对象我们还没有学习，一会再重点讲解。</p></div></div></div><div class="heading-wrapper"><h4 data-heading="代码实现" class="heading" id="代码实现"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>代码实现</h4><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>执行DML语句</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+  * 执行DML语句
+  * <span class="token keyword">@throws</span> <span class="token reference"><span class="token class-name">Exception</span></span>
+  */</span>
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDML</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span>  <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+    <span class="token comment">//1. 注册驱动</span>
+    <span class="token comment">//Class.forName("com.mysql.jdbc.Driver");</span>
+    <span class="token comment">//2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写</span>
+    <span class="token class-name">String</span> url <span class="token operator">=</span> <span class="token string">"jdbc:mysql:///db1?useSSL=false"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> username <span class="token operator">=</span> <span class="token string">"root"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> password <span class="token operator">=</span> <span class="token string">"1234"</span><span class="token punctuation">;</span>
+    <span class="token class-name">Connection</span> conn <span class="token operator">=</span> <span class="token class-name">DriverManager</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> username<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//3. 定义sql</span>
+    <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"update account set money = 3000 where id = 1"</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 获取执行sql的对象 Statement</span>
+    <span class="token class-name">Statement</span> stmt <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">createStatement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//5. 执行sql</span>
+    <span class="token keyword">int</span> count <span class="token operator">=</span> stmt<span class="token punctuation">.</span><span class="token function">executeUpdate</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//执行完DML语句，受影响的行数</span>
+    <span class="token comment">//6. 处理结果</span>
+    <span class="token comment">//System.out.println(count);</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>count <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"修改成功~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"修改失败~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//7. 释放资源</span>
+    stmt<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="35"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>执行DDL语句</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+  * 执行DDL语句
+  * <span class="token keyword">@throws</span> <span class="token reference"><span class="token class-name">Exception</span></span>
+  */</span>
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDDL</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span>  <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+    <span class="token comment">//1. 注册驱动</span>
+    <span class="token comment">//Class.forName("com.mysql.jdbc.Driver");</span>
+    <span class="token comment">//2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写</span>
+    <span class="token class-name">String</span> url <span class="token operator">=</span> <span class="token string">"jdbc:mysql:///db1?useSSL=false"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> username <span class="token operator">=</span> <span class="token string">"root"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> password <span class="token operator">=</span> <span class="token string">"1234"</span><span class="token punctuation">;</span>
+    <span class="token class-name">Connection</span> conn <span class="token operator">=</span> <span class="token class-name">DriverManager</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> username<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//3. 定义sql</span>
+    <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"drop database db2"</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 获取执行sql的对象 Statement</span>
+    <span class="token class-name">Statement</span> stmt <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">createStatement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//5. 执行sql</span>
+    <span class="token keyword">int</span> count <span class="token operator">=</span> stmt<span class="token punctuation">.</span><span class="token function">executeUpdate</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//执行完DDL语句，可能是0</span>
+    <span class="token comment">//6. 处理结果</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//7. 释放资源</span>
+    stmt<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+<blockquote>
+<p>注意：</p>
+<ul>
+<li data-line="68">以后开发很少使用java代码操作DDL语句</li>
+</ul>
+</blockquote>
+</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="ResultSet" class="heading" id="ResultSet"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>ResultSet</h3><div class="heading-children"><div class="heading-wrapper"><h4 data-heading="概述" class="heading" id="概述"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>概述</h4><div class="heading-children"><div><p>ResultSet（结果集对象）作用：</p></div><div><ul>
+<li data-line="0"><mark>封装了SQL查询语句的结果。</mark></li>
+</ul></div><div><p>而执行了DQL语句后就会返回该对象，对应执行DQL语句的方法如下：</p></div><div><pre class="language-sql" tabindex="0"><code class="language-sql is-loaded">ResultSet  executeQuery<span class="token punctuation">(</span><span class="token keyword">sql</span><span class="token punctuation">)</span>：执行DQL 语句，返回 ResultSet 对象
+</code><button class="copy-code-button">复制</button></pre></div><div><p>那么我们就需要从 <code>ResultSet</code> 对象中获取我们想要的数据。<code>ResultSet</code> 对象提供了操作查询结果数据的方法，如下：</p></div><div><blockquote>
+<p>boolean  next()</p>
+<ul>
+<li data-line="2">将光标从当前位置向前移动一行 </li>
+<li data-line="3">判断当前行是否为有效行</li>
+</ul>
+<p>方法返回值说明：</p>
+<ul>
+<li data-line="7">true  ： 有效航，当前行有数据</li>
+<li data-line="8">false ： 无效行，当前行没有数据</li>
+</ul>
+</blockquote></div><div><blockquote>
+<p>xxx  getXxx(参数)：获取数据</p>
+<ul>
+<li data-line="2">xxx : 数据类型；如： int getInt(参数) ；String getString(参数)</li>
+<li data-line="3"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>参数
+<ul>
+<li data-line="4">int类型的参数：<mark>列的编号，从1开始</mark></li>
+<li data-line="5">String类型的参数：<mark>列的名称 【更推荐实用列名称:可读性好/IDEA自动补全变量名和变量类型】</mark></li>
+</ul>
+</li>
+</ul>
+</blockquote></div><div><p>如下图为执行SQL语句后的结果<br>
+<img src="https://i0.hdslb.com/bfs/album/6dc3d879e7b0c98d0065bfce0e1523f3b92541f2.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>一开始光标指定于第一行前【非数值行】，如图所示红色箭头指向于表头行。当我们调用了 <code>next()</code> 方法后，光标就下移到第一行数据，并且方法返回true，此时就可以通过 <code>getInt("id")</code> 获取当前行id字段的值，也可以通过 <code>getString("name")</code> 获取当前行name字段的值。如果想获取下一行的数据，继续调用 <code>next()</code>  方法，以此类推。</p></div></div></div><div class="heading-wrapper"><h4 data-heading="代码实现" class="heading" id="代码实现"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>代码实现</h4><div class="heading-children"><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+  * 执行DQL
+  * <span class="token keyword">@throws</span> <span class="token reference"><span class="token class-name">Exception</span></span>
+  */</span>
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testResultSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span>  <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+    <span class="token comment">//1. 注册驱动</span>
+    <span class="token comment">//Class.forName("com.mysql.jdbc.Driver");</span>
+    <span class="token comment">//2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写</span>
+    <span class="token class-name">String</span> url <span class="token operator">=</span> <span class="token string">"jdbc:mysql:///db1?useSSL=false"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> username <span class="token operator">=</span> <span class="token string">"root"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> password <span class="token operator">=</span> <span class="token string">"1234"</span><span class="token punctuation">;</span>
+    <span class="token class-name">Connection</span> conn <span class="token operator">=</span> <span class="token class-name">DriverManager</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> username<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//3. 定义sql</span>
+    <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"select * from account"</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 获取statement对象</span>
+    <span class="token class-name">Statement</span> stmt <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">createStatement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//5. 执行sql</span>
+    <span class="token class-name">ResultSet</span> rs <span class="token operator">=</span> stmt<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//6. 处理结果， 遍历rs中的所有数据</span>
+    <span class="token comment">/* // 6.1 光标向下移动一行，并且判断当前行是否有数据
+        while (rs.next()){
+            //6.2 获取数据  getXxx()
+            int id = rs.getInt(1);
+            String name = rs.getString(2);
+            double money = rs.getDouble(3);
+
+            System.out.println(id);
+            System.out.println(name);
+            System.out.println(money);
+
+            System.out.println("--------------");
+
+        }*/</span>
+    <span class="token comment">// 6.1 光标向下移动一行，并且判断当前行是否有数据</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//6.2 获取数据  getXxx()</span>
+        <span class="token keyword">int</span> id <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> name <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">double</span> money <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getDouble</span><span class="token punctuation">(</span><span class="token string">"money"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>money<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"--------------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//7. 释放资源</span>
+    rs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stmt<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="案例" class="heading" id="案例"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>案例</h4><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>需求：查询account账户表数据，封装为Account对象中，并且存储到ArrayList集合中<br>
+<img src="https://i0.hdslb.com/bfs/album/4802214385ad65d9fb5f58e5a2483602c7d20db2.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="3">
+<p>代码实现</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+  * 查询account账户表数据，封装为Account对象中，并且存储到ArrayList集合中
+  * 1. 定义实体类Account
+  * 2. 查询数据，封装到Account对象中
+  * 3. 将Account对象存入ArrayList集合中
+  */</span>
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testResultSet2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span>  <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+    <span class="token comment">//1. 注册驱动</span>
+    <span class="token comment">//Class.forName("com.mysql.jdbc.Driver");</span>
+    <span class="token comment">//2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写</span>
+    <span class="token class-name">String</span> url <span class="token operator">=</span> <span class="token string">"jdbc:mysql:///db1?useSSL=false"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> username <span class="token operator">=</span> <span class="token string">"root"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> password <span class="token operator">=</span> <span class="token string">"1234"</span><span class="token punctuation">;</span>
+    <span class="token class-name">Connection</span> conn <span class="token operator">=</span> <span class="token class-name">DriverManager</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> username<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//3. 定义sql</span>
+    <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"select * from account"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//4. 获取statement对象</span>
+    <span class="token class-name">Statement</span> stmt <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">createStatement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//5. 执行sql</span>
+    <span class="token class-name">ResultSet</span> rs <span class="token operator">=</span> stmt<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 创建集合</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Account</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+    <span class="token comment">// 6.1 光标向下移动一行，并且判断当前行是否有数据</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">Account</span> account <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Account</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//6.2 获取数据  getXxx()</span>
+        <span class="token keyword">int</span> id <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> name <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">double</span> money <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getDouble</span><span class="token punctuation">(</span><span class="token string">"money"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//赋值</span>
+        account<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        account<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        account<span class="token punctuation">.</span><span class="token function">setMoney</span><span class="token punctuation">(</span>money<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 存入集合</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>account<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//7. 释放资源</span>
+    rs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stmt<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="PreparedStatement" class="heading" id="PreparedStatement"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>PreparedStatement</h3><div class="heading-children"><div class="heading-wrapper"><h4 data-heading="概述" class="heading" id="概述"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>概述</h4><div class="heading-children"><div><blockquote>
+<p>PreparedStatement作用：</p>
+<ul>
+<li data-line="2">预编译SQL语句并执行，性能更高</li>
+<li data-line="3">预防<a data-href="SQL注入" href="技术/后端/java/sql注入.html" class="internal-link" target="_self" rel="noopener">SQL注入</a>问题：：<mark>将敏感字符进行转义</mark></li>
+</ul>
+</blockquote></div><div><ul>
+<li data-line="0">
+<p>获取 PreparedStatement 对象</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token comment">// SQL语句中的参数值，使用？占位符替代</span>
+<span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"select * from user where username = ? and password = ?"</span><span class="token punctuation">;</span>
+<span class="token comment">// 通过Connection对象获取，并传入对应的sql语句</span>
+<span class="token class-name">PreparedStatement</span> pstmt <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="9"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>设置参数值</p>
+<p>上面的sql语句中参数使用 ? 进行占位，在之前之前肯定要设置这些 ?  的值。</p>
+<blockquote>
+<p>PreparedStatement对象：setXxx(参数1，参数2)：给 ? 赋值</p>
+<ul>
+<li data-line="15">
+<p>Xxx：数据类型 ； 如 setInt (参数1，参数2)</p>
+</li>
+<li data-line="17"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>参数：</p>
+<ul>
+<li data-line="19">
+<p>参数1： <mark>？的位置编号，从1 开始</mark></p>
+</li>
+<li data-line="21">
+<p>参数2： ？的值</p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li data-line="23"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>执行SQL语句</p>
+<blockquote>
+<p>executeUpdate();  执行DDL语句和DML语句</p>
+<p>executeQuery();  执行DQL语句</p>
+<p><mark>注意：</mark></p>
+<ul>
+<li data-line="31">调用这两个方法时不需要传递SQL语句，因为获取SQL语句执行对象时已经对SQL语句进行预编译了。</li>
+</ul>
+</blockquote>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="预防SQL注入" class="heading" id="预防SQL注入"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>预防SQL注入</h4><div class="heading-children"><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"> <span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testPreparedStatement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span>  <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+    <span class="token comment">//2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写</span>
+    <span class="token class-name">String</span> url <span class="token operator">=</span> <span class="token string">"jdbc:mysql:///db1?useSSL=false"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> username <span class="token operator">=</span> <span class="token string">"root"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> password <span class="token operator">=</span> <span class="token string">"1234"</span><span class="token punctuation">;</span>
+    <span class="token class-name">Connection</span> conn <span class="token operator">=</span> <span class="token class-name">DriverManager</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> username<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 接收用户输入 用户名和密码</span>
+    <span class="token class-name">String</span> name <span class="token operator">=</span> <span class="token string">"zhangsan"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> pwd <span class="token operator">=</span> <span class="token string">"' or '1' = '1"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 定义sql</span>
+    <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"select * from tb_user where username = ? and password = ?"</span><span class="token punctuation">;</span>
+    <span class="token comment">// 获取pstmt对象</span>
+    <span class="token class-name">PreparedStatement</span> pstmt <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 设置？的值</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>pwd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 执行sql</span>
+    <span class="token class-name">ResultSet</span> rs <span class="token operator">=</span> pstmt<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 判断登录是否成功</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"登录成功~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"登录失败~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//7. 释放资源</span>
+    rs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>执行上面语句就可以发现不会出现<a data-href="SQL注入" href="技术/后端/java/sql注入.html" class="internal-link" target="_self" rel="noopener">SQL注入</a>漏洞问题了。那么PreparedStatement又是如何解决的呢？它是将特殊字符进行了转义，转义的SQL如下：</p></div><div><pre class="language-sql" tabindex="0"><code class="language-sql is-loaded"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> tb_user <span class="token keyword">where</span> username <span class="token operator">=</span> <span class="token string">'sjdljfld'</span> <span class="token operator">and</span> password <span class="token operator">=</span> <span class="token string">'\'or \'1\' = \'1'</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="预编译原理" class="heading" id="预编译原理"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>预编译原理</h4><div class="heading-children"><div><p><img src="https://i0.hdslb.com/bfs/album/bd912d96cedb70b4edc250978eb113c5cca9e616.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>Java代码操作数据库流程如图所示：</p></div><div><ul>
+<li data-line="0">
+<p>将sql语句发送到MySQL服务器端</p>
+</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>MySQL服务端会对sql语句进行如下操作</p>
+<ul>
+<li data-line="4">
+<p>检查SQL语句</p>
+<p>检查SQL语句的语法是否正确。</p>
+</li>
+<li data-line="8">
+<p>编译SQL语句。将SQL语句编译成可执行的函数。</p>
+<p><mark>检查SQL和编译SQL花费的时间比执行SQL的时间还要长。如果我们只是重新设置参数，那么检查SQL语句和编译SQL语句将不需要重复执行。这样就提高了性能。</mark></p>
+</li>
+<li data-line="12">
+<p>执行SQL语句</p>
+</li>
+</ul>
+</li>
+</ul></div><div><p>接下来我们通过查询日志来看一下原理。</p></div><div><ul>
+<li data-line="0">
+<p>开启预编译功能</p>
+<p>在代码中编写url时需要加上以下参数。而我们之前根本就没有开启预编译功能，只是解决了SQL注入漏洞。【默认关闭】</p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded">useServerPrepStmts<span class="token operator">=</span><span class="token boolean">true</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="8">
+<p>配置MySQL执行日志（重启mysql服务后生效）</p>
+</li>
+<li data-line="10">
+<p>java测试代码如下：</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"> <span class="token doc-comment comment">/**
+   * PreparedStatement原理
+   * <span class="token keyword">@throws</span> <span class="token reference"><span class="token class-name">Exception</span></span>
+   */</span>
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testPreparedStatement2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span>  <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">//2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写</span>
+    <span class="token comment">// useServerPrepStmts=true 参数开启预编译功能</span>
+    <span class="token class-name">String</span> url <span class="token operator">=</span> <span class="token string">"jdbc:mysql:///db1?useSSL=false&amp;useServerPrepStmts=true"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> username <span class="token operator">=</span> <span class="token string">"root"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> password <span class="token operator">=</span> <span class="token string">"1234"</span><span class="token punctuation">;</span>
+    <span class="token class-name">Connection</span> conn <span class="token operator">=</span> <span class="token class-name">DriverManager</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> username<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 接收用户输入 用户名和密码</span>
+    <span class="token class-name">String</span> name <span class="token operator">=</span> <span class="token string">"zhangsan"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> pwd <span class="token operator">=</span> <span class="token string">"' or '1' = '1"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 定义sql</span>
+    <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"select * from tb_user where username = ? and password = ?"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 获取pstmt对象</span>
+    <span class="token class-name">PreparedStatement</span> pstmt <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 设置？的值</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>pwd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">ResultSet</span> rs <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 执行sql</span>
+    rs <span class="token operator">=</span> pstmt<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 设置？的值</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"aaa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 执行sql</span>
+    rs <span class="token operator">=</span> pstmt<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 判断登录是否成功</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"登录成功~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"登录失败~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//7. 释放资源</span>
+    rs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="65">
+<p>执行SQL语句，查看 <code>D:\mysql.log</code> 日志如下:</p>
+</li>
+</ul></div><div><p><img src="https://i0.hdslb.com/bfs/album/06894730cc2b3b3749d73d34bf62f3dad15d77b9.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+上图中第三行中的 <code>Prepare</code> 是对SQL语句进行预编译。第四行和第五行是执行了两次SQL语句，而第二次执行前并没有对SQL进行预编译。</p></div><div><blockquote>
+<p><mark>小结：</mark></p>
+<ul>
+<li data-line="2">在获取PreparedStatement对象时，将sql语句发送给mysql服务器进行检查，编译（这些步骤很耗时）</li>
+<li data-line="3">执行时就不用再进行这些步骤了，速度更快</li>
+<li data-line="4">如果sql模板一样，则只需要进行一次检查、编译</li>
+</ul>
+<p>一句话：</p>
+<ol>
+<li data-line="7">预编译：事先检查+编译SQL代码——只进行一次</li>
+<li data-line="8"><mark>预编译的功能要自己手动开启，就是JDBC创建连接对象是要传入相应参数</mark></li>
+</ol>
+</blockquote></div></div></div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="数据库连接池" class="heading" id="数据库连接池"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>数据库连接池</h2><div class="heading-children"><div class="heading-wrapper"><h3 data-heading="数据库连接池简介" class="heading" id="数据库连接池简介"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>数据库连接池简介</h3><div class="heading-children"><div><blockquote>
+<ul>
+<li data-line="0">
+<p>数据库连接池是个容器，负责分配、管理数据库连接(Connection)</p>
+</li>
+<li data-line="2">
+<p>它允许应用程序重复使用一个现有的数据库连接，而不是再重新建立一个；</p>
+</li>
+<li data-line="4">
+<p>释放空闲时间超过最大空闲时间的数据库连接来避免因为没有释放数据库连接而引起的数据库连接遗漏</p>
+</li>
+<li data-line="5"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>好处</p>
+<ul>
+<li data-line="6">资源重用</li>
+<li data-line="7">提升系统响应速度</li>
+<li data-line="8">避免数据库连接遗漏</li>
+</ul>
+</li>
+</ul>
+</blockquote></div><div><p>之前我们代码中使用连接是没有使用都创建一个Connection对象，使用完毕就会将其销毁。这样重复创建销毁的过程是特别耗费计算机的性能的及消耗时间的。</p></div><div><p>而数据库使用了数据库连接池后，就能达到Connection对象的复用，如下图<br>
+<img src="https://i0.hdslb.com/bfs/album/3c0f25742ce44fde4d8efd21eeb9eaa2d9240d23.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>连接池是在一开始就创建好了一些连接（Connection）对象存储起来。用户需要连接数据库时，不需要自己创建连接，而只需要从连接池中获取一个连接进行使用，使用完毕后再将连接对象归还给连接池；这样就可以起到资源重用，也节省了频繁创建连接销毁连接所花费的时间，从而提升了系统响应的速度。</p></div></div></div><div class="heading-wrapper"><h3 data-heading="数据库连接池实现" class="heading" id="数据库连接池实现"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>数据库连接池实现</h3><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>标准接口：<mark>DataSource</mark></p>
+<p>官方(SUN) 提供的数据库连接池标准接口，由第三方组织实现此接口。该接口提供了获取连接的功能：</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token class-name">Connection</span> <span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>那么以后就不需要通过 <code>DriverManager</code> 对象获取 <code>Connection</code> 对象，而是通过连接池（DataSource）获取 <code>Connection</code> 对象。</p>
+</li>
+<li data-line="10"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>常见的数据库连接池</p>
+<ul>
+<li data-line="12">DBCP</li>
+<li data-line="13">C3P0</li>
+<li data-line="14">Druid</li>
+</ul>
+<p>我们现在使用更多的是Druid，它的性能比其他两个会好一些。</p>
+</li>
+<li data-line="18"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>Druid（德鲁伊）</p>
+<ul>
+<li data-line="20">
+<p>Druid连接池是阿里巴巴开源的数据库连接池项目 </p>
+</li>
+<li data-line="22">
+<p>功能强大，性能优秀，是Java语言最好的数据库连接池之一</p>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h3 data-heading="Driud使用" class="heading" id="Driud使用"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Driud使用</h3><div class="heading-children"><div><blockquote>
+<ul>
+<li data-line="0">导入jar包 druid-1.1.12.jar</li>
+<li data-line="1">定义配置文件</li>
+<li data-line="2">加载配置文件</li>
+<li data-line="3">获取数据库连接池对象</li>
+<li data-line="4">获取连接</li>
+</ul>
+</blockquote></div><div><p>现在通过代码实现，首先需要先将druid的jar包放到项目下的lib下并添加为库文件<br>
+<img src="https://i0.hdslb.com/bfs/album/b4ae1d72df8502a65035edc70ada32094f51b1f4.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>项目结构如下：<br>
+<img src="https://i0.hdslb.com/bfs/album/dc9dc9384f77596d4362b8bb3b99a8ffb8c8ff15.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>编写配置文件如下：【一般不用自己编写，主要是修改】</p></div><div><pre class="language-properties" tabindex="0"><code class="language-properties is-loaded"><span class="token key attr-name">driverClassName</span><span class="token punctuation">=</span><span class="token value attr-value">com.mysql.jdbc.Driver</span>
+<span class="token key attr-name">url</span><span class="token punctuation">=</span><span class="token value attr-value">jdbc:mysql:///db1?useSSL=false&amp;useServerPrepStmts=true</span>
+<span class="token key attr-name">username</span><span class="token punctuation">=</span><span class="token value attr-value">root</span>
+<span class="token key attr-name">password</span><span class="token punctuation">=</span><span class="token value attr-value">1234</span>
+<span class="token comment"># 初始化连接数量</span>
+<span class="token key attr-name">initialSize</span><span class="token punctuation">=</span><span class="token value attr-value">5</span>
+<span class="token comment"># 最大连接数</span>
+<span class="token key attr-name">maxActive</span><span class="token punctuation">=</span><span class="token value attr-value">10</span>
+<span class="token comment"># 最大等待时间</span>
+<span class="token key attr-name">maxWait</span><span class="token punctuation">=</span><span class="token value attr-value">3000</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>使用druid的代码如下：</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+ * Druid数据库连接池演示
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DruidDemo</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.导入jar包</span>
+        <span class="token comment">//2.定义配置文件</span>
+        <span class="token comment">//3. 加载配置文件</span>
+        <span class="token class-name">Properties</span> prop <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        prop<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"jdbc-demo/src/druid.properties"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4. 获取连接池对象</span>
+        <span class="token class-name">DataSource</span> dataSource <span class="token operator">=</span> <span class="token class-name">DruidDataSourceFactory</span><span class="token punctuation">.</span><span class="token function">createDataSource</span><span class="token punctuation">(</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//5. 获取数据库连接 Connection</span>
+        <span class="token class-name">Connection</span> connection <span class="token operator">=</span> dataSource<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>connection<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//获取到了连接后就可以继续做其他操作了</span>
+
+        <span class="token comment">//System.out.println(System.getProperty("user.dir"));</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><blockquote>
+<ol>
+<li data-line="0">更推荐使用类加载器加载文件，如下：</li>
+</ol>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded">prop<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token class-name">DruidDemo</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getReasourceAsStream</span><span class="token punctuation">(</span><span class="token string">"/druid.properties"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+<ol start="2">
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>书写技巧：
+<blockquote>
+<ul>
+<li data-line="5">先书写获取连接对象的方法</li>
+<li data-line="6">根据连接对象的资源对象的类型按下alt+enter快速生成加载配置文件资源对象的代码</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+</blockquote></div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="JDBC练习" class="heading" id="JDBC练习"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>JDBC练习</h2><div class="heading-children"><div class="heading-wrapper"><h3 data-heading="需求" class="heading" id="需求"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>需求</h3><div class="heading-children"><div><p>完成商品品牌数据的增删改查操作</p></div><div><ul>
+<li data-line="0">查询：查询所有数据</li>
+<li data-line="1">添加：添加品牌</li>
+<li data-line="2">修改：根据id修改</li>
+<li data-line="3">删除：根据id删除</li>
+</ul></div></div></div><div class="heading-wrapper"><h3 data-heading="案例实现" class="heading" id="案例实现"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>案例实现</h3><div class="heading-children"><div class="heading-wrapper"><h4 data-heading="环境准备" class="heading" id="环境准备"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>环境准备</h4><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>数据库表 <code>tb_brand</code></p>
+<pre class="language-sql" tabindex="0"><code class="language-sql is-loaded"><span class="token comment">-- 删除tb_brand表</span>
+<span class="token keyword">drop</span> <span class="token keyword">table</span> <span class="token keyword">if</span> <span class="token keyword">exists</span> tb_brand<span class="token punctuation">;</span>
+<span class="token comment">-- 创建tb_brand表</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> tb_brand <span class="token punctuation">(</span>
+    <span class="token comment">-- id 主键</span>
+    id <span class="token keyword">int</span> <span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token keyword">auto_increment</span><span class="token punctuation">,</span>
+    <span class="token comment">-- 品牌名称</span>
+    brand_name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">-- 企业名称</span>
+    company_name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">-- 排序字段</span>
+    ordered <span class="token keyword">int</span><span class="token punctuation">,</span>
+    <span class="token comment">-- 描述信息</span>
+    description <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">-- 状态：0：禁用  1：启用</span>
+    <span class="token keyword">status</span> <span class="token keyword">int</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 添加数据</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> tb_brand <span class="token punctuation">(</span>brand_name<span class="token punctuation">,</span> company_name<span class="token punctuation">,</span> ordered<span class="token punctuation">,</span> description<span class="token punctuation">,</span> <span class="token keyword">status</span><span class="token punctuation">)</span>
+<span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'三只松鼠'</span><span class="token punctuation">,</span> <span class="token string">'三只松鼠股份有限公司'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'好吃不上火'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">'华为'</span><span class="token punctuation">,</span> <span class="token string">'华为技术有限公司'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token string">'华为致力于把数字世界带入每个人、每个家庭、每个组织，构建万物互联的智能世界'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">(</span><span class="token string">'小米'</span><span class="token punctuation">,</span> <span class="token string">'小米科技有限公司'</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token string">'are you ok'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="27">
+<p>在pojo包下实体类 Brand<br>
+从数据库表的表创建文件快速完成在java中实例化对象的操作技巧</p>
+</li>
+</ul></div><div><ol>
+<li data-line="0">选中复制到IDEA的Java代码中</li>
+<li data-line="1">处理注释：Ctrl+R统一替换<code>--</code>到<code>//</code></li>
+<li data-line="2">删除sql字段的数据类型：调整注释和数据类型间的距离后，alt+鼠标左键选中整列批量删除数据类型</li>
+<li data-line="3">修改命名规范：数据库的表名都是使用<code>_</code>来进行命名的，换到Java里边的变量就是大驼峰式【因为数据库不支持大小写】</li>
+<li data-line="4">实体类中建议将基本数据类型改成包装类【基本数据类型有默认值，而这些值在业务中有具体的意义；而对象的默认值为null不产生影响】</li>
+<li data-line="5">Ctrl+alt+I格式化</li>
+</ol></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+ * 品牌
+ * alt + 鼠标左键：整列编辑
+ * 在实体类中，基本数据类型建议使用其对应的包装类型
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Brand</span> <span class="token punctuation">{</span>
+    <span class="token comment">// id 主键</span>
+    <span class="token keyword">private</span> <span class="token class-name">Integer</span> id<span class="token punctuation">;</span>
+    <span class="token comment">// 品牌名称</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> brandName<span class="token punctuation">;</span>
+    <span class="token comment">// 企业名称</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> companyName<span class="token punctuation">;</span>
+    <span class="token comment">// 排序字段</span>
+    <span class="token keyword">private</span> <span class="token class-name">Integer</span> ordered<span class="token punctuation">;</span>
+    <span class="token comment">// 描述信息</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> description<span class="token punctuation">;</span>
+    <span class="token comment">// 状态：0：禁用  1：启用</span>
+    <span class="token keyword">private</span> <span class="token class-name">Integer</span> status<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Integer</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setId</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getBrandName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> brandName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBrandName</span><span class="token punctuation">(</span><span class="token class-name">String</span> brandName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>brandName <span class="token operator">=</span> brandName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getCompanyName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> companyName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setCompanyName</span><span class="token punctuation">(</span><span class="token class-name">String</span> companyName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>companyName <span class="token operator">=</span> companyName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Integer</span> <span class="token function">getOrdered</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> ordered<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setOrdered</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> ordered<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>ordered <span class="token operator">=</span> ordered<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getDescription</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> description<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setDescription</span><span class="token punctuation">(</span><span class="token class-name">String</span> description<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>description <span class="token operator">=</span> description<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Integer</span> <span class="token function">getStatus</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> status<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">=</span> status<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"Brand{"</span> <span class="token operator">+</span>
+                <span class="token string">"id="</span> <span class="token operator">+</span> id <span class="token operator">+</span>
+                <span class="token string">", brandName='"</span> <span class="token operator">+</span> brandName <span class="token operator">+</span> <span class="token char">'\''</span> <span class="token operator">+</span>
+                <span class="token string">", companyName='"</span> <span class="token operator">+</span> companyName <span class="token operator">+</span> <span class="token char">'\''</span> <span class="token operator">+</span>
+                <span class="token string">", ordered="</span> <span class="token operator">+</span> ordered <span class="token operator">+</span>
+                <span class="token string">", description='"</span> <span class="token operator">+</span> description <span class="token operator">+</span> <span class="token char">'\''</span> <span class="token operator">+</span>
+                <span class="token string">", status="</span> <span class="token operator">+</span> status <span class="token operator">+</span>
+                <span class="token char">'}'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="查询所有" class="heading" id="查询所有"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>查询所有</h4><div class="heading-children"><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"> <span class="token doc-comment comment">/**
+   * 查询所有
+   * 1. SQL：select * from tb_brand;
+   * 2. 参数：不需要
+   * 3. 结果：List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Brand</span><span class="token punctuation">&gt;</span></span>
+   */</span>
+
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+    <span class="token comment">//1. 获取Connection</span>
+    <span class="token comment">//3. 加载配置文件</span>
+    <span class="token class-name">Properties</span> prop <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    prop<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"jdbc-demo/src/druid.properties"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 获取连接池对象</span>
+    <span class="token class-name">DataSource</span> dataSource <span class="token operator">=</span> <span class="token class-name">DruidDataSourceFactory</span><span class="token punctuation">.</span><span class="token function">createDataSource</span><span class="token punctuation">(</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//5. 获取数据库连接 Connection</span>
+    <span class="token class-name">Connection</span> conn <span class="token operator">=</span> dataSource<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//2. 定义SQL</span>
+    <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"select * from tb_brand;"</span><span class="token punctuation">;</span>
+    <span class="token comment">//3. 获取pstmt对象</span>
+    <span class="token class-name">PreparedStatement</span> pstmt <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 设置参数</span>
+    <span class="token comment">//5. 执行SQL</span>
+    <span class="token class-name">ResultSet</span> rs <span class="token operator">=</span> pstmt<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//6. 处理结果 List&lt;Brand&gt; 封装Brand对象，装载List集合</span>
+    <span class="token class-name">Brand</span> brand <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Brand</span><span class="token punctuation">&gt;</span></span> brands <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//获取数据</span>
+        <span class="token keyword">int</span> id <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> brandName <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"brand_name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> companyName <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"company_name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> ordered <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">"ordered"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> description <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"description"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> status <span class="token operator">=</span> rs<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">"status"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//封装Brand对象</span>
+        brand <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Brand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        brand<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        brand<span class="token punctuation">.</span><span class="token function">setBrandName</span><span class="token punctuation">(</span>brandName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        brand<span class="token punctuation">.</span><span class="token function">setCompanyName</span><span class="token punctuation">(</span>companyName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        brand<span class="token punctuation">.</span><span class="token function">setOrdered</span><span class="token punctuation">(</span>ordered<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        brand<span class="token punctuation">.</span><span class="token function">setDescription</span><span class="token punctuation">(</span>description<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        brand<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//装载集合</span>
+        brands<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>brand<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>brands<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//7. 释放资源</span>
+    rs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="添加数据" class="heading" id="添加数据"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>添加数据</h4><div class="heading-children"><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+  * 添加
+  * 1. SQL：insert into tb_brand(brand_name, company_name, ordered, description, status) values(?,?,?,?,?);
+  * 2. 参数：需要，除了id之外的所有参数信息
+  * 3. 结果：boolean
+  */</span>
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 接收页面提交的参数</span>
+    <span class="token class-name">String</span> brandName <span class="token operator">=</span> <span class="token string">"香飘飘"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> companyName <span class="token operator">=</span> <span class="token string">"香飘飘"</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> ordered <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> description <span class="token operator">=</span> <span class="token string">"绕地球一圈"</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> status <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//1. 获取Connection</span>
+    <span class="token comment">//3. 加载配置文件</span>
+    <span class="token class-name">Properties</span> prop <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    prop<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"jdbc-demo/src/druid.properties"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 获取连接池对象</span>
+    <span class="token class-name">DataSource</span> dataSource <span class="token operator">=</span> <span class="token class-name">DruidDataSourceFactory</span><span class="token punctuation">.</span><span class="token function">createDataSource</span><span class="token punctuation">(</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//5. 获取数据库连接 Connection</span>
+    <span class="token class-name">Connection</span> conn <span class="token operator">=</span> dataSource<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//2. 定义SQL</span>
+    <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"insert into tb_brand(brand_name, company_name, ordered, description, status) values(?,?,?,?,?);"</span><span class="token punctuation">;</span>
+    <span class="token comment">//3. 获取pstmt对象</span>
+    <span class="token class-name">PreparedStatement</span> pstmt <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 设置参数</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>brandName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>companyName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setInt</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span>ordered<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span>description<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setInt</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//5. 执行SQL</span>
+    <span class="token keyword">int</span> count <span class="token operator">=</span> pstmt<span class="token punctuation">.</span><span class="token function">executeUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 影响的行数</span>
+    <span class="token comment">//6. 处理结果</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>count <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//7. 释放资源</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="修改数据" class="heading" id="修改数据"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>修改数据</h4><div class="heading-children"><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+  * 修改
+  * 1. SQL：
+
+     update tb_brand
+         set brand_name  = ?,
+         company_name= ?,
+         ordered     = ?,
+         description = ?,
+         status      = ?
+     where id = ?
+
+   * 2. 参数：需要，所有数据
+   * 3. 结果：boolean
+   */</span>
+
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 接收页面提交的参数</span>
+    <span class="token class-name">String</span> brandName <span class="token operator">=</span> <span class="token string">"香飘飘"</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> companyName <span class="token operator">=</span> <span class="token string">"香飘飘"</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> ordered <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> description <span class="token operator">=</span> <span class="token string">"绕地球三圈"</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> status <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> id <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//1. 获取Connection</span>
+    <span class="token comment">//3. 加载配置文件</span>
+    <span class="token class-name">Properties</span> prop <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    prop<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"jdbc-demo/src/druid.properties"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 获取连接池对象</span>
+    <span class="token class-name">DataSource</span> dataSource <span class="token operator">=</span> <span class="token class-name">DruidDataSourceFactory</span><span class="token punctuation">.</span><span class="token function">createDataSource</span><span class="token punctuation">(</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//5. 获取数据库连接 Connection</span>
+    <span class="token class-name">Connection</span> conn <span class="token operator">=</span> dataSource<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//2. 定义SQL</span>
+    <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">" update tb_brand\n"</span> <span class="token operator">+</span>
+        <span class="token string">"         set brand_name  = ?,\n"</span> <span class="token operator">+</span>
+        <span class="token string">"         company_name= ?,\n"</span> <span class="token operator">+</span>
+        <span class="token string">"         ordered     = ?,\n"</span> <span class="token operator">+</span>
+        <span class="token string">"         description = ?,\n"</span> <span class="token operator">+</span>
+        <span class="token string">"         status      = ?\n"</span> <span class="token operator">+</span>
+        <span class="token string">"     where id = ?"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//3. 获取pstmt对象</span>
+    <span class="token class-name">PreparedStatement</span> pstmt <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//4. 设置参数</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>brandName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>companyName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setInt</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span>ordered<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span>description<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setInt</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setInt</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//5. 执行SQL</span>
+    <span class="token keyword">int</span> count <span class="token operator">=</span> pstmt<span class="token punctuation">.</span><span class="token function">executeUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 影响的行数</span>
+    <span class="token comment">//6. 处理结果</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>count <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//7. 释放资源</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="删除数据" class="heading" id="删除数据"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>删除数据</h4><div class="heading-children"><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+  * 删除
+  * 1. SQL：
+            delete from tb_brand where id = ?
+  * 2. 参数：需要，id
+  * 3. 结果：boolean
+  */</span>
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDeleteById</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 接收页面提交的参数</span>
+    <span class="token keyword">int</span> id <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    <span class="token comment">//1. 获取Connection</span>
+    <span class="token comment">//3. 加载配置文件</span>
+    <span class="token class-name">Properties</span> prop <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    prop<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"jdbc-demo/src/druid.properties"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 获取连接池对象</span>
+    <span class="token class-name">DataSource</span> dataSource <span class="token operator">=</span> <span class="token class-name">DruidDataSourceFactory</span><span class="token punctuation">.</span><span class="token function">createDataSource</span><span class="token punctuation">(</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//5. 获取数据库连接 Connection</span>
+    <span class="token class-name">Connection</span> conn <span class="token operator">=</span> dataSource<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//2. 定义SQL</span>
+    <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">" delete from tb_brand where id = ?"</span><span class="token punctuation">;</span>
+    <span class="token comment">//3. 获取pstmt对象</span>
+    <span class="token class-name">PreparedStatement</span> pstmt <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//4. 设置参数</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">setInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//5. 执行SQL</span>
+    <span class="token keyword">int</span> count <span class="token operator">=</span> pstmt<span class="token punctuation">.</span><span class="token function">executeUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 影响的行数</span>
+    <span class="token comment">//6. 处理结果</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>count <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//7. 释放资源</span>
+    pstmt<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div></div></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="JDBC高级技术" class="heading" id="JDBC高级技术">JDBC高级技术</h1><div class="heading-children"><div><p>其实就是高级框架，简化JDBC代码的编写，常用的有MyBatis、Spring JDBC<br>
+<a data-href="Mybatis" href="技术/后端/java/mybatis.html" class="internal-link" target="_self" rel="noopener">Mybatis</a></p></div><div class="mod-footer"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#JDBC" data-path="#JDBC"><div class="tree-item-inner heading-link" heading-name="JDBC">JDBC</div></a><div class="tree-item-children"><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#什么是JDBC" data-path="#什么是JDBC"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="什么是JDBC">什么是JDBC</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#JDBC概念" data-path="#JDBC概念"><div class="tree-item-inner heading-link" heading-name="JDBC概念">JDBC概念</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#JDBC本质" data-path="#JDBC本质"><div class="tree-item-inner heading-link" heading-name="JDBC本质">JDBC本质</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#JDBC好处" data-path="#JDBC好处"><div class="tree-item-inner heading-link" heading-name="JDBC好处">JDBC好处</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#JDBC快速入门" data-path="#JDBC快速入门"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="JDBC快速入门">JDBC快速入门</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#编写代码步骤" data-path="#编写代码步骤"><div class="tree-item-inner heading-link" heading-name="编写代码步骤">编写代码步骤</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#参考代码" data-path="#参考代码"><div class="tree-item-inner heading-link" heading-name="参考代码">参考代码</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#JDBC_API详解" data-path="#JDBC_API详解"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="JDBC API详解">JDBC API详解</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#DriverManager" data-path="#DriverManager"><div class="tree-item-inner heading-link" heading-name="DriverManager">DriverManager</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#Connection" data-path="#Connection"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="Connection">Connection</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#获取执行对象" data-path="#获取执行对象"><div class="tree-item-inner heading-link" heading-name="获取执行对象">获取执行对象</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#事务管理" data-path="#事务管理"><div class="tree-item-inner heading-link" heading-name="事务管理">事务管理</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#Statement" data-path="#Statement"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="Statement">Statement</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#概述" data-path="#概述"><div class="tree-item-inner heading-link" heading-name="概述">概述</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#代码实现" data-path="#代码实现"><div class="tree-item-inner heading-link" heading-name="代码实现">代码实现</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#ResultSet" data-path="#ResultSet"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="ResultSet">ResultSet</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#概述" data-path="#概述"><div class="tree-item-inner heading-link" heading-name="概述">概述</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#代码实现" data-path="#代码实现"><div class="tree-item-inner heading-link" heading-name="代码实现">代码实现</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#案例" data-path="#案例"><div class="tree-item-inner heading-link" heading-name="案例">案例</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#PreparedStatement" data-path="#PreparedStatement"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="PreparedStatement">PreparedStatement</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#概述" data-path="#概述"><div class="tree-item-inner heading-link" heading-name="概述">概述</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#预防SQL注入" data-path="#预防SQL注入"><div class="tree-item-inner heading-link" heading-name="预防SQL注入">预防SQL注入</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#预编译原理" data-path="#预编译原理"><div class="tree-item-inner heading-link" heading-name="预编译原理">预编译原理</div></a><div class="tree-item-children"></div></div></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#数据库连接池" data-path="#数据库连接池"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="数据库连接池">数据库连接池</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#数据库连接池简介" data-path="#数据库连接池简介"><div class="tree-item-inner heading-link" heading-name="数据库连接池简介">数据库连接池简介</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#数据库连接池实现" data-path="#数据库连接池实现"><div class="tree-item-inner heading-link" heading-name="数据库连接池实现">数据库连接池实现</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#Driud使用" data-path="#Driud使用"><div class="tree-item-inner heading-link" heading-name="Driud使用">Driud使用</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#JDBC练习" data-path="#JDBC练习"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="JDBC练习">JDBC练习</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#需求" data-path="#需求"><div class="tree-item-inner heading-link" heading-name="需求">需求</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#案例实现" data-path="#案例实现"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="案例实现">案例实现</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#环境准备" data-path="#环境准备"><div class="tree-item-inner heading-link" heading-name="环境准备">环境准备</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#查询所有" data-path="#查询所有"><div class="tree-item-inner heading-link" heading-name="查询所有">查询所有</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#添加数据" data-path="#添加数据"><div class="tree-item-inner heading-link" heading-name="添加数据">添加数据</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#修改数据" data-path="#修改数据"><div class="tree-item-inner heading-link" heading-name="修改数据">修改数据</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#删除数据" data-path="#删除数据"><div class="tree-item-inner heading-link" heading-name="删除数据">删除数据</div></a><div class="tree-item-children"></div></div></div></div></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/jdbc.html#JDBC高级技术" data-path="#JDBC高级技术"><div class="tree-item-inner heading-link" heading-name="JDBC高级技术">JDBC高级技术</div></a><div class="tree-item-children"></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

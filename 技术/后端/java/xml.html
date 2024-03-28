@@ -1,0 +1,374 @@
+<!DOCTYPE html> <html><head>
+<title>XML</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - XML">
+<meta property="og:title" content="XML">
+<meta property="og:description" content="尘影迹痕 - XML">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/后端/java/xml.html">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/082b463818c7cef3f9824d87de11f408b710edb2.png">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="什么是XML"><p>什么是XML</p></h1><div><div data-callout-metadata="" data-callout-fold="+" data-callout="tip" class="callout is-collapsible"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">碎碎念</div><div class="callout-fold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg></div></div><div class="callout-content">
+<p>很老之前的笔记了，而且xml现在基本上淘汰了，<mark>现在网络传输的主流媒介是JSON</mark><br>
+<del>但感觉还不错就保留了说不定以后用得上（不太可能）</del> </p>
+</div></div></div><div class="heading-wrapper"><div class="heading-children"><div><p>XML是<mark>可扩展标记语言（eXtensible Markup Language）</mark>的缩写，它是是一种数据表示格式，可以描述非常复杂的数据结构，常用于传输和存储数据。</p></div><div><blockquote>
+<p>可扩展标记语言指的是标签可以自由定义，可以用于自定义数据格式</p>
+</blockquote></div></div></div><div class="heading-wrapper"><h1 data-heading="XML的几个特点和使用场景" class="heading" id="XML的几个特点和使用场景">XML的几个特点和使用场景</h1><div class="heading-children"><div><p><strong>特点：</strong></p></div><div><ul>
+<li data-line="0">一是纯文本，默认使用UTF-8编码；</li>
+<li data-line="1">二是可嵌套；<br>
+如果把XML内容存为文件，那么它就是一个XML文件。<br>
+<strong>XML的使用场景：</strong></li>
+<li data-line="4">XML内容经常被当成消息进行网络传输</li>
+<li data-line="5">作为配置文件用于存储系统的信息。 例如<br>
+<img src="https://i0.hdslb.com/bfs/album/082b463818c7cef3f9824d87de11f408b710edb2.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+</ul></div></div></div><div class="heading-wrapper"><h1 data-heading="XML的语法规则" class="heading" id="XML的语法规则">XML的语法规则</h1><div class="heading-children"><div><ol>
+<li data-line="0">XML文件的后缀名为：<mark>xml</mark></li>
+<li data-line="1">文档声明必须是<mark>第一行</mark><br>
+<img src="https://i0.hdslb.com/bfs/album/83d9519906f477fdf5b842871ba7cd7bdd960aae.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+<li data-line="3"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>XML的标签(元素)规则：
+<ol>
+<li data-line="4">标签由一对尖括号和合法标识符组成: <code>&lt;name&gt;&lt;/name&gt;</code>，<mark>必须存在一个根标签，有且只能有一个。</mark></li>
+<li data-line="5">标签必须成对出现，<mark>有开始，有结束</mark>: <code>&lt;name&gt;&lt;/name&gt;</code></li>
+<li data-line="6">特殊的标签可以不成对，但是必须有<mark>结束标记</mark>，如:<code>&lt;br/&gt;</code></li>
+<li data-line="7">标签中可以<mark>定义属性</mark>，属性和标签名空格隔开,属性值必须用引号引起来<code>&lt;student id = “1”&gt;&lt;/name&gt;</code></li>
+<li data-line="8">标签需要<mark>正确的嵌套</mark></li>
+</ol>
+</li>
+<li data-line="9"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>XML的其他组成：<br>
+1. XML文件中可以定义注释信息：<mark>&lt;!– 注释内容 -</mark>-&gt;<br>
+2. XML文件中可以存在以下<mark>特殊字符</mark><br>
+<img src="https://i0.hdslb.com/bfs/album/ee0b1dcba927f1d04508ebee7e101a7bc6542d9a.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+1. XML文件中可以存在<mark>CDATA区</mark>: <code>&lt;![CDATA[   …内容…  ]]&gt;</code>
+<blockquote>
+<p>XML解析式可能发生冲突，例如自定义的sql标签里存储SQL语句：</p>
+<ol>
+<li data-line="15">可以用特殊字符替代冲突的符号；</li>
+<li data-line="16">或者使用CDATA区，在里边书写包含特殊字符内容<br>
+【IDEA中输入CD会智能提示；浏览器不能解析，但后面用到的技术可以去掉CDATA区】</li>
+</ol>
+</blockquote>
+</li>
+</ol></div></div></div><div class="heading-wrapper"><h1 data-heading="XML文档约束" class="heading" id="XML文档约束">XML文档约束</h1><div class="heading-children"><div><p>由于XML文件可以自定义标签，导致XML文件可以随意定义，程序在解析的时候可能出现问题。所以我们需要对XML文档进行约束。<br>
+<mark>文档约束：用来限定xml文件中的标签以及属性应该怎么写。→以此强制约束程序员必须按照文档约束的规定来编写xml文件。</mark><br>
+文档约束有两种方式：DTD和schema，如下</p></div><div><ol>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>DTD</strong></p>
+<ol>
+<li data-line="1">
+<p>编写DTD约束文档，后缀必须是.dtd<br>
+<img src="https://i0.hdslb.com/bfs/album/f460d60dc1cc543e7ef2ca3dda1aba9e832476e6.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="4">
+<p>在需要编写的XML文件中导入该DTD约束文档</p>
+</li>
+<li data-line="5">
+<p><mark>按照约束的规定编写XML文件的内容。</mark></p>
+</li>
+</ol>
+</li>
+<li data-line="7"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>schema</strong></p>
+<ol>
+<li data-line="8">
+<p>编写schema约束文档，后缀必须是.xsd<img src="https://i0.hdslb.com/bfs/album/6aaeef13a0515bf9e5fe34072848d88b590f94ba.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="10">
+<p>在需要编写的XML文件中导入该schema约束文档</p>
+</li>
+<li data-line="11">
+<p>按照约束内容编写XML文件的标签。</p>
+</li>
+</ol>
+</li>
+</ol></div><div><p><strong>两者的比较：</strong></p></div><div><ol>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>XML的文档约束-DTD的作用和问题？
+<ul>
+<li data-line="1">可以约束XML文件的编写。</li>
+<li data-line="2"><mark>不能约束具体的数据类型。</mark></li>
+</ul>
+</li>
+<li data-line="3"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>XML的文档约束-schema的优点？
+<ul>
+<li data-line="4"><mark>可以约束XML文件的标签内容格式，以及具体的数据类型。</mark></li>
+<li data-line="5">本身也是xml文件，格式更严谨。【虽然后缀不一样但数据内容式是xml的语法格式】<img src="https://i0.hdslb.com/bfs/album/ac182b59b9453e07302fd4538fd8f4b52d1338a0.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+</ul>
+</li>
+</ol></div></div></div><div class="heading-wrapper"><h1 data-heading="XML如何解析" class="heading" id="XML如何解析">XML如何解析</h1><div class="heading-children"><div><p>什么是XML解析：使用程序读取XML中的数据<img src="https://i0.hdslb.com/bfs/album/bcf2506e7ce62ecfdeccc2122c81d9bf69f66065.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>两种解析方式：SAX和DOM解析</p></div><div class="heading-wrapper"><h2 data-heading="SAX解析【逐行解析——前端（略）】" class="heading" id="SAX解析【逐行解析——前端（略）】"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>SAX解析【逐行解析——前端（略）】</h2><div class="heading-children"></div></div><div class="heading-wrapper"><h2 data-heading="DOM解析" class="heading" id="DOM解析"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>DOM解析</h2><div class="heading-children"><div class="heading-wrapper"><h3 data-heading="DOM解析解析文档对象模型" class="heading" id="DOM解析解析文档对象模型"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>DOM解析解析文档对象模型</h3><div class="heading-children"><div><p>DOM解析即树状解析，将对象以树的形态整体解析出来，且每个对象结点都实现了Node接口<br>
+<img src="https://i0.hdslb.com/bfs/album/3ee8b39bc7e38a3fd0bd2d7486b6d118db497908.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h3 data-heading="Dom常见的解析工具" class="heading" id="Dom常见的解析工具"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Dom常见的解析工具</h3><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JAXP</td>
+<td>SUN公司提供的一套XML的解析的API</td>
+</tr>
+<tr>
+<td>JDOM</td>
+<td>JDOM是一个开源项目，它基于树型结构，利用纯JAVA的技术对XML文档实现解析、生成、序列化以及多种操作。</td>
+</tr>
+<tr>
+<td><mark>dom4j</mark></td>
+<td><mark>是JDOM的升级品，用来读写XML文件的。具有性能优异、功能强大和极其易使用的特点，它的性能超过sun公司官方的dom  技术，同时它也是一个开放源代码的软件，Hibernate也用它来读写配置文件。</mark></td>
+</tr>
+<tr>
+<td>jsoup</td>
+<td>功能强大DOM方式的XML解析开发包，尤其对HTML解析更加方便</td>
+</tr>
+</tbody>
+</table></div></div></div><div class="heading-wrapper"><h3 data-heading="如何使用Dom4J解析XML文件" class="heading" id="如何使用Dom4J解析XML文件"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>如何使用Dom4J解析XML文件</h3><div class="heading-children"><div><p>Dom4J的解析思想：得到文档对象Document，从中获取元素对象和内容。<br>
+Dom4J的解析后的数据形式：通常数据会封装成Java的对象，如单个对象，或者集合对象形式</p></div><div><blockquote>
+<p>但在此之前我们需要先创建Dom4J的解析器对象</p>
+</blockquote></div><div class="heading-wrapper"><h4 data-heading="基本步骤" class="heading" id="基本步骤"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>基本步骤</h4><div class="heading-children"><div><ol>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>在项目中导入Dom4J框架
+<ol>
+<li data-line="1">下载Dom4j框架，官网下载。</li>
+<li data-line="2">在项目中创建一个文件夹：lib</li>
+<li data-line="3">将dom4j-2.1.1.jar文件复制到 lib 文件夹</li>
+<li data-line="4">在jar文件上点右键，选择 Add as Library -&gt; 点击OK</li>
+<li data-line="5">在类中导包使用</li>
+</ol>
+</li>
+<li data-line="6"><mark>创建Dom4J的解析器对象</mark></li>
+<li data-line="7"><mark>加载XML文件成为Document对象</mark></li>
+<li data-line="8"><mark>获取Document对象的根元素对象</mark></li>
+<li data-line="9"><mark>进一步解析XML的其它元素、属性、文本</mark></li>
+</ol></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="Dom4J框架解析元素的类和方法" class="heading" id="Dom4J框架解析元素的类和方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Dom4J框架解析元素的类和方法</h3><div class="heading-children"><div><p>根据需求驱动来记就好</p></div><div class="heading-wrapper"><h4 data-heading="SAXReader类" class="heading" id="SAXReader类"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>SAXReader类</h4><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>构造器/方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public SAXReader() </code></td>
+<td>创建Dom4J的解析器对象</td>
+</tr>
+<tr>
+<td><code>Document  read(String url)</code></td>
+<td>加载XML文件成为Document对象</td>
+</tr>
+</tbody>
+</table></div></div></div><div class="heading-wrapper"><h4 data-heading="Document类" class="heading" id="Document类"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Document类</h4><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Element getRootElement()</code></td>
+<td>获得根元素对象</td>
+</tr>
+</tbody>
+</table></div></div></div><div class="heading-wrapper"><h4 data-heading="Node类" class="heading" id="Node类"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Node类</h4><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>List&lt;Element&gt; elements()  </code></td>
+<td>得到当前元素下所有子元素</td>
+</tr>
+<tr>
+<td><code>List&lt;Element&gt;  elements(String name)</code></td>
+<td>得到当前元素下指定名字的子元素返回集合</td>
+</tr>
+<tr>
+<td><code>Element  element(String name)  </code></td>
+<td>得到当前元素下指定名字的子元素,如果有很多名字相同的返回第一个</td>
+</tr>
+<tr>
+<td><code>String  getName()              </code></td>
+<td>得到元素名字</td>
+</tr>
+<tr>
+<td><code>String attributeValue(String name)</code></td>
+<td>通过属性名直接得到属性值</td>
+</tr>
+<tr>
+<td><code>String  elementText(子元素名)</code></td>
+<td>得到指定名称的子元素的文本</td>
+</tr>
+<tr>
+<td><code>String  getText()    </code></td>
+<td>得到文本</td>
+</tr>
+</tbody>
+</table></div><div><blockquote>
+<p>对于获取Text的方法后面加上Trim可以获得不带格式（空格）的文本信息</p>
+</blockquote></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="Dom4J解析XML应用实例" class="heading" id="Dom4J解析XML应用实例"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Dom4J解析XML应用实例</h3><div class="heading-children"><div><p><strong>应用场景：</strong><br>
+利用Dom4J的知识，将Contact.xml文件中的联系人数据封装成List集合，其中每个元素是实体类Contact。打印输出 List 中的每个元素。<br>
+<strong>效果图：</strong><img src="https://i0.hdslb.com/bfs/album/78c18a8605d32f158f9ec93bfa16428e7f2ce037.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p><strong>步骤：</strong></p></div><div><ol>
+<li data-line="0">首先是准备待解析的<code>Contact.xml</code>文件<br>
+<img src="https://i0.hdslb.com/bfs/album/5a081924dd50deaef79f3c12efeef625510426e7.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+<li data-line="2">根据待解析的<code>Contact.xml</code>文件创建<code>Contact</code>标准实体类</li>
+</ol></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Contact</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">boolean</span> vip<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">char</span> gender<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> email<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Contact</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Contact</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> id<span class="token punctuation">,</span> <span class="token keyword">boolean</span> vip<span class="token punctuation">,</span> <span class="token keyword">char</span> gendar<span class="token punctuation">,</span> <span class="token class-name">String</span> email<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>vip <span class="token operator">=</span> vip<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>gender <span class="token operator">=</span> gendar<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>email <span class="token operator">=</span> email<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setId</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isVip</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> vip<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setVip</span><span class="token punctuation">(</span><span class="token keyword">boolean</span> vip<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>vip <span class="token operator">=</span> vip<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">char</span> <span class="token function">getGender</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> gender<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setGender</span><span class="token punctuation">(</span><span class="token keyword">char</span> gender<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>gender <span class="token operator">=</span> gender<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getEmail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> email<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token class-name">String</span> email<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>email <span class="token operator">=</span> email<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"Contact{"</span> <span class="token operator">+</span>
+                <span class="token string">"name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token char">'\''</span> <span class="token operator">+</span>
+                <span class="token string">", id="</span> <span class="token operator">+</span> id <span class="token operator">+</span>
+                <span class="token string">", vip="</span> <span class="token operator">+</span> vip <span class="token operator">+</span>
+                <span class="token string">", gendar="</span> <span class="token operator">+</span> gender <span class="token operator">+</span>
+                <span class="token string">", email='"</span> <span class="token operator">+</span> email <span class="token operator">+</span> <span class="token char">'\''</span> <span class="token operator">+</span>
+                <span class="token char">'}'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><ol start="3">
+<li data-line="0">在测试类中编写解析XML文件和打印数据的核心逻辑</li>
+</ol></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dom4JTest2</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">parseToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 需求：解析XML中的数据成为一个List集合对象。</span>
+        <span class="token comment">// 1、导入框架（做过）</span>
+        <span class="token comment">// 2、创建SaxReader对象</span>
+        <span class="token class-name">SAXReader</span> saxReader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SAXReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 3、加载XML文件成为文档对象Document对象。</span>
+        <span class="token class-name">Document</span> document <span class="token operator">=</span>
+                saxReader<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token class-name">Dom4JTest2</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span><span class="token string">"/Contacts.xml"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 4、先拿根元素</span>
+        <span class="token class-name">Element</span> root <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getRootElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 5、提取contact子元素</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Element</span><span class="token punctuation">&gt;</span></span> contactEles <span class="token operator">=</span> root<span class="token punctuation">.</span><span class="token function">elements</span><span class="token punctuation">(</span><span class="token string">"contact"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 6、准备一个ArrayList集合封装联系人信息</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Contact</span><span class="token punctuation">&gt;</span></span> contacts <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 7、遍历Contact子元素</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Element</span> contactEle <span class="token operator">:</span> contactEles<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 8、每个子元素都是一个联系人对象</span>
+            <span class="token class-name">Contact</span> contact <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Contact</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            contact<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>contactEle<span class="token punctuation">.</span><span class="token function">attributeValue</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            contact<span class="token punctuation">.</span><span class="token function">setVip</span><span class="token punctuation">(</span><span class="token class-name">Boolean</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>contactEle<span class="token punctuation">.</span><span class="token function">attributeValue</span><span class="token punctuation">(</span><span class="token string">"vip"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            contact<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>contactEle<span class="token punctuation">.</span><span class="token function">elementTextTrim</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            contact<span class="token punctuation">.</span><span class="token function">setGender</span><span class="token punctuation">(</span>contactEle<span class="token punctuation">.</span><span class="token function">elementTextTrim</span><span class="token punctuation">(</span><span class="token string">"gender"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            contact<span class="token punctuation">.</span><span class="token function">setEmail</span><span class="token punctuation">(</span>contactEle<span class="token punctuation">.</span><span class="token function">elementText</span><span class="token punctuation">(</span><span class="token string">"email"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// 9、把联系人对象数据加入到List集合</span>
+            contacts<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>contact<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 10、遍历List集合</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Contact</span> contact <span class="token operator">:</span> contacts<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>contact<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="Xpath——XML检索技术" class="heading" id="Xpath——XML检索技术">Xpath——XML检索技术</h1><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="什么是Xpath检索技术" class="heading" id="什么是Xpath检索技术"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>什么是Xpath检索技术</h2><div class="heading-children"><div><p>首先Dom4j需要进行文件的全部解析，然后再寻找数据。而Xpath技术更加适合做信息检索【推荐检索数据】。<br>
+<mark>XPath使用路径表达式来定位XML文档中的元素节点或属性节点。</mark></p></div></div></div><div class="heading-wrapper"><h2 data-heading="怎么使用Xpath检索技术" class="heading" id="怎么使用Xpath检索技术"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>怎么使用Xpath检索技术</h2><div class="heading-children"><div><p><strong>需求：</strong> 使用Dom4J把一个XML文件的数据进行解析<br>
+<strong>分析：</strong></p></div><div><ol>
+<li data-line="0">
+<p>导入jar包(dom4j和jaxen-1.1.2.jar)，<mark>Xpath技术依赖Dom4j技术</mark></p>
+</li>
+<li data-line="2">
+<p>通过dom4j的SAXReader获取Document对象</p>
+</li>
+<li data-line="4">
+<p>利用XPath提供的API,结合XPath的语法完成选取XML文档元素节点进行解析操作。</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Node  selectSingleNode("表达式")</code></td>
+<td>获取符合表达式的唯一元素</td>
+</tr>
+<tr>
+<td><code>List&lt;Node&gt; selectNodes("表达式")</code></td>
+<td>获取符合表达式的元素集合</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol></div><div><p><strong>XPath提供的四种检索数据的写法：</strong></p></div><div><ol>
+<li data-line="0">绝对路径：<code> /根元素/子元素/子元素。</code></li>
+<li data-line="1">相对路径： <code>./子元素/子元素。 (.代表了当前元素)</code></li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>全文搜索：
+<ul>
+<li data-line="3"><code>//元素  在全文找这个元素</code></li>
+<li data-line="4"><code>//元素1/元素2  在全文找元素1下面的一级元素2</code></li>
+<li data-line="5"><code>//元素1//元素2  在全文找元素1下面的全部元素2</code></li>
+</ul>
+</li>
+<li data-line="6"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>属性查找。
+<ul>
+<li data-line="7">//<code>@属性名称</code>  在全文<mark>检索属性对象。</mark></li>
+<li data-line="8">//<code>元素[@属性名称]</code>  在全文检索包含该属性的<mark>元素对象。</mark></li>
+<li data-line="9">//<code>元素[@属性名称=值]</code>  在全文检索包含该属性的元素且属性值为该值的<mark>元素对象。</mark></li>
+</ul>
+</li>
+</ol></div><div class="mod-footer"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#什么是XML" data-path="#什么是XML"><div class="tree-item-inner heading-link" heading-name="什么是XML">什么是XML</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#XML的几个特点和使用场景" data-path="#XML的几个特点和使用场景"><div class="tree-item-inner heading-link" heading-name="XML的几个特点和使用场景">XML的几个特点和使用场景</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#XML的语法规则" data-path="#XML的语法规则"><div class="tree-item-inner heading-link" heading-name="XML的语法规则">XML的语法规则</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#XML文档约束" data-path="#XML文档约束"><div class="tree-item-inner heading-link" heading-name="XML文档约束">XML文档约束</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#XML如何解析" data-path="#XML如何解析"><div class="tree-item-inner heading-link" heading-name="XML如何解析">XML如何解析</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#SAX解析【逐行解析——前端（略）】" data-path="#SAX解析【逐行解析——前端（略）】"><div class="tree-item-inner heading-link" heading-name="SAX解析【逐行解析——前端（略）】">SAX解析【逐行解析——前端（略）】</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#DOM解析" data-path="#DOM解析"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="DOM解析">DOM解析</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#DOM解析解析文档对象模型" data-path="#DOM解析解析文档对象模型"><div class="tree-item-inner heading-link" heading-name="DOM解析解析文档对象模型">DOM解析解析文档对象模型</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#Dom常见的解析工具" data-path="#Dom常见的解析工具"><div class="tree-item-inner heading-link" heading-name="Dom常见的解析工具">Dom常见的解析工具</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#如何使用Dom4J解析XML文件" data-path="#如何使用Dom4J解析XML文件"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="如何使用Dom4J解析XML文件">如何使用Dom4J解析XML文件</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#基本步骤" data-path="#基本步骤"><div class="tree-item-inner heading-link" heading-name="基本步骤">基本步骤</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#Dom4J框架解析元素的类和方法" data-path="#Dom4J框架解析元素的类和方法"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="Dom4J框架解析元素的类和方法">Dom4J框架解析元素的类和方法</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#SAXReader类" data-path="#SAXReader类"><div class="tree-item-inner heading-link" heading-name="SAXReader类">SAXReader类</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#Document类" data-path="#Document类"><div class="tree-item-inner heading-link" heading-name="Document类">Document类</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#Node类" data-path="#Node类"><div class="tree-item-inner heading-link" heading-name="Node类">Node类</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#Dom4J解析XML应用实例" data-path="#Dom4J解析XML应用实例"><div class="tree-item-inner heading-link" heading-name="Dom4J解析XML应用实例">Dom4J解析XML应用实例</div></a><div class="tree-item-children"></div></div></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#Xpath——XML检索技术" data-path="#Xpath——XML检索技术"><div class="tree-item-inner heading-link" heading-name="Xpath——XML检索技术">Xpath——XML检索技术</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#什么是Xpath检索技术" data-path="#什么是Xpath检索技术"><div class="tree-item-inner heading-link" heading-name="什么是Xpath检索技术">什么是Xpath检索技术</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/xml.html#怎么使用Xpath检索技术" data-path="#怎么使用Xpath检索技术"><div class="tree-item-inner heading-link" heading-name="怎么使用Xpath检索技术">怎么使用Xpath检索技术</div></a><div class="tree-item-children"></div></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

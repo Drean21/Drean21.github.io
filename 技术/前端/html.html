@@ -1,0 +1,721 @@
+<!DOCTYPE html> <html><head>
+<title>html</title>
+<base href="../..">
+<meta id="root-path" root-path="../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - html">
+<meta property="og:title" content="html">
+<meta property="og:description" content="尘影迹痕 - html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/前端/html.html">
+<meta property="og:image" content="https://th.bing.com/th?id=OIP.CzHoQKVPCyloR2y79V6GbwHaE8&amp;w=306&amp;h=204&amp;c=8&amp;rs=1&amp;qlt=90&amp;o=6&amp;dpr=1.5&amp;pid=3.1&amp;rm=2">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="什么是HTML"><p>什么是HTML</p></h1><div class="heading-wrapper"><div class="heading-children"><div><p><mark>HTML(HyperText Markup Language)：超文本标记语言</mark>：</p></div><div><ul>
+<li data-line="0">
+<p><mark>超文本</mark>：超越了文本的限制，比普通文本更强大。除了文字信息，还可以定义图片、音频、视频等内容</p>
+<p>如上图看到的页面，我们除了能看到一些文字，同时也有大量的图片展示；有些网页也有视频，音频等。这种展示效果超越了文本展示的限制。</p>
+</li>
+<li data-line="4">
+<p><mark>标记</mark>语言：由标签构成的语言</p>
+<p>之前学习的XML就是标记语言，由一个一个的标签组成，HTML 也是由标签组成 。我们在浏览器页面右键可以查看页面的源代码，如下</p>
+</li>
+</ul></div><div><div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></div><div class="callout-title-inner">这些标签不像XML那样可以自定义，HTML中的标签都是预定义好的，运行在浏览器上并由浏览器解析，然后展示出对应的效果。例如我们想在浏览器上展示出图片就需要使用预定义的 <code>img</code> 标签；想展示可以点击的链接的效果就可以使用预定义的 <code>a</code> 标签等。</div></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="HTML特点" class="heading" id="HTML特点">HTML特点</h1><div class="heading-children"><div><ul>
+<li data-line="0">
+<p><mark>HTML 文件以.htm或.html为扩展名</mark></p>
+</li>
+<li data-line="2">
+<p><mark>HTML 标签不区分大小写</mark></p>
+<p>如上案例中的 <code>font</code> 写成 <code>Font</code> 也是一样可以展示出对应的效果的。</p>
+</li>
+<li data-line="6">
+<p><mark>HTML 标签属性值 单双引皆可</mark></p>
+<p>如上案例中的color属性值使用双引号也是可以的。<font color="red"></font></p>
+</li>
+<li data-line="10">
+<p><mark>HTML 语法松散</mark></p>
+<p>比如 font 标签不加结束标签也是可以展示出效果的。但是建议同学们在写的时候还是不要这样做，严格按照要求去写。</p>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h1 data-heading="特殊字符" class="heading" id="特殊字符">特殊字符</h1><div class="heading-children"><div><p>像版权所有里有特殊字符，需要使用转义字符。有如下转义字符：</p></div><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>HTML 原代码</th>
+<th>显示结果</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;lt;</td>
+<td>&lt;</td>
+<td>小于号或显示标记</td>
+</tr>
+<tr>
+<td>&amp;gt ;</td>
+<td>&gt;</td>
+<td>大于号或显示标记</td>
+</tr>
+<tr>
+<td>&amp;amp;</td>
+<td>&amp;</td>
+<td>可用于显示其它特殊字符</td>
+</tr>
+<tr>
+<td>&amp;quot;</td>
+<td>“</td>
+<td>引号</td>
+</tr>
+<tr>
+<td>&amp;reg;</td>
+<td>®</td>
+<td>已注册</td>
+</tr>
+<tr>
+<td>&amp;copy;</td>
+<td>©</td>
+<td>版权</td>
+</tr>
+<tr>
+<td>&amp;trade;</td>
+<td>™</td>
+<td>商标</td>
+</tr>
+<tr>
+<td>&amp;nbsp;</td>
+<td></td>
+<td>不断行的空白</td>
+</tr>
+</tbody>
+</table></div></div></div><div class="heading-wrapper"><h1 data-heading="HTML标签" class="heading" id="HTML标签">HTML标签</h1><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="结构标签" class="heading" id="结构标签"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>结构标签</h2><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">IDE自动创建html文档时会自动生成顶部的版本信息<code>&lt;!DOCTYPE html&gt;</code>和在head结构标签通过子标签<code>&lt;meta charset="UTF-8"&gt;</code>指定默认编码</div></div></div></div><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;HTML&gt;</td>
+<td>定义 HTML 文档</td>
+</tr>
+<tr>
+<td>&lt;head&gt;</td>
+<td>定义关于文档的信息</td>
+</tr>
+<tr>
+<td>&lt;title&gt;</td>
+<td>定义文档的标题</td>
+</tr>
+<tr>
+<td>&lt;body&gt;</td>
+<td>定义文档的主体</td>
+</tr>
+</tbody>
+</table></div></div></div><div class="heading-wrapper"><h2 data-heading="基础标签" class="heading" id="基础标签"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>基础标签</h2><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;h1&gt;&nbsp; ~  &lt;h6&gt;</td>
+<td>定义标题，h1最大，h6最小</td>
+</tr>
+<tr>
+<td>&lt;font&gt;</td>
+<td>定义文本的字体、字体尺寸、字体颜色</td>
+</tr>
+<tr>
+<td>&lt;b&gt;</td>
+<td>定义粗体文本</td>
+</tr>
+<tr>
+<td>&lt;i&gt;</td>
+<td>定义斜体文本</td>
+</tr>
+<tr>
+<td>&lt;u&gt;</td>
+<td>定义文本下划线</td>
+</tr>
+<tr>
+<td>&lt;center&gt;</td>
+<td>定义文本居中</td>
+</tr>
+<tr>
+<td>&lt;p&gt;</td>
+<td>定义段落</td>
+</tr>
+<tr>
+<td>&lt;br&gt;</td>
+<td>定义折行</td>
+</tr>
+<tr>
+<td>&lt;hr&gt;</td>
+<td>定义水平线</td>
+</tr>
+</tbody>
+</table></div></div></div><div class="heading-wrapper"><h2 data-heading="图片、音频、视频标签" class="heading" id="图片、音频、视频标签"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>图片、音频、视频标签</h2><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;img&gt;</td>
+<td>定义图片</td>
+</tr>
+<tr>
+<td>&lt;audio&gt;</td>
+<td>定义音频</td>
+</tr>
+<tr>
+<td>&lt;video&gt;</td>
+<td>定义视频</td>
+</tr>
+</tbody>
+</table></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>img：定义图片
+<ul>
+<li data-line="1">src：规定显示图像的 URL</li>
+<li data-line="2">height：定义图像的高度</li>
+<li data-line="3">width：定义图像的宽度</li>
+</ul>
+</li>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>audio：定义音频。支持的音频格式：MP3、WAV、OGG 
+<ul>
+<li data-line="5">src：规定音频的 URL</li>
+<li data-line="6">controls：显示播放控件</li>
+</ul>
+</li>
+<li data-line="7"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>video：定义视频。支持的音频格式：MP4, WebM、OGG
+<ul>
+<li data-line="8">src：规定视频的 URL</li>
+<li data-line="9">controls：显示播放控件</li>
+</ul>
+</li>
+</ul></div><div><p>一般来说，媒体文件尤其是视频常常会结合iframe标签使用</p></div></div></div><div class="heading-wrapper"><h2 data-heading="嵌入标签iframe" class="heading" id="嵌入标签iframe"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>嵌入标签iframe</h2><div class="heading-children"><div><p>HTML 中的 <code>&lt;iframe&gt; </code>标签是用于在当前 HTML 文档中嵌入另一个 HTML 页面或者外部网页的标记。它允许您在一个页面中显示另一个页面的内容，从而创建了一种框架式的结构。</p></div><div><p>以下是 <code>&lt;iframe&gt; </code>标签的一些特点和用法：</p></div><div><ol>
+<li data-line="0">
+<p><strong>嵌入其他页面：</strong> 最常见的用法是使用 <code>&lt;iframe&gt; </code>标签嵌入其他页面的内容，这些内容可以是本地文件或者远程网页。</p>
+</li>
+<li data-line="2">
+<p><strong>创建内联框架：</strong> <code>&lt;iframe&gt;</code> 标签允许您在当前页面中创建一个内联框架，用于显示其他页面的内容，而无需用户离开当前页面。</p>
+</li>
+<li data-line="4">
+<p><strong>指定嵌入页面的地址：</strong> 使用<code> &lt;iframe&gt;</code> 标签的 src 属性可以指定要嵌入的页面的地址，可以是本地文件的路径或者外部网页的 URL。</p>
+</li>
+<li data-line="6">
+<p><strong>控制框架的尺寸：</strong> 使用 <code>&lt;iframe&gt; </code>标签的 width 和 height 属性可以控制框架的宽度和高度，可以是像素值或者百分比值。</p>
+</li>
+<li data-line="8">
+<p><strong>兼容性：</strong><code>&lt;iframe&gt;</code>标签在所有现代浏览器中都被支持，但在一些特殊情况下可能会受到安全策略的限制。</p>
+</li>
+<li data-line="10">
+<p><strong>嵌入其他文档类型：</strong> 除了 HTML 页面外，<code>&lt;iframe&gt; </code>标签还可以用于嵌入其他类型的文档，如 PDF 文件、音频文件、视频文件等。</p>
+</li>
+</ol></div><div><p>需要注意的是，虽然 <code>&lt;iframe&gt; </code>标签提供了一种方便的方式来嵌入其他页面的内容，但过度使用<code>&lt;iframe&gt;</code>可能会导致性能问题、安全隐患以及页面的可访问性问题。因此，在使用 <code>&lt;iframe&gt;</code> 标签时，需要谨慎考虑其影响，并遵循最佳实践。</p></div><div><p><strong>例子：</strong></p></div><div><pre class="language-html" tabindex="0"><code class="language-html is-loaded"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>IFrame Demo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>嵌入页面示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>以下是一个嵌入页面的示例：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://www.example.com<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>800<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>600<span class="token punctuation">"</span></span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>以上是一个嵌入页面的示例。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在这个示例中，我们使用 <code>&lt;iframe&gt;</code> 标签将名为 "<a data-tooltip-position="top" aria-label="https://www.example.com/" rel="noopener" class="external-link is-unresolved" href="https://www.example.com/" target="_self">https://www.example.com</a>" 的外部网页嵌入到当前页面中。该 <code>&lt;iframe&gt;</code> 元素具有指定的宽度（800 像素）和高度（600 像素），并且没有边框（frameborder="0"）。在用户访问页面时，该网页会在页面中显示为一个框架，用户可以与该框架中的内容进行交互。</p></div></div></div><div class="heading-wrapper"><h2 data-heading="超链接标签" class="heading" id="超链接标签"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>超链接标签</h2><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;a&gt;</td>
+<td>定义超链接，用于链接到另一个资源</td>
+</tr>
+</tbody>
+</table></div><div><ul>
+<li data-line="0">href：指定访问资源的URL</li>
+<li data-line="1"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>target：指定打开资源的方式
+<ul>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>self:默认值，在当前页面打开
+<ul>
+<li data-line="3">blank：在空白页面打开</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="列表标签" class="heading" id="列表标签"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>列表标签</h2><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;ol&gt;</td>
+<td>定义有序列表</td>
+</tr>
+<tr>
+<td>&lt;ul&gt;</td>
+<td>定义无序列表</td>
+</tr>
+<tr>
+<td>&lt;li&gt;</td>
+<td>定义列表项</td>
+</tr>
+</tbody>
+</table></div><div><ul>
+<li data-line="0">type：设置符号的类型【无用，<font color="#9bbb59">后期主要使用css控制</font>】</li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="表格标签" class="heading" id="表格标签"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>表格标签</h2><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">在最早期的网页发展中，网站的布局基本上表格布局，不过现在基本上是css控制了而且有很多现成的css布局方案可以选择</div></div></div></div><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;table&gt;</td>
+<td>定义表格</td>
+</tr>
+<tr>
+<td>&lt;tr&gt;</td>
+<td>定义行</td>
+</tr>
+<tr>
+<td>&lt;td&gt;</td>
+<td>定义单元格</td>
+</tr>
+<tr>
+<td>&lt;th&gt;</td>
+<td>定义表头单元格</td>
+</tr>
+</tbody>
+</table></div><div><ul>
+<li data-line="0">table：定义表格</li>
+<li data-line="1"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>width：宽度
+<ul>
+<li data-line="2">border：边框</li>
+<li data-line="3">cellpadding：定义内容和单元格的距离</li>
+<li data-line="4">cellspacing：定义单元格之间的距离。如果指定为0，则单元格的线会合为一条、</li>
+<li data-line="5">bgcolor：背景色</li>
+<li data-line="6">align：对齐方式</li>
+</ul>
+</li>
+<li data-line="7">tr：定义行</li>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>bgcolor：背景色
+<ul>
+<li data-line="9">align：对齐方式</li>
+</ul>
+</li>
+<li data-line="10">td：定义单元格</li>
+<li data-line="11"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>colspan：合并列
+<ul>
+<li data-line="12">rowspan：合并行</li>
+</ul>
+</li>
+<li data-line="13">th：定义表头单元格</li>
+<li data-line="14"><code>&lt;caption&gt;</code>：表格标题</li>
+</ul></div><div class="heading-wrapper"><h3 data-heading="代码演示" class="heading" id="代码演示"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>代码演示</h3><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">合并单元格要弄明白的问题——要合并的单元格究竟属于第几行或者说第几列，它要跨越几列或几行</div></div></div></div><div><pre class="language-html" tabindex="0"><code class="language-html is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">cellspacing</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>500<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>序号<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>品牌logo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>品牌名称<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>企业名称<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span> <span class="token attr-name">align</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>010<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../img/三只松鼠.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>60<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>三只松鼠<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>三只松鼠<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span> <span class="token attr-name">align</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>009<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../img/优衣库.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>60<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>优衣库<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>优衣库<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span> <span class="token attr-name">align</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>008<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../img/小米.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>60<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>小米<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>小米科技有限公司<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+
+</code><button class="copy-code-button">复制</button></pre></div><div><p><strong>效果：</strong></p></div><div></div><div></div><div></div><div style="overflow-x: auto;"><table width="500" cellspacing="0" border="1">
+    <tbody><tr>
+        <th>序号</th>
+        <th>品牌logo</th>
+        <th>品牌名称</th>
+        <th>企业名称</th>
+    </tr>
+    <tr align="center">
+        <td>010</td>
+        <td><img height="50" src="https://th.bing.com/th?id=OIP.CzHoQKVPCyloR2y79V6GbwHaE8&amp;w=306&amp;h=204&amp;c=8&amp;rs=1&amp;qlt=90&amp;o=6&amp;dpr=1.5&amp;pid=3.1&amp;rm=2" referrerpolicy="no-referrer" style="width: 60px; max-width: 100%;" target="_self" class="is-unresolved"></td>
+        <td>三只松鼠</td>
+        <td>三只松鼠</td>
+    </tr>
+    <tr align="center">
+        <td>009</td>
+        <td><img height="50" src="https://th.bing.com/th?id=OIP.3n4dz5jnJat2XAthR42P9QHaEo&amp;w=316&amp;h=197&amp;c=8&amp;rs=1&amp;qlt=90&amp;o=6&amp;dpr=1.5&amp;pid=3.1&amp;rm=2" referrerpolicy="no-referrer" style="width: 60px; max-width: 100%;" target="_self" class="is-unresolved"></td>
+        <td>优衣库</td>
+        <td>优衣库</td>
+    </tr>
+    <tr align="center">
+        <td>008</td>
+        <td><img height="50" src="https://th.bing.com/th?id=OIP.YKoZzgmubNBxQ8j-mmoTKAHaEK&amp;w=333&amp;h=187&amp;c=8&amp;rs=1&amp;qlt=90&amp;o=6&amp;dpr=1.5&amp;pid=3.1&amp;rm=2" referrerpolicy="no-referrer" style="width: 60px; max-width: 100%;" target="_self" class="is-unresolved"></td>
+        <td>小米</td>
+        <td>小米科技有限公司</td>
+    </tr>
+</tbody></table></div><div>
+</div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="布局标签" class="heading" id="布局标签"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>布局标签</h2><div class="heading-children"><div><p>其实所有标签都可以结合CSS来完成布局效果，只是有一些一开始就是为了布局而诞生的，算是<font color="#9bbb59">“语义标签”</font>。</p></div><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;div&gt;</td>
+<td>定义 HTML 文档中的一个区域部分，经常与 CSS 一起使用，用来布局网页</td>
+</tr>
+<tr>
+<td>&lt;span&gt;</td>
+<td>用于组合行内元素。</td>
+</tr>
+</tbody>
+</table></div></div></div><div class="heading-wrapper"><h2 data-heading="表单标签" class="heading" id="表单标签"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>表单标签</h2><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;form&gt;</td>
+<td>定义表单</td>
+</tr>
+<tr>
+<td>&lt;input&gt;</td>
+<td>定义表单项，通过type属性控制输入形式</td>
+</tr>
+<tr>
+<td>&lt;label&gt;</td>
+<td>为表单项定义标注</td>
+</tr>
+<tr>
+<td>&lt;select&gt;</td>
+<td>定义下拉列表</td>
+</tr>
+<tr>
+<td>&lt;option&gt;</td>
+<td>定义下拉列表的列表项</td>
+</tr>
+<tr>
+<td>&lt;textarea&gt;</td>
+<td>定义文本域</td>
+</tr>
+</tbody>
+</table></div><div class="heading-wrapper"><h3 data-heading="form标签属性" class="heading" id="form标签属性"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>form标签属性</h3><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">Tip</div></div><div class="callout-content">
+<p>在HTML中，<code>#</code> 符号代表当前页面的链接目标。当您在一个链接或者表单的 <code>action</code> 属性中使用 <code>#</code> 时，它表示将表单提交到当前页面本身。实际上，<code>#</code> 是一个特殊的片段标识符，它指向当前页面的顶部，也被称为“锚点”。<br>
+当您在一个表单的 <code>action</code> 属性中使用 <code>#</code> 时，表单将被提交到当前页面，浏览器将会重新加载当前页面并且将表单数据发送到当前页面。这种方法通常用于在没有服务器端处理表单数据的情况下，使用客户端脚本（如 JavaScript）来处理表单提交。</p>
+</div></div></div><div><ul>
+<li data-line="0"><strong>action：规定当提交表单时向何处发送表单数据，该属性值就是URL</strong><br>
+以后会将数据提交到服务端，该属性需要书写服务端的URL。</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>method ：规定用于发送表单数据的方式</strong>
+<ul>
+<li data-line="3"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>get：默认值。如果不设置method属性则默认就是该值
+<ul>
+<li data-line="4">请求参数会拼接在URL后边</li>
+<li data-line="5">url的长度有限制 4KB</li>
+</ul>
+</li>
+<li data-line="6"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>post：
+<ul>
+<li data-line="7">浏览器会将数据放到http请求消息体中</li>
+<li data-line="8">请求参数无限制的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h3 data-heading="input标签属性" class="heading" id="input标签属性"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>input标签属性</h3><div class="heading-children"><div><p>表单项，通过type属性控制输入形式<br>
+<code>input</code> 标签有个 <code>type</code> 属性。 <code>type</code> 属性的取值不同，展示的效果也不一样<br>
+<img src="https://i0.hdslb.com/bfs/album/9faa0a04552c801ade46d9c679df7cc5270c2ea1.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h3 data-heading="label标签属性" class="heading" id="label标签属性"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>label标签属性</h3><div class="heading-children"><div><p>指定输入项的文字描述信息<br>
+label的for属性一般会和 input 的 id属性值 对应。如果对应了，则点击label区域，会让input输入框获取焦点。</p></div></div></div><div class="heading-wrapper"><h3 data-heading="select标签及option子标签属性" class="heading" id="select标签及option子标签属性"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>select标签及option子标签属性</h3><div class="heading-children"><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>select: 下拉列表
+<ul>
+<li data-line="1"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>子元素：option，指定列表项
+<ul>
+<li data-line="2">selected属性，可以指定默认值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div><div><p>如下图就是下拉列表的效果：<br>
+<img src="https://i0.hdslb.com/bfs/album/af7e999aafd9ff5ce155c65951ee60a664f010cd.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h3 data-heading="textarea标签属性" class="heading" id="textarea标签属性"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>textarea标签属性</h3><div class="heading-children"><div><p><code>&lt;textarea&gt;</code>：文本域<br>
+如下图就是文本域效果。它可以输入多行文本，而 <code>input</code> 数据框只能输入一行文本。</p></div><div><p><img src="https://i0.hdslb.com/bfs/album/25dfdcca54b67b09cea296c91f7a2ace53ab5c01.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></div><div class="callout-title-inner">Warning</div></div><div class="callout-content">
+<ul>
+<li data-line="2">以上标签项的内容要想提交，必须得定义 <code>name</code> 属性。</li>
+<li data-line="3">每一个标签都有id属性，id属性值是唯一的标识。</li>
+<li data-line="4">单选框、复选框、下拉列表需要使用 <code>value</code> 属性指定提交的值。【否则只是选中而不是提交/其中option若不存在value默认提交标签体的内容】</li>
+</ul>
+</div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="代码演示" class="heading" id="代码演示"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>代码演示</h3><div class="heading-children"><div><pre class="language-html" tabindex="0"><code class="language-html is-loaded"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>123<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>用户名：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>密码：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+
+        性别：
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gender<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>male<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>male<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>男<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gender<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>female<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>female<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>女<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+
+        爱好：
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hobby<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 旅游
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hobby<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 电影
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hobby<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 游戏
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+
+        头像：
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+
+        城市:
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>city<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>北京<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>shanghai<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>上海<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>广州<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+
+        个人描述：
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">cols</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20<span class="token punctuation">"</span></span> <span class="token attr-name">rows</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>5<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>desc<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>免费注册<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>reset<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>重置<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>一个按钮<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p><strong>效果如下：</strong></p></div><div>&nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; <form method="post" action="#">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input value="123" type="hidden">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="username">用户名：</label>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input id="username" name="username" type="text" value="">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="password">密码：</label>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input id="password" name="password" type="password">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 性别：
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input id="male" value="1" name="gender" type="radio">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="male">男</label>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input id="female" value="2" name="gender" type="radio">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="female">女</label>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 爱好：
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input value="1" name="hobby" type="checkbox"> 旅游
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input value="2" name="hobby" type="checkbox"> 电影
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input value="3" name="hobby" type="checkbox"> 游戏
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 头像：
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="file">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 城市:
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <select name="city">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <option>北京</option>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <option value="shanghai">上海</option>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <option>广州</option>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </select>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 个人描述：
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <textarea name="desc" rows="5" cols="20"></textarea>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input value="免费注册" type="submit">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input value="重置" type="reset">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input value="一个按钮" type="button">
+&nbsp; &nbsp; &nbsp; &nbsp; </form>
+&nbsp; &nbsp; 
+</div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="语义化标签" class="heading" id="语义化标签"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>语义化标签</h2><div class="heading-children"><div><p>参考文章：<a data-tooltip-position="top" aria-label="https://blog.csdn.net/qq_43085848/article/details/119965399" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/qq_43085848/article/details/119965399" target="_self">Web前端开发笔记——第二章 HTML语言 第十一节 语义标签_晚风(●•σ )的博客-CSDN博客</a></p></div><div class="heading-wrapper"><h3 data-heading="定义" class="heading" id="定义"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>定义</h3><div class="heading-children"><div><p>Web语义化，语义元素标签即为更明确、清楚的元素标签，使开发者、浏览者更加理解其内容。 比如，下列是一个网站的基本的语义元素标签的页面，其中包括头部标签、底部标签、内容栏标签等等，这些都是一个个块： <img src="https://i0.hdslb.com/bfs/article/6612b215f1decb7638f5f6672a823f37688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h3 data-heading="头部标签、底部标签" class="heading" id="头部标签、底部标签"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>头部标签、底部标签</h3><div class="heading-children"><div><p>通过<code>&lt;header&gt;&lt;/header&gt;</code>头部标签和<code>&lt;footer&gt;&lt;/footer&gt;</code>底部标签，可定义网页的头部区域以及底部区域，头部一般介绍网页的信息区域或者展示区域，底部一般是该网页的备案号、链接的条款、联系方式等等。</p></div></div></div><div class="heading-wrapper"><h3 data-heading="导航栏标签" class="heading" id="导航栏标签"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>导航栏标签</h3><div class="heading-children"><div><p>通过<code>&lt;nav&gt;&lt;/nav&gt;</code>导航栏标签，可以定义导航栏的内容。例如，下列html代码中参见代码</p></div><div><pre class="language-html" tabindex="0"><code class="language-html is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>  
+​  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>主页<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>数据库<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>HTML<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>JavaScript<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>计算机网络<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>2000-2021<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span>  
+​  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p><strong>效果如下</strong> </p></div><div></div><div>​  
+  
+    <header>  
+        <h1 class="heading" id="主页">主页</h1>  
+    </header>  
+    <nav>  
+        <a href="技术/前端/html.html#" target="_self" rel="noopener">数据库</a>  
+        <a href="技术/前端/html.html#" target="_self" rel="noopener">HTML</a>  
+        <a href="技术/前端/html.html#" target="_self" rel="noopener">JavaScript</a>  
+        <a href="技术/前端/html.html#" target="_self" rel="noopener">计算机网络</a>  
+    </nav>  
+    <footer>  
+        <p>2000-2021</p>  
+    </footer>  
+​  
+</div><div></div></div></div><div class="heading-wrapper"><h3 data-heading="内容栏标签、区段标签" class="heading" id="内容栏标签、区段标签"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>内容栏标签、区段标签</h3><div class="heading-children"><div><p>通过<code>&lt;article&gt;&lt;/article&gt;</code>标签来定义一个独立的内容，且通过<code>&lt;section&gt;&lt;/section&gt;</code>标签来定义一个个区段，它可以是不同的段落。 例如，下列html代码中效果如下：</p></div><div><pre class="language-html" tabindex="0"><code class="language-html is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>  
+​  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>主页<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>数据库<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>HTML<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>JavaScript<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>计算机网络<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>计算机网络<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">&gt;</span></span>  
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>特点<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>  
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>计算机网络系统是由网络硬件和网络软件组成的。在网络系统中，硬件的选择对网络起着决定性的作用，而网络软件则是挖掘网络潜力的工具。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">&gt;</span></span>  
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>功能<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>  
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>资源共享是基于网络的资源分享，但随着网络和经济社会的发展资源共享在社会中也暴露出了一些问题。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>数据库<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">&gt;</span></span>  
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>数据库是“按照数据结构来组织、存储和管理数据的仓库”。是一个长期存储在计算机内的、有组织的、可共享的、统一管理的大量数据的集合。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>2000-2021<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span>  
+​  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p><strong>效果如下：</strong></p></div><div></div><div>​  
+  
+    <header>  
+        <h1 class="heading" id="主页">主页</h1>  
+    </header>  
+    <nav>  
+        <a href="技术/前端/html.html#" target="_self" rel="noopener">数据库</a>  
+        <a href="技术/前端/html.html#" target="_self" rel="noopener">HTML</a>  
+        <a href="技术/前端/html.html#" target="_self" rel="noopener">JavaScript</a>  
+        <a href="技术/前端/html.html#" target="_self" rel="noopener">计算机网络</a>  
+    </nav>  
+    <article>  
+        <h2 class="heading" id="计算机网络">计算机网络</h2>  
+        <section>  
+            <h1 class="heading" id="特点">特点</h1>  
+            <p>计算机网络系统是由网络硬件和网络软件组成的。在网络系统中，硬件的选择对网络起着决定性的作用，而网络软件则是挖掘网络潜力的工具。</p>  
+        </section>  
+        <section>  
+            <h1 class="heading" id="功能">功能</h1>  
+            <p>资源共享是基于网络的资源分享，但随着网络和经济社会的发展资源共享在社会中也暴露出了一些问题。</p>  
+        </section>  
+    </article>  
+    <article>  
+        <h2 class="heading" id="数据库">数据库</h2>  
+        <section>  
+            <p>数据库是“按照数据结构来组织、存储和管理数据的仓库”。是一个长期存储在计算机内的、有组织的、可共享的、统一管理的大量数据的集合。</p>  
+        </section>  
+    </article>  
+    <footer>  
+        <p>2000-2021</p>  
+    </footer>  
+​  
+</div><div></div></div></div><div class="heading-wrapper"><h3 data-heading="外围区域：aside" class="heading" id="外围区域：aside"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>外围区域：aside</h3><div class="heading-children"><div><p>通过<code>&lt;aside&gt;&lt;/aside&gt;</code>标签来定义除网页的主要区域外的其它内容，例如广告栏、侧边栏等等。</p></div></div></div><div class="heading-wrapper"><h3 data-heading="独立流：figure" class="heading" id="独立流：figure"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>独立流：figure</h3><div class="heading-children"><div><ul>
+<li data-line="0">标签规定独立的流内容（图像、图表、照片、代码等等）。</li>
+<li data-line="1">元素的内容应该与主内容相关，同时元素的位置相对于主内容是独立的。如果被删除，则不应对文档流产生影响。</li>
+<li data-line="2">figcaption定义内容的标题，它位于figure的最后且一个独立流中只有一个
+
+</li>
+</ul></div><div>​  
+  
+    <figure>  
+        <img height="200" alt="grassland" src="https://img1.baidu.com/it/u=3314408997,630807627&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=584&amp;h=500" referrerpolicy="no-referrer" style="width: 300px; max-width: 100%;" target="_self" class="is-unresolved">  
+        <figcaption>这是一片广阔的草原</figcaption>  
+    </figure>  
+</div><div>
+**源码如下：**
+```html
+</div><div>​  
+  
+    <figure>  
+        <img height="200" alt="grassland" src="https://img1.baidu.com/it/u=3314408997,630807627&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=584&amp;h=500" referrerpolicy="no-referrer" style="width: 300px; max-width: 100%;" target="_self" class="is-unresolved">  
+        <figcaption>这是一片广阔的草原</figcaption>  
+    </figure>  
+</div><div>
+```</div></div></div><div class="heading-wrapper"><h3 data-heading="其他语义标签" class="heading" id="其他语义标签"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>其他语义标签</h3><div class="heading-children"><div class="heading-wrapper"><h4 data-heading="`<main>`元素" class="heading" id="`<main>`元素"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>&lt;main&gt;</code>元素</h4><div class="heading-children"><div><p>定义页面的主要内容，一个页面只能使用一次。如果是web应用，则包围其主要功能。</p></div></div></div><div class="heading-wrapper"><h4 data-heading="`<small>`元素" class="heading" id="`<small>`元素"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>&lt;small&gt;</code>元素</h4><div class="heading-children"><div><p>为较不重要的内容定义小字体。如果被包围的字体已经是字体模型所支持的最小字号，那么 <code>&lt;small&gt;</code> 标签将不起任何作用。（同理<code>&lt;big&gt;</code>也是如此）</p></div></div></div><div class="heading-wrapper"><h4 data-heading="`<strong>`元素" class="heading" id="`<strong>`元素"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>&lt;strong&gt;</code>元素</h4><div class="heading-children"><div><p>粗体，强调的意思</p></div></div></div><div class="heading-wrapper"><h4 data-heading="`<mark>`元素" class="heading" id="`<mark>`元素"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>&lt;mark&gt;</code>元素</h4><div class="heading-children"><div><p>mark 标签定义带有记号的文本。请在需要突出显示文本时使用<code>&lt;mark&gt;</code>标签。</p></div></div></div><div class="heading-wrapper"><h4 data-heading="`<blockquote>`元素" class="heading" id="`<blockquote>`元素"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>&lt;blockquote&gt;</code>元素</h4><div class="heading-children"><div><p>定义块引用，浏览器会在 blockquote 元素前后添加换行，并增加外边距。cite属性可用来规定引用的来源</p></div></div></div><div class="heading-wrapper"><h4 data-heading="`<abbr>`元素" class="heading" id="`<abbr>`元素"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>&lt;abbr&gt;</code>元素</h4><div class="heading-children"><div><p>解释缩写词。使用title属性可提供全称，只在第一次出现时使用就ok。<br>
+效果：</p></div><div><p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+源码：
+```html
+<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+```</div><div><p>​</p></div><div class="mod-footer"></div></div></div></div></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/html.html#什么是HTML" data-path="#什么是HTML"><div class="tree-item-inner heading-link" heading-name="什么是HTML">什么是HTML</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/html.html#HTML特点" data-path="#HTML特点"><div class="tree-item-inner heading-link" heading-name="HTML特点">HTML特点</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/html.html#特殊字符" data-path="#特殊字符"><div class="tree-item-inner heading-link" heading-name="特殊字符">特殊字符</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/html.html#HTML标签" data-path="#HTML标签"><div class="tree-item-inner heading-link" heading-name="HTML标签">HTML标签</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/html.html#结构标签" data-path="#结构标签"><div class="tree-item-inner heading-link" heading-name="结构标签">结构标签</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/html.html#基础标签" data-path="#基础标签"><div class="tree-item-inner heading-link" heading-name="基础标签">基础标签</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/html.html#图片、音频、视频标签" data-path="#图片、音频、视频标签"><div class="tree-item-inner heading-link" heading-name="图片、音频、视频标签">图片、音频、视频标签</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/html.html#嵌入标签iframe" data-path="#嵌入标签iframe"><div class="tree-item-inner heading-link" heading-name="嵌入标签iframe">嵌入标签iframe</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/html.html#超链接标签" data-path="#超链接标签"><div class="tree-item-inner heading-link" heading-name="超链接标签">超链接标签</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/html.html#列表标签" data-path="#列表标签"><div class="tree-item-inner heading-link" heading-name="列表标签">列表标签</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/html.html#表格标签" data-path="#表格标签"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="表格标签">表格标签</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#代码演示" data-path="#代码演示"><div class="tree-item-inner heading-link" heading-name="代码演示">代码演示</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/html.html#布局标签" data-path="#布局标签"><div class="tree-item-inner heading-link" heading-name="布局标签">布局标签</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/html.html#表单标签" data-path="#表单标签"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="表单标签">表单标签</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#form标签属性" data-path="#form标签属性"><div class="tree-item-inner heading-link" heading-name="form标签属性">form标签属性</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#input标签属性" data-path="#input标签属性"><div class="tree-item-inner heading-link" heading-name="input标签属性">input标签属性</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#label标签属性" data-path="#label标签属性"><div class="tree-item-inner heading-link" heading-name="label标签属性">label标签属性</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#select标签及option子标签属性" data-path="#select标签及option子标签属性"><div class="tree-item-inner heading-link" heading-name="select标签及option子标签属性">select标签及option子标签属性</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#textarea标签属性" data-path="#textarea标签属性"><div class="tree-item-inner heading-link" heading-name="textarea标签属性">textarea标签属性</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#代码演示" data-path="#代码演示"><div class="tree-item-inner heading-link" heading-name="代码演示">代码演示</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/html.html#语义化标签" data-path="#语义化标签"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="语义化标签">语义化标签</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#定义" data-path="#定义"><div class="tree-item-inner heading-link" heading-name="定义">定义</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#头部标签、底部标签" data-path="#头部标签、底部标签"><div class="tree-item-inner heading-link" heading-name="头部标签、底部标签">头部标签、底部标签</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#导航栏标签" data-path="#导航栏标签"><div class="tree-item-inner heading-link" heading-name="导航栏标签">导航栏标签</div></a><div class="tree-item-children"></div></div></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/html.html#主页" data-path="#主页"><div class="tree-item-inner heading-link" heading-name="主页">主页</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#内容栏标签、区段标签" data-path="#内容栏标签、区段标签"><div class="tree-item-inner heading-link" heading-name="内容栏标签、区段标签">内容栏标签、区段标签</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/html.html#主页" data-path="#主页"><div class="tree-item-inner heading-link" heading-name="主页">主页</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/html.html#计算机网络" data-path="#计算机网络"><div class="tree-item-inner heading-link" heading-name="计算机网络">计算机网络</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/html.html#特点" data-path="#特点"><div class="tree-item-inner heading-link" heading-name="特点">特点</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/html.html#功能" data-path="#功能"><div class="tree-item-inner heading-link" heading-name="功能">功能</div></a><div class="tree-item-children"><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/html.html#数据库" data-path="#数据库"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="数据库">数据库</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#外围区域：aside" data-path="#外围区域：aside"><div class="tree-item-inner heading-link" heading-name="外围区域：aside">外围区域：aside</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#独立流：figure" data-path="#独立流：figure"><div class="tree-item-inner heading-link" heading-name="独立流：figure">独立流：figure</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/html.html#其他语义标签" data-path="#其他语义标签"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="其他语义标签">其他语义标签</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/前端/html.html#`<main>`元素" data-path="#`<main>`元素"><div class="tree-item-inner heading-link" heading-name="`<main>`元素"><code>&lt;main&gt;</code>元素</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/前端/html.html#`<small>`元素" data-path="#`<small>`元素"><div class="tree-item-inner heading-link" heading-name="`<small>`元素"><code>&lt;small&gt;</code>元素</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/前端/html.html#`<strong>`元素" data-path="#`<strong>`元素"><div class="tree-item-inner heading-link" heading-name="`<strong>`元素"><code>&lt;strong&gt;</code>元素</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/前端/html.html#`<mark>`元素" data-path="#`<mark>`元素"><div class="tree-item-inner heading-link" heading-name="`<mark>`元素"><code>&lt;mark&gt;</code>元素</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/前端/html.html#`<blockquote>`元素" data-path="#`<blockquote>`元素"><div class="tree-item-inner heading-link" heading-name="`<blockquote>`元素"><code>&lt;blockquote&gt;</code>元素</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/前端/html.html#`<abbr>`元素" data-path="#`<abbr>`元素"><div class="tree-item-inner heading-link" heading-name="`<abbr>`元素"><code>&lt;abbr&gt;</code>元素</div></a><div class="tree-item-children"></div></div></div></div></div></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

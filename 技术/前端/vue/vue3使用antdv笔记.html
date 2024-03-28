@@ -1,0 +1,772 @@
+<!DOCTYPE html> <html><head>
+<title>Vue3使用Antdv笔记</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - Vue3使用Antdv笔记">
+<meta property="og:title" content="Vue3使用Antdv笔记">
+<meta property="og:description" content="尘影迹痕 - Vue3使用Antdv笔记">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/前端/vue/vue3使用antdv笔记.html">
+<meta property="og:image" content="undefined">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="表格（基本表格）"><p>表格（基本表格）</p></h1><div class="heading-wrapper"><div class="heading-children"><div><p>使用了Ant Design Vue（antdv）组件库中的表格组件来展示从后端API请求的学生列表数据。其中包含以下要点：</p></div><div><ol>
+<li data-line="0">模板（template）中使用<code>&lt;a-table&gt;</code>标签来生成表格，使用了数据绑定的方式绑定了<code>columns</code>和<code>students</code>属性，<code>rowKey</code>属性用于指定数据中唯一的主键。</li>
+<li data-line="1">在<code>&lt;script setup&gt;</code>中使用了Vue 3的Composition API，定义了需要用到的组件状态（状态数据和计算属性），以及相关的业务逻辑代码。</li>
+<li data-line="2">使用了<code>useRequest</code>方法向后端API发起异步请求，并使用<code>computed</code>计算属性将响应数据中的学生列表数据进行处理，返回一个只包含学生列表数据的数组。</li>
+<li data-line="3">定义了一个名为<code>rowKey</code>的函数，用于返回每一行数据中唯一的主键值。</li>
+<li data-line="4">定义了一个名为<code>columns</code>的ref类型的状态，包含了表格中每一列的标题和对应的数据字段。</li>
+</ol></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;!-- &lt;a-table :columns="columns" :dataSource="students" rowKey="id"&gt;&lt;/a-table&gt; --&gt;
+  &lt;a-table :columns="columns" :dataSource="students" :rowKey="rowKey"&gt;&lt;/a-table&gt;
+&lt;/template&gt;
+&lt;script setup lang="ts"&gt;
+import axios from "../api/request";
+import { ref, computed } from "vue";
+import { useRequest } from "vue-request";
+import { AxiosRespList, Student } from "../model/Model8080";
+
+const {data} = useRequest&lt;AxiosRespList&lt;Student&gt;&gt;(
+  ()=&gt;axios.get('/api/students')
+)
+
+const students = computed(()=&gt;{
+  return data.value?.data.data || []
+})
+
+function rowKey(r:Student) {
+  return r.id
+}
+
+const columns = ref([
+  {
+    title:'编号',
+    dataIndex:'id'
+  },
+  {
+    title:'姓名',
+    dataIndex:'name'
+  },
+  {
+    title:'性别',
+    dataIndex:'sex'
+  },
+  {
+    title:'年龄',
+    dataIndex:'age'
+  }
+])
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h1 data-heading="分页（分页器）" class="heading" id="分页（分页器）">分页（分页器）</h1><div class="heading-children"><div><p>实现了一个使用 Ant Design Vue 表格组件展示分页数据的功能。具体解释如下：</p></div><div><ul>
+<li data-line="0">在模板中，通过 <code>&lt;a-table&gt;</code> 标签引入 Ant Design Vue 表格组件，并使用 <code>:columns</code> 和 <code>:data-source</code> 属性将 <code>columns</code> 和 <code>students</code> 分别绑定到表格的列定义和数据源上。同时，通过 <code>row-key</code> 属性指定行数据对象的 <code>id</code> 属性作为行唯一标识。</li>
+<li data-line="1">在 <code>script setup</code> 代码块中，首先使用 <code>usePagination</code> 钩子函数获取分页数据。该钩子函数接收两个参数，第一个参数是一个返回 Promise 对象的函数，用于获取分页数据；第二个参数是一个数组类型的可选参数，用于传递分页查询条件。在这里，我们使用了 <code>axios</code> 库向 <code>/api/students/q</code> 接口发送分页查询请求，同时将 <code>dto</code> 对象作为分页查询条件传递给接口。这里 <code>dto</code> 用于记录当前页号和页大小等分页信息。</li>
+<li data-line="2"><code>usePagination</code> 钩子函数返回一个包含 <code>data</code>、<code>total</code> 和 <code>run</code> 属性的对象。其中，<code>data</code> 属性记录了当前分页数据；<code>total</code> 属性记录了总记录数；<code>run</code> 属性是一个函数，用于重新获取分页数据。</li>
+<li data-line="3"><code>tableChange</code> 函数用于处理分页信息的变化事件，即当页号或页大小发生变化时，修改 <code>dto</code> 对象中的页号和页大小，并重新获取分页数据。</li>
+<li data-line="4"><code>pagination</code> 计算属性用于动态生成分页组件的配置参数。具体来说，<code>pagination</code> 属性是一个 <code>PaginationProps</code> 类型的对象，包含了当前页、页大小、总记录数、是否显示页大小下拉列表等信息。这里的下拉列表选项是通过 <code>pageSizeOptions</code> 属性自定义的，包括 1、2、3、4、5 五个选项。</li>
+<li data-line="5"><code>students</code> 计算属性用于从 <code>data</code> 属性中获取分页数据列表。</li>
+<li data-line="6"><code>columns</code> 变量用于定义表格的列定义，包括编号、姓名、性别、年龄四个列。</li>
+</ul></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;a-table :columns="columns" :data-source="students" row-key="id"
+   :pagination="pagination" @change="tableChange"&gt;&lt;/a-table&gt;
+&lt;/template&gt;
+&lt;script setup lang="ts"&gt;
+import axios from "../api/request";
+import { ref, computed } from "vue";
+import { usePagination } from "vue-request";
+import { AxiosRespPage, Student, StudentQueryDto } from "../model/Model8080";
+import { PaginationProps } from "ant-design-vue";
+import DateBody from "ant-design-vue/lib/vc-picker/panels/DatePanel/DateBody";
+
+const dto = ref({page: 1, size: 5})
+
+const {data, total, run} = usePagination&lt;AxiosRespPage&lt;Student&gt;, StudentQueryDto[]&gt;(
+  (d)=&gt; axios.get('/api/students/q', {params:d}),
+  {
+    defaultParams: [dto.value],
+    pagination: {
+      currentKey: "page",
+      pageSizeKey: 'size',
+      totalKey: 'data.data.total'
+    }
+  }
+)
+
+// 在页号或页大小改变时调用
+function tableChange(pagination: PaginationProps) { 
+  console.log(pagination)
+  dto.value.page = pagination.current ?? 1
+  dto.value.size = pagination.pageSize ?? 5
+  run(dto.value)
+}
+
+const pagination = computed&lt;PaginationProps&gt;(()=&gt;{
+  return {
+    current: dto.value.page, // 当前页
+    pageSize: dto.value.size, // 页大小
+    total: total.value,       // 总记录数
+    showSizeChanger: true,    // 显示页大小的下拉列表
+    pageSizeOptions: ["1","2","3","4","5"] // 自定义下拉列表内容
+  }
+})
+
+const students = computed(()=&gt;{
+  return data.value?.data.data.list || []
+})
+
+const columns = ref([
+  {
+    title: "编号",
+    dataIndex: "id",
+  },
+  {
+    title: "姓名",
+    dataIndex: "name",
+  },
+  {
+    title: "性别",
+    dataIndex: "sex",
+  },
+  {
+    title: "年龄",
+    dataIndex: "age",
+  },
+]);
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h1 data-heading="搜索、删除（确认按钮）" class="heading" id="搜索、删除（确认按钮）">搜索、删除（确认按钮）</h1><div class="heading-children"><div><ul>
+<li data-line="0">搜索功能：定义了一个名为dto的响应式变量，其中包含了分页参数page、size以及搜索条件name、sex和age，通过Ant Design Vue框架的组件实现了相关UI。通过usePagination和useRequest实现了后端接口的调用和前端渲染。</li>
+<li data-line="1">删除功能：通过useRequest实现了删除请求和响应的调用，通过onDelete函数和a-popconfirm组件实现了UI交互。</li>
+<li data-line="2">删除选中：通过useRequest和onSelectChange实现了批量删除请求和响应的调用，通过a-popconfirm和a-table组件实现了UI交互。</li>
+</ul></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;a-row&gt;
+    &lt;a-col :span="2"&gt;
+      &lt;a-button type="primary" size="small"&gt;新增&lt;/a-button&gt;
+    &lt;/a-col&gt;
+    &lt;a-col :span="4"&gt;
+      &lt;a-popconfirm title="确认要删除选中学生吗?"
+        ok-text="确定" cancel-text="取消" @confirm="onDeleteIds"
+        @visibleChange="onVisibleChange" :visible="visible"&gt;
+        &lt;a-button type="primary" size="small"&gt;删除选中&lt;/a-button&gt;
+      &lt;/a-popconfirm&gt;
+    &lt;/a-col&gt;
+    &lt;a-col :span="4"&gt;
+    &lt;/a-col&gt;
+    &lt;a-col :span="4"&gt;
+      &lt;a-input v-model:value="dto.name" placeholder="输姓名" size="small"&gt;&lt;/a-input&gt;
+    &lt;/a-col&gt;
+    &lt;a-col :span="4"&gt;
+      &lt;a-select v-model:value="dto.sex" placeholder="选性别" :allowClear="true" size="small"&gt;
+        &lt;a-select-option value="男"&gt;男&lt;/a-select-option&gt;
+        &lt;a-select-option value="女"&gt;女&lt;/a-select-option&gt;
+      &lt;/a-select&gt;
+    &lt;/a-col&gt;
+    &lt;a-col :span="4"&gt;
+      &lt;a-select v-model:value="dto.age" placeholder="选年龄" :allowClear="true" size="small"&gt;
+        &lt;a-select-option value="0,20"&gt;20以下&lt;/a-select-option&gt;
+        &lt;a-select-option value="21,30"&gt;21~30&lt;/a-select-option&gt;
+        &lt;a-select-option value="31,40"&gt;31~40&lt;/a-select-option&gt;
+        &lt;a-select-option value="40,120"&gt;40以上&lt;/a-select-option&gt;
+      &lt;/a-select&gt;
+    &lt;/a-col&gt;
+    &lt;a-col :span="2"&gt;
+      &lt;a-button @click="tableChange" type="primary" size="small"&gt;搜索&lt;/a-button&gt;
+    &lt;/a-col&gt;
+  &lt;/a-row&gt;
+  &lt;hr&gt;
+  &lt;a-table :columns="columns" :data-source="students" row-key="id"
+    :pagination="pagination" @change="tableChange"
+    :row-selection="{selectedRowKeys:ids,onChange:onSelectChange}"&gt;
+    &lt;template #bodyCell="{column, record}"&gt;
+      &lt;template v-if="column.dataIndex==='name'"&gt;
+      {{record.name + (record.sex==='男'?'(大侠)':'(女侠)')}}
+      &lt;/template&gt;
+
+      &lt;template v-else-if="column.dataIndex==='operation'"&gt;
+      &lt;a&gt;修改&lt;/a&gt;
+      &lt;a-divider type="vertical"&gt;&lt;/a-divider&gt;
+      &lt;a-popconfirm title="确认要删除该学生吗?"
+        ok-text="确定" cancel-text="取消" @confirm="onDelete(record.id)"&gt;
+        &lt;a&gt;删除&lt;/a&gt;   
+      &lt;/a-popconfirm&gt;         
+      &lt;/template&gt;
+    &lt;/template&gt;
+  &lt;/a-table&gt;
+  
+&lt;/template&gt;
+&lt;script setup lang="ts"&gt;
+import axios from "../api/request";
+import { ref, computed } from "vue";
+import { usePagination, useRequest } from "vue-request";
+import { AxiosRespPage, AxiosRespString, Student, StudentQueryDto } from "../model/Model8080";
+import { PaginationProps } from "ant-design-vue";
+
+// &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; 搜索功能开始
+const dto = ref({page: 1, size: 5, name: '', sex: null, age: null})
+
+const {data, total, run: search} = usePagination&lt;AxiosRespPage&lt;Student&gt;, StudentQueryDto[]&gt;(
+  (d) =&gt; axios.get('/api/students/q', {params:d}),
+  {
+    defaultParams: [dto.value],
+    pagination: {
+      currentKey: "page",
+      pageSizeKey: 'size',
+      totalKey: 'data.data.total'
+    }
+  }
+)
+
+function tableChange(pagination: PaginationProps) { 
+  // console.log(pagination)
+  dto.value.page = pagination.current ?? 1
+  dto.value.size = pagination.pageSize ?? 5
+  search(dto.value)
+}
+
+const pagination = computed&lt;PaginationProps&gt;(()=&gt;{
+  return {
+    current: dto.value.page, // 当前页
+    pageSize: dto.value.size, // 页大小
+    total: total.value,       // 总记录数
+    showSizeChanger: true,    // 显示页大小的下拉列表
+    pageSizeOptions: ["1","2","3","4","5"] // 自定义下拉列表内容
+  }
+})
+
+const students = computed(()=&gt;{
+  return data.value?.data.data.list || []
+})
+// &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; 搜索功能结束
+
+
+// &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; 删除功能开始
+async function onDelete(id:number) {
+  // console.log("学生id是:"+id)
+  await deleteById(id)      // 删除请求 删除响应
+  search(dto.value)        //                   查询请求 查询响应
+}
+
+const { runAsync: deleteById } = useRequest&lt;AxiosRespString, number[]&gt;(
+  (id) =&gt; axios.delete(`/api/students/${id}`),
+  {
+    manual: true
+  }
+)
+// &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; 删除功能结束
+
+// &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; 删除选中开始
+const ids = ref&lt;number[]&gt;([])
+
+function onSelectChange(keys:number[]) {
+  // console.log(keys)
+  ids.value = keys
+}
+
+async function onDeleteIds() {
+  await deleteByIds(ids.value)
+  ids.value = []
+  search(dto.value)
+}
+
+const { runAsync: deleteByIds } = useRequest&lt;AxiosRespString, number[][]&gt;(
+  (ids)=&gt;axios.delete('/api/students', {data: ids}),
+  {
+    manual: true
+  }
+)
+
+const visible = ref(false)
+
+function onVisibleChange(v:boolean) {
+  if(!v) { // 希望隐藏
+    visible.value = false
+  } else { // 希望显示
+    visible.value = ids.value.length &gt; 0
+  }
+}
+// &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; 删除选中结束
+
+const columns = ref([
+  {
+    title: "编号",
+    dataIndex: "id",
+  },
+  {
+    title: "姓名",
+    dataIndex: "name",
+  },
+  {
+    title: "性别",
+    dataIndex: "sex",
+  },
+  {
+    title: "年龄",
+    dataIndex: "age",
+  },
+  {
+    title: '操作',
+    dataIndex: 'operation'
+  }
+]);
+&lt;/script&gt;
+&lt;style scoped&gt;
+  .ant-input, .ant-select {
+    width: 80px;
+  }
+&lt;/style&gt;
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h1 data-heading="新增、修改（可视弹窗）" class="heading" id="新增、修改（可视弹窗）">新增、修改（可视弹窗）</h1><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">Note</div></div><div class="callout-content">
+<p><code>Object.assign(saveDto, {name:'', sex:'男', age:18})</code> 是将一个新的对象 <code>{name:'', sex:'男', age:18}</code> 的属性值合并到 <code>saveDto</code> 中，并返回合并后的 <code>saveDto</code> 对象。</p>
+<p>在这个例子中，<code>saveDto</code> 是一个响应式对象，用于保存学生信息。在新增学生或者修改学生信息时，需要将对应的信息填入到 <code>saveDto</code> 中。通过使用 <code>Object.assign()</code> 方法，将一个新的对象的属性值合并到 <code>saveDto</code> 中，达到清空或者替换 <code>saveDto</code> 中对应属性的值的目的。</p>
+<p>具体地说，当用户点击“新增”按钮时，会触发 <code>onInsert()</code> 方法，将弹窗可见性 <code>saveVisible</code> 设为 <code>true</code>，并将表单数据清空，即将 <code>saveDto</code> 对象中的 <code>name</code>、<code>sex</code> 和 <code>age</code> 属性都设置为初始值，此时用户可以重新输入新的数据。同理，当用户点击“修改”按钮时，会触发 <code>onUpdate(record: Student)</code> 方法，将弹窗可见性 <code>saveVisible</code> 设为 <code>true</code>，并将表单数据初始化为当前记录的值，即将 <code>saveDto</code> 对象中的 <code>name</code>、<code>sex</code> 和 <code>age</code> 属性都设置为当前记录的值，此时用户可以修改数据并保存。</p>
+<hr>
+<p>在这个例子中，<code>saveDto</code> 是通过 <code>reactive()</code> 创建的响应式对象。如果直接给这个对象的属性赋值，Vue 无法检测到属性的变化，因此无法更新相关的视图。</p>
+<p>因此，这里使用 <code>Object.assign</code> 方法来将一个新对象的属性值合并到 <code>saveDto</code> 中，这样 Vue 就能够检测到 <code>saveDto</code> 对象属性的变化，并及时更新相关的视图。</p>
+</div></div></div><div><p>子组件</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;a-modal :visible="visible" :title="title" 
+    @ok="onOk" @cancel="onCancel"&gt;
+    &lt;a-form&gt;
+      &lt;a-form-item label="编号" v-if="id"&gt;
+        &lt;a-input readonly v-model:value="id"&gt;&lt;/a-input&gt;
+      &lt;/a-form-item&gt;
+      &lt;a-form-item label="姓名"&gt;
+        &lt;a-input v-model:value="dto.name"&gt;&lt;/a-input&gt;
+      &lt;/a-form-item&gt;
+      &lt;a-form-item label="性别"&gt;
+        &lt;a-radio-group v-model:value="dto.sex"&gt;
+          &lt;a-radio-button value="男"&gt;男&lt;/a-radio-button&gt;
+          &lt;a-radio-button value="女"&gt;女&lt;/a-radio-button&gt;
+        &lt;/a-radio-group&gt;
+      &lt;/a-form-item&gt;
+      &lt;a-form-item label="年龄"&gt;
+        &lt;a-input-number v-model:value="dto.age"&gt;&lt;/a-input-number&gt;
+      &lt;/a-form-item&gt;
+    &lt;/a-form&gt;
+  &lt;/a-modal&gt;
+&lt;/template&gt;
+&lt;script setup lang="ts"&gt;
+import axios from "../api/request";
+import { ref, computed } from "vue";
+import { useRequest } from "vue-request";
+import { StudentSaveDto, AxiosRespString } from "../model/Model8080";
+import { Form } from 'ant-design-vue'
+
+// 定义属性
+const props = defineProps&lt;{id:number, dto:StudentSaveDto, visible:boolean}&gt;()
+
+const title = computed(()=&gt; props.id===0?'新增学生':'修改学生')
+
+// 定义事件
+const emit = defineEmits(['update:visible', 'saved'])
+
+async function onOk() {
+  if(props.id === 0) {
+    await insert(props.dto)
+  } else {
+    await update(props.dto)
+  }
+  emit('saved')
+  // 发送事件给父组件, 希望把 visible 改为 false
+  emit('update:visible', false) 
+}
+
+function onCancel() {
+  // 发送事件给父组件, 希望把 visible 改为 false
+  emit('update:visible', false)
+}
+
+const {runAsync:insert} = useRequest&lt;AxiosRespString,StudentSaveDto[]&gt;(
+  (dto)=&gt;axios.post('/api/students', dto),
+  {
+    manual: true
+  }
+)
+
+const {runAsync:update} = useRequest&lt;AxiosRespString,StudentSaveDto[]&gt;(
+  (dto)=&gt;axios.put(`/api/students/${props.id}`, dto),
+  {
+    manual: true
+  }
+)
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>父组件使用子组件</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;A4Save :id="id" :dto="saveDto" v-model:visible="saveVisible"&gt;&lt;/A4Save&gt;
+
+&lt;script setup lang="ts"&gt;
+// ...
+// &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; 新增、修改开始
+const saveVisible = ref(false)
+const id = ref(0)
+const saveDto = reactive({name:'', sex:'男', age:18})
+
+function onInsert() {
+  saveVisible.value = true
+  id.value = 0
+  Object.assign(saveDto, {name:'', sex:'男', age:18})
+}
+
+function onUpdate(record: Student) {
+  saveVisible.value = true
+  id.value = record.id
+  Object.assign(saveDto, record)
+}
+
+function onSaved() {
+  search(dto.value)
+}    
+// &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; 新增、修改结束
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><ul>
+<li data-line="0">
+<p>saveDto 使用 reactive 包装，是为了解决后续表单校验失效问题</p>
+</li>
+<li data-line="2">
+<p>Object.assign 是将源对象（参数2）的属性值赋值给目标对象（参数1）的同名属性，效果等价于</p>
+<pre class="language-js" tabindex="0"><code class="language-js is-loaded">saveDto<span class="token punctuation">.</span><span class="token property-access">name</span> <span class="token operator">=</span> record<span class="token punctuation">.</span><span class="token property-access">name</span>
+saveDto<span class="token punctuation">.</span><span class="token property-access">sex</span> <span class="token operator">=</span> record<span class="token punctuation">.</span><span class="token property-access">sex</span>
+saveDto<span class="token punctuation">.</span><span class="token property-access">age</span> <span class="token operator">=</span> record<span class="token punctuation">.</span><span class="token property-access">age</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h1 data-heading="全局消息（案例优化）" class="heading" id="全局消息（案例优化）">全局消息（案例优化）</h1><div class="heading-children"><div><p>在 request.ts 中对响应消息统一处理</p></div><div><pre class="language-typescript" tabindex="0"><code class="language-typescript is-loaded"><span class="token keyword">import</span> <span class="token punctuation">{</span> message <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ant-design-vue'</span>
+
+<span class="token comment">// ...</span>
+<span class="token comment">// 响应拦截器</span>
+_axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span> <span class="token comment">// 状态码  2xx</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      message<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>    
+    <span class="token comment">// ... </span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span> <span class="token comment">// 状态码 &gt; 2xx, 400,401,403,404,500</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h1 data-heading="表单校验（校验规则）" class="heading" id="表单校验（校验规则）">表单校验（校验规则）</h1><div class="heading-children"><div><p>首先，定义了校验规则 <code>rules</code>：定义了三个属性的校验规则，分别是 <code>name</code>、<code>sex</code> 和 <code>age</code>，其中每个属性都有多个校验规则，比如 <code>name</code> 属性的规则是必填且长度至少为2。</p></div><div><p>接着，使用 <code>Form.useForm</code> 方法创建了一个表单对象，并把校验规则和表单数据传入：返回的 <code>validateInfos</code> 对象包含了每个属性的校验状态和错误信息，<code>validate</code> 方法用于手动触发表单校验。</p></div><div><p>最后，在提交表单时，先调用 <code>validate</code> 方法进行校验，如果校验通过再执行添加或修改操作：</p></div><div><p>如果校验不通过，则会抛出一个错误。这里采用了 async/await 语法，可以很方便地处理异步请求。</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;a-modal :visible="visible" :title="title" 
+    @ok="onOk" @cancel="onCancel"&gt;
+    &lt;a-form&gt;
+      &lt;a-form-item label="编号" v-if="id"&gt;
+        &lt;a-input readonly v-model:value="id"&gt;&lt;/a-input&gt;
+      &lt;/a-form-item&gt;
+      &lt;a-form-item label="姓名" v-bind="validateInfos.name"&gt;
+        &lt;a-input v-model:value="dto.name"&gt;&lt;/a-input&gt;
+      &lt;/a-form-item&gt;
+      &lt;a-form-item label="性别" v-bind="validateInfos.sex"&gt;
+        &lt;a-radio-group v-model:value="dto.sex"&gt;
+          &lt;a-radio-button value="男"&gt;男&lt;/a-radio-button&gt;
+          &lt;a-radio-button value="女"&gt;女&lt;/a-radio-button&gt;
+        &lt;/a-radio-group&gt;
+      &lt;/a-form-item&gt;
+      &lt;a-form-item label="年龄" v-bind="validateInfos.age"&gt;
+        &lt;a-input-number v-model:value="dto.age"&gt;&lt;/a-input-number&gt;
+      &lt;/a-form-item&gt;
+    &lt;/a-form&gt;
+  &lt;/a-modal&gt;
+&lt;/template&gt;
+&lt;script setup lang="ts"&gt;
+import axios from "../api/request";
+import { ref, computed } from "vue";
+import { useRequest } from "vue-request";
+import { StudentSaveDto, AxiosRespString } from "../model/Model8080";
+import { Form } from 'ant-design-vue'
+
+// 定义属性
+const props = defineProps&lt;{id:number, dto:StudentSaveDto, visible:boolean}&gt;()
+
+const title = computed(()=&gt; props.id===0?'新增学生':'修改学生')
+
+// 定义事件
+const emit = defineEmits(['update:visible', 'saved'])
+
+async function onOk() {
+  try {
+    // 提交前校验
+    await validate()
+    if(props.id === 0) {
+      await insert(props.dto)
+    } else {
+      await update(props.dto)
+    }
+    emit('saved')
+    // 发送事件给父组件, 希望把 visible 改为 false
+    emit('update:visible', false) 
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+function onCancel() {
+  // 发送事件给父组件, 希望把 visible 改为 false
+  emit('update:visible', false)
+}
+
+const {runAsync:insert} = useRequest&lt;AxiosRespString,StudentSaveDto[]&gt;(
+  (dto)=&gt;axios.post('/api/students', dto),
+  {
+    manual: true
+  }
+)
+
+const {runAsync:update} = useRequest&lt;AxiosRespString,StudentSaveDto[]&gt;(
+  (dto)=&gt;axios.put(`/api/students/${props.id}`, dto),
+  {
+    manual: true
+  }
+)
+
+const rules = ref({
+  name: [
+    {required: true, message:'姓名必须'},
+    {min:2, message:'字符数至少为2'}
+  ],
+  sex: [
+    {required: true, message:'性别必须'}
+  ],
+  age: [
+    {required: true, message:'年龄必须'},
+    {min:10, message:'年龄最小为10岁', type:'number'},
+    {max:120, message:'年龄最大为120岁', type:'number'}
+  ]
+})
+
+// 参数1: 待校验的数据
+// 参数2: 校验规则
+const { validateInfos, validate } = Form.useForm(props.dto, rules)
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h1 data-heading="布局a-layout" class="heading" id="布局a-layout">布局a-layout</h1><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="主页布局" class="heading" id="主页布局"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>主页布局</h2><div class="heading-children"><div><p>借助 antdv 的 layout 组件，可以实现主页【上】【左】【右】布局</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div class="a53"&gt;
+    &lt;a-layout&gt;
+      &lt;a-layout-header&gt;&lt;/a-layout-header&gt;
+      &lt;a-layout&gt;
+        &lt;a-layout-sider&gt;&lt;/a-layout-sider&gt;
+        &lt;a-layout-content&gt;
+          &lt;router-view&gt;&lt;/router-view&gt;
+        &lt;/a-layout-content&gt;
+      &lt;/a-layout&gt;
+    &lt;/a-layout&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;style scoped&gt;
+.a53 {
+  height: 100%;
+  background-color: rgb(220, 225, 255);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='35' y='10' font-size='14' font-family='system-ui, sans-serif' text-anchor='middle' dominant-baseline='middle'%3EA53(主页)%3C/text%3E%3C/svg%3E");
+  padding: 20px;
+  box-sizing: border-box;
+}
+.ant-layout-header {
+  height: 50px;
+  background-color:darkseagreen;
+}
+
+.ant-layout-sider {
+  background-color:lightsalmon;
+}
+
+.ant-layout-content {
+  background-color: aliceblue;
+}
+
+.ant-layout-footer {
+  background-color:darkslateblue;
+  height: 30px;
+}
+
+.ant-layout {
+  height: 100%;
+}
+
+.ant-layout-has-sider {
+  height: calc(100% - 50px);
+}
+&lt;/style&gt;
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h2 data-heading="侧边栏菜单" class="heading" id="侧边栏菜单"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>侧边栏菜单</h2><div class="heading-children"><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div class="a53"&gt;
+    &lt;a-layout&gt;
+      &lt;a-layout-header&gt;&lt;/a-layout-header&gt;
+      &lt;a-layout&gt;
+        &lt;a-layout-sider&gt;
+          &lt;a-menu theme="dark" mode="inline"&gt;
+            &lt;a-menu-item :key="1"&gt;
+              &lt;router-link to="/a3/student"&gt;菜单1&lt;/router-link&gt;
+            &lt;/a-menu-item&gt;
+            &lt;a-menu-item :key="2"&gt;
+              &lt;router-link to="/a3/teacher"&gt;菜单2&lt;/router-link&gt;
+            &lt;/a-menu-item&gt;
+            &lt;a-menu-item :key="3"&gt;菜单3&lt;/a-menu-item&gt;
+            &lt;a-sub-menu :key="4" title="菜单4"&gt;
+              &lt;a-menu-item :key="41"&gt;菜单41&lt;/a-menu-item&gt;
+              &lt;a-menu-item :key="42"&gt;菜单42&lt;/a-menu-item&gt;
+            &lt;/a-sub-menu&gt;
+          &lt;/a-menu&gt;
+        &lt;/a-layout-sider&gt;
+        &lt;a-layout-content&gt;
+          &lt;router-view&gt;&lt;/router-view&gt;
+        &lt;/a-layout-content&gt;
+      &lt;/a-layout&gt;
+    &lt;/a-layout&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><ul>
+<li data-line="0">a-menu-item 与 a-sub-menu 都必须为 key 属性唯一赋值，否则会产生混乱</li>
+<li data-line="1">router-link 标签用来切换路由，to 是目标路由的路径</li>
+<li data-line="2">theme 属性定义菜单的主题（默认亮色主题，dark 为暗色主题）</li>
+<li data-line="3">mode 属性定义子菜单的展示模式（默认弹出，inline 显示在下方）</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="菜单图标" class="heading" id="菜单图标">菜单图标</h1><div class="heading-children"><div><p>需要单独安装图标依赖</p></div><div><pre class="language-cmd" tabindex="0"><code class="language-cmd is-loaded">npm install @ant-design/icons-vue
+</code><button class="copy-code-button">复制</button></pre></div><div class="heading-wrapper"><h2 data-heading="基本使用" class="heading" id="基本使用"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>基本使用</h2><div class="heading-children"><div><p>菜单中使用图标</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div class="a53"&gt;
+    &lt;a-layout&gt;
+      &lt;a-layout-header&gt;&lt;/a-layout-header&gt;
+      &lt;a-layout&gt;
+        &lt;a-layout-sider&gt;
+          &lt;a-menu theme="dark" mode="inline"&gt;
+            &lt;a-menu-item :key="1"&gt;
+              &lt;template #icon&gt;
+                &lt;highlight-outlined /&gt;
+              &lt;/template&gt;
+              &lt;router-link to="/a3/student"&gt;菜单1&lt;/router-link&gt;
+            &lt;/a-menu-item&gt;
+            &lt;a-menu-item :key="2"&gt;
+              &lt;template #icon&gt;
+                &lt;align-center-outlined /&gt;
+              &lt;/template&gt;
+              &lt;router-link to="/a3/teacher"&gt;菜单2&lt;/router-link&gt;
+            &lt;/a-menu-item&gt;
+            &lt;a-menu-item :key="3"&gt;
+              &lt;template #icon&gt;
+                &lt;strikethrough-outlined /&gt;
+              &lt;/template&gt;
+              菜单3&lt;/a-menu-item&gt;
+            &lt;a-sub-menu :key="4" title="菜单4"&gt;
+              &lt;template #icon&gt;
+                &lt;sort-descending-outlined /&gt;
+              &lt;/template&gt;
+              &lt;a-menu-item :key="41"&gt;菜单41&lt;/a-menu-item&gt;
+              &lt;a-menu-item :key="42"&gt;菜单42&lt;/a-menu-item&gt;
+            &lt;/a-sub-menu&gt;
+          &lt;/a-menu&gt;
+        &lt;/a-layout-sider&gt;
+        &lt;a-layout-content&gt;
+          &lt;router-view&gt;&lt;/router-view&gt;
+        &lt;/a-layout-content&gt;
+      &lt;/a-layout&gt;
+    &lt;/a-layout&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script setup lang="ts"&gt;
+import {HighlightOutlined, AlignCenterOutlined, StrikethroughOutlined, SortDescendingOutlined} from '@ant-design/icons-vue'
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><ul>
+<li data-line="0">图标组件没有全局绑定，需要 import 之后才能使用</li>
+<li data-line="1">用 <code>&lt;template #icon&gt;&lt;/template&gt;</code> 插槽，才能确定图标展示的位置（菜单文字之前）</li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="二次封装图标组件" class="heading" id="二次封装图标组件"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>二次封装图标组件</h2><div class="heading-children"><div><p>最终希望用统一的图标组件去使用图标，图标名只是作为一个属性值传递进去，例如：</p></div><div><p>使用者</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;a-icon icon="highlight-outlined"&gt;&lt;/a-icon&gt;
+  &lt;a-icon icon="align-center-outlined"&gt;&lt;/a-icon&gt;
+  &lt;a-icon icon="strikethrough-outlined"&gt;&lt;/a-icon&gt;
+  &lt;a-icon icon="sort-descending-outlined"&gt;&lt;/a-icon&gt;
+&lt;/template&gt;
+&lt;script setup lang="ts"&gt;
+import AIcon from '../components/AIcon1.vue'
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div class="heading-wrapper"><h3 data-heading="方法1，使用 vue 单文件组件" class="heading" id="方法1，使用_vue_单文件组件"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>方法1，使用 vue 单文件组件</h3><div class="heading-children"><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;script lang="ts" setup&gt;
+import {HighlightOutlined, AlignCenterOutlined, StrikethroughOutlined, SortDescendingOutlined} from '@ant-design/icons-vue'
+const props = defineProps&lt;{icon:string}&gt;()
+&lt;/script&gt;
+&lt;template&gt;
+  &lt;highlight-outlined v-if="icon==='highlight-outlined'"&gt;&lt;/highlight-outlined&gt;
+  &lt;align-center-outlined v-else-if="icon==='align-center-outlined'"&gt;&lt;/align-center-outlined&gt;
+  &lt;strikethrough-outlined v-else-if="icon==='strikethrough-outlined'"&gt;&lt;/strikethrough-outlined&gt;
+  &lt;sort-descending-outlined v-else-if="icon==='sort-descending-outlined'"&gt;&lt;/sort-descending-outlined&gt;
+&lt;/template&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><ul>
+<li data-line="0">缺点：实现太笨</li>
+</ul></div></div></div><div class="heading-wrapper"><h3 data-heading="方法2，使用函数式组件" class="heading" id="方法2，使用函数式组件"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>方法2，使用函数式组件</h3><div class="heading-children"><div><pre class="language-typescript" tabindex="0"><code class="language-typescript is-loaded"><span class="token keyword">import</span> <span class="token punctuation">{</span> h <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"vue"</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Icons <span class="token keyword">from</span> <span class="token string">'@ant-design/icons-vue'</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Module</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>p<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token builtin">any</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 参数1: 组件属性</span>
+<span class="token keyword">const</span> <span class="token function-variable function">AIcon</span> <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token operator">:</span><span class="token punctuation">{</span>icon<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// console.log(props.icon)</span>
+  <span class="token comment">// console.log(Icons)</span>
+  <span class="token comment">// 参数1: 组件对象</span>
+  <span class="token keyword">const</span> im<span class="token operator">:</span> Module <span class="token operator">=</span> Icons
+  <span class="token keyword">return</span> <span class="token function">h</span><span class="token punctuation">(</span>im<span class="token punctuation">[</span><span class="token function">toCamelCase</span><span class="token punctuation">(</span>props<span class="token punctuation">.</span>icon<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> AIcon
+
+<span class="token comment">// 将-分隔的单词转换为大驼峰命名的单词</span>
+<span class="token keyword">function</span> <span class="token function">toCamelCase</span><span class="token punctuation">(</span>str<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// highlight-outlined</span>
+  <span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">)</span> <span class="token comment">// ['highlight', 'outlined']</span>
+    <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token operator">=&gt;</span> e<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> e<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token comment">// ['Highlight', 'Outlined']</span>
+    <span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/*
+Icons 的结构如下
+{
+  HighlightOutlined: HighlightOutlined组件对象,
+  MonitorOutlined: MonitorOutlined组件对象,
+  ...
+}
+*/</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><ul>
+<li data-line="0">需要动态生成标签的时候，可以考虑使用函数式组件</li>
+</ul></div></div></div><div class="heading-wrapper"><h3 data-heading="方法3，使用 jsx 组件" class="heading" id="方法3，使用_jsx_组件"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>方法3，使用 jsx 组件</h3><div class="heading-children"><div><blockquote>
+<p>JSX是一种在React中使用的语法，它是一种JavaScript和HTML混合的语法。它允许开发者在JavaScript代码中编写类似于HTML标签的语法，用来描述UI组件的结构和样式。</p>
+<p>而TSX则是在TypeScript中使用的一种扩展，它基本上与JSX语法相同，但使用了TypeScript的类型注解。它的目的是为了让开发者能够在React开发中使用TypeScript的类型检查功能，从而提高代码的健壮性和可维护性。</p>
+<p>说白了就是能让js或者ts能直接返回html代码的一种额外语法支持，现在像React和Vue等框架都在支持他</p>
+</blockquote></div><div><p>首先，安装  </p></div><div><pre class="language-cmd" tabindex="0"><code class="language-cmd is-loaded">npm install @vitejs/plugin-vue-jsx -D
+</code><button class="copy-code-button">复制</button></pre></div><div><p>配置 vite.config.ts</p></div><div><pre class="language-typescript" tabindex="0"><code class="language-typescript is-loaded"><span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-vue'</span>
+<span class="token keyword">import</span> vueJsx <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-vue-jsx'</span>
+
+<span class="token comment">// https://vitejs.dev/config/</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">vueJsx</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>编写一个 Hi.tsx 组件</p></div><div><pre class="language-tsx" tabindex="0"><code class="language-tsx is-loaded"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  props<span class="token operator">:</span> <span class="token punctuation">{</span>
+    msg<span class="token operator">:</span> <span class="token known-class-name class-name">String</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">setup</span><span class="token punctuation">(</span>props<span class="token operator">:</span> <span class="token punctuation">{</span> msg<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>props<span class="token punctuation">.</span><span class="token property-access">msg</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>然后被其它组件使用</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;script setup lang="ts"&gt;
+import Hi from '../components/Hi'
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;Hi msg="Hello,World"&gt;&lt;/Hi&gt;
+&lt;/template&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>用 jsx 实现图标组件</p></div><div><pre class="language-typescript" tabindex="0"><code class="language-typescript is-loaded"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Icons <span class="token keyword">from</span> <span class="token string">'@ant-design/icons-vue'</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Module</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>p<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token builtin">any</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">toCamelCase</span><span class="token punctuation">(</span>str<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// highlight-outlined</span>
+  <span class="token keyword">return</span> str
+    <span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">)</span> <span class="token comment">// ['highlight', 'outlined']</span>
+    <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> e<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> e<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// ['Highlight', 'Outlined']</span>
+    <span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// HighlightOutlined</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  props<span class="token operator">:</span> <span class="token punctuation">{</span>
+    icon<span class="token operator">:</span> String
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">setup</span><span class="token punctuation">(</span>props<span class="token operator">:</span> <span class="token punctuation">{</span>icon<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> im<span class="token operator">:</span> Module <span class="token operator">=</span> Icons
+    <span class="token keyword">const</span> tag <span class="token operator">=</span> im<span class="token punctuation">[</span><span class="token function">toCamelCase</span><span class="token punctuation">(</span>props<span class="token punctuation">.</span>icon<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment">// 图标组件</span>
+    <span class="token comment">// HighlightOutlined</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span> <span class="token operator">&lt;</span>tag<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>tag<span class="token operator">&gt;</span> <span class="token comment">// 返回组件标签</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div class="mod-footer"></div></div></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#表格（基本表格）" data-path="#表格（基本表格）"><div class="tree-item-inner heading-link" heading-name="表格（基本表格）">表格（基本表格）</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#分页（分页器）" data-path="#分页（分页器）"><div class="tree-item-inner heading-link" heading-name="分页（分页器）">分页（分页器）</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#搜索、删除（确认按钮）" data-path="#搜索、删除（确认按钮）"><div class="tree-item-inner heading-link" heading-name="搜索、删除（确认按钮）">搜索、删除（确认按钮）</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#新增、修改（可视弹窗）" data-path="#新增、修改（可视弹窗）"><div class="tree-item-inner heading-link" heading-name="新增、修改（可视弹窗）">新增、修改（可视弹窗）</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#全局消息（案例优化）" data-path="#全局消息（案例优化）"><div class="tree-item-inner heading-link" heading-name="全局消息（案例优化）">全局消息（案例优化）</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#表单校验（校验规则）" data-path="#表单校验（校验规则）"><div class="tree-item-inner heading-link" heading-name="表单校验（校验规则）">表单校验（校验规则）</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#布局a-layout" data-path="#布局a-layout"><div class="tree-item-inner heading-link" heading-name="布局a-layout">布局a-layout</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#主页布局" data-path="#主页布局"><div class="tree-item-inner heading-link" heading-name="主页布局">主页布局</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#侧边栏菜单" data-path="#侧边栏菜单"><div class="tree-item-inner heading-link" heading-name="侧边栏菜单">侧边栏菜单</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#菜单图标" data-path="#菜单图标"><div class="tree-item-inner heading-link" heading-name="菜单图标">菜单图标</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#基本使用" data-path="#基本使用"><div class="tree-item-inner heading-link" heading-name="基本使用">基本使用</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#二次封装图标组件" data-path="#二次封装图标组件"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="二次封装图标组件">二次封装图标组件</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#方法1，使用_vue_单文件组件" data-path="#方法1，使用_vue_单文件组件"><div class="tree-item-inner heading-link" heading-name="方法1，使用 vue 单文件组件">方法1，使用 vue 单文件组件</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#方法2，使用函数式组件" data-path="#方法2，使用函数式组件"><div class="tree-item-inner heading-link" heading-name="方法2，使用函数式组件">方法2，使用函数式组件</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3使用antdv笔记.html#方法3，使用_jsx_组件" data-path="#方法3，使用_jsx_组件"><div class="tree-item-inner heading-link" heading-name="方法3，使用 jsx 组件">方法3，使用 jsx 组件</div></a><div class="tree-item-children"></div></div></div></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

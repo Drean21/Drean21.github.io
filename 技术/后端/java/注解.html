@@ -1,0 +1,257 @@
+<!DOCTYPE html> <html><head>
+<title>注解</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - 注解">
+<meta property="og:title" content="注解">
+<meta property="og:description" content="尘影迹痕 - 注解">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/后端/java/注解.html">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/3ef6e6723f175c824d314dce8f55900e174f4788.png">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="什么是注解"><p>什么是注解</p></h1><div class="heading-wrapper"><div class="heading-children"><div><p>Java 注解（Annotation）又称 Java 标注，是 JDK5.0 引入的一种注释机制。<br>
+<mark>Java 语言中的类、构造器、方法、成员变量、参数等都可以被注解进行标注。</mark></p></div></div></div><div class="heading-wrapper"><h1 data-heading="注解的作用" class="heading" id="注解的作用">注解的作用</h1><div class="heading-children"><div><p>对Java中类、方法、成员变量做标记，然后进行特殊处理。<br>
+例如：JUnit框架中，标记了注解@Test的方法就可以被当成测试方法执行，而没有标记的就不能当成测试方法执行</p></div></div></div><div class="heading-wrapper"><h1 data-heading="我们可以自定义注解" class="heading" id="我们可以自定义注解">我们可以自定义注解</h1><div class="heading-children"><div><p>我们可以简单理解注解是一个打上的标签，所以我们可以自定义注解。自定义注解就是自己做一个注解来使用。<br>
+<strong>格式如下：</strong><br>
+<img src="https://i0.hdslb.com/bfs/album/3ef6e6723f175c824d314dce8f55900e174f4788.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+<strong>特殊属性：</strong></p></div><div><ul>
+<li data-line="0">value属性，如果只有一个value属性的情况下，使用value属性的时候可以省略value名称不写!!</li>
+<li data-line="1">但是如果有多个属性,  且多个属性没有默认值，那么value名称是不能省略的。</li>
+</ul></div><div><p><strong>参考示例：</strong><br>
+我们自定义了一个Book和MyBook注解如下</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">public</span> <span class="token annotation punctuation">@interface</span> <span class="token class-name">Book</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> <span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 特殊属性</span>
+    <span class="token keyword">double</span> <span class="token function">price</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+    <span class="token keyword">double</span> <span class="token function">price</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token number">9.9</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token annotation punctuation">@interface</span> <span class="token class-name">MyBook</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">authors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> <span class="token function">price</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在测试类中使用MyBook注解如下</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+   目标：学会自定义注解。掌握其定义格式和语法。
+ */</span>
+<span class="token annotation punctuation">@MyBook</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"《精通JavaSE》"</span><span class="token punctuation">,</span>authors <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"黑马"</span><span class="token punctuation">,</span> <span class="token string">"dlei"</span><span class="token punctuation">}</span> <span class="token punctuation">,</span> price <span class="token operator">=</span> <span class="token number">199.5</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Book</span><span class="token punctuation">(</span><span class="token string">"/delete"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Book</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/delete"</span><span class="token punctuation">,</span> price <span class="token operator">=</span> <span class="token number">23.5</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnnotationDemo1</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@MyBook</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"《精通JavaSE2》"</span><span class="token punctuation">,</span>authors <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"黑马"</span><span class="token punctuation">,</span> <span class="token string">"dlei"</span><span class="token punctuation">}</span> <span class="token punctuation">,</span> price <span class="token operator">=</span> <span class="token number">199.5</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">AnnotationDemo1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@MyBook</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"《精通JavaSE1》"</span><span class="token punctuation">,</span>authors <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"黑马"</span><span class="token punctuation">,</span> <span class="token string">"dlei"</span><span class="token punctuation">}</span> <span class="token punctuation">,</span> price <span class="token operator">=</span> <span class="token number">199.5</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@MyBook</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"《精通JavaSE2》"</span><span class="token punctuation">,</span>authors <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"黑马"</span><span class="token punctuation">,</span> <span class="token string">"dlei"</span><span class="token punctuation">}</span> <span class="token punctuation">,</span> price <span class="token operator">=</span> <span class="token number">199.5</span><span class="token punctuation">)</span>
+        <span class="token keyword">int</span> age <span class="token operator">=</span> <span class="token number">21</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>可以看到，类、构造器、方法、成员变量、参数等都可以被注解所注释，且<mark>注解必须要有实参，有默认值的可不写</mark></p></div></div></div><div class="heading-wrapper"><h1 data-heading="有一种注解叫元注解" class="heading" id="有一种注解叫元注解">有一种注解叫元注解</h1><div class="heading-children"><div><p>元注解：就是注解注解的注解。 <mark>即给注解标注的注解</mark><br>
+<mark>常用的元注解（两个）：</mark></p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><mark>@Target: 约束自定义注解只能在哪些地方使用，</mark>可使用的值定义在ElementType枚举类中常用值如下
+<ul>
+<li data-line="1">TYPE，类，接口</li>
+<li data-line="2">FIELD, 成员变量</li>
+<li data-line="3">METHOD, 成员方法</li>
+<li data-line="4">PARAMETER, 方法参数</li>
+<li data-line="5">CONSTRUCTOR, 构造器</li>
+<li data-line="6">LOCAL_VARIABLE, 局部变量</li>
+</ul>
+</li>
+<li data-line="7"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><mark>@Retention：申明注解的生命周期,</mark>可使用的值定义在RetentionPolicy枚举类中，常用值如下
+<ul>
+<li data-line="8">SOURCE： 注解只作用在源码阶段，生成的字节码文件中不存在</li>
+<li data-line="9">CLASS：  注解作用在源码阶段，字节码文件阶段，运行阶段不存在，默认值.</li>
+<li data-line="10"><mark>RUNTIME：注解作用在源码阶段，字节码文件阶段，运行阶段（开发常用）</mark>【希望注解能永久存在】</li>
+</ul>
+</li>
+</ul></div><div><p><strong>参考示例：</strong><br>
+首先我们对自定义的MyTest注解进行注解</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token annotation punctuation">@Target</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">ElementType</span><span class="token punctuation">.</span>METHOD<span class="token punctuation">,</span><span class="token class-name">ElementType</span><span class="token punctuation">.</span>FIELD<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// 元注解</span>
+<span class="token annotation punctuation">@Retention</span><span class="token punctuation">(</span><span class="token class-name">RetentionPolicy</span><span class="token punctuation">.</span>RUNTIME<span class="token punctuation">)</span> <span class="token comment">// 一直活着，在运行阶段这个注解也不消失</span>
+<span class="token keyword">public</span> <span class="token annotation punctuation">@interface</span> <span class="token class-name">MyTest</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在测试类中使用自定义的MyTest注解</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+   目标：认识元注解
+ */</span>
+<span class="token comment">//@MyTest // 只能注解方法和成员变量</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnnotationDemo2</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@MyTest</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@MyTest</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h1 data-heading="注解是如何解析的呢" class="heading" id="注解是如何解析的呢">注解是如何解析的呢</h1><div class="heading-children"><div><ol>
+<li data-line="0">
+<p>首先什么是注解的解析：注解的操作中经常需要进行解析，<mark>注解的解析就是判断是否存在注解，存在注解就解析出内容。</mark></p>
+</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>了解<mark>注解的接口和继承体系</mark>：</p>
+<ul>
+<li data-line="4">
+<p><mark>Annotation: 注解的顶级接口，注解都是Annotation类型的对象</mark></p>
+</li>
+<li data-line="6">
+<p><mark>AnnotatedElement:该接口定义了与注解解析相关的解析方法</mark></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Annotation[]  getDeclaredAnnotations()</code></td>
+<td>获得当前对象上使用的所有注解，返回注解数组。</td>
+</tr>
+<tr>
+<td><code>T getDeclaredAnnotation(Class&lt;T&gt;  annotationClass) </code></td>
+<td>根据注解类型获得对应注解对象</td>
+</tr>
+<tr>
+<td><code>boolean isAnnotationPresent(Class&lt;Annotation&gt;  annotationClass)</code></td>
+<td>判断当前对象是否使用了指定的注解，如果使用了则返回true，否则false</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li data-line="14">
+<p><mark>所有的类成分Class, Method , Field , Constructor，都实现了AnnotatedElement接口他们都拥有解析注解的能力</mark></p>
+</li>
+</ul>
+</li>
+<li data-line="16"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><mark>解析注解的技巧</mark></p>
+<ul>
+<li data-line="17">注解在哪个成分上，我们就先拿哪个成分对象。</li>
+<li data-line="18">比如注解作用成员方法，则要获得该成员方法对应的Method对象，再来拿上面的注解</li>
+<li data-line="19">比如注解作用在类上，则要该类的Class对象，再来拿上面的注解</li>
+<li data-line="20">比如注解作用在成员变量上，则要获得该成员变量对应的Field对象，再来拿上面的注解</li>
+</ul>
+</li>
+</ol></div><div><p><strong>参考示例：</strong></p></div><div><ol>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>定义注解Book，要求如下：
+<ul>
+<li data-line="1">包含属性：String value()  书名</li>
+<li data-line="2">包含属性：double price() 价格，默认值为 100</li>
+<li data-line="3">包含属性：String[] authors() 多位作者</li>
+<li data-line="4">限制注解使用的位置：类和成员方法上</li>
+<li data-line="5">指定注解的有效范围：RUNTIME</li>
+</ul>
+</li>
+</ol></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token annotation punctuation">@Target</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">ElementType</span><span class="token punctuation">.</span>TYPE<span class="token punctuation">,</span><span class="token class-name">ElementType</span><span class="token punctuation">.</span>METHOD<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Retention</span><span class="token punctuation">(</span><span class="token class-name">RetentionPolicy</span><span class="token punctuation">.</span>RUNTIME<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token annotation punctuation">@interface</span> <span class="token class-name">Bookk</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> <span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> <span class="token function">price</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token number">100</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">author</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><ol start="2">
+<li data-line="0">定义BookStore类，在类和成员方法上使用Book注解</li>
+</ol></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token annotation punctuation">@Bookk</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"《情深深雨濛濛》"</span><span class="token punctuation">,</span> price <span class="token operator">=</span> <span class="token number">99.9</span><span class="token punctuation">,</span> author <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"琼瑶"</span><span class="token punctuation">,</span> <span class="token string">"dlei"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">BookStore</span><span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Bookk</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"《三少爷的剑》"</span><span class="token punctuation">,</span> price <span class="token operator">=</span> <span class="token number">399.9</span><span class="token punctuation">,</span> author <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"古龙"</span><span class="token punctuation">,</span> <span class="token string">"熊耀华"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><ol start="4">
+<li data-line="0">定义AnnotationDemo01测试类获取Book注解上的数据</li>
+</ol></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**
+   目标：完成注解的解析
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnnotationDemo3</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">parseClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">// a.先得到类对象</span>
+        <span class="token class-name">Class</span> c <span class="token operator">=</span> <span class="token class-name">BookStore</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">;</span>
+        <span class="token comment">// b.判断这个类上面是否存在这个注解</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">isAnnotationPresent</span><span class="token punctuation">(</span><span class="token class-name">Bookk</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//c.直接获取该注解对象</span>
+            <span class="token class-name">Bookk</span> book <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Bookk</span><span class="token punctuation">)</span> c<span class="token punctuation">.</span><span class="token function">getDeclaredAnnotation</span><span class="token punctuation">(</span><span class="token class-name">Bookk</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>book<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>book<span class="token punctuation">.</span><span class="token function">price</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>book<span class="token punctuation">.</span><span class="token function">author</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">parseMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">NoSuchMethodException</span> <span class="token punctuation">{</span>
+        <span class="token comment">// a.先得到类对象</span>
+        <span class="token class-name">Class</span> c <span class="token operator">=</span> <span class="token class-name">BookStore</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">Method</span> m <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">getDeclaredMethod</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// b.判断这个类上面是否存在这个注解</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">isAnnotationPresent</span><span class="token punctuation">(</span><span class="token class-name">Bookk</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//c.直接获取该注解对象</span>
+            <span class="token class-name">Bookk</span> book <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Bookk</span><span class="token punctuation">)</span> m<span class="token punctuation">.</span><span class="token function">getDeclaredAnnotation</span><span class="token punctuation">(</span><span class="token class-name">Bookk</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>book<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>book<span class="token punctuation">.</span><span class="token function">price</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>book<span class="token punctuation">.</span><span class="token function">author</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h1 data-heading="再来看一下注解的应用场景" class="heading" id="再来看一下注解的应用场景">再来看一下注解的应用场景</h1><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="模拟Junit测试框架" class="heading" id="模拟Junit测试框架"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>模拟Junit测试框架</h2><div class="heading-children"><div><p>定义若干个方法，只要加了MyTest注解，就可以在启动时被触发执行</p></div><div><ol>
+<li data-line="0">
+<p>定义一个自定义注解MyTest，只能注解方法，存活范围是一直都在。</p>
+</li>
+<li data-line="2">
+<p>定义若干个方法，只要有@MyTest注解的方法就能在启动时被触发执行，没有这个注解的方法不能执行</p>
+</li>
+</ol></div><div><p>因为Junnit框架是集成到IDEA中的有相应的右键菜单，当然我们可以制作插件来达成，但现在我们用main方法来模拟</p></div><div><p><strong>MyTest注解：</strong></p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token annotation punctuation">@Target</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">ElementType</span><span class="token punctuation">.</span>METHOD<span class="token punctuation">,</span><span class="token class-name">ElementType</span><span class="token punctuation">.</span>FIELD<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// 元注解</span>
+<span class="token annotation punctuation">@Retention</span><span class="token punctuation">(</span><span class="token class-name">RetentionPolicy</span><span class="token punctuation">.</span>RUNTIME<span class="token punctuation">)</span> <span class="token comment">// 一直活着，在运行阶段这个注解也不消失</span>
+<span class="token keyword">public</span> <span class="token annotation punctuation">@interface</span> <span class="token class-name">MyTest</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p><strong>使用MyTest注解和main方法实现框架效果：</strong></p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnnotationDemo4</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"===test1==="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@MyTest</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"===test2==="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@MyTest</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"===test3==="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token doc-comment comment">/**
+      启动菜单：有注解的才被调用。
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token class-name">AnnotationDemo4</span> t <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AnnotationDemo4</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// a.获取类对象</span>
+        <span class="token class-name">Class</span> c <span class="token operator">=</span> <span class="token class-name">AnnotationDemo4</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">;</span>
+        <span class="token comment">// b.提取全部方法</span>
+        <span class="token class-name">Method</span><span class="token punctuation">[</span><span class="token punctuation">]</span> methods <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">getDeclaredMethods</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// c.遍历方法，看是否有MyTest注解，有就跑它</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Method</span> method <span class="token operator">:</span> methods<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>method<span class="token punctuation">.</span><span class="token function">isAnnotationPresent</span><span class="token punctuation">(</span><span class="token class-name">MyTest</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token comment">// 跑它</span>
+                method<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div class="mod-footer"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/注解.html#什么是注解" data-path="#什么是注解"><div class="tree-item-inner heading-link" heading-name="什么是注解">什么是注解</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/注解.html#注解的作用" data-path="#注解的作用"><div class="tree-item-inner heading-link" heading-name="注解的作用">注解的作用</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/注解.html#我们可以自定义注解" data-path="#我们可以自定义注解"><div class="tree-item-inner heading-link" heading-name="我们可以自定义注解">我们可以自定义注解</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/注解.html#有一种注解叫元注解" data-path="#有一种注解叫元注解"><div class="tree-item-inner heading-link" heading-name="有一种注解叫元注解">有一种注解叫元注解</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/注解.html#注解是如何解析的呢" data-path="#注解是如何解析的呢"><div class="tree-item-inner heading-link" heading-name="注解是如何解析的呢">注解是如何解析的呢</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/注解.html#再来看一下注解的应用场景" data-path="#再来看一下注解的应用场景"><div class="tree-item-inner heading-link" heading-name="再来看一下注解的应用场景">再来看一下注解的应用场景</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/注解.html#模拟Junit测试框架" data-path="#模拟Junit测试框架"><div class="tree-item-inner heading-link" heading-name="模拟Junit测试框架">模拟Junit测试框架</div></a><div class="tree-item-children"></div></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

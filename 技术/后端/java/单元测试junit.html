@@ -1,0 +1,156 @@
+<!DOCTYPE html> <html><head>
+<title>单元测试Junit</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - 单元测试Junit">
+<meta property="og:title" content="单元测试Junit">
+<meta property="og:description" content="尘影迹痕 - 单元测试Junit">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/后端/java/单元测试junit.html">
+<meta property="og:image" content="undefined">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="什么是单元测试"><p>什么是单元测试</p></h1><div class="heading-wrapper"><div class="heading-children"><div><p>单元测试就是针对最小的功能单元编写测试代码，Java程序最小的功能单元是方法，因此，单元测试就是针对Java方法的测试，进而检查方法的正确性。<mark>即Junit单元测试是用来测试类中方法的正确性的。</mark></p></div></div></div><div class="heading-wrapper"><h1 data-heading="为什么需要单元测试" class="heading" id="为什么需要单元测试">为什么需要单元测试</h1><div class="heading-children"><div><p><mark>在没有单元测试之前</mark>我们是使用main方法进行测试的，但是只有一个main方法，如果一个方法的测试失败了，其他方法测试会受到影响。无法得到测试的结果报告，需要程序员自己去观察测试是否成功。无法实现自动化测试。<br>
+<mark>所以后来有公司发明Junit单元测试</mark>，对应的优点：</p></div><div><ul>
+<li data-line="0">JUnit可以灵活的选择执行哪些测试方法，可以一键执行全部测试方法。</li>
+<li data-line="1">Junit可以生成全部方法的测试报告。如果测试良好则是绿色；如果测试失败，则是红色【断言失败为黄色】</li>
+<li data-line="2">单元测试中的某个方法测试失败了，不会影响其他测试方法的测试。</li>
+</ul></div></div></div><div class="heading-wrapper"><h1 data-heading="怎么进行单元测试" class="heading" id="怎么进行单元测试">怎么进行单元测试</h1><div class="heading-children"><div><p><strong>应该达到的要求：</strong></p></div><div><ul>
+<li data-line="0">必须导入Junit框架的jar包。【IDEA集成，初次使用联网自动选择版本导入/也可手动下载加入jar包，4.0版本相对5.0版本会更稳定】</li>
+<li data-line="1"><mark>定义的测试方法必须是无参数无返回值，且公开的方法。</mark><strong>【方便框架的实现】</strong></li>
+<li data-line="2">测试方法使用@Test注解标记。<br>
+<strong>JUnit测试某个方法，测试全部方法怎么处理？成功的标志是什么：</strong></li>
+<li data-line="4">测试某个方法直接右键该方法启动测试。</li>
+<li data-line="5">测试全部方法，可以选择类或者模块启动。</li>
+<li data-line="6">红色失败，绿色通过。</li>
+</ul></div></div></div><div class="heading-wrapper"><h1 data-heading="断言与示例" class="heading" id="断言与示例">断言与示例</h1><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="什么是断言" class="heading" id="什么是断言"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>什么是断言</h2><div class="heading-children"><div><p><mark>进行预期结果的正确性测试：</mark>Junit中Assert类即实现断言功能，根据实际情况会有很多种断言方法。<br>
+例如下面例子中的Assert.assertEquals方法中的参数("结果错误打印的message", "方法正确预期得到的结果", 方法执行得到的实际结果 )</p></div></div></div><div class="heading-wrapper"><h2 data-heading="Junit示例" class="heading" id="Junit示例"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Junit示例</h2><div class="heading-children"><div><ol>
+<li data-line="0">首先我们要有一个业务方法<code>UserService</code>，我们才能为其编写测试类<code>UserService</code>进行方法测试</li>
+</ol></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**  
+ 业务方法  
+ */</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">loginName</span><span class="token punctuation">(</span><span class="token class-name">String</span> loginName <span class="token punctuation">,</span> <span class="token class-name">String</span> passWord<span class="token punctuation">)</span><span class="token punctuation">{</span>  
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>loginName<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token string">"123456"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>passWord<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+            <span class="token keyword">return</span> <span class="token string">"登录成功"</span><span class="token punctuation">;</span>  
+ <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>  
+            <span class="token keyword">return</span> <span class="token string">"用户名或者密码有问题"</span><span class="token punctuation">;</span>  
+ <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span>  
+  
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">selectNames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+ <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"查询全部用户名称成功~~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+ <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><ol start="2">
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>在<code>TestUserService</code>类中我们分别编写不同的<mark>公开、无参、无返回值的测试方法</mark>
+<ol>
+<li data-line="1">测试用户名输入是否正确，因为有返回值，所以需要用到断言自动化判断结果【 Assert.assertEquals("结果错误打印的message", "方法正确预期得到的结果", 方法执行得到的实际结果 ); 】</li>
+<li data-line="2">selectNames筛选用户名功能没有返回值，直接调用测试</li>
+<li data-line="3"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>注意：
+<ul>
+<li data-line="4">在测试方法中先要做的是实例化对象，在调用方法</li>
+<li data-line="5">红色：功能的函数逻辑发生错误【无法正常运行】</li>
+<li data-line="6">黄色：功能的函数逻辑正确，但参数错误【可以运行只是结果不对】</li>
+<li data-line="7">绿色：功能的函数逻辑和参数均正确</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token doc-comment comment">/**  
+ 测试类  
+ */</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestUserService</span> <span class="token punctuation">{</span>  
+    <span class="token doc-comment comment">/**  
+ 测试方法  
+ 注意点： 1、必须是公开的，无参数 无返回值的方法  
+ 2、测试方法必须使用@Test注解标记。  
+ */</span>  
+ <span class="token annotation punctuation">@Test</span>  
+ <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testLoginName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+        <span class="token class-name">UserService</span> userService <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UserService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+ <span class="token class-name">String</span> rs <span class="token operator">=</span> userService<span class="token punctuation">.</span><span class="token function">loginName</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">,</span><span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+  
+ <span class="token comment">// 进行预期结果的正确性测试：断言。  </span>
+ <span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">"您的登录业务可能出现问题"</span><span class="token punctuation">,</span> <span class="token string">"登录成功"</span><span class="token punctuation">,</span> rs <span class="token punctuation">)</span><span class="token punctuation">;</span>  
+ <span class="token punctuation">}</span>  
+  
+    <span class="token annotation punctuation">@Test</span>  
+ <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectNames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+        <span class="token class-name">UserService</span> userService <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UserService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+ userService<span class="token punctuation">.</span><span class="token function">selectNames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+ <span class="token punctuation">}</span>  
+  
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="常用注解" class="heading" id="常用注解">常用注解</h1><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="Junit常用注解(Junit 4.xxxx版本)" class="heading" id="Junit常用注解(Junit_4.xxxx版本)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Junit常用注解(Junit 4.xxxx版本)</h2><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>注解</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Test</td>
+<td>测试方法</td>
+</tr>
+<tr>
+<td>@Before</td>
+<td>用来修饰实例方法，该方法会在每一个测试方法执行之前执行一次。</td>
+</tr>
+<tr>
+<td>@After</td>
+<td>用来修饰实例方法，该方法会在每一个测试方法执行之后执行一次。</td>
+</tr>
+<tr>
+<td>@BeforeClass</td>
+<td>用来静态修饰方法，该方法会在所有测试方法之前只执行一次。</td>
+</tr>
+<tr>
+<td>@AfterClass</td>
+<td>用来静态修饰方法，该方法会在所有测试方法之后只执行一次。</td>
+</tr>
+</tbody>
+</table></div></div></div><div class="heading-wrapper"><h2 data-heading="Junit常用注解(Junit 5.xxxx版本)" class="heading" id="Junit常用注解(Junit_5.xxxx版本)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Junit常用注解(Junit 5.xxxx版本)</h2><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>注解</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Test</td>
+<td>测试方法</td>
+</tr>
+<tr>
+<td>@BeforeEach</td>
+<td>用来修饰实例方法，该方法会在每一个测试方法执行之前执行一次。</td>
+</tr>
+<tr>
+<td>@AfterEach</td>
+<td>用来修饰实例方法，该方法会在每一个测试方法执行之后执行一次。</td>
+</tr>
+<tr>
+<td>@BeforeAll</td>
+<td>用来静态修饰方法，该方法会在所有测试方法之前只执行一次。</td>
+</tr>
+<tr>
+<td>@AfterAll</td>
+<td>用来静态修饰方法，该方法会在所有测试方法之后只执行一次。</td>
+</tr>
+</tbody>
+</table></div></div></div><div class="heading-wrapper"><h2 data-heading="Junit4和junit5的注解区别在哪里" class="heading" id="Junit4和junit5的注解区别在哪里"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Junit4和junit5的注解区别在哪里</h2><div class="heading-children"><div><p>Junit5的注解只是在Jnunit4的基础上改成了更直观的名字而已</p></div></div></div><div class="heading-wrapper"><h2 data-heading="这些注解有啥用，为啥需要注解" class="heading" id="这些注解有啥用，为啥需要注解"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>这些注解有啥用，为啥需要注解</h2><div class="heading-children"><div><ul>
+<li data-line="0">开始执行的方法：初始化资源。</li>
+<li data-line="1">执行完之后的方法：释放资源。</li>
+</ul></div><div><p>比如IO流需要加载类，我们就需要：</p></div><div><ul>
+<li data-line="0">在所有测试方法之前加载流【使用@BeforeClass】</li>
+<li data-line="1">在所有测试方法之后关闭流【使用@AfterClass】</li>
+</ul></div><div class="mod-footer"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/单元测试junit.html#什么是单元测试" data-path="#什么是单元测试"><div class="tree-item-inner heading-link" heading-name="什么是单元测试">什么是单元测试</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/单元测试junit.html#为什么需要单元测试" data-path="#为什么需要单元测试"><div class="tree-item-inner heading-link" heading-name="为什么需要单元测试">为什么需要单元测试</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/单元测试junit.html#怎么进行单元测试" data-path="#怎么进行单元测试"><div class="tree-item-inner heading-link" heading-name="怎么进行单元测试">怎么进行单元测试</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/单元测试junit.html#断言与示例" data-path="#断言与示例"><div class="tree-item-inner heading-link" heading-name="断言与示例">断言与示例</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/单元测试junit.html#什么是断言" data-path="#什么是断言"><div class="tree-item-inner heading-link" heading-name="什么是断言">什么是断言</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/单元测试junit.html#Junit示例" data-path="#Junit示例"><div class="tree-item-inner heading-link" heading-name="Junit示例">Junit示例</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/单元测试junit.html#常用注解" data-path="#常用注解"><div class="tree-item-inner heading-link" heading-name="常用注解">常用注解</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/单元测试junit.html#Junit常用注解(Junit_4.xxxx版本)" data-path="#Junit常用注解(Junit_4.xxxx版本)"><div class="tree-item-inner heading-link" heading-name="Junit常用注解(Junit 4.xxxx版本)">Junit常用注解(Junit 4.xxxx版本)</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/单元测试junit.html#Junit常用注解(Junit_5.xxxx版本)" data-path="#Junit常用注解(Junit_5.xxxx版本)"><div class="tree-item-inner heading-link" heading-name="Junit常用注解(Junit 5.xxxx版本)">Junit常用注解(Junit 5.xxxx版本)</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/单元测试junit.html#Junit4和junit5的注解区别在哪里" data-path="#Junit4和junit5的注解区别在哪里"><div class="tree-item-inner heading-link" heading-name="Junit4和junit5的注解区别在哪里">Junit4和junit5的注解区别在哪里</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/单元测试junit.html#这些注解有啥用，为啥需要注解" data-path="#这些注解有啥用，为啥需要注解"><div class="tree-item-inner heading-link" heading-name="这些注解有啥用，为啥需要注解">这些注解有啥用，为啥需要注解</div></a><div class="tree-item-children"></div></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

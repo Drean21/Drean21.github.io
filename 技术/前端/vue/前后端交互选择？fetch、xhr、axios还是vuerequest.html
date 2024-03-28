@@ -1,0 +1,364 @@
+<!DOCTYPE html> <html><head>
+<title>前后端交互选择？Fetch、xhr、Axios还是vueRequest</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - 前后端交互选择？Fetch、xhr、Axios还是vueRequest">
+<meta property="og:title" content="前后端交互选择？Fetch、xhr、Axios还是vueRequest">
+<meta property="og:description" content="尘影迹痕 - 前后端交互选择？Fetch、xhr、Axios还是vueRequest">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/前端/vue/前后端交互选择？fetch、xhr、axios还是vuerequest.html">
+<meta property="og:image" content="undefined">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="导读"><p>导读</p></h1><div class="heading-wrapper"><div class="heading-children"><div><p>先捋一捋前后端交互请求的API方式都有哪些吧！</p></div><div><p>首先明确我们现在学习和使用的是Vue3.js，那么选用VueRequest库自然是比较不错的选择，当然了Fetch和Axios还是会在合适的地方使用的，即便是繁杂的原始xhr也会在某些高级功能的时候需要我们使用</p></div><div><p>大体如下：</p></div><div><ul>
+<li data-line="0">
+<p><mark>Fetch</mark><br>
+Fetch是浏览器提供的用于进行网络请求的API，使用起来相对简单。它返回一个Promise对象，支持请求和响应的headers、body、response type等属性的设置。<br>
+Fetch的优点在于它是浏览器自带的API，不需要安装额外的库或插件，而且可以轻松地发送和接收JSON数据。</p>
+</li>
+<li data-line="4">
+<p><mark>XMLHttpRequest (XHR)</mark><br>
+XMLHttpRequest (XHR)是一个早期的用于进行异步HTTP请求的API。它可以从服务器获取数据，也可以将数据发送到服务器。XHR的优点在于它的支持性较好，可以在所有主流的浏览器中使用。<br>
+XHR的缺点在于，它的API较为繁琐，需要手动设置请求头、发送数据等。而且在处理复杂的请求时，代码会变得复杂且难以维护。</p>
+</li>
+<li data-line="8">
+<p><mark>Axios</mark><br>
+Axios是一个流行的用于进行HTTP请求的JavaScript库。它可以在浏览器和Node.js中使用，支持Promise API、请求和响应拦截器、数据转换、自动CSRF等功能。Axios还提供了一些方便的API，例如axios.get、axios.post等。<br>
+Axios的优点在于它的API简单易用，而且提供了许多有用的功能，例如请求拦截器和响应拦截器，可以方便地在请求或响应被发送或接收时进行一些处理。此外，Axios还支持取消请求，可以在请求已经被发送但是服务器还未响应时取消该请求。</p>
+</li>
+<li data-line="12">
+<p><mark>vue-request</mark><br>
+vue-request是一个基于Vue.js的第三方组件库，提供了一些常用的HTTP请求和响应处理功能。它封装了XMLHttpRequest和fetch，支持自定义的拦截器和自动重试。<br>
+vue-request的优点在于它是基于Vue.js的，可以方便地集成到Vue.js项目中。此外，vue-request提供了一些额外的功能，例如自动重试和拦截器，可以提高代码的可重用性和可维护性。</p>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h1 data-heading="xhr" class="heading" id="xhr">xhr</h1><div class="heading-children"><div><p>浏览器中有两套 API 可以和后端交互，发送请求、接收响应，fetch api 前面我们已经介绍过了，另一套 api 是 xhr，基本用法如下</p></div><div><pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token keyword">const</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+xhr<span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span><span class="token property-access">response</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+xhr<span class="token punctuation">.</span><span class="token method function property-access">open</span><span class="token punctuation">(</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'http://localhost:8080/api/students'</span><span class="token punctuation">)</span>
+xhr<span class="token punctuation">.</span><span class="token property-access">responseType</span> <span class="token operator">=</span> <span class="token string">"json"</span>
+xhr<span class="token punctuation">.</span><span class="token method function property-access">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>但这套 api 虽然功能强大，但比较老，不直接支持 Promise，因此有必要对其进行改造</p></div><div><pre class="language-typescript" tabindex="0"><code class="language-typescript is-loaded"><span class="token keyword">function</span> <span class="token function">get</span><span class="token punctuation">(</span>url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Promise</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    xhr<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>response<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">404</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">reject</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>response<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token comment">// 其它情况也需考虑，这里简化处理</span>
+    <span class="token punctuation">}</span>
+    xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'GET'</span><span class="token punctuation">,</span> url<span class="token punctuation">)</span>
+    xhr<span class="token punctuation">.</span>responseType <span class="token operator">=</span> <span class="token string">'json'</span>
+    xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><ul>
+<li data-line="0">Promise 对象适合用来封装异步操作，并可以配合 await 一齐使用</li>
+<li data-line="1"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Promise 在构造时，需要一个箭头函数，箭头函数有两个参数 resolve 和 reject
+<ul>
+<li data-line="2">resolve 是异步操作成功时被调用，把成功的结果传递给它，最后会作为 await 的结果返回</li>
+<li data-line="3">reject 在异步操作失败时被调用，把失败的结果传递给它，最后在 catch 块被捉住</li>
+</ul>
+</li>
+<li data-line="4">await 会一直等到 Promise 内调用了 resolve 或 reject 才会继续向下运行</li>
+</ul></div><div><p>调用示例1：同步接收结果，不走代理</p></div><div><pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token keyword control-flow">try</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> resp <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"http://localhost:8080/api/students"</span><span class="token punctuation">)</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>resp<span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword control-flow">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>调用示例2：走代理</p></div><div><pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token keyword control-flow">try</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> resp <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/api/students'</span><span class="token punctuation">)</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>resp<span class="token punctuation">)</span>  
+<span class="token punctuation">}</span> <span class="token keyword control-flow">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>走代理明显慢不少</p></div></div></div><div class="heading-wrapper"><h1 data-heading="axios" class="heading" id="axios">axios</h1><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="基本用法" class="heading" id="基本用法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>基本用法</h2><div class="heading-children"><div><p>axios 就是对 xhr api 的封装，手法与前面例子类似</p></div><div><p>安装</p></div><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token function">npm</span> <span class="token function">install</span> axios
+</code><button class="copy-code-button">复制</button></pre></div><div><p>一个简单的例子</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;script setup lang="ts"&gt;
+import { ref, onMounted } from "vue";
+import axios from "axios";
+
+let count = ref(0);
+
+async function getStudents() {
+  try {
+    const resp = await axios.get("/api/students");
+    count.value = resp.data.data.length;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+onMounted(() =&gt; {
+  getStudents()
+})
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;h2&gt;学生人数为：{{ count }}&lt;/h2&gt;
+&lt;/template&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><ul>
+<li data-line="0">onMounted 指 vue 组件生成的 html 代码片段，挂载完毕后被执行</li>
+</ul></div><div><p>再来看一个 post 例子</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;script setup lang="ts"&gt;
+import { ref } from "vue";
+import axios from "axios";
+
+const student = ref({
+  name: '',
+  sex: '男',
+  age: 18
+})
+
+async function addStudent() {
+  console.log(student.value)
+  const resp = await axios.post('/api/students', student.value)
+  console.log(resp.data.data)
+}
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;div&gt;
+      &lt;input type="text" placeholder="请输入姓名" v-model="student.name"/&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for=""&gt;请选择性别&lt;/label&gt;
+      男 &lt;input type="radio" value="男" v-model="student.sex"/&gt; 
+      女 &lt;input type="radio" value="女" v-model="student.sex"/&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;input type="number" placeholder="请输入年龄" v-model="student.age"/&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;input type="button" value="添加" @click="addStudent"/&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;style scoped&gt;
+div {
+  font-size: 14px;
+}
+&lt;/style&gt;
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h2 data-heading="环境变量" class="heading" id="环境变量"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>环境变量</h2><div class="heading-children"><div><ul>
+<li data-line="0">开发环境下，联调的后端服务器地址是 <code>http://localhost:8080</code>，</li>
+<li data-line="1">上线改为生产环境后，后端服务器地址为 <code>http://itheima.com</code></li>
+</ul></div><div><p>这就要求我们区分开发环境和生产环境，这件事交给构建工具 vite 来做<br>
+默认情况下，vite 支持上面两种环境，分别对应根目录下两个配置文件 </p></div><div><ul>
+<li data-line="0">.env.development - 开发环境</li>
+<li data-line="1">.env.production - 生产环境</li>
+</ul></div><div><p>针对以上需求，分别在两个文件中加入</p></div><div><pre class="language-properties" tabindex="0"><code class="language-properties is-loaded"><span class="token key attr-name">VITE_BACKEND_API_BASE_URL</span> <span class="token punctuation">=</span> <span class="token value attr-value">'http://localhost:8080'</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>和</p></div><div><pre class="language-properties" tabindex="0"><code class="language-properties is-loaded"><span class="token key attr-name">VITE_BACKEND_API_BASE_URL</span> <span class="token punctuation">=</span> <span class="token value attr-value">'http://itheima.com'</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>然后在代码中使用 vite 给我们提供的特殊对象 <code>import.meta.env</code>，就可以获取到 <code>VITE_BACKEND_API_BASE_URL</code> 在不同环境下的值</p></div><div><pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token keyword module">import</span><span class="token punctuation">.</span><span class="token property-access">meta</span><span class="token punctuation">.</span><span class="token property-access">env</span><span class="token punctuation">.</span><span class="token constant">VITE_BACKEND_API_BASE_URL</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>默认情况下，不能智能提示自定义的环境变量，做如下配置：新增文件 <code>src/env.d.ts</code> 并添加如下内容</p></div><div><pre class="language-typescript" tabindex="0"><code class="language-typescript is-loaded"><span class="token comment">/// &lt;reference types="vite/client" /&gt;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">ImportMetaEnv</span> <span class="token punctuation">{</span>
+  <span class="token keyword">readonly</span> <span class="token constant">VITE_BACKEND_API_BASE_URL</span><span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token comment">// 更多环境变量...</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">ImportMeta</span> <span class="token punctuation">{</span>
+  <span class="token keyword">readonly</span> env<span class="token operator">:</span> ImportMetaEnv
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><ul>
+<li data-line="0">参考文档地址 <a data-tooltip-position="top" aria-label="https://cn.vitejs.dev/guide/env-and-mode.html" rel="noopener" class="external-link is-unresolved" href="https://cn.vitejs.dev/guide/env-and-mode.html" target="_self">环境变量和模式 | Vite 官方中文文档 (vitejs.dev)</a></li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="baseURL" class="heading" id="baseURL"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>baseURL</h2><div class="heading-children"><div><p>可以自己创建一个 axios 对象，方便添加默认设置，新建文件 /src/api/request.ts</p></div><div><pre class="language-typescript" tabindex="0"><code class="language-typescript is-loaded"><span class="token comment">// 创建新的 axios 对象</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
+<span class="token keyword">const</span> _axios <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  baseURL<span class="token operator">:</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">VITE_BACKEND_API_BASE_URL</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> _axios
+</code><button class="copy-code-button">复制</button></pre></div><div><p>然后在其它组件中引用这个 ts 文件，例如 /src/views/E8.vue，就不用自己拼接路径前缀了</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;script setup lang="ts"&gt;
+import axios from '../api/request'
+// ...
+await axios.post('/api/students', ...)    
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h2 data-heading="拦截器" class="heading" id="拦截器"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>拦截器</h2><div class="heading-children"><div><pre class="language-typescript" tabindex="0"><code class="language-typescript is-loaded"><span class="token comment">// 创建新的 axios 对象</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
+<span class="token keyword">const</span> _axios <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  baseURL<span class="token operator">:</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">VITE_BACKEND_API_BASE_URL</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 请求拦截器</span>
+_axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span> <span class="token comment">// 统一添加请求头</span>
+    config<span class="token punctuation">.</span>headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+      Authorization<span class="token operator">:</span> <span class="token string">'aaa.bbb.ccc'</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> config
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span> <span class="token comment">// 请求出错时的处理</span>
+    <span class="token keyword">return</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">// 响应拦截器</span>
+_axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span> <span class="token comment">// 状态码  2xx</span>
+    <span class="token comment">// 这里的code是自定义的错误码</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> response
+    <span class="token punctuation">}</span>     
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token number">401</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>       
+      <span class="token comment">// 情况1</span>
+      <span class="token keyword">return</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// ... </span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span> <span class="token comment">// 状态码 &gt; 2xx, 400,401,403,404,500</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token comment">// 处理了异常</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">400</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 情况1</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">401</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 情况2</span>
+    <span class="token punctuation">}</span> 
+    <span class="token comment">// ...</span>
+    <span class="token keyword">return</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> _axios
+</code><button class="copy-code-button">复制</button></pre></div><div><p>处理响应时，又分成两种情况</p></div><div><ol>
+<li data-line="0">后端返回的是标准响应状态码，这时会走响应拦截器第二个箭头函数，用 error.response.status 做分支判断</li>
+<li data-line="1">后端返回的响应状态码总是200，用自定义错误码表示出错，这时会走响应拦截器第一个箭头函数，用 response.data.code 做分支判断</li>
+</ol></div><div><p>另外</p></div><div><ul>
+<li data-line="0">Promise.reject(error) 类似于将异常继续向上抛出，异常由调用者（Vue组件）来配合 try ... catch 来处理</li>
+<li data-line="1">Promise.resolve({}) 表示错误已解决，返回一个空对象，调用者中接到这个空对象时，需要配合 ?. 来避免访问不存在的属性</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="vue-request请求库" class="heading" id="vue-request请求库">vue-request请求库</h1><div class="heading-children"><div><p>响应式的 axios 封装，官网地址 <a data-tooltip-position="top" aria-label="https://next.cn.attojs.org/" rel="noopener" class="external-link is-unresolved" href="https://next.cn.attojs.org/" target="_self">一个 Vue 请求库 | VueRequest (attojs.org)</a></p></div><div><p>首先安装 vue-request</p></div><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token function">npm</span> <span class="token function">install</span> vue-request@next
+</code><button class="copy-code-button">复制</button></pre></div><div class="heading-wrapper"><h2 data-heading="useRequest" class="heading" id="useRequest"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>useRequest</h2><div class="heading-children"><div><p>组件</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;h3 v-if="students.length === 0"&gt;暂无数据&lt;/h3&gt;
+  &lt;ul v-else&gt;
+    &lt;li v-for="s of students" :key="s.id"&gt;
+      &lt;span&gt;{{s.name}}&lt;/span&gt;
+      &lt;span&gt;{{s.sex}}&lt;/span&gt;
+      &lt;span&gt;{{s.age}}&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/template&gt;
+&lt;script setup lang="ts"&gt;
+import axios from "../api/request"
+import { useRequest } from 'vue-request'
+import { computed } from 'vue'
+import { AxiosRespList, Student } from '../model/Model8080'
+
+// data 代表就是 axios 的响应对象
+const { data } = useRequest&lt;AxiosRespList&lt;Student&gt;&gt;(() =&gt; axios.get('/api/students'))
+
+const students = computed(()=&gt;{
+  return data?.value?.data.data || []
+})
+&lt;/script&gt;
+&lt;style scoped&gt;
+ul li {
+  list-style: none;
+  font-family: "华文行楷";
+}
+
+li span:nth-child(1) {
+  font-size: 24px;
+}
+li span:nth-child(2) {
+  font-size: 12px;
+  color: crimson;
+  vertical-align: bottom;
+}
+li span:nth-child(3) {
+  font-size: 12px;
+  color: darkblue;
+  vertical-align: top;
+}
+&lt;/style&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>data.value 的取值一开始是 undefined，随着响应返回变成 axios 的响应对象<br>
+用 computed 进行适配</p></div></div></div><div class="heading-wrapper"><h2 data-heading="usePagination" class="heading" id="usePagination"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>usePagination</h2><div class="heading-children"><div><p>在 src/model/Model8080.ts 中补充类型说明</p></div><div><pre class="language-typescript" tabindex="0"><code class="language-typescript is-loaded"><span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">StudentQueryDto</span> <span class="token punctuation">{</span>
+  name<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+  sex<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+  age<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token comment">// 18,20</span>
+  page<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span>
+  size<span class="token operator">:</span> <span class="token builtin">number</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>js 中类似于 18,20 这样以逗号分隔字符串，会在 get 传参时转换为 java 中的整数数组</p></div><div><p>编写组件</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;input type="text" placeholder="请输入姓名" v-model="dto.name"&gt;
+  &lt;select v-model="dto.sex"&gt;
+    &lt;option value="" selected&gt;请选择性别&lt;/option&gt;
+    &lt;option value="男"&gt;男&lt;/option&gt;
+    &lt;option value="女"&gt;女&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;input type="text" placeholder="请输入年龄范围" v-model="dto.age"&gt;
+  &lt;br&gt;
+  &lt;input type="text" placeholder="请输入页码" v-model="dto.page"&gt;
+  &lt;input type="text" placeholder="请输入页大小" v-model="dto.size"&gt;
+  &lt;input type="button" value="搜索" @click="search"&gt;
+  &lt;hr&gt;
+  &lt;h3 v-if="students.length === 0"&gt;暂无数据&lt;/h3&gt;
+  &lt;ul v-else&gt;
+    &lt;li v-for="s of students" :key="s.id"&gt;
+      &lt;span&gt;{{s.name}}&lt;/span&gt;
+      &lt;span&gt;{{s.sex}}&lt;/span&gt;
+      &lt;span&gt;{{s.age}}&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;hr&gt;
+  总记录数{{total}} 总页数{{totalPage}}
+&lt;/template&gt;
+&lt;script setup lang="ts"&gt;
+import axios from "../api/request"
+import { usePagination } from 'vue-request'
+import { computed, ref } from 'vue'
+import { AxiosRespPage, Student, StudentQueryDto } from '../model/Model8080'
+
+const dto = ref&lt;StudentQueryDto&gt;({name:'', sex:'', age:'', page:1, size:5})
+
+// data 代表就是 axios 的响应对象
+// 泛型参数1: 响应类型
+// 泛型参数2: 请求类型
+const { data, total, totalPage, run } = usePagination&lt;AxiosRespPage&lt;Student&gt;, StudentQueryDto[]&gt;(
+  (d) =&gt; axios.get('/api/students/q', {params: d}), // 箭头函数
+  {
+    defaultParams: [ dto.value ], // 默认参数, 会作为参数传递给上面的箭头函数
+    pagination: {
+      currentKey: 'page', // 指明当前页属性
+      pageSizeKey: 'size', // 指明页大小属性
+      totalKey: 'data.data.total' // 指明总记录数属性
+    } 
+  } // 选项
+)
+
+const students = computed(()=&gt;{
+  return data?.value?.data.data.list || []
+})
+
+function search() {
+  run(dto.value) // 会作为参数传递给usePagination的箭头函数
+}
+&lt;/script&gt;
+&lt;style scoped&gt;
+ul li {
+  list-style: none;
+  font-family: "华文行楷";
+}
+
+li span:nth-child(1) {
+  font-size: 24px;
+}
+li span:nth-child(2) {
+  font-size: 12px;
+  color: crimson;
+  vertical-align: bottom;
+}
+li span:nth-child(3) {
+  font-size: 12px;
+  color: darkblue;
+  vertical-align: top;
+}
+input,select {
+  width: 100px;
+}
+&lt;/style&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>usePagination 只需要定义一次，后续还想用它内部的 axios 发请求，只需调用 run 函数</p></div><div class="mod-footer"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/前后端交互选择？fetch、xhr、axios还是vuerequest.html#导读" data-path="#导读"><div class="tree-item-inner heading-link" heading-name="导读">导读</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/前后端交互选择？fetch、xhr、axios还是vuerequest.html#xhr" data-path="#xhr"><div class="tree-item-inner heading-link" heading-name="xhr">xhr</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/前后端交互选择？fetch、xhr、axios还是vuerequest.html#axios" data-path="#axios"><div class="tree-item-inner heading-link" heading-name="axios">axios</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/前后端交互选择？fetch、xhr、axios还是vuerequest.html#基本用法" data-path="#基本用法"><div class="tree-item-inner heading-link" heading-name="基本用法">基本用法</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/前后端交互选择？fetch、xhr、axios还是vuerequest.html#环境变量" data-path="#环境变量"><div class="tree-item-inner heading-link" heading-name="环境变量">环境变量</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/前后端交互选择？fetch、xhr、axios还是vuerequest.html#baseURL" data-path="#baseURL"><div class="tree-item-inner heading-link" heading-name="baseURL">baseURL</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/前后端交互选择？fetch、xhr、axios还是vuerequest.html#拦截器" data-path="#拦截器"><div class="tree-item-inner heading-link" heading-name="拦截器">拦截器</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/前后端交互选择？fetch、xhr、axios还是vuerequest.html#vue-request请求库" data-path="#vue-request请求库"><div class="tree-item-inner heading-link" heading-name="vue-request请求库">vue-request请求库</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/前后端交互选择？fetch、xhr、axios还是vuerequest.html#useRequest" data-path="#useRequest"><div class="tree-item-inner heading-link" heading-name="useRequest">useRequest</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/前后端交互选择？fetch、xhr、axios还是vuerequest.html#usePagination" data-path="#usePagination"><div class="tree-item-inner heading-link" heading-name="usePagination">usePagination</div></a><div class="tree-item-children"></div></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

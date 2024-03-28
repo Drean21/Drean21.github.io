@@ -1,0 +1,148 @@
+<!DOCTYPE html> <html><head>
+<title>Vue3监听器监听属性值变化进行策略选择</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - Vue3监听器监听属性值变化进行策略选择">
+<meta property="og:title" content="Vue3监听器监听属性值变化进行策略选择">
+<meta property="og:description" content="尘影迹痕 - Vue3监听器监听属性值变化进行策略选择">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/前端/vue/vue3监听器监听属性值变化进行策略选择.html">
+<meta property="og:image" content="https://article.biliimg.com/bfs/article/fd673b25ae5f88732cd623713370a6084d395aee.png">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="监听器"><p>监听器</p></h1><div class="heading-wrapper"><div class="heading-children"><div><p>利用监听器，可以在【响应式】的基础上添加一些副作用，把更多的东西变成【响应式的】</p></div><div><ul>
+<li data-line="0">
+<p>原本只是数据变化 =&gt; 页面更新</p>
+</li>
+<li data-line="2">
+<p>watch 可以在数据变化时 =&gt; 其它更新</p>
+</li>
+</ul></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;input type="text" v-model="name" /&gt;
+&lt;/template&gt;
+
+&lt;script setup lang="ts"&gt;
+import { ref, watch } from "vue";
+function useStorage(name: string) {
+  const data = ref(sessionStorage.getItem(name) ?? "");
+  watch(data, (newValue) =&gt; {
+    sessionStorage.setItem(name, newValue);
+  });
+  return data;
+}
+const name = useStorage("name");
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><ul>
+<li data-line="0">名称为 useXXXX 的函数，作用是返回带扩展功能的【响应式】数据</li>
+<li data-line="1">localStorage   即使浏览器关闭，数据还在</li>
+<li data-line="2">sessionStorage  数据工作在浏览器活动期间</li>
+</ul></div><div><p>此外，参数中，新值和旧值都可以设为一个相对应的数组参数同时监听多个属性和对象</p></div></div></div><div class="heading-wrapper"><h1 data-heading="深度监听" class="heading" id="深度监听">深度监听</h1><div class="heading-children"><div><p>监听器还有深度监听,可以深度监听对象中某个属性的变化进而更细致的操作，同时可以在watch内嵌套达到监听外层同时吗满足内层变化的时候执行不同的逻辑。</p></div><div><p>默认情况下，ref不会实现深度监听无法监听到对象例如数组中某个值的属性的具体变化，但reactive在源码中默认实现了deep属性的开启了</p></div><div><p>如果是ref，那么就需要传递第三个参数option，其中设置deep属性为开启</p></div><div><p><strong>例子：通过监听对象的变化来实现计数器的功能</strong></p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h2&gt;计数器&lt;/h2&gt;
+    &lt;button @click="counter.value++"&gt;增加&lt;/button&gt;
+    &lt;button @click="counter.value--"&gt;减少&lt;/button&gt;
+    &lt;p&gt;计数器的值为： {{ counter.value }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { ref, watch } from 'vue';
+
+export default {
+  setup() {
+    const counter = ref(0);
+
+    // 深度监听counter对象的变化
+    watch(counter, (newValue, oldValue) =&gt; {
+      console.log(`计数器的值从 ${oldValue} 变为了 ${newValue}`);
+    }, { deep: true });
+
+    return {
+      counter
+    }
+  }
+}
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在上面的代码中，我们使用了Vue3的组合式API来定义一个计数器组件。在<code>setup()</code>函数中，我们首先使用<code>ref()</code>函数创建了一个响应式的计数器变量<code>counter</code>，并将其初始值设为0。</p></div><div><p>接着，我们使用<code>watch()</code>函数来对<code>counter</code>变量进行深度监听。当<code>counter</code>对象的任何属性发生变化时，回调函数就会被触发。在回调函数中，我们输出了计数器的新旧值。</p></div><div><p>在模板中，我们通过按钮来增加或减少计数器的值，并将计数器的值显示在页面上。</p></div><div><p>需要注意的是，<strong>由于深度监听可能会影响性能，因此应该尽可能避免在大型对象上使用深度监听。如果只需要监听对象的某些属性，可以考虑使用浅监听或计算属性来代替深度监听。</strong></p></div><div><p>此外，如果我们只想要监听对象中某一个单一属性，可以将其参数传入为一个回调函数</p></div><div><p><img alt="image-20230331233234295" src="https://article.biliimg.com/bfs/article/fd673b25ae5f88732cd623713370a6084d395aee.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h1 data-heading="watchEffect高级侦听器" class="heading" id="watchEffect高级侦听器">watchEffect高级侦听器</h1><div class="heading-children"><div><p><code>watch</code>函数和<code>watchEffect</code>函数都是Vue3提供的侦听器函数，<strong>它们的区别在于<code>watch</code>需要显式指定要侦听的数据，而<code>watchEffect</code>会自动侦听函数内部使用的所有响应式数据。</strong>因此，在不同的场景下，我们可以选择使用不同的侦听器函数。</p></div><div><p>在同一个组件中，如果您需要同时侦听多个响应式数据的变化，可以使用多个<code>watch</code>函数或一个<code>watchEffect</code>函数。例如，以下代码展示了一个组件中同时使用<code>watch</code>和<code>watchEffect</code>的示例：</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h2&gt;用户信息&lt;/h2&gt;
+    &lt;p&gt;姓名：{{ userInfo.name }}&lt;/p&gt;
+    &lt;p&gt;年龄：{{ userInfo.age }}&lt;/p&gt;
+    &lt;p&gt;性别：{{ userInfo.gender }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { reactive, watch, watchEffect } from 'vue';
+
+export default {
+  setup() {
+    const userInfo = reactive({
+      name: '张三',
+      age: 18,
+      gender: '男',
+    });
+
+    // 使用watch函数侦听name和age的变化
+    watch(
+      [() =&gt; userInfo.name, () =&gt; userInfo.age],
+      ([newName, newAge], [oldName, oldAge]) =&gt; {
+        console.log(`姓名或年龄发生变化：${oldName}(${oldAge}) =&gt; ${newName}(${newAge})`);
+      }
+    );
+
+    // 使用watchEffect函数侦听userInfo的变化
+    watchEffect(() =&gt; {
+      console.log(`用户信息发生变化：${userInfo.name}(${userInfo.age}, ${userInfo.gender})`);
+    });
+
+    return {
+      userInfo,
+    };
+  },
+};
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在上面的例子中，我们使用<code>reactive</code>函数创建了一个响应式对象<code>userInfo</code>，其中包含用户的姓名、年龄和性别。我们使用<code>watch</code>函数来侦听姓名和年龄的变化，使用<code>watchEffect</code>函数来侦听整个用户信息对象的变化。</p></div><div><p>当姓名或年龄发生变化时，<code>watch</code>函数的回调函数会被触发，输出变化前后的姓名和年龄。当用户信息对象发生变化时，<code>watchEffect</code>函数的回调函数会被触发，输出变化后的用户信息。</p></div><div><p><strong>除了自动追踪函数内部的响应式数据外，<code>watchEffect</code>函数还有一些特别的属性和方法特性，可以帮助我们更好地使用和管理侦听器。</strong></p></div><div><p>以下是<code>watchEffect</code>函数的一些特别属性和方法：</p></div><div><ol>
+<li data-line="0">
+<p><code>stop</code>: <code>watchEffect</code>函数返回一个函数，该函数可以用于停止侦听器。调用该函数后，侦听器将被销毁，不再侦听响应式数据的变化。例如：</p>
+<pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token keyword">const</span> stop <span class="token operator">=</span> <span class="token function">watchEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 函数体</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 停止侦听</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="9">
+<p><code>onInvalidate</code>: <code>watchEffect</code>函数可以接收一个回调函数作为参数，在侦听器被销毁时触发。例如：</p>
+<pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token keyword">const</span> stop <span class="token operator">=</span> <span class="token function">watchEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">onInvalidate</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">onInvalidate</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'侦听器被销毁了'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 函数体</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 停止侦听，触发onInvalidate回调函数</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>在上面的例子中，我们在<code>watchEffect</code>函数的回调函数中调用了<code>onInvalidate</code>函数，并传入一个回调函数。当侦听器被销毁时，该回调函数会被触发，输出一条消息。</p>
+</li>
+<li data-line="23">
+<p><code>scheduler</code>: <code>watchEffect</code>函数可以接收一个<code>scheduler</code>函数作为参数，用于控制侦听器的执行时机。例如：</p>
+<pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token keyword">const</span> stop <span class="token operator">=</span> <span class="token function">watchEffect</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 函数体</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token function-variable function">scheduler</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">job</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'调度器被触发了'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">job</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>在上面的例子中，我们在<code>watchEffect</code>函数的第二个参数中传入了一个<code>scheduler</code>函数。该函数会在侦听器需要重新执行时被触发，我们可以在该函数内部实现自定义的调度逻辑。</p>
+</li>
+</ol></div><div><p>需要注意的是，虽然<code>watchEffect</code>函数提供了一些特别的属性和方法，<strong>但在大多数情况下，我们不需要使用这些特性。在实际开发中，我们可以根据具体的需求来选择合适的侦听器函数和侦听器选项，以便更好地管理侦听器。</strong>（损耗性能）</p></div><div class="mod-footer"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3监听器监听属性值变化进行策略选择.html#监听器" data-path="#监听器"><div class="tree-item-inner heading-link" heading-name="监听器">监听器</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3监听器监听属性值变化进行策略选择.html#深度监听" data-path="#深度监听"><div class="tree-item-inner heading-link" heading-name="深度监听">深度监听</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/vue3监听器监听属性值变化进行策略选择.html#watchEffect高级侦听器" data-path="#watchEffect高级侦听器"><div class="tree-item-inner heading-link" heading-name="watchEffect高级侦听器">watchEffect高级侦听器</div></a><div class="tree-item-children"></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

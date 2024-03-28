@@ -1,0 +1,399 @@
+<!DOCTYPE html> <html><head>
+<title>都说组合式，那么感受下子组件的魅力吧</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - 都说组合式，那么感受下子组件的魅力吧">
+<meta property="og:title" content="都说组合式，那么感受下子组件的魅力吧">
+<meta property="og:description" content="尘影迹痕 - 都说组合式，那么感受下子组件的魅力吧">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/前端/vue/都说组合式，那么感受下子组件的魅力吧.html">
+<meta property="og:image" content="https://article.biliimg.com/bfs/article/a9951aa2ca44fe6551e15994f42032c449880348.png">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="导读"><p>导读</p></h1><div class="heading-wrapper"><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content">
+<p>子组件是在 Vue 组件中被引用的组件，它可以接受来自父组件的 props 数据，并根据这些数据进行渲染。子组件可以被多个父组件引用，提高了组件的复用性。在 Vue 3 中，我们可以使用 <code>defineProps</code> 定义组件的 props，以及 <code>defineEmits</code> 定义组件的自定义事件，使得组件的使用更加明确和类型安全。另外，Vue 3 推荐使用 Composition API 编写组件逻辑，使用 <code>setup()</code> 函数来定义子组件的逻辑代码，让组件更加易于维护和扩展。</p>
+<p>其实一路学习下来或多或少都有了解了，这里只是给一些综合案例代码再次感受下组合式API的魅力罢了~</p>
+</div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="例1：在 Vue 中定义和使用子组件 定义子组件 Child1" class="heading" id="例1：在_Vue_中定义和使用子组件_定义子组件_Child1">例1：在 Vue 中定义和使用子组件 定义子组件 Child1</h1><div class="heading-children"><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="card"&gt;
+      &lt;div&gt;
+        &lt;p class="name"&gt;{{name}}&lt;/p&gt;
+        &lt;p class="location"&gt;{{country}}&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;img :src="avatar || '/src/assets/vue.svg'"/&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script setup lang="ts"&gt;
+// 定义属性,  编译宏
+defineProps&lt;{name:string,country:string,avatar?:string}&gt;()
+&lt;/script&gt;
+&lt;style scoped&gt;
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+}
+.name {
+  font-weight: bold;
+}
+.location {
+  font-size: 0.8em;
+  color: #6d597a;
+}
+.card {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+  margin: 1rem;
+  border-radius: 5px;
+  background: #fff;
+  width: 200px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card:hover {
+  transform: rotate(-5deg);
+}
+
+.card img {
+  margin-left: 1em;
+  border-radius: 50%;
+  max-width: 55px;
+  max-height: 55px;
+}
+&lt;/style&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>父组件引用</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;Child1 name="张三" country="中国" avatar="/src/assets/vue.svg"&gt;&lt;/Child1&gt;
+  &lt;Child1 name="李四" country="印度" avatar="/vite.svg"&gt;&lt;/Child1&gt;
+  &lt;Child1 name="王五" country="韩国" &gt;&lt;/Child1&gt;
+&lt;/template&gt;
+&lt;script lang="ts" setup&gt;
+import Child1 from '../components/Child1.vue';
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>除此之外，我们还可以使用app.component(key,component)在根组件中实现全局注册，那么就不需要再每个组件中都单独引入。</p></div><div><p>同样的我们还可以将大量的组件封装成数组然后遍历实现批量注册，以Element-UI组件库为例：</p></div><div><p><img alt="image-20230401015223787" src="https://article.biliimg.com/bfs/article/a9951aa2ca44fe6551e15994f42032c449880348.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h1 data-heading="例2：使用 RandomUser API 获取数据并在 Vue 子组件中使用" class="heading" id="例2：使用_RandomUser_API_获取数据并在_Vue_子组件中使用">例2：使用 RandomUser API 获取数据并在 Vue 子组件中使用</h1><div class="heading-children"><div><p>首先添加类型说明 model/ModelRandomUser.ts</p></div><div><pre class="language-typescript" tabindex="0"><code class="language-typescript is-loaded"><span class="token keyword">import</span> <span class="token punctuation">{</span> AxiosResponse <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"axios"</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">AxiosRespResults</span> <span class="token keyword">extends</span> <span class="token class-name">AxiosResponse<span class="token operator">&lt;</span>Results<span class="token operator">&gt;</span></span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">Results</span> <span class="token punctuation">{</span>
+  info<span class="token operator">:</span> <span class="token punctuation">{</span>
+    page<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span>
+    results<span class="token operator">:</span> <span class="token builtin">number</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  results<span class="token operator">:</span> Result<span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">Result</span> <span class="token punctuation">{</span>
+  gender<span class="token operator">:</span> <span class="token string">'male'</span> <span class="token operator">|</span> <span class="token string">'female'</span><span class="token punctuation">,</span>
+  name<span class="token operator">:</span> <span class="token punctuation">{</span>
+    first<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+    last<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  location<span class="token operator">:</span> <span class="token punctuation">{</span>
+    country<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  picture<span class="token operator">:</span> <span class="token punctuation">{</span>
+    medium<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  login<span class="token operator">:</span> <span class="token punctuation">{</span>
+    username<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>子组件不变，父组件使用子组件</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;!-- 父组件 --&gt;
+&lt;template&gt;
+  &lt;Child1 v-for="u of users" 
+    :name="u.name.first" 
+    :country="u.location.country" 
+    :avatar="u.picture.medium"
+    :key="u.login.username"&gt;&lt;/Child1&gt;
+&lt;/template&gt;
+&lt;script setup lang="ts"&gt;
+import axios from "axios";
+import { useRequest } from "vue-request";
+import { computed } from "vue";
+import { AxiosRespResults } from '../model/ModelRandomUser'
+import Child1 from "../components/Child1.vue";
+
+const { data } = useRequest&lt;AxiosRespResults&gt;(
+  ()=&gt;axios.get('https://randomuser.me/api/?results=3')
+)
+
+const users = computed(()=&gt;{
+  return data.value?.data.results || []
+})
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>如果觉得 Result 数据结构嵌套太复杂，还可以做一个类型映射</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;!-- 父组件 --&gt;
+&lt;template&gt;
+  &lt;Child1 v-for="u of users" 
+    :name="u.name" 
+    :country="u.country" 
+    :avatar="u.avatar"
+    :key="u.username"&gt;&lt;/Child1&gt;
+&lt;/template&gt;
+&lt;script setup lang="ts"&gt;
+import axios from "axios";
+import { useRequest } from "vue-request";
+import { computed } from "vue";
+import { AxiosRespResults, Result } from '../model/ModelRandomUser'
+import Child1 from "../components/Child1.vue";
+
+const { data } = useRequest&lt;AxiosRespResults&gt;(
+  ()=&gt;axios.get('https://randomuser.me/api/?results=3')
+)
+
+const users = computed(()=&gt;{
+  return data.value?.data.results.map(resultToUser) || []
+})
+
+interface User {
+  name: string,
+  country: string,
+  avatar: string,
+  username: string
+}
+function resultToUser(r:Result):User {
+  return {
+    name: r.name.first,
+    country: r.location.country,
+    avatar: r.picture.medium,
+    username: r.login.username
+  }
+}
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><ul>
+<li data-line="0">resultToUser 将 Result 类型映射为 User 类型</li>
+</ul></div></div></div><div class="heading-wrapper"><h1 data-heading="例3：动态组件响应属性:is" class="heading" id="例3：动态组件响应属性is">例3：动态组件响应属性:is</h1><div class="heading-children"><div><p>在一个页面中可能有多个Tab进行来回切换（组件切换），我们会怎么做呢？可能是路由、可能是多个if、else标签</p></div><div><p>但是我们可以使用动态组件实现这种切换</p></div><div><p>在使用动态组件的场景下，并不需要使用<code>v-if</code>、<code>v-show</code>等指令来控制子组件的显示和隐藏，而是通过动态组件的特性来实现。下面是一个更加准确和清晰的示例代码：</p></div><div><p>父组件：</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div&gt;
+    &lt;button @click="toggleComponent"&gt;Toggle Component&lt;/button&gt;
+    &lt;component :is="currentComponent"&gt;&lt;/component&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { defineComponent, ref } from 'vue'
+import ComponentA from './ComponentA.vue'
+import ComponentB from './ComponentB.vue'
+
+export default defineComponent({
+  components: {
+    ComponentA,
+    ComponentB
+  },
+  setup() {
+    const currentComponent = ref(ComponentA)
+
+    const toggleComponent = () =&gt; {
+      currentComponent.value = currentComponent.value === ComponentA ? ComponentB : ComponentA
+    }
+
+    return {
+      currentComponent,
+      toggleComponent
+    }
+  }
+})
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>子组件A：</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div&gt;Component A&lt;/div&gt;
+&lt;/template&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>子组件B：</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div&gt;Component B&lt;/div&gt;
+&lt;/template&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在上面的例子中，我们使用了动态组件的特性来实现子组件的动态切换，而不需要使用<code>v-if</code>、<code>v-show</code>等指令来控制子组件的显示和隐藏。在父组件中，我们使用<code>&lt;component&gt;</code>元素来渲染动态组件，并使用<code>:is</code>属性绑定一个响应式变量<code>currentComponent</code>，该变量的值会根据用户的操作动态改变。在<code>toggleComponent</code>方法中，我们只需要修改<code>currentComponent</code>的值，然后动态组件会自动切换并重新渲染子组件。</p></div></div></div><div class="heading-wrapper"><h1 data-heading="例4：异步组件defineAsyncComponent" class="heading" id="例4：异步组件defineAsyncComponent">例4：异步组件defineAsyncComponent</h1><div class="heading-children"><div><p>当我们的应用变得越来越大时，加载所有组件的初始渲染时间会变得越来越长，这会影响用户的体验。异步组件可以帮助我们按需加载组件，从而提高应用的性能和效率。比如：常见的骨架屏（加载成功前的白屏效果~）</p></div><div><p>以下是一个更具体的案例，我们假设有一个<code>ProductList</code>组件，它会渲染一个产品列表。在这个列表中，每个产品都有一张图片，但是这些图片可能会很大，导致初始渲染时间很长。为了解决这个问题，我们可以将每个产品的图片作为一个异步组件来加载。</p></div><div><p>首先，我们需要定义一个异步组件来加载图片：</p></div><div><pre class="language-javascript" tabindex="0"><code class="language-javascript is-loaded"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> defineAsyncComponent <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'vue'</span>
+
+<span class="token keyword">const</span> <span class="token maybe-class-name">AsyncImage</span> <span class="token operator">=</span> <span class="token function">defineAsyncComponent</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">return</span> <span class="token keyword module">import</span><span class="token punctuation">(</span><span class="token string">'./AsyncImage.vue'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在<code>AsyncImage.vue</code>组件中，我们可以按照需要加载图片：</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;img :src="src" /&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  props: {
+    src: String
+  }
+}
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>现在，我们可以将<code>ProductList</code>组件修改为：</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h1&gt;Product List&lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;li v-for="product in products" :key="product.id"&gt;
+        &lt;h2&gt;{{ product.name }}&lt;/h2&gt;
+        &lt;async-image :src="product.image" /&gt;
+        &lt;p&gt;{{ product.description }}&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { defineAsyncComponent } from 'vue'
+
+const AsyncImage = defineAsyncComponent(() =&gt; {
+  return import('./AsyncImage.vue')
+})
+
+export default {
+  data() {
+    return {
+      products: [
+        {
+          id: 1,
+          name: 'Product 1',
+          image: '/images/product1.jpg',
+          description: 'Description of product 1'
+        },
+        {
+          id: 2,
+          name: 'Product 2',
+          image: '/images/product2.jpg',
+          description: 'Description of product 2'
+        },
+        {
+          id: 3,
+          name: 'Product 3',
+          image: '/images/product3.jpg',
+          description: 'Description of product 3'
+        }
+      ]
+    }
+  },
+  components: {
+    AsyncImage
+  }
+}
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在上面的代码中，我们使用了<code>AsyncImage</code>组件来渲染产品图片，这个组件会异步加载图片文件。这样，当我们渲染<code>ProductList</code>组件时，只会先加载文本内容，而图片则会在需要时异步加载，从而提高了初始渲染的速度和性能。</p></div><div><p>总的来说，异步组件可以帮助我们实现按需加载组件，从而提高应用的性能和效率。在需要加载大量图片或其他资源时，使用异步组件可以让我们更好地控制资源的加载和使用。</p></div></div></div><div class="heading-wrapper"><h1 data-heading="例5：传送组件Teleport" class="heading" id="例5：传送组件Teleport">例5：传送组件Teleport</h1><div class="heading-children"><div><blockquote>
+<p>说实话这个组件就是用来破坏原来定义的父子组件关系的，啊哈哈</p>
+</blockquote></div><div><p>假设我们有一个应用程序，它包含一个固定的页眉和页脚，并在中间显示不同的页面内容。我们可能会在应用程序的根组件中定义页眉和页脚，并使用路由来渲染不同的页面内容。</p></div><div><p>现在，假设我们想在某些页面中添加一个全屏的模态框，但<strong>我们希望该模态框的内容不受应用程序的其他组件的影响。</strong>这时，我们可以使用Teleport传送组件来实现。</p></div><div><p>首先，我们可以在根组件中定义一个<code>&lt;teleport&gt;</code>标签，并将其目标设置为<code>&lt;body&gt;</code>。这将使我们能够在任何地方使用Teleport传送组件，并将其内容渲染到<code>&lt;body&gt;</code>元素中，而不受组件层次结构的限制。</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div&gt;
+    &lt;header&gt;
+      &lt;!-- Header content goes here --&gt;
+    &lt;/header&gt;
+
+    &lt;!-- Use Teleport to render modals --&gt;
+    &lt;teleport to="body"&gt;&lt;/teleport&gt;
+
+    &lt;!-- Render the router view --&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+
+    &lt;footer&gt;
+      &lt;!-- Footer content goes here --&gt;
+    &lt;/footer&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  // Component definition goes here
+};
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>接下来，我们可以定义一个模态框组件，并在其中使用Teleport传送组件来将模态框内容渲染到<code>&lt;body&gt;</code>元素中。</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div class="modal"&gt;
+    &lt;div class="modal-overlay" @click="$emit('close')"&gt;&lt;/div&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;!-- Modal content goes here --&gt;
+      &lt;slot&gt;&lt;/slot&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  // Component definition goes here
+};
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>最后，我们可以在我们的页面组件中使用模态框组件，并将其包装在<code>&lt;teleport&gt;</code>标签中。这将使模态框的内容被渲染到<code>&lt;body&gt;</code>元素中，而不受应用程序的其他组件的影响。</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h1&gt;Page content goes here&lt;/h1&gt;
+
+    &lt;teleport to="body"&gt;
+      &lt;Modal v-if="showModal" @close="showModal = false"&gt;
+        &lt;p&gt;This is the content of the modal!&lt;/p&gt;
+      &lt;/Modal&gt;
+    &lt;/teleport&gt;
+
+    &lt;button @click="showModal = true"&gt;Show Modal&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Modal from './Modal.vue';
+
+export default {
+  components: {
+    Modal,
+  },
+
+  data() {
+    return {
+      showModal: false,
+    };
+  },
+};
+&lt;/script&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在上面的代码中，我们将<code>&lt;Modal&gt;</code>组件包装在<code>&lt;teleport&gt;</code>标签中，并将其目标设置为<code>&lt;body&gt;</code>。这将使模态框的内容被渲染到<code>&lt;body&gt;</code>元素中，并且可以在全屏幕中显示，而不受应用程序的其他组件的影响。</p></div></div></div><div class="heading-wrapper"><h1 data-heading="例6：动画组件transition" class="heading" id="例6：动画组件transition">例6：动画组件transition</h1><div class="heading-children"><div><blockquote>
+<p>一般用来干嘛的呢？自然是用来设计动画效果，比如网站首页的动画、不同路由切换过程的动画等</p>
+</blockquote></div><div><p>Vue3提供了一个内置的动画系统，可以通过<code>&lt;transition&gt;</code>和<code>&lt;animation&gt;</code>组件来实现动画效果。</p></div><div><p><code>&lt;transition&gt;</code>组件可以在元素插入或删除时触发过渡效果。它可以监听以下事件：</p></div><div><ul>
+<li data-line="0"><code>enter</code>：元素插入时触发</li>
+<li data-line="1"><code>enter-from</code>：元素插入时的起始状态</li>
+<li data-line="2"><code>enter-to</code>：元素插入时的结束状态</li>
+<li data-line="3"><code>leave</code>：元素删除时触发</li>
+<li data-line="4"><code>leave-from</code>：元素删除时的起始状态</li>
+<li data-line="5"><code>leave-to</code>：元素删除时的结束状态</li>
+</ul></div><div><p><code>&lt;transition&gt;</code>组件可以通过设置<code>name</code>属性来自定义过渡类名，以及通过设置<code>duration</code>属性来控制过渡的持续时间。</p></div><div><p>示例代码：</p></div><div><pre class="language-html" tabindex="0"><code class="language-html is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transition</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fade<span class="token punctuation">"</span></span> <span class="token attr-name">duration</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1000<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Hello World<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>transition</span><span class="token punctuation">&gt;</span></span>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+</code><button class="copy-code-button">复制</button></pre></div><div><p>上面的代码会在<code>&lt;div&gt;</code>元素插入或删除时触发一个淡入淡出的过渡效果。</p></div><div><p>另外，Vue3还提供了<code>&lt;animation&gt;</code>组件来实现更高级的动画效果，包括帧动画、变形动画、路径动画等。<code>&lt;animation&gt;</code>组件需要引入<code>@vue/animation</code>模块才能使用。</p></div><div><p>示例代码：</p></div><div><pre class="language-html" tabindex="0"><code class="language-html is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>animation</span> <span class="token attr-name">:duration</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1000<span class="token punctuation">"</span></span> <span class="token attr-name">:frames</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>frames<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Hello World<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>animation</span><span class="token punctuation">&gt;</span></span>
+import { defineAnimation } from '@vue/animation'
+
+const frames = defineAnimation([
+  { opacity: 0, transform: 'scale(0.5)' },
+  { opacity: 1, transform: 'scale(1)' }
+])
+
+export default {
+  data() {
+    return {
+      frames
+    }
+  }
+}
+</code><button class="copy-code-button">复制</button></pre></div><div><p>上面的代码会在<code>&lt;div&gt;</code>元素上播放一个逐帧动画，从透明度为0，缩放为0.5的状态逐渐过渡到透明度为1，缩放为1的状态。</p></div><div><p>除了这些属性，还可以为trasistion设置生命周期方法，使用js动态计算属性来编写复杂的动画效果，同时还有一个appear属性可以用来控制在页面初始化时进行加载的动画效果</p></div><div><p>再提一下，如果是对数组这样的集合添加动画效果应当使用transitionGroup组件包裹，具体的属性和生命周期方法的使用完全一样</p></div></div></div><div class="heading-wrapper"><h1 data-heading="警告：子组件标签不是原生HTML标签！" class="heading" id="警告：子组件标签不是原生HTML标签！">警告：子组件标签不是原生HTML标签！</h1><div class="heading-children"><div><p>在Vue3中，您可以通过将子组件作为标签使用，并将标签属性作为props传递来将子组件挂载到根组件中。例如，如果您有一个名为"my-component"的子组件，您可以在根组件中将其作为标签使用，如下所示：</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div&gt;
+    &lt;my-component prop1="value1" prop2="value2" /&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在这个例子中，"my-component"是一个组件标签，"prop1"和"prop2"是props属性，它们的值分别为"value1"和"value2"。您可以在子组件中通过props来接收这些值，并在组件内部使用它们。</p></div><div><p><strong>但是，由于子组件是Vue组件，而不是原生HTML标签，所以不能直接使用标签选择器来选中子组件并修改其样式。</strong>相反，您可以使用组件名或组件类名作为选择器，并使用样式作用域或全局CSS样式来修改组件的样式。例如，如果您想要修改"my-component"组件的样式，可以使用以下CSS样式代码：</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">/* 样式作用域 */
+&lt;style scoped&gt;
+.my-component {
+  background-color: #f0f0f0;
+}
+&lt;/style&gt;
+
+/* 全局样式 */
+&lt;style&gt;
+.my-component {
+  background-color: #f0f0f0;
+}
+&lt;/style&gt;
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在这个例子中，".my-component"是组件的类名，您可以在子组件模板中使用该类名来应用样式作用域或全局样式。需要注意的是，在样式作用域中，组件类名会自动转换为具有唯一标识符的类名，以避免样式冲突的问题。</p></div><div class="mod-footer"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/都说组合式，那么感受下子组件的魅力吧.html#导读" data-path="#导读"><div class="tree-item-inner heading-link" heading-name="导读">导读</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/都说组合式，那么感受下子组件的魅力吧.html#例1：在_Vue_中定义和使用子组件_定义子组件_Child1" data-path="#例1：在_Vue_中定义和使用子组件_定义子组件_Child1"><div class="tree-item-inner heading-link" heading-name="例1：在 Vue 中定义和使用子组件 定义子组件 Child1">例1：在 Vue 中定义和使用子组件 定义子组件 Child1</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/都说组合式，那么感受下子组件的魅力吧.html#例2：使用_RandomUser_API_获取数据并在_Vue_子组件中使用" data-path="#例2：使用_RandomUser_API_获取数据并在_Vue_子组件中使用"><div class="tree-item-inner heading-link" heading-name="例2：使用 RandomUser API 获取数据并在 Vue 子组件中使用">例2：使用 RandomUser API 获取数据并在 Vue 子组件中使用</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/都说组合式，那么感受下子组件的魅力吧.html#例3：动态组件响应属性is" data-path="#例3：动态组件响应属性is"><div class="tree-item-inner heading-link" heading-name="例3：动态组件响应属性:is">例3：动态组件响应属性:is</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/都说组合式，那么感受下子组件的魅力吧.html#例4：异步组件defineAsyncComponent" data-path="#例4：异步组件defineAsyncComponent"><div class="tree-item-inner heading-link" heading-name="例4：异步组件defineAsyncComponent">例4：异步组件defineAsyncComponent</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/都说组合式，那么感受下子组件的魅力吧.html#例5：传送组件Teleport" data-path="#例5：传送组件Teleport"><div class="tree-item-inner heading-link" heading-name="例5：传送组件Teleport">例5：传送组件Teleport</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/都说组合式，那么感受下子组件的魅力吧.html#例6：动画组件transition" data-path="#例6：动画组件transition"><div class="tree-item-inner heading-link" heading-name="例6：动画组件transition">例6：动画组件transition</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/都说组合式，那么感受下子组件的魅力吧.html#警告：子组件标签不是原生HTML标签！" data-path="#警告：子组件标签不是原生HTML标签！"><div class="tree-item-inner heading-link" heading-name="警告：子组件标签不是原生HTML标签！">警告：子组件标签不是原生HTML标签！</div></a><div class="tree-item-children"></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

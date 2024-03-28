@@ -1,0 +1,317 @@
+<!DOCTYPE html> <html><head>
+<title>Maven基础</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - Maven基础">
+<meta property="og:title" content="Maven基础">
+<meta property="og:description" content="尘影迹痕 - Maven基础">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/后端/java/maven基础.html">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/85c576da42b179990706650d1c41887f783a046f.png">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="什么是Maven"><p>什么是Maven</p></h1><div class="heading-wrapper"><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="简介" class="heading" id="简介"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>简介</h2><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">Note</div></div><div class="callout-content">
+<p>Apache Maven 是一个项目管理和构建工具，它基于项目对象模型(POM)的概念，通过一小段描述信息来管理项目的构建、报告和文档。</p>
+<p>官网 ：<a rel="noopener" class="external-link is-unresolved" href="http://maven.apache.org/" target="_self">http://maven.apache.org/</a> </p>
+</div></div></div><div><p>通过上面的描述大家只需要知道Maven是一个工具即可。Apache 是一个开源组织，将来我们会学习很多Apache提供的项目。</p></div></div></div><div class="heading-wrapper"><h2 data-heading="作用" class="heading" id="作用"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>作用</h2><div class="heading-children"><div><p>Maven是专门用于管理和构建Java项目的工具，它的主要功能有：</p></div><div><ul>
+<li data-line="0">
+<p>提供了一套标准化的项目结构</p>
+</li>
+<li data-line="2">
+<p>提供了一套标准化的构建流程（编译，测试，打包，发布……）</p>
+</li>
+<li data-line="4">
+<p>提供了一套依赖管理机制</p>
+</li>
+</ul></div><div><p><strong>标准化的项目结构：</strong></p></div><div><p>项目结构我们都知道，每一个开发工具（IDE）都有自己不同的项目结构，它们互相之间不通用。我再eclipse中创建的目录，无法在idea中进行使用，这就造成了很大的不方便，如下图:前两个是以后开发经常使用的开发工具<br>
+<img src="https://i0.hdslb.com/bfs/album/85c576da42b179990706650d1c41887f783a046f.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>而Maven提供了一套标准化的项目结构，所有的IDE使用Maven构建的项目完全一样，所以IDE创建的Maven项目可以通用。如下图右边就是<mark>Maven构建的项目结构</mark>。</p></div><div><p><img src="https://i0.hdslb.com/bfs/album/700b729abf4891bcaa872e8898cf899000eac1da.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p><strong>标准化的构建流程：</strong><br>
+<img src="https://i0.hdslb.com/bfs/album/3b91fccabf10691b4148c3701ca93476448faeea.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>如上图所示我们开发了一套系统，代码需要进行编译、测试、打包、发布，这些操作如果需要反复进行就显得特别麻烦，而Maven提供了一套简单的命令来完成项目构建。</p></div><div><p><strong>依赖管理：</strong></p></div><div><p>依赖管理其实就是管理你项目所依赖的第三方资源（jar包、插件）。如之前我们项目中需要使用JDBC和Druid的话，就需要去网上下载对应的依赖包（当前之前是老师已经下载好提供给大家了），复制到项目中，还要将jar包加入工作环境这一系列的操作。如下图所示</p></div><div><p><img src="https://i0.hdslb.com/bfs/album/a50ab5caf3d8556ced3dee029d646ae3d2c7eac2.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>而Maven使用标准的 <mark>坐标</mark> 配置来管理各种依赖，只需要简单的配置就可以完成依赖管理。</p></div><div><p><img src="https://i0.hdslb.com/bfs/album/2a80eb98c3f146bb0d2da0aeee5d65b5280c63ea.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>如上图右边所示就是mysql驱动包的坐标，在项目中只需要写这段配置，其他都不需要我们担心，Maven都帮我们进行操作了。</p></div><div><p>市面上有很多构建工具，而Maven依旧还是主流构建工具。</p></div></div></div><div class="heading-wrapper"><h2 data-heading="Maven 坐标详解" class="heading" id="Maven_坐标详解"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Maven 坐标详解</h2><div class="heading-children"><div><p><strong>什么是坐标？</strong></p></div><div><ul>
+<li data-line="0">Maven 中的坐标是<mark>资源的唯一标识</mark></li>
+<li data-line="1">使用坐标来定义项目或引入项目中需要的依赖</li>
+</ul></div><div><p><strong>Maven 坐标主要组成</strong></p></div><div><ul>
+<li data-line="0">groupId：定义当前Maven项目隶属组织名称（通常是域名反写，例如：com.itheima）</li>
+<li data-line="1">artifactId：定义当前Maven项目名称（通常是模块名称，例如 order-service、goods-service）</li>
+<li data-line="2">version：定义当前项目版本号</li>
+</ul></div><div><p>如下图就是使用坐标表示一个项目：<br>
+<img src="https://i0.hdslb.com/bfs/album/dd018e8b56e18d424f17d740c30f02272e746ca3.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><blockquote>
+<p><mark>注意：</mark></p>
+<ul>
+<li data-line="2">上面所说的<mark>资源可以是插件、依赖、当前项目</mark>。</li>
+<li data-line="3">我们的项目如果被其他的项目依赖时，也是需要坐标来引入的。</li>
+</ul>
+</blockquote></div></div></div><div class="heading-wrapper"><h2 data-heading="Maven模型" class="heading" id="Maven模型"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Maven模型</h2><div class="heading-children"><div><ul>
+<li data-line="0">项目对象模型 (Project Object Model)</li>
+<li data-line="1">依赖管理模型(Dependency)</li>
+<li data-line="2">插件(Plugin)</li>
+</ul></div><div><p><img src="https://i0.hdslb.com/bfs/album/d13c2407b468931c54e9562cae3448d406df8262.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>如上图所示就是Maven的模型，而我们先看紫色框框起来的部分，他就是用来完成 <code>标准化构建流程</code> 。如我们需要编译，Maven提供了一个编译插件供我们使用，我们需要打包，Maven就提供了一个打包插件提供我们使用等。</p></div><div><p><img src="https://i0.hdslb.com/bfs/album/2e99a20a99569a931f513dd3a3ef08fe5ed759b5.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>上图中紫色框起来的部分，项目对象模型就是将我们自己抽象成一个对象模型，有自己专属的坐标，如下图所示是一个Maven项目：</p></div><div><p><img src="https://i0.hdslb.com/bfs/album/db441cffae99a102c9e9df654390510b2f31739c.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>依赖管理模型则是使用坐标来描述当前项目依赖哪儿些第三方jar包，如下图所示<br>
+<img src="https://i0.hdslb.com/bfs/album/87985d8fd80f3bb7ab4dd869bb1748a630a18f7e.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>上述Maven模型图中还有一部分是仓库。如何理解仓库呢？</p></div></div></div><div class="heading-wrapper"><h2 data-heading="仓库" class="heading" id="仓库"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>仓库</h2><div class="heading-children"><div><p>大家想想这样的场景，我们创建Maven项目，<mark>在项目中使用坐标来指定项目的依赖</mark>，那么依赖的jar包到底存储在什么地方呢？<mark>其实依赖jar包是存储在我们的本地仓库中。而项目运行时从本地仓库中拿需要的依赖jar包。</mark></p></div><div><p><strong>仓库分类：</strong></p></div><div><ul>
+<li data-line="0">
+<p>本地仓库：自己计算机上的一个目录</p>
+</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>中央仓库：由Maven团队维护的全球唯一的仓库</p>
+<ul>
+<li data-line="4">地址： <a rel="noopener" class="external-link is-unresolved" href="https://repo1.maven.org/maven2/" target="_self">https://repo1.maven.org/maven2/</a></li>
+</ul>
+</li>
+<li data-line="6">
+<p>远程仓库(私服)：一般由公司团队搭建的私有仓库</p>
+<p>今天我们只学习远程仓库的使用，并不会搭建。</p>
+</li>
+</ul></div><div><p>当项目中使用坐标引入对应依赖jar包后，首先会查找本地仓库中是否有对应的jar包：</p></div><div><ul>
+<li data-line="0">
+<p>如果有，则在项目直接引用;</p>
+</li>
+<li data-line="2">
+<p>如果没有，则去中央仓库中下载对应的jar包到本地仓库。</p>
+</li>
+</ul></div><div><p><img src="https://i0.hdslb.com/bfs/album/f0b120e5e76f8a3bfc87d71a7de661fd87f06b06.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>如果还可以搭建远程仓库，将来jar包的查找顺序则变为：</p></div><div><blockquote>
+<p>本地仓库 --&gt; 远程仓库--&gt; 中央仓库</p>
+</blockquote></div><div><p><img src="https://i0.hdslb.com/bfs/album/3bae7d2385f8211c36cf54617fa6ff9745bafc0c.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="Maven安装配置" class="heading" id="Maven安装配置">Maven安装配置</h1><div class="heading-children"><div><ul>
+<li data-line="0">解压到没有中文、特殊字符的路径下即可。目录结构：</li>
+</ul></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>bin目录 ： 存放的是可执行命令。mvn 命令重点关注。
+<ul>
+<li data-line="1">conf目录 ：存放Maven的配置文件。<code>settings.xml</code> 配置文件后期需要修改。</li>
+</ul>
+</li>
+<li data-line="2">lib目录 ：存放Maven依赖的jar包。Maven也是使用java开发的，所以它也依赖其他的jar包。</li>
+</ul></div><div><ul>
+<li data-line="0">
+<p>配置环境变量：<br>
+在系统变量处新建一个变量 <code>MAVEN_HOME</code><br>
+在 <code>Path</code> 中进行配置<code>%MAVEN_HOME%\bin</code><br>
+打开命令提示符输入<code>mvn -version</code>进行验证，出现如图所示表示安装成功<br>
+<img src="https://i0.hdslb.com/bfs/album/bb607a3deebcb1661b67ea29c526639f4ff7f36f.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="7">
+<p>配置本地仓库<br>
+修改 <code>conf/settings.xml </code>中的 <code>&lt;localRepository&gt; </code>为一个指定目录作为本地仓库，用来存储jar包。建议是Maven当前目录下创建mvn_resp。<br>
+<img src="https://i0.hdslb.com/bfs/album/92c58c9701036633ca9f318fdd9a94d43ca6cc0f.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="12">
+<p>配置阿里云私服</p>
+<p>中央仓库在国外，所以下载jar包速度可能比较慢，而阿里公司提供了一个远程<strong>镜像</strong>仓库，里面基本也都有开源项目的jar包。</p>
+<p>修改 <code>conf/settings.xml</code> 中的 <code>&lt;mirrors&gt;</code>标签，为其添加如下子标签：</p>
+<pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirror</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">&gt;</span></span>alimaven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>aliyun maven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>https://maven.aliyun.com/repository/public<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrorOf</span><span class="token punctuation">&gt;</span></span>central<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrorOf</span><span class="token punctuation">&gt;</span></span>          
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirror</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>其中<code>&lt;mirrorOf&gt;central&lt;/mirrorOf&gt; </code>表示的意思就是替换中央仓库的镜像配置</p>
+<p>阿里云镜像仓库具体地址可能发生变化，详见<a data-tooltip-position="top" aria-label="https://developer.aliyun.com/mvn/guide" rel="noopener" class="external-link is-unresolved" href="https://developer.aliyun.com/mvn/guide" target="_self">仓库服务 (aliyun.com)</a></p>
+</li>
+</ul></div><div class="heading-wrapper"><h2 data-heading="用户配置" class="heading" id="用户配置"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>用户配置</h2><div class="heading-children"><div><p>参考文档：<a data-tooltip-position="top" aria-label="https://blog.csdn.net/weixin_44296929/article/details/115898303" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/weixin_44296929/article/details/115898303" target="_self">Maven settings的全局配置和用户配置如何选择</a></p></div><div><p>其实上面的配置都是针对全局配置的setting.xml配置文件。但是推荐配置自己用户的setting.xml文件，避免更新的麻烦。配置也不复杂，直接将全局的配置文件粘贴到用户配置的目录下即可，也就是Maven在运行的时候会判断用户目录下有没有配置文件，有的话就覆盖掉全局的配置。</p></div><div><p><strong>配置路径</strong></p></div><div><ul>
+<li data-line="0">全局配置：<code>$M2_HOME/conf/settings.xml</code></li>
+<li data-line="1">用户配置：<code>~/.m2/settings.xml</code></li>
+</ul></div><div><p><strong>说明</strong></p></div><div><ul>
+<li data-line="0">前者是全局范围的，整台机器上的所有用户都会直接受到该配置的影响，而后者是用户范围的，只有当前用户才会受到该配置的影响；</li>
+<li data-line="1">推荐个人使用用户范围的settings.xml，主要是为了避免无意识的影响到系统中的其他用户；</li>
+<li data-line="2">如果团队开发需要统一系统中所有用户的settings.xml配置，则使用全局范围的settings.xml；</li>
+<li data-line="3">除了影响范围这一因素，配置用户范围settings.xml文件还便于文件升级，直接修改conf目录下的settings.xml会导致maven升级不便，每次升级到新版本的Maven都需要复制settings.xml文件。如果使用~/.m2/目录下的settings.xml，就不会影响到Maven安装文件，升级时就不需要触动settings.xml文件。</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="常用命令" class="heading" id="常用命令">常用命令</h1><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">Note</div></div><div class="callout-content">
+<ul>
+<li data-line="1">
+<p>compile ：编译</p>
+</li>
+<li data-line="3">
+<p>clean：清理</p>
+</li>
+<li data-line="5">
+<p>test：测试</p>
+</li>
+<li data-line="7">
+<p>package：打包</p>
+</li>
+<li data-line="9">
+<p>install：安装</p>
+</li>
+</ul>
+</div></div></div><div><p><strong>命令演示：</strong></p></div><div><p>准备一个使用Maven构建的项目，<br>
+使用上面命令需要在磁盘上进入到项目的 <code>pom.xml</code> 目录下，打开命令提示符<br>
+<img src="https://i0.hdslb.com/bfs/album/908cc9c196a4146cb5d1926af624009b9976aef9.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div class="heading-wrapper"><h2 data-heading="编译命令演示" class="heading" id="编译命令演示"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>编译命令演示</h2><div class="heading-children"><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded">compile ：编译
+</code><button class="copy-code-button">复制</button></pre></div><div><p>执行上述命令可以看到：</p></div><div><ul>
+<li data-line="0">从阿里云下载编译需要的插件的jar包，在本地仓库也能看到下载好的插件</li>
+<li data-line="1">在项目下会生成一个 <code>target</code> 目录<br>
+<img src="https://i0.hdslb.com/bfs/album/62bcfa7e84159d2b2686901957bbb149133f5a8b.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+</ul></div><div><ul>
+<li data-line="0">同时在项目下会出现一个 <code>target</code> 目录，编译后的字节码文件就放在该目录下<br>
+<img src="https://i0.hdslb.com/bfs/album/d908d6cc9b0aa044121524a859d2e24be32f72e1.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="清理命令演示" class="heading" id="清理命令演示"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>清理命令演示</h2><div class="heading-children"><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded">mvn clean
+</code><button class="copy-code-button">复制</button></pre></div><div><p>执行上述命令可以看到</p></div><div><ul>
+<li data-line="0">从阿里云下载清理需要的插件jar包</li>
+<li data-line="1">删除项目下的 <code>target</code> 目录<br>
+<img src="https://i0.hdslb.com/bfs/album/0277acb1367bfa5a011047a4c298392a594e0023.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="打包命令演示" class="heading" id="打包命令演示"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>打包命令演示</h2><div class="heading-children"><div><pre><code>mvn package
+</code><button class="copy-code-button">复制</button></pre></div><div><p>执行上述命令可以看到：</p></div><div><ul>
+<li data-line="0">从阿里云下载打包需要的插件jar包</li>
+<li data-line="1">在项目的 <code>terget</code> 目录下有一个jar包（将当前项目打成的jar包）</li>
+</ul></div><div><p><img src="https://i0.hdslb.com/bfs/album/0e60e46dbc9e51bfef31bc398a2df0244f51f59f.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h2 data-heading="测试命令演示" class="heading" id="测试命令演示"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>测试命令演示</h2><div class="heading-children"><div><pre><code>mvn test  
+</code><button class="copy-code-button">复制</button></pre></div><div><p>该命令会执行所有的测试代码（此处是打印输出语句）。执行上述命令效果如下</p></div><div><p><img src="https://i0.hdslb.com/bfs/album/6a79286c96b8eee648f28ee080385e563e7ee438.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h2 data-heading="安装命令演示" class="heading" id="安装命令演示"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>安装命令演示</h2><div class="heading-children"><div><pre><code>mvn install
+</code><button class="copy-code-button">复制</button></pre></div><div><p>该命令会将当前项目打成jar包，并安装到本地仓库。执行完上述命令后到本地仓库查看结果如下：</p></div><div><p><img src="https://i0.hdslb.com/bfs/album/0e20ac9da6c0f930790607c083eea0d15edd49dc.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="生命周期" class="heading" id="生命周期">生命周期</h1><div class="heading-children"><div><p>Maven 构建项目生命周期描述的是一次构建过程经历经历了多少个事件</p></div><div><p>Maven 对项目构建的生命周期划分为3套：</p></div><div><ul>
+<li data-line="0">clean ：清理工作。</li>
+<li data-line="1">default ：核心工作，例如编译，测试，打包，安装等。</li>
+<li data-line="2">site ： 产生报告，发布站点等。这套生命周期一般不会使用。</li>
+</ul></div><div><p>同一套生命周期内，执行后边的命令，前面的所有命令会自动执行。例如默认（default）生命周期如下：</p></div><div><p>当我们执行 <code>install</code>（安装）命令时，它会先执行 <code>compile</code>命令，再执行 <code>test </code> 命令，再执行 <code>package</code> 命令，最后执行 <code>install</code> 命令。</p></div><div><p>当我们执行 <code>package</code> （打包）命令时，它会先执行 <code>compile</code> 命令，再执行 <code>test</code> 命令，最后执行 <code>package</code> 命令。</p></div><div><p>默认的生命周期也有对应的很多命令，其他的一般都不会使用，我们只关注常用的：</p></div><div><p><img src="https://i0.hdslb.com/bfs/album/563ca3d00aeb6b89b42a7831f6b4ee84eeb3807c.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h1 data-heading="IDEA使用Maven" class="heading" id="IDEA使用Maven">IDEA使用Maven</h1><div class="heading-children"><div><p>以后开发中我们肯定会在高级开发工具中使用Maven管理项目，而我们常用的高级开发工具是IDEA</p></div><div class="heading-wrapper"><h2 data-heading="配置Maven环境" class="heading" id="配置Maven环境"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>配置Maven环境</h2><div class="heading-children"><div><blockquote>
+<p>其实IDEA好像有个bug，我们还应该去File-new Project Settings-Setting for New Project去单独设置一下<br>
+<img src="https://i0.hdslb.com/bfs/album/8688a610f8cbd43361772b71f10c042631f3a231.png@1e_1c.webp" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</blockquote></div><div><p>我们需要先在IDEA中配置Maven环境：</p></div><div><ul>
+<li data-line="0">选择 IDEA中 File --&gt; Settings</li>
+<li data-line="1">搜索 maven<br>
+<img src="https://i0.hdslb.com/bfs/album/bae58a3e9fc0694bd4e1b6d48037672da1cd2467.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+<li data-line="3">设置 IDEA 使用本地安装的 Maven，并修改配置文件路径<br>
+<img src="https://i0.hdslb.com/bfs/album/bdc604b9def86f59a735683abd70125143e5b402.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+</ul></div><div><blockquote>
+<p>其实IDEA默认集成Maven插件，在自带的里边配置也行。目录在<code>idea contens plugin maven</code></p>
+</blockquote></div></div></div><div class="heading-wrapper"><h2 data-heading="创建 Maven项目" class="heading" id="创建_Maven项目"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>创建 Maven项目</h2><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>创建模块，选择Maven，点击Next</p>
+<p><img src="https://i0.hdslb.com/bfs/album/a79bc4b18b46341390e3400344e48f149bd48176.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="5">
+<p>填写模块名称，坐标信息，点击finish，创建完成</p>
+<p><img src="https://i0.hdslb.com/bfs/album/78c879d89d26307c9ac37686c9d9875720d4dae5.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+<p>创建好的项目目录结构如下：</p>
+<p><img src="https://i0.hdslb.com/bfs/album/6fa2e207ad2017123eb8ab1f129277f153be0307.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="15">
+<p>编写 HelloWorld，并运行</p>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="导入 Maven项目" class="heading" id="导入_Maven项目"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>导入 Maven项目</h2><div class="heading-children"><div><p>大家在学习时可能需要看老师的代码，当然也就需要将老师的代码导入到自己的IDEA中。我们可以通过以下步骤进行项目的导入：</p></div><div><ul>
+<li data-line="0">选择右侧Maven面板，点击 + 号</li>
+</ul></div><div><p><img src="https://i0.hdslb.com/bfs/album/8a61da2f72e5d29157bafc7b6895e185389aaf4d.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><ul>
+<li data-line="0">
+<p>选中对应项目的pom.xml文件，双击即可</p>
+</li>
+<li data-line="2">
+<p>如果没有Maven面板，选择</p>
+<p>View --&gt; Appearance --&gt; Tool Window Bars</p>
+</li>
+</ul></div><div><p><img src="https://i0.hdslb.com/bfs/album/5c79b546bbb35c4ecd4092284fe40398348b8899.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>可以通过下图所示进行命令的操作：</p></div><div><p><img src="https://i0.hdslb.com/bfs/album/efc0403a5e9e14edb404cc0d7f6dba3e6c8967cf.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div class="heading-wrapper"><h3 data-heading="配置 Maven-Helper 插件" class="heading" id="配置_Maven-Helper_插件"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>配置 Maven-Helper 插件</h3><div class="heading-children"><div><ul>
+<li data-line="0">选择 IDEA中 File --&gt; Settings</li>
+</ul></div><div><p> <img src="https://i0.hdslb.com/bfs/album/983d698007a9eddb90f352590fd320b38abce8d5.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><ul>
+<li data-line="0">选择 Plugins</li>
+</ul></div><div><p><img src="https://i0.hdslb.com/bfs/album/39b4bfbea969646713a6ddc7b627b30a4a13a3be.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><ul>
+<li data-line="0">搜索 Maven，选择第一个 Maven Helper，点击Install安装，弹出面板中点击Accept</li>
+</ul></div><div><p><img src="https://i0.hdslb.com/bfs/album/e11ec088aea090f7757fbe26c8c6fb8101832c30.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><ul>
+<li data-line="0">重启 IDEA</li>
+</ul></div><div><p>安装完该插件后可以通过 选中项目右键进行相关命令操作，如下图所示：</p></div><div><p><img src="https://i0.hdslb.com/bfs/album/9a099365fc4b3f2ef63fc3d36588e8eba8c3953c.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="依赖管理" class="heading" id="依赖管理"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>依赖管理</h2><div class="heading-children"><div class="heading-wrapper"><h3 data-heading="使用坐标引入jar包" class="heading" id="使用坐标引入jar包"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>使用坐标引入jar包</h3><div class="heading-children"><div><p><strong>使用坐标引入jar包的步骤：</strong></p></div><div><ul>
+<li data-line="0">在项目的 pom.xml 中编写 <code>&lt;dependencies&gt; </code>标签【表示资源的坐标】</li>
+<li data-line="1">在 <code>&lt;dependencies&gt;</code> 标签中 使用 <code>&lt;dependency&gt; </code>引入坐标【有很多个坐标】</li>
+<li data-line="2">定义坐标的 groupId，artifactId，version<br>
+<img src="https://i0.hdslb.com/bfs/album/a2682eba8084c4a3755bcc17a94fc328298dc0aa.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+<li data-line="4"><mark>点击刷新按钮，使坐标生效</mark></li>
+</ul></div><div><div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">Tip</div></div><div class="callout-content">
+<p>具体的坐标我们可以到如下网站进行搜索：<a rel="noopener" class="external-link is-unresolved" href="https://mvnrepository.com/" target="_self">https://mvnrepository.com/</a></p>
+</div></div></div><div><p><strong>快捷方式导入jar包的坐标：</strong></p></div><div><p>每次需要引入jar包，都去对应的网站进行搜索是比较麻烦的，接下来给大家介绍一种快捷引入坐标的方式</p></div><div><p><strong>前提是本地仓库有这个Jar包才能搜索到</strong></p></div><div><ul>
+<li data-line="0">
+<p>在弹出的面板中搜索对应坐标，然后双击选中对应坐标<br>
+<img src="https://i0.hdslb.com/bfs/album/506781934b22f4d03dc89cb9d1539e75b7fa851b.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="3">
+<p><mark>点击刷新按钮，使坐标生效</mark></p>
+</li>
+</ul></div><div><p><strong>自动导入设置：</strong></p></div><div><p>上面每次操作都需要点击刷新按钮，让引入的坐标生效。当然我们也可以通过设置让其自动完成</p></div><div><ul>
+<li data-line="0">
+<p>选择 IDEA中 File --&gt; Settings</p>
+</li>
+<li data-line="2">
+<p>在弹出的面板中找到 Build Tools</p>
+</li>
+<li data-line="3">
+<p>选择 Any changes，点击 ok 即可生效</p>
+</li>
+</ul></div><div><p><mark>不建议，最好自己养成修改后自己手动刷新的习惯</mark>避免因为频繁修改加载速度跟不上而爆红报错</p></div></div></div><div class="heading-wrapper"><h3 data-heading="依赖范围" class="heading" id="依赖范围"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>依赖范围</h3><div class="heading-children"><div><p><mark>通过设置坐标的依赖范围(scope)，可以设置 对应jar包的作用范围：编译环境、测试环境、运行环境。</mark></p></div><div><p>如下图所示给 <code>junit</code> 依赖通过 <code>scope</code> 标签指定依赖的作用范围。 那么这个依赖就只能作用在测试环境，其他环境下不能使用。</p></div><div><p><img src="https://i0.hdslb.com/bfs/album/4418a5d3b11de58e68b20007b5c819f748a8c075.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>那么 <code>scope</code> 都可以有哪些取值呢？</p></div><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th><strong>依赖范围</strong></th>
+<th>编译classpath</th>
+<th>测试classpath</th>
+<th>运行classpath</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>compile</strong></td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>logback</td>
+</tr>
+<tr>
+<td><strong>test</strong></td>
+<td>-</td>
+<td>Y</td>
+<td>-</td>
+<td>Junit</td>
+</tr>
+<tr>
+<td><strong>provided</strong></td>
+<td>Y</td>
+<td>Y</td>
+<td>-</td>
+<td>servlet-api</td>
+</tr>
+<tr>
+<td><strong>runtime</strong></td>
+<td>-</td>
+<td>Y</td>
+<td>Y</td>
+<td>jdbc驱动</td>
+</tr>
+<tr>
+<td><strong>system</strong></td>
+<td>Y</td>
+<td>Y</td>
+<td>-</td>
+<td>存储在本地的jar包</td>
+</tr>
+</tbody>
+</table></div><div><ul>
+<li data-line="0">compile ：作用于编译环境、测试环境、运行环境。</li>
+<li data-line="1">test ： 作用于测试环境。典型的就是Junit坐标，以后使用Junit时，都会将scope指定为该值</li>
+<li data-line="2"><mark>provided</mark> ：作用于编译环境、测试环境。我们后面会<mark>学习 <code>servlet-api</code> ，在使用它时，必须将 <code>scope</code> 设置为该值，不然运行时就会报错</mark>【打成war包时lib文件夹就不会有相应的依赖】<a data-tooltip-position="top" aria-label="Servlet > ^6so7tr" data-href="Servlet#^6so7tr" href="技术/后端/java/servlet.html#^6so7tr" class="internal-link" target="_self" rel="noopener">原因解答</a></li>
+<li data-line="3">runtime  ： 作用于测试环境、运行环境。jdbc驱动一般将 <code>scope</code> 设置为该值，当然不设置也没有任何问题 </li>
+</ul></div><div><div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">Tip</div></div><div class="callout-content">
+<p>如果引入坐标不指定 <code>scope</code> 标签时，默认就是 compile  值。以后大部分jar包都是使用默认值。</p>
+</div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="依赖传递" class="heading" id="依赖传递"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>依赖传递</h3><div class="heading-children"><div><ul>
+<li data-line="0">以显示为主，有显示版本用显示版本，没有用隐式</li>
+<li data-line="1">以路径短的为准如果在同一pom.xml文件中有2个相同的依赖，以后声明的为准</li>
+<li data-line="2">如果是在不同pom.xml中有2个相同的依赖，以先声明的为准</li>
+<li data-line="3">相同依赖只会保留一个jar包</li>
+</ul></div><div><p>因为依赖传递特性，我们可能会引入很多“重复的依赖”，就比如：</p></div><div><ul>
+<li data-line="0">我引入了A（A依赖B），</li>
+<li data-line="1">我还引入了C（C也依赖于B）</li>
+<li data-line="2">这样就会有两个B（但他们的版本号又可能不一样）<br>
+为了避免版本冲突和限定使用的依赖版本，我们根据情形有两种解决方案：</li>
+<li data-line="4">如果我们是开源框架的开发者，我们可以手动将其标为<mark>可选依赖（不透明）</mark></li>
+<li data-line="5">作为导入的使用者，我们可以手动<mark>排除依赖（不需要）</mark></li>
+</ul></div><div><p><strong>下面是一个简单的例子来说明如何使用可选依赖和排除依赖：</strong></p></div><div><p>假设我们正在开发一个开源框架，这个框架依赖于一个名为 <code>logging</code> 的日志库。但是，我们不想强制用户必须使用特定版本的 <code>logging</code> 库，因为用户可能已经在他们的项目中使用了其他版本。因此，我们将 <code>logging</code> 库标记为可选依赖。</p></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token comment">&lt;!-- pom.xml --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.example<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>our-framework<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>1.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- 将日志库标记为可选依赖 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>现在，假设我们有一个使用我们框架的项目，但是项目已经使用了自己的日志库，不想使用我们框架中提供的日志库。在这种情况下，我们可以手动排除我们框架中的日志库依赖。</p></div><div><pre class="language-xml" tabindex="0"><code class="language-xml is-loaded"><span class="token comment">&lt;!-- pom.xml --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.example<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>our-framework<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>1.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusions</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusion</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.slf4j<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>logging<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusion</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusions</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>通过这种方式，我们可以避免版本冲突并且限定使用特定版本的依赖，同时给用户更大的灵活性。</p></div><div class="mod-footer"></div></div></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#什么是Maven" data-path="#什么是Maven"><div class="tree-item-inner heading-link" heading-name="什么是Maven">什么是Maven</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#简介" data-path="#简介"><div class="tree-item-inner heading-link" heading-name="简介">简介</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#作用" data-path="#作用"><div class="tree-item-inner heading-link" heading-name="作用">作用</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#Maven_坐标详解" data-path="#Maven_坐标详解"><div class="tree-item-inner heading-link" heading-name="Maven 坐标详解">Maven 坐标详解</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#Maven模型" data-path="#Maven模型"><div class="tree-item-inner heading-link" heading-name="Maven模型">Maven模型</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#仓库" data-path="#仓库"><div class="tree-item-inner heading-link" heading-name="仓库">仓库</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#Maven安装配置" data-path="#Maven安装配置"><div class="tree-item-inner heading-link" heading-name="Maven安装配置">Maven安装配置</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#用户配置" data-path="#用户配置"><div class="tree-item-inner heading-link" heading-name="用户配置">用户配置</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#常用命令" data-path="#常用命令"><div class="tree-item-inner heading-link" heading-name="常用命令">常用命令</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#编译命令演示" data-path="#编译命令演示"><div class="tree-item-inner heading-link" heading-name="编译命令演示">编译命令演示</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#清理命令演示" data-path="#清理命令演示"><div class="tree-item-inner heading-link" heading-name="清理命令演示">清理命令演示</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#打包命令演示" data-path="#打包命令演示"><div class="tree-item-inner heading-link" heading-name="打包命令演示">打包命令演示</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#测试命令演示" data-path="#测试命令演示"><div class="tree-item-inner heading-link" heading-name="测试命令演示">测试命令演示</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#安装命令演示" data-path="#安装命令演示"><div class="tree-item-inner heading-link" heading-name="安装命令演示">安装命令演示</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#生命周期" data-path="#生命周期"><div class="tree-item-inner heading-link" heading-name="生命周期">生命周期</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#IDEA使用Maven" data-path="#IDEA使用Maven"><div class="tree-item-inner heading-link" heading-name="IDEA使用Maven">IDEA使用Maven</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#配置Maven环境" data-path="#配置Maven环境"><div class="tree-item-inner heading-link" heading-name="配置Maven环境">配置Maven环境</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#创建_Maven项目" data-path="#创建_Maven项目"><div class="tree-item-inner heading-link" heading-name="创建 Maven项目">创建 Maven项目</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#导入_Maven项目" data-path="#导入_Maven项目"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="导入 Maven项目">导入 Maven项目</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#配置_Maven-Helper_插件" data-path="#配置_Maven-Helper_插件"><div class="tree-item-inner heading-link" heading-name="配置 Maven-Helper 插件">配置 Maven-Helper 插件</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#依赖管理" data-path="#依赖管理"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="依赖管理">依赖管理</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#使用坐标引入jar包" data-path="#使用坐标引入jar包"><div class="tree-item-inner heading-link" heading-name="使用坐标引入jar包">使用坐标引入jar包</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#依赖范围" data-path="#依赖范围"><div class="tree-item-inner heading-link" heading-name="依赖范围">依赖范围</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/maven基础.html#依赖传递" data-path="#依赖传递"><div class="tree-item-inner heading-link" heading-name="依赖传递">依赖传递</div></a><div class="tree-item-children"></div></div></div></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

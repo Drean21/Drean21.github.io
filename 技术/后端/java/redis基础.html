@@ -1,0 +1,173 @@
+<!DOCTYPE html> <html><head>
+<title>Redis基础</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - Redis基础">
+<meta property="og:title" content="Redis基础">
+<meta property="og:description" content="尘影迹痕 - Redis基础">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/后端/java/redis基础.html">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/011a515af990ca66dc07b492a4b94456a8c02b01.png">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="什么是Redis"><p>什么是Redis</p></h1><div class="heading-wrapper"><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">Info</div></div><div class="callout-content">
+<p>Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache, and<br>
+message broker</p>
+</div></div></div><div><p>翻译为:Redis是一个开源的内存中的数据结构存储系统，它可以用作:数据库、缓存和消息中间件。官网:<a rel="noopener" class="external-link is-unresolved" href="https://redis.io" target="_self">https://redis.io</a><br>
+Redis是用C语言开发的一个开源的高性能键值对<strong>(key-value</strong>)数据库，官方提供的数据是可以达到100000+的QPS(每秒内查询次数）。它存储的value类型比较丰富，也被称为结构化的NoSql数据库。</p></div><div><p>NoSql (Not only sQL)，不仅仅是SQL，泛指非关系型数据库。NoSql数据库并不是要取代关系型数据库，而是关系型数据库的补充。</p></div></div></div><div class="heading-wrapper"><h1 data-heading="Redis应用场景" class="heading" id="Redis应用场景">Redis应用场景</h1><div class="heading-children"><div><ul>
+<li data-line="0">缓存（可以延伸很多比如搜索,...）</li>
+<li data-line="1">任务队列</li>
+<li data-line="2">消息队列</li>
+<li data-line="3">分布式锁</li>
+</ul></div></div></div><div class="heading-wrapper"><h1 data-heading="安装配置启动" class="heading" id="安装配置启动">安装配置启动</h1><div class="heading-children"><div><p><strong>下载安装</strong></p></div><div><p>PC绿色版直接解压即可</p></div><div><p>Linux 基于c++编写，在解压文件后在redis的根目录执行make命令进行编译然后进入src目录中执行make install指令进行安装</p></div><div><p><img alt="image-20230119095356825" src="https://i0.hdslb.com/bfs/album/011a515af990ca66dc07b492a4b94456a8c02b01.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p><strong>目录骨架和配置</strong></p></div><div><p>有两个配置文件，具体用哪个启动服务端的时候通过命令参数指定即可</p></div><div><p><img alt="image-20230119104032802" src="https://i0.hdslb.com/bfs/album/5f4d1b5f9b967d44518d3a6aa5a532216805cb50.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>基础配置：</p></div><div><ul>
+<li data-line="0">
+<p>后台运行：protected-mode  yes</p>
+</li>
+<li data-line="1">
+<p>端口：port 6379</p>
+</li>
+<li data-line="2">
+<p>设置密码：打开<code>requiepass 自定义密码</code>的注释</p>
+</li>
+<li data-line="4">
+<p>允许远程连接：注释掉<code>bind 127.0.0.1</code></p>
+</li>
+<li data-line="6">
+<p>创建的数据库数量：databases 具体的数量（Redis默认创建16个数据库，0-15，默认操作的是第0号数据库，通过<code>select 数据库序号</code>命令进行切换）</p>
+<p><img alt="image-20230119120415424" src="https://i0.hdslb.com/bfs/album/bf099dec25f95887b5863bb128a0fb7df7aed5c4.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+</ul></div><div><p><strong>启动连接</strong></p></div><div><p>安装完成后会有一个客户端和一个服务端（CS架构），先启动服务端，再通过客户端连接进行操作</p></div><div><p>启动服务</p></div><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded">./redis-server ./redis.conf
+</code><button class="copy-code-button">复制</button></pre></div><div><p>客户端连接</p></div><div><pre class="language-shell" tabindex="0"><code class="language-shell is-loaded">./redis-cli -h localhost -p <span class="token number">6379</span> -a 密码
+或者先连接
+./redis-cli -h localhost -p <span class="token number">6379</span>
+提示没有权限的时候输入auth 密码解锁权限
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h1 data-heading="Redis 5中常用数据类型" class="heading" id="Redis_5中常用数据类型">Redis 5中常用数据类型</h1><div class="heading-children"><div><p>Redis的键只能是String类型，他常用的数据类型指的是值的数据类型</p></div><div><p><img alt="image-20230119103349666" src="https://i0.hdslb.com/bfs/album/1426756b3bd9db6a83e4636dacca9350cf426200.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h1 data-heading="常用命令" class="heading" id="常用命令">常用命令</h1><div class="heading-children"><div><p>完整官方文档：</p></div><div class="heading-wrapper"><h2 data-heading="字符串类型常用命令" class="heading" id="字符串类型常用命令"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>字符串类型常用命令</h2><div class="heading-children"><div><ul>
+<li data-line="0">SET key value<br>
+设置指定key的值</li>
+<li data-line="2">GET key<br>
+获取指定key的值</li>
+<li data-line="4">SETEX key seconds value——<strong>验证码</strong><br>
+设置指定key的值，并将key的过期时间设为seconds秒</li>
+<li data-line="6">SETNX key value——<strong>分布式锁</strong><br>
+只有在 key不存在时设置key的值工</li>
+</ul></div><div><p><img alt="image-20230119114904499" src="https://i0.hdslb.com/bfs/album/524055eb31b222e2125795795451abca6932ee38.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h2 data-heading="哈希类型常用命令" class="heading" id="哈希类型常用命令"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>哈希类型常用命令</h2><div class="heading-children"><div><p><strong>Redis hash是一个string类型的 field 和value的映射表</strong>，hash特别适合用于<strong>存储对象</strong>，常用命令:</p></div><div><ul>
+<li data-line="0">HSET key field value<br>
+将哈希表key中的字段field 的值设为value</li>
+<li data-line="2">HGET key field<br>
+获取存储在哈希表中指定字段的值</li>
+<li data-line="4">HDEL key field<br>
+删除存储在哈希表中的指定字段</li>
+<li data-line="6">HKEYs key<br>
+获取哈希表中所有字段</li>
+<li data-line="8">HVALS key<br>
+获取哈希表中所有值</li>
+<li data-line="10">HGETALL key<br>
+获取在哈希表中指定key的所有字段和值	</li>
+</ul></div><div><p><img alt="image-20230119111800992" src="https://i0.hdslb.com/bfs/album/a0f5d7910db196fb79d09ac7da593604286c74c5.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h2 data-heading="列表list操作命令" class="heading" id="列表list操作命令"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>列表list操作命令</h2><div class="heading-children"><div><p>Redis列表是简单的字符串列表，按照插入顺序排序（任务队列），常用命令:</p></div><div><ul>
+<li data-line="0"><code>LPUSH key value1 [value2]</code><br>
+将一个或多个值插入到列表头部</li>
+<li data-line="2"><code>LRANGE key start stop</code><br>
+获取列表指定范围内的元素</li>
+<li data-line="4"><code>RPOP key</code><br>
+移除并获取列表最后一个元素</li>
+<li data-line="6"><code>LLEN key</code><br>
+获取列表长度</li>
+<li data-line="8"><code>BRPOP key1 [key2 ] timeout</code><br>
+移出并获取列表的最后一个元素，<strong>如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止</strong></li>
+</ul></div><div><p><img alt="image-20230119112414876" src="https://i0.hdslb.com/bfs/album/21375a71b09637d54657287a588e8c8f0f9520b3.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="集合常用命令" class="heading" id="集合常用命令">集合常用命令</h1><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="无序集合set" class="heading" id="无序集合set"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>无序集合set</h2><div class="heading-children"><div><p>Redis set是string类型的无序集合。集合成员是唯一的，这就意味着集合中不能出现重复的数据，常用命令:</p></div><div><ul>
+<li data-line="0">
+<p><code>SADD key member1 [member2]</code></p>
+<p>向集合添加一个或多个成员</p>
+</li>
+<li data-line="4">
+<p><code>SMEMBERS key</code><br>
+返回集合中的所有成员</p>
+</li>
+<li data-line="7">
+<p><code>SCARD key</code><br>
+获取集合的成员数</p>
+</li>
+<li data-line="10">
+<p><code>SINTER key1 [key2]</code><br>
+返回给定所有集合的交集</p>
+</li>
+<li data-line="13">
+<p><code>SUNION key1 [key2]</code><br>
+返回所有给定集合的并集</p>
+</li>
+<li data-line="16">
+<p><code>SDIFF key1 [key2]</code><br>
+返回给定所有集合的差集——<strong>前减后</strong></p>
+</li>
+<li data-line="19">
+<p><code>SREM key member1 [member2]</code></p>
+<p>移除集合中一个或多个成员	</p>
+</li>
+</ul></div><div><p><img alt="image-20230119113521380" src="https://i0.hdslb.com/bfs/album/592169dc12e32f8511dbcf91efb3672f8c8c9b93.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h2 data-heading="有序集合sorted set" class="heading" id="有序集合sorted_set"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>有序集合sorted set</h2><div class="heading-children"><div><p>Redis sorted set有序集合是string类型元素的集合，且不允许重复的成员。<strong>每个元素都会关联一个double类型的分数(score)。redis正是通过分数来为集合中的成员进行从小到大排序。有序集合的成员是唯一的，但分数却可以重复。</strong>常用命令:</p></div><div><ul>
+<li data-line="0">ZADD key score1 member1 [score2 member2]<br>
+向有序集合添加一个或多个成员，或者更新已存在成员的分数</li>
+<li data-line="2">ZRANGE key start stop [WITHSCORES]<br>
+通过索引区间返回有序集合中指定区间内的成员</li>
+<li data-line="4">ZINCRBY key increment member<br>
+有序集合中对指定成员的分数加上增量increment</li>
+<li data-line="6">ZREM key member [member ...]<br>
+移除有序集合中的一个或多个成员</li>
+</ul></div><div><p><img alt="image-20230119113319193" src="https://i0.hdslb.com/bfs/album/4f2f6af778e7c58a3744ffde4438236c0fcfcf09.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h2 data-heading="通用命令" class="heading" id="通用命令"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>通用命令</h2><div class="heading-children"><div><p>不论是对应何种value类型的key都可以操作的通用命令</p></div><div><ul>
+<li data-line="0">KEYS pattern<br>
+查找所有符合给定模式( pattern)的 key</li>
+<li data-line="2">EXISTS key<br>
+检查给定key是否存在</li>
+<li data-line="4">TYPE key<br>
+返回key所储存的值的类型</li>
+<li data-line="6">TTL key<br>
+返回给定key 的剩余生存时间(TTL, time to live)，以秒为单位</li>
+<li data-line="8">DEL key<br>
+该命令用于在key存在是删除 key</li>
+</ul></div><div><p><img alt="image-20230119114552288" src="https://i0.hdslb.com/bfs/album/dd2dbd117877d2a780d6713cedf0afdad8976f38.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="Java操作Redis" class="heading" id="Java操作Redis">Java操作Redis</h1><div class="heading-children"><div><p>Redis的Java客户端很多，官方推荐的有三种:</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Jedis
+<ul>
+<li data-line="1">获取连接</li>
+<li data-line="2">执行操作</li>
+<li data-line="3">关闭连接</li>
+</ul>
+</li>
+<li data-line="4">LettuceRedisson</li>
+<li data-line="5">Spring 对 Redis客户端进行了整合，提供了Spring Data Redis，在Spring Boot项目中还提供了对应的Starter，即spring-boot-starter-data-redis（对Jedis进行了封装）✔️</li>
+</ul></div><div class="heading-wrapper"><h2 data-heading="spring-boot-starter-data-redis" class="heading" id="spring-boot-starter-data-redis"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>spring-boot-starter-data-redis</h2><div class="heading-children"><div><p>Spring Data Redis中提供了一个高度封装的类: <code>RedisTemplate</code>针对jedis客户端中大量api进行了归类封装,将同一类型操作封装为operation接口，具体分类如下;</p></div><div><ul>
+<li data-line="0">ValueOperations:简单K-V操作</li>
+<li data-line="1">setOperations: set类型数据操作</li>
+<li data-line="2">zsetOperations: zset类型数据操作</li>
+<li data-line="3">HashOperations:针对map类型的数据操作</li>
+<li data-line="4">ListOperations:针对list类型的数据操作</li>
+</ul></div><div><div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">Tip</div></div><div class="callout-content">
+<p>RedisTemplate对象默认分别给set和get方法进行了对键和值的序列化和反序列化，所以在Redis客户端查看key和value的时候会看到键和值不是自己设置的样子。但是在Java代码操作中却能得到想要的值，因为get操作会按规则相应执行反序列化得到本意的值</p>
+<p>如果我们不希望对存储的值进行序列化，我们可以在配置类声明RedisTemplate的序列化和反序列化方法覆盖SpringBoot启动时内置的RedisTemplate的序列化和反序列化方法：</p>
+<p><img alt="image-20230119122600412" src="https://i0.hdslb.com/bfs/album/2c440f11e605042c6e9d47f0f505e5431559e033.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</div></div></div><div><p><strong>使用步骤</strong></p></div><div><ol>
+<li data-line="0">
+<p>导入依赖坐标<br>
+<img alt="image-20230119122213269" src="https://i0.hdslb.com/bfs/album/d85744ce27fa7dd27d530f8debb7e40ddab00774.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="3">
+<p>配置Redis</p>
+<p><img alt="image-20230119122115761" src="https://i0.hdslb.com/bfs/album/f0c808d5e0b4ce40e05cd353dc118e2a93dd91c1.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="7"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>开始使用<br>
+start：<a data-tooltip-position="top" aria-label="https://www.bilibili.com/video/BV13a411q753?p=149&amp;vd_source=60cd820d66490f513305005717358b72" rel="noopener" class="external-link is-unresolved" href="https://www.bilibili.com/video/BV13a411q753?p=149&amp;vd_source=60cd820d66490f513305005717358b72" target="_self">Redis-08-Redis常用命令<em>集合类型&amp;有序集合类型操作命令</em>哔哩哔哩_bilibili</a><br>
+通过<code>RedisTemplate</code>对象获取操作对应数据类型的对象再操作即可，两个例子：</p>
+<ul>
+<li data-line="11">opsForValue：<br>
+<img alt="image-20230119122716540" src="https://i0.hdslb.com/bfs/album/7d2570bca9035c77b6e0d2cd278c8f4434280af6.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+</ul>
+</li>
+</ol></div><div><ul>
+<li data-line="0">hashOperations：<br>
+<img alt="image-20230119125343636" src="https://i0.hdslb.com/bfs/album/2eacb2957de1b76f354d1b5756d59650f8ac1a48.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+</ul></div><div class="mod-footer"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#什么是Redis" data-path="#什么是Redis"><div class="tree-item-inner heading-link" heading-name="什么是Redis">什么是Redis</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#Redis应用场景" data-path="#Redis应用场景"><div class="tree-item-inner heading-link" heading-name="Redis应用场景">Redis应用场景</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#安装配置启动" data-path="#安装配置启动"><div class="tree-item-inner heading-link" heading-name="安装配置启动">安装配置启动</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#Redis_5中常用数据类型" data-path="#Redis_5中常用数据类型"><div class="tree-item-inner heading-link" heading-name="Redis 5中常用数据类型">Redis 5中常用数据类型</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#常用命令" data-path="#常用命令"><div class="tree-item-inner heading-link" heading-name="常用命令">常用命令</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#字符串类型常用命令" data-path="#字符串类型常用命令"><div class="tree-item-inner heading-link" heading-name="字符串类型常用命令">字符串类型常用命令</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#哈希类型常用命令" data-path="#哈希类型常用命令"><div class="tree-item-inner heading-link" heading-name="哈希类型常用命令">哈希类型常用命令</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#列表list操作命令" data-path="#列表list操作命令"><div class="tree-item-inner heading-link" heading-name="列表list操作命令">列表list操作命令</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#集合常用命令" data-path="#集合常用命令"><div class="tree-item-inner heading-link" heading-name="集合常用命令">集合常用命令</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#无序集合set" data-path="#无序集合set"><div class="tree-item-inner heading-link" heading-name="无序集合set">无序集合set</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#有序集合sorted_set" data-path="#有序集合sorted_set"><div class="tree-item-inner heading-link" heading-name="有序集合sorted set">有序集合sorted set</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#通用命令" data-path="#通用命令"><div class="tree-item-inner heading-link" heading-name="通用命令">通用命令</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#Java操作Redis" data-path="#Java操作Redis"><div class="tree-item-inner heading-link" heading-name="Java操作Redis">Java操作Redis</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/redis基础.html#spring-boot-starter-data-redis" data-path="#spring-boot-starter-data-redis"><div class="tree-item-inner heading-link" heading-name="spring-boot-starter-data-redis">spring-boot-starter-data-redis</div></a><div class="tree-item-children"></div></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

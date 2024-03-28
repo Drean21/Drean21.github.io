@@ -1,0 +1,636 @@
+<!DOCTYPE html> <html><head>
+<title>Java基础语法</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - Java基础语法">
+<meta property="og:title" content="Java基础语法">
+<meta property="og:description" content="尘影迹痕 - Java基础语法">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/后端/java/java基础语法.html">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/c7aaa467f818d5680f1333923d3b802ad2ab29a4.jpg">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="Java基础语法"><p>Java基础语法</p></h1><div class="heading-wrapper"><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="（一）入门名词解释和基本语句" class="heading" id="（一）入门名词解释和基本语句"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>（一）入门名词解释和基本语句</h2><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>main方法： 称为主方法。写法是固定格式不可以更改。main方法是程序的入口点或起始点，无论我们编写多 少程序，JVM在运行的时候，都会从main方法这里开始执行。 </p>
+</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>注释： 就是对代码的解释和说明。其目的是让人们能够更加轻松地了解代码。为代码添加注释，是十分必须 要的，它不影响程序的编译和运行。 </p>
+<ul>
+<li data-line="3">单行注释<code>//注释内容</code></li>
+<li data-line="4">多行注释<code>/*注释内容（可换行）*/</code></li>
+</ul>
+</li>
+<li data-line="6">
+<p>方法体：方法内部的内容</p>
+</li>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>输出语句：</p>
+<ul>
+<li data-line="9"><code>System.out.println();</code>换行输出</li>
+<li data-line="10"><code>System.out.print();</code>不换行输出</li>
+</ul>
+</li>
+<li data-line="12">
+<p>关键字keywords：是指在程序中，Java已经定义好的单词，具有特殊含义。  例如：<code> public</code> 、<code>class</code>、<code> static</code> 、<code>void</code>等。关键字的特点：1. 完全小写的字母。2.在增强版的记事本当中（例如Notepad++）有特殊颜色。</p>
+</li>
+<li data-line="14"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>标识符：是指在程序中，我们自己定义内容。比如类的名字、方法的名字和变量的名字等等，都是标识符 。</p>
+<ul>
+<li data-line="15">命名规则：标识符可以包含 英文<strong>字母</strong>26个(区分大小写) 、 <code>0-9</code> <strong>数字</strong> 、<code>$</code>（美元符号） 和 <code>_</code>（<strong>下划线</strong>） 。 <strong>标识符不能以数字开头。 标识符不能是关键字。</strong></li>
+<li data-line="16"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>命名规范：
+<ul>
+<li data-line="17">类名规范：首字母大写，后面每个单词首字母大写（<u>大驼峰式</u>）。 </li>
+<li data-line="18">方法名规范： 首字母小写，后面每个单词首字母大写（<u>小驼峰式</u>）。 </li>
+<li data-line="19">变量名规范：全部小写。 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="（二）常量、变量" class="heading" id="（二）常量、变量"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>（二）常量、变量</h2><div class="heading-children"><div><p><mark>常量：在程序运行期间，固定不变的量。</mark>常量的分类：</p></div><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+<th>数据举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>整数常量</td>
+<td>直接写上的数字，没有小数点</td>
+<td>100、200、0、-250</td>
+</tr>
+<tr>
+<td>浮点数常量</td>
+<td>直接写上的数字，有小数点</td>
+<td>2.5、-3.14、0.0</td>
+</tr>
+<tr>
+<td>字符常量</td>
+<td>凡是用单引号引起来的<strong>单个字符</strong>，就做字符常量</td>
+<td>'A'、'b'、'9'、'中'</td>
+</tr>
+<tr>
+<td>字符串常量</td>
+<td>凡是用双引号引起来的部分，叫做字符串常量。</td>
+<td>"abc"、"Hello"、"123"</td>
+</tr>
+<tr>
+<td>布尔常量</td>
+<td>只有两种取值</td>
+<td>true、false</td>
+</tr>
+<tr>
+<td>空常量</td>
+<td>代表没有任何数据</td>
+<td>null</td>
+</tr>
+</tbody>
+</table></div><div><p><mark>变量：程序运行期间，内容可以发生改变的量。</mark>创建一个变量并且使用的格式：</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded">数据类型 变量名称<span class="token punctuation">;</span> <span class="token comment">// 创建了一个变量</span>
+变量名称 <span class="token operator">=</span> 数据值<span class="token punctuation">;</span> <span class="token comment">// 赋值，将右边的数据值，赋值交给左边的变量</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>一步到位的格式：</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded">数据类型 变量名称 <span class="token operator">=</span> 数据值<span class="token punctuation">;</span> <span class="token comment">// 在创建一个变量的同时，立刻放入指定的数据值</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>使用变量的时候，有一些注意事项：</p></div><div><ol>
+<li data-line="0">如果创建多个变量，那么变量之间的名称不可以重复。</li>
+<li data-line="1">对于float和long类型来说，字母后缀F和L不要丢掉。</li>
+<li data-line="2">如果使用byte或者short类型的变量，那么右侧的数据值不能超过左侧类型的范围。</li>
+<li data-line="3">没有进行赋值的变量，不能直接使用；一定要赋值之后，才能使用。</li>
+<li data-line="4">变量使用不能超过作用域的范围。<mark>【作用域】：从定义变量的一行开始，一直到直接所属的大括号结束为止。</mark></li>
+<li data-line="5">可以通过一个语句来创建多个变量，但是一般情况不推荐这么写。</li>
+</ol></div></div></div><div class="heading-wrapper"><h2 data-heading="（三） 数据类型转换、运算符" class="heading" id="（三）_数据类型转换、运算符"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>（三） 数据类型转换、运算符</h2><div class="heading-children"><div class="heading-wrapper"><h3 data-heading="1、数据类型转换" class="heading" id="1、数据类型转换"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1、数据类型转换</h3><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">当数据类型不一样时，将会发生数据类型转换。</div></div></div></div><div><ul>
+<li data-line="0">
+<p>自动类型转换（隐式）<br>
+1. 特点：代码不需要进行特殊处理，自动完成。<br>
+2. 规则：数据范围从小到大。</p>
+</li>
+<li data-line="4">
+<p>强制类型转换（显式）</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded">强制类型转换
+ 	<span class="token number">1.</span> 特点：代码需要进行特殊的格式处理，不能自动完成。
+    <span class="token number">2.</span> 格式：范围小的类型 范围小的变量名 <span class="token operator">=</span> <span class="token punctuation">(</span>范围小的类型<span class="token punctuation">)</span> 原本范围大的数据<span class="token punctuation">;</span>
+
+注意事项：
+ 	<span class="token number">1.</span> 强制类型转换一般不推荐使用，因为有可能发生精度损失、数据溢出。
+ 	<span class="token number">2.</span> <span class="token keyword">byte</span><span class="token operator">/</span><span class="token keyword">short</span><span class="token operator">/</span><span class="token keyword">char</span>这三种类型都可以发生数学运算，例如加法“<span class="token operator">+</span>”<span class="token punctuation">.</span>
+ 	<span class="token number">3.</span> <span class="token keyword">byte</span><span class="token operator">/</span><span class="token keyword">short</span><span class="token operator">/</span><span class="token keyword">char</span>这三种类型在运算的时候，都会被首先提升成为<span class="token keyword">int</span>类型，然后再计算。
+ 	<span class="token number">4.</span> <span class="token keyword">boolean</span>类型不能发生数据类型转换
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+</ul></div><div><p>数字和字符的对照关系表（编码表）：</p></div><div><ul>
+<li data-line="0">ASCII码表：<code>American Standard Code for Information Interchange</code>，美国信息交换标准代码。</li>
+<li data-line="1">Unicode码表：万国码。也是数字和符号的对照关系，开头0-127部分和ASCII完全一样，但是从128开始包含有更多字符
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded">	<span class="token number">48</span> <span class="token operator">-</span> <span class="token char">'0'</span>
+	<span class="token number">65</span> <span class="token operator">-</span> <span class="token char">'A'</span>
+	<span class="token number">97</span> <span class="token operator">-</span> <span class="token char">'a'</span>
+	<span class="token comment">/*大写字母和小写字母相差32,例如：*/</span>
+	<span class="token keyword">char</span> zifu3 <span class="token operator">=</span> <span class="token char">'c'</span><span class="token punctuation">;</span>
+	<span class="token comment">// 左侧是int类型，右边是char类型，</span>
+	<span class="token comment">// char --&gt; int，确实是从小到大</span>
+	<span class="token comment">// 发生了自动类型转换</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h3 data-heading="2、运算符" class="heading" id="2、运算符"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>2、运算符</h3><div class="heading-children"><div><p>运算符：进行特定操作的符号。例如：+<br>
+表达式：用运算符连起来的式子叫做表达式。例如：20 + 5。又例如：a + b</p></div><div class="heading-wrapper"><h4 data-heading="（1）算数运算符" class="heading" id="（1）算数运算符"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>（1）算数运算符</h4><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>算术运算符</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>加法运算、字符串连接运算</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>减法运算</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>乘法运算</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>除法运算</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>取模运算，两个数字相除取余数</td>
+</tr>
+<tr>
+<td><code>++</code>、<code>--</code></td>
+<td>自增自减运算</td>
+</tr>
+</tbody>
+</table></div><div><p>对于一个整数的表达式来说，除法用的是整除，整数除以整数，结果仍然是整数。只看商，不看余数。<br>
+只有对于整数的除法来说，取模运算符才有余数的意义。</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded">注意事项：
+
+ 	<span class="token number">1.</span> 一旦运算当中有不同类型的数据，那么结果将会是数据类型范围大的那种。
+    	<span class="token comment">// int + double --&gt; double + double --&gt; double</span>
+		<span class="token keyword">int</span> x<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span>
+    	<span class="token keyword">double</span> result3 <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">2.5</span><span class="token punctuation">;</span>
+	<span class="token number">2.</span>自增自减，使用区别：
+		<span class="token number">1.</span> 在单独使用的时候，前<span class="token operator">++</span>和后<span class="token operator">++</span>没有任何区别。也就是：<span class="token operator">++</span>num<span class="token punctuation">;</span>和num<span class="token operator">++</span><span class="token punctuation">;</span>是完全一样的。
+		<span class="token number">2.</span> 在混合的时候，有【重大区别】
+			<span class="token class-name">A</span><span class="token punctuation">.</span> 如果是【前<span class="token operator">++</span>】，那么变量【立刻马上<span class="token operator">+</span><span class="token number">1</span>】，然后拿着结果进行使用。	【先加后用】
+			<span class="token class-name">B</span><span class="token punctuation">.</span> 如果是【后<span class="token operator">++</span>】，那么首先使用变量本来的数值，【然后再让变量<span class="token operator">+</span><span class="token number">1</span>】。	【先用后加】
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="（2）赋值运算符" class="heading" id="（2）赋值运算符"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>（2）赋值运算符</h4><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>基本运算符</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code></td>
+<td>代表将右侧的数据交给左侧的变量【左边取右边的值】</td>
+</tr>
+<tr>
+<td>复合运算符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>+=</code></td>
+<td>a += 3		相当于		a = a + 3</td>
+</tr>
+<tr>
+<td><code>-=</code></td>
+<td>b -= 4		相当于		b = b - 4</td>
+</tr>
+<tr>
+<td><code>*=</code></td>
+<td>c <em>= 5		相当于		c = c </em> 5</td>
+</tr>
+<tr>
+<td><code>/=</code></td>
+<td>d /= 6		相当于		d = d / 6</td>
+</tr>
+<tr>
+<td><code>%=</code></td>
+<td>e %= 7		相当于		e = e % 7</td>
+</tr>
+</tbody>
+</table></div><div><p>注意事项</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded">复合赋值运算符其中隐含了一个强制类型转换。
+    <span class="token keyword">byte</span> num <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+		<span class="token comment">// num = num + 5;</span>
+		<span class="token comment">// num = byte + int</span>
+		<span class="token comment">// num = int + int</span>
+		<span class="token comment">// num = int</span>
+		<span class="token comment">// num = (byte) int</span>
+		num <span class="token operator">+=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="（3）比较运算符" class="heading" id="（3）比较运算符"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>（3）比较运算符</h4><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>比较运算符</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&gt;</code></td>
+<td>大于</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>小于</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td>==</td>
+<td>相等</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>不等于</td>
+</tr>
+</tbody>
+</table></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded">注意事项：
+<span class="token number">1.</span> 比较运算符的结果一定是一个<span class="token keyword">boolean</span>值，成立就是<span class="token boolean">true</span>，不成立就是<span class="token boolean">false</span>
+<span class="token number">2.</span> 如果进行多次判断，不能连着写。
+   数学当中的写法，例如：<span class="token number">1</span> <span class="token operator">&lt;</span> x <span class="token operator">&lt;</span> <span class="token number">3</span>
+   程序当中【不允许】这种写法。
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="（4）逻辑运算符" class="heading" id="（4）逻辑运算符"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>（4）逻辑运算符</h4><div class="heading-children"><div style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th>逻辑运算符</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;&amp;</code>短路与（并且）</td>
+<td>全都是true，才是true；否则就是false</td>
+</tr>
+<tr>
+<td>`</td>
+<td></td>
+</tr>
+<tr>
+<td><code>!</code>非（取反）</td>
+<td>本来是true，变成false；本来是false，变成true</td>
+</tr>
+</tbody>
+</table></div><div><blockquote>
+<p>与“&amp;&amp;”，或“||”，具有短路效果：如果根据左边已经可以判断得到最终结果，那么右边的代码将不再执行，从而节省一定的性能。</p>
+</blockquote></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded">注意事项：
+<span class="token number">1.</span> 逻辑运算符只能用于<span class="token keyword">boolean</span>值。
+<span class="token number">2.</span> 与、或需要左右各自有一个<span class="token keyword">boolean</span>值，但是取反只要有唯一的一个<span class="token keyword">boolean</span>值即可。
+<span class="token number">3.</span> 与、或两种运算符，如果有多个条件，可以连续写。
+   两个条件：条件<span class="token class-name">A</span> <span class="token operator">&amp;&amp;</span> 条件<span class="token class-name">B</span>
+   多个条件：条件<span class="token class-name">A</span> <span class="token operator">&amp;&amp;</span> 条件<span class="token class-name">B</span> <span class="token operator">&amp;&amp;</span> 条件<span class="token class-name">C</span>
+TIPS：
+对于<span class="token number">1</span> <span class="token operator">&lt;</span> x <span class="token operator">&lt;</span> <span class="token number">3</span>的情况，应该拆成两个部分，然后使用与运算符连接起来：
+<span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token number">1</span> <span class="token operator">&lt;</span> x <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> <span class="token number">3</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="（5）三元运算符" class="heading" id="（5）三元运算符"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>（5）三元运算符</h4><div class="heading-children"><div><p>一元运算符：只需要一个数据就可以进行操作的运算符。例如：取反!、自增++、自减--<br>
+二元运算符：需要两个数据才可以进行操作的运算符。例如：加法+、赋值=<br>
+三元运算符：需要三个数据才可以进行操作的运算符。</p></div><div><p>格式：</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded">数据类型 变量名称 <span class="token operator">=</span> 条件判断 <span class="token operator">?</span> 表达式<span class="token class-name">A</span> <span class="token operator">:</span> 表达式<span class="token class-name">B</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>流程：</p></div><div><p>首先判断条件是否成立：</p></div><div><ol>
+<li data-line="0">
+<p>如果成立为true，那么将表达式A的值赋值给左侧的变量；</p>
+</li>
+<li data-line="2">
+<p>如果不成立为false，那么将表达式B的值赋值给左侧的变量；<br>
+二者选其一。 </p>
+</li>
+</ol></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded">例如：		<span class="token comment">// 数据类型 变量名称 = 条件判断 ? 表达式A : 表达式B;</span>
+		<span class="token comment">// 判断a &gt; b是否成立，如果成立将a的值赋值给max；如果不成立将b的值赋值给max。二者选其一</span>
+		<span class="token keyword">int</span> max <span class="token operator">=</span> a <span class="token operator">&gt;</span> b <span class="token operator">?</span> a <span class="token operator">:</span> b<span class="token punctuation">;</span> <span class="token comment">// 最大值的变量</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="（四）流程控制语句" class="heading" id="（四）流程控制语句"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>（四）流程控制语句</h2><div class="heading-children"><div class="heading-wrapper"><h4 data-heading="1、判断语句-if" class="heading" id="1、判断语句-if"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1、判断语句-if</h4><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>单if</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">if</span><span class="token punctuation">(</span>关系表达式<span class="token punctuation">)</span>｛
+	语句体<span class="token punctuation">;</span>
+｝
+</code><button class="copy-code-button">复制</button></pre>
+<p><img alt="1627961263813" src="https://i0.hdslb.com/bfs/album/c7aaa467f818d5680f1333923d3b802ad2ab29a4.jpg" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="10">
+<p>标准的if-else语句</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">if</span><span class="token punctuation">(</span>关系表达式<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	语句体<span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+	语句体<span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p><img alt="1627961415628" src="https://i0.hdslb.com/bfs/album/3d032bf32ab90f4245ecc13f6841011e3e5f5fb6.jpg" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="22">
+<p>if..else if...else </p>
+</li>
+</ul></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token comment">// x和y的关系满足如下：</span>
+<span class="token comment">// 如果x &gt;= 3，那么y = 2x + 1;</span>
+<span class="token comment">// 如果-1 &lt; x &lt; 3，那么y = 2x;</span>
+<span class="token comment">// 如果x &lt;= -1，那么y = 2x – 1;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo04IfElseExt</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">;</span>
+		<span class="token keyword">int</span> y<span class="token punctuation">;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&gt;=</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			y <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&lt;</span> x <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			y <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> x<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+			y <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> x <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"结果是："</span> <span class="token operator">+</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>  <img alt="1627961481766" src="https://i0.hdslb.com/bfs/album/dbf819b3fcbfa751af9c252102483cf22eb1a992.jpg" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><ul>
+<li data-line="0">if语句和三元运算符的互换 </li>
+</ul></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token comment">// 题目：使用三元运算符和标准的if-else语句分别实现：取两个数字当中的最大值</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo06Max</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">105</span><span class="token punctuation">;</span>
+		<span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+		
+		<span class="token comment">// 首先使用三元运算符</span>
+		<span class="token comment">// int max = a &gt; b ? a : b;</span>
+		
+		<span class="token comment">// 使用今天的if语句</span>
+		<span class="token keyword">int</span> max<span class="token punctuation">;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">&gt;</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			max <span class="token operator">=</span> a<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+			max <span class="token operator">=</span> b<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"最大值："</span> <span class="token operator">+</span> max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="2、 选择语句--switch" class="heading" id="2、_选择语句--switch"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>2、 选择语句--switch</h4><div class="heading-children"><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo07Switch</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+		
+		<span class="token keyword">switch</span> <span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期一"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期二"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期三"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token keyword">case</span> <span class="token number">4</span><span class="token operator">:</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期四"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token keyword">case</span> <span class="token number">5</span><span class="token operator">:</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期五"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token keyword">case</span> <span class="token number">6</span><span class="token operator">:</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期六"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token keyword">case</span> <span class="token number">7</span><span class="token operator">:</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期日"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token keyword">default</span><span class="token operator">:</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"数据不合理"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">break</span><span class="token punctuation">;</span> <span class="token comment">// 最后一个break语句可以省略，但是强烈推荐不要省略</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p><img alt="1627961909462" src="https://i0.hdslb.com/bfs/album/df54a3d76994ee2a84d966035c1ff55463b8c4bd.jpg" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">switch</span>语句使用的注意事项：
+
+<span class="token number">1.</span> 多个<span class="token keyword">case</span>后面的数值不可以重复。
+
+<span class="token number">2.</span> <span class="token keyword">switch</span>后面小括号当中只能是下列数据类型：
+基本数据类型：<span class="token keyword">byte</span><span class="token operator">/</span><span class="token keyword">short</span><span class="token operator">/</span><span class="token keyword">char</span><span class="token operator">/</span><span class="token keyword">int</span>
+引用数据类型：<span class="token class-name">String</span>字符串、<span class="token keyword">enum</span>枚举
+
+<span class="token number">3.</span> <span class="token keyword">switch</span>语句格式可以很灵活：前后顺序可以颠倒，而且<span class="token keyword">break</span>语句还可以省略。
+“匹配哪一个<span class="token keyword">case</span>就从哪一个位置向下执行，直到遇到了<span class="token keyword">break</span>或者整体结束为止。”【<span class="token keyword">case</span>的穿透性】
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="3、循环语句" class="heading" id="3、循环语句"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>3、循环语句</h4><div class="heading-children"><div><p>循环结构的基本组成部分，一般可以分成四部分：</p></div><div><ol>
+<li data-line="0">初始化语句：在循环开始最初执行，而且只做唯一一次。</li>
+<li data-line="1">条件判断：如果成立，则循环继续；如果不成立，则循环退出。</li>
+<li data-line="2">循环体：重复要做的事情内容，若干行语句。</li>
+<li data-line="3">步进语句：每次循环之后都要进行的扫尾工作，每次循环结束之后都要执行一次。</li>
+</ol></div><div><ul>
+<li data-line="0">
+<p>for</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">for</span><span class="token punctuation">(</span>初始化表达式①<span class="token punctuation">;</span> 布尔表达式②<span class="token punctuation">;</span> 步进表达式④<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		循环体③
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="8">
+<p>while</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token comment">/*
+初始化语句;
+while (条件判断) {
+	循环体;
+	步进语句;
+}
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo10While</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我错啦！"</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		
+		<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 1. 初始化语句</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 2. 条件判断</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我错啦！"</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3. 循环体</span>
+			i<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">// 4. 步进语句</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="34"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>do-while</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token comment">/*
+初始化语句
+do {
+	循环体
+	步进语句
+} while (条件判断);
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo11DoWhile</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"原谅你啦！起来吧！地上怪凉！"</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"==============="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		
+		<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 1. 初始化语句</span>
+		<span class="token keyword">do</span> <span class="token punctuation">{</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"原谅你啦！起来吧！地上怪凉！"</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3. 循环体</span>
+			i<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">// 4. 步进语句</span>
+		<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2. 条件判断</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+<p>三种循环的区别。</p>
+<ol>
+<li data-line="62">如果条件判断从来没有满足过，那么for循环和while循环将会执行0次，但是do-while循环会执行至少一次。</li>
+<li data-line="63">for循环的变量在小括号当中定义，只有循环内部才可以使用。while循环和do-while循环初始化语句本来就在外面，所以出来循环之后还可以继续使用</li>
+</ol>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="4、跳出语句" class="heading" id="4、跳出语句"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>4、跳出语句</h4><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>break</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token comment">/*
+break关键字的用法有常见的两种：
+
+1. 可以用在switch语句当中，一旦执行，整个switch语句立刻结束。
+2. 还可以用在循环语句当中，一旦执行，整个循环语句立刻结束。打断循环。
+
+关于循环的选择，有一个小建议：
+凡是次数确定的场景多用for循环；否则多用while循环。
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo14Break</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// 如果希望从第4次开始，后续全都不要了，就要打断循环</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 如果当前是第4次</span>
+				<span class="token keyword">break</span><span class="token punctuation">;</span> <span class="token comment">// 那么就打断整个循环</span>
+			<span class="token punctuation">}</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello"</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="25">
+<p>continue</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token comment">/*
+另一种循环控制语句是continue关键字。
+一旦执行，立刻跳过当前次循环剩余内容，马上开始下一次循环。
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo15Continue</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 如果当前是第4层</span>
+				<span class="token keyword">continue</span><span class="token punctuation">;</span> <span class="token comment">// 那么跳过当前次循环，马上开始下一次（第5层）</span>
+			<span class="token punctuation">}</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token string">"层到了。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="5、死循环" class="heading" id="5、死循环"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>5、死循环</h4><div class="heading-children"><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token comment">/*
+永远停不下来的循环，叫做死循环。
+
+死循环的标准格式：
+while (true) {
+	循环体
+}
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo16DeadLoop</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"I Love Java!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		
+		<span class="token comment">// System.out.println("Hello");</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h4 data-heading="6、循环嵌套" class="heading" id="6、循环嵌套"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>6、循环嵌套</h4><div class="heading-children"><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo17LoopHourAndMinute</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> hour <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> hour <span class="token operator">&lt;</span> <span class="token number">24</span><span class="token punctuation">;</span> hour<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 外层控制小时</span>
+
+			<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> minute <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> minute <span class="token operator">&lt;</span> <span class="token number">60</span><span class="token punctuation">;</span> minute<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 内层控制小时之内的分钟</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>hour <span class="token operator">+</span> <span class="token string">"点"</span> <span class="token operator">+</span> minute <span class="token operator">+</span> <span class="token string">"分"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="（五）数组" class="heading" id="（五）数组"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>（五）数组</h2><div class="heading-children"><div class="heading-wrapper"><h3 data-heading="1、什么是数组" class="heading" id="1、什么是数组"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1、什么是数组</h3><div class="heading-children"><div><p>数组的概念：是一种容器，可以同时存放多个数据值。</p></div><div><p>数组的特点：</p></div><div><ol>
+<li data-line="0">数组是一种引用数据类型</li>
+<li data-line="1">数组当中的多个数据，类型必须统一</li>
+<li data-line="2"><strong>数组的长度在程序运行期间不可改变</strong></li>
+</ol></div></div></div><div class="heading-wrapper"><h3 data-heading="2、数组的初始化" class="heading" id="2、数组的初始化"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>2、数组的初始化</h3><div class="heading-children"><div><p>数组的初始化：在内存当中创建一个数组，并且向其中赋予一些默认值。<br>
+两种常见的初始化方式：</p></div><div><ol>
+<li data-line="0">
+<p>动态初始化（指定长度）</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded">	数据类型<span class="token punctuation">[</span><span class="token punctuation">]</span> 数组名称 <span class="token operator">=</span> <span class="token keyword">new</span> 数据类型<span class="token punctuation">[</span>数组长度<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="6">
+<p>静态初始化（指定内容）</p>
+<pre class="language-java" tabindex="0"><code class="language-java is-loaded">标准格式：
+数据类型<span class="token punctuation">[</span><span class="token punctuation">]</span> 数组名称 <span class="token operator">=</span> <span class="token keyword">new</span> 数据类型<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span> 元素<span class="token number">1</span><span class="token punctuation">,</span> 元素<span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+省略格式：
+数据类型<span class="token punctuation">[</span><span class="token punctuation">]</span> 数组名称 <span class="token operator">=</span> <span class="token punctuation">{</span> 元素<span class="token number">1</span><span class="token punctuation">,</span> 元素<span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+</ol></div><div><p>​如果不确定数组当中的具体内容，用动态初始化；否则，已经确定了具体的内容，用静态初始化。</p></div><div><p>​<mark>使用动态初始化数组的时候，其中的元素将会自动拥有一个默认值。</mark>规则如下：</p></div><div><p>如果是整数类型，那么默认为0；</p></div><div><p>如果是浮点类型，那么默认为0.0；</p></div><div><p>如果是字符类型，那么默认	为'\u0000'<code>【不可见字符】</code>'；</p></div><div><p>如果是布尔类型，那么默认为false；</p></div><div><p>如果是引用类型，那么默认为null。</p></div><div><p>注意事项：静态初始化其实也有默认值的过程，只不过系统自动马上将默认值替换成为了大括号当中的具体数值。</p></div></div></div><div class="heading-wrapper"><h3 data-heading="3、访问数组元素" class="heading" id="3、访问数组元素"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>3、访问数组元素</h3><div class="heading-children"><div><p>直接打印数组名称，得到的是数组对应的：内存地址哈希值。<code>【16进制】</code></p></div><div><p>访问数组元素的格式：数组名称[索引值]<br>
+【注意】索引值从0开始，一直到“数组的长度-1”<code>【数组名.length-1】</code>为止。</p></div><div><p>改变数组当中元素的内容：</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded">array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>更改数组地址：</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token comment">// 将arrayA数组的地址值，赋值给arrayB数组</span>
+<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arrayB <span class="token operator">=</span> arrayA<span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arrayB<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 地址值</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>遍历数组：</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"> 
+<span class="token comment">//1、普通for循环</span>
+ <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> array<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+<span class="token comment">//2、增强for循环</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">:</span>array<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token class-name">Syoutem</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>数组反转：</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded">  <span class="token comment">/*
+        初始化语句：int min = 0, max = array.length - 1
+        条件判断：min &lt; max
+        步进表达式：min++, max--
+        循环体：用第三个变量倒手
+         */</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> min <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> max <span class="token operator">=</span> array<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> min <span class="token operator">&lt;</span> max<span class="token punctuation">;</span> min<span class="token operator">++</span><span class="token punctuation">,</span> max<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> temp <span class="token operator">=</span> array<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            array<span class="token punctuation">[</span>min<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">[</span>max<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            array<span class="token punctuation">[</span>max<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h3 data-heading="4、多维数组的实质⭐" class="heading" id="4、多维数组的实质⭐"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>4、多维数组的实质⭐</h3><div class="heading-children"><div><p><strong>图例</strong></p></div><div><p>首先<code>int[][] arr</code> 压栈，然后在堆内存中分配一个二维数组的地址，引用给arr声明，注意，这里的地址其实是一个一维数组，一维数组中存放的都是地址值，然后遍历<code>arr[]</code>,再次分配几个一维数组堆内存，将它们在堆中的地址值存储在arr[]中，这样一个二维数组就完成了，注意，新分配的这几个一维数组内存储的就都是正儿八经的数据。</p></div><div><p><img alt="img" src="https://i0.hdslb.com/bfs/album/dd5ed95b0d797522509429c601585b25c20ca2b9.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p><strong>eg：foreach遍历一个二维数组</strong></p></div><div><p>在java中是没有真正的二维数组的。所以在外层循环中定义了一个字符串数组类型的变量，而内层是真正定义了一个字符串类型。</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"> <span class="token class-name">String</span> name<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">{</span> <span class="token string">"张三"</span><span class="token punctuation">,</span> <span class="token string">"李四"</span><span class="token punctuation">,</span> <span class="token string">"王五"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token string">"张六"</span><span class="token punctuation">,</span> <span class="token string">"李七"</span><span class="token punctuation">,</span> <span class="token string">"王八"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+				<span class="token punctuation">{</span> <span class="token string">"张九"</span><span class="token punctuation">,</span> <span class="token string">"李十"</span><span class="token punctuation">,</span> <span class="token string">"王十一"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> str1 <span class="token operator">:</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> str2 <span class="token operator">:</span> str1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="（六）方法" class="heading" id="（六）方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>（六）方法</h2><div class="heading-children"><div class="heading-wrapper"><h3 data-heading="1、方法基本内容" class="heading" id="1、方法基本内容"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>1、方法基本内容</h3><div class="heading-children"><div><p>定义格式：</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded">修饰符 返回值类型 方法名称<span class="token punctuation">(</span>参数类型 参数名称<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    方法体
+    <span class="token keyword">return</span> 返回值<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+三要素
+返回值类型、方法名称、参数列表
+</code><button class="copy-code-button">复制</button></pre></div><div><p>3种调用方法：</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded"><span class="token number">1.</span> 单独调用：方法名称<span class="token punctuation">(</span>参数<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">2.</span> 打印调用：<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>方法名称<span class="token punctuation">(</span>参数<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">3.</span> 赋值调用：数据类型 变量名称 <span class="token operator">=</span> 方法名称<span class="token punctuation">(</span>参数<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">复制</button></pre></div><div><p>return两个作用：第一停止当前方法，第二将后面的返回值还给调用处</p></div><div><pre class="language-java" tabindex="0"><code class="language-java is-loaded">注意事项：对于有返回值的方法，可以使用单独调用、打印调用或者赋值调用。但是对于无返回值的方法，只能使用单独调用，不能使用打印调用或者赋值调用。
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h3 data-heading="2、方法重载Overload" class="heading" id="2、方法重载Overload"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>2、方法重载Overload</h3><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">Note</div></div><div class="callout-content">
+<p>多个方法的名称一样，但是参数列表不一样。好处：只需要记住唯一一个方法名称，就可以实现类似的多个功能。</p>
+</div></div></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>方法重载与下列因素相关：</p>
+<ol>
+<li data-line="1">参数个数不同</li>
+<li data-line="2">参数类型不同</li>
+<li data-line="3">参数的多类型顺序不同</li>
+</ol>
+</li>
+<li data-line="5"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>方法重载与下列因素无关：</p>
+<ol>
+<li data-line="6">与参数的名称无关</li>
+<li data-line="7">与方法的返回值类型无关</li>
+</ol>
+</li>
+</ul></div><div class="mod-footer"></div></div></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#Java基础语法" data-path="#Java基础语法"><div class="tree-item-inner heading-link" heading-name="Java基础语法">Java基础语法</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#（一）入门名词解释和基本语句" data-path="#（一）入门名词解释和基本语句"><div class="tree-item-inner heading-link" heading-name="（一）入门名词解释和基本语句">（一）入门名词解释和基本语句</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#（二）常量、变量" data-path="#（二）常量、变量"><div class="tree-item-inner heading-link" heading-name="（二）常量、变量">（二）常量、变量</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#（三）_数据类型转换、运算符" data-path="#（三）_数据类型转换、运算符"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="（三） 数据类型转换、运算符">（三） 数据类型转换、运算符</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#1、数据类型转换" data-path="#1、数据类型转换"><div class="tree-item-inner heading-link" heading-name="1、数据类型转换">1、数据类型转换</div></a><div class="tree-item-children"></div></div><div class="tree-item mod-collapsible" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#2、运算符" data-path="#2、运算符"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="2、运算符">2、运算符</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#（1）算数运算符" data-path="#（1）算数运算符"><div class="tree-item-inner heading-link" heading-name="（1）算数运算符">（1）算数运算符</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#（2）赋值运算符" data-path="#（2）赋值运算符"><div class="tree-item-inner heading-link" heading-name="（2）赋值运算符">（2）赋值运算符</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#（3）比较运算符" data-path="#（3）比较运算符"><div class="tree-item-inner heading-link" heading-name="（3）比较运算符">（3）比较运算符</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#（4）逻辑运算符" data-path="#（4）逻辑运算符"><div class="tree-item-inner heading-link" heading-name="（4）逻辑运算符">（4）逻辑运算符</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#（5）三元运算符" data-path="#（5）三元运算符"><div class="tree-item-inner heading-link" heading-name="（5）三元运算符">（5）三元运算符</div></a><div class="tree-item-children"></div></div></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#（四）流程控制语句" data-path="#（四）流程控制语句"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="（四）流程控制语句">（四）流程控制语句</div></a><div class="tree-item-children"><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#1、判断语句-if" data-path="#1、判断语句-if"><div class="tree-item-inner heading-link" heading-name="1、判断语句-if">1、判断语句-if</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#2、_选择语句--switch" data-path="#2、_选择语句--switch"><div class="tree-item-inner heading-link" heading-name="2、 选择语句--switch">2、 选择语句--switch</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#3、循环语句" data-path="#3、循环语句"><div class="tree-item-inner heading-link" heading-name="3、循环语句">3、循环语句</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#4、跳出语句" data-path="#4、跳出语句"><div class="tree-item-inner heading-link" heading-name="4、跳出语句">4、跳出语句</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#5、死循环" data-path="#5、死循环"><div class="tree-item-inner heading-link" heading-name="5、死循环">5、死循环</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#6、循环嵌套" data-path="#6、循环嵌套"><div class="tree-item-inner heading-link" heading-name="6、循环嵌套">6、循环嵌套</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#（五）数组" data-path="#（五）数组"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="（五）数组">（五）数组</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#1、什么是数组" data-path="#1、什么是数组"><div class="tree-item-inner heading-link" heading-name="1、什么是数组">1、什么是数组</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#2、数组的初始化" data-path="#2、数组的初始化"><div class="tree-item-inner heading-link" heading-name="2、数组的初始化">2、数组的初始化</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#3、访问数组元素" data-path="#3、访问数组元素"><div class="tree-item-inner heading-link" heading-name="3、访问数组元素">3、访问数组元素</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#4、多维数组的实质⭐" data-path="#4、多维数组的实质⭐"><div class="tree-item-inner heading-link" heading-name="4、多维数组的实质⭐">4、多维数组的实质⭐</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item mod-collapsible" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#（六）方法" data-path="#（六）方法"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="（六）方法">（六）方法</div></a><div class="tree-item-children"><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#1、方法基本内容" data-path="#1、方法基本内容"><div class="tree-item-inner heading-link" heading-name="1、方法基本内容">1、方法基本内容</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-item-self is-clickable" href="技术/后端/java/java基础语法.html#2、方法重载Overload" data-path="#2、方法重载Overload"><div class="tree-item-inner heading-link" heading-name="2、方法重载Overload">2、方法重载Overload</div></a><div class="tree-item-children"></div></div></div></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

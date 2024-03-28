@@ -1,0 +1,324 @@
+<!DOCTYPE html> <html><head>
+<title>Nginx</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - Nginx">
+<meta property="og:title" content="Nginx">
+<meta property="og:description" content="尘影迹痕 - Nginx">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/后端/java/nginx.html">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/d1a19bc9186f3190915a3cf55b773256688545001.png">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="什么是Nginx"><p>什么是Nginx</p></h1><div class="heading-wrapper"><div class="heading-children"><div><p><strong>Nginx是一款轻量级的web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。</strong></p></div><div><p>其特点是占有内存少，并发能力强，事实上nginx的并发能力在同类型的网页服务器中表现较好，中国大陆使用nginx的网站有:百度、京东、新浪、网易、腾讯、淘宝等。<br>
+Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文:PaM6nep）开发的,第一个公开版本0.1.0发布于2004年10月4日。<br>
+官网: <a data-tooltip-position="top" aria-label="https://nginx.org/" rel="noopener" class="external-link is-unresolved" href="https://nginx.org/" target="_self">nginx news</a></p></div><div class="heading-wrapper"><h2 data-heading="下载安装" class="heading" id="下载安装"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>下载安装</h2><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-inner">Tip</div></div><div class="callout-content">
+<ul>
+<li data-line="1">Nginx是C语言编写的需要环境gcc环境</li>
+<li data-line="2">可以使用Docker一键安装（使用Docker安装的话一定要注意容器内网络的映射）</li>
+</ul>
+</div></div></div><div><p>安装过程:<br>
+1、安装依赖包<code>yum -y install gcc pcre-devel zlib-devel openssl openssl-devel</code><br>
+2、下载Nginx安装包<code>wget https: //nginx.org/download/nginx-1.16.1.tar·gz</code><br>
+3、解压tar <code>-zxvf nginx-1.16.1.tar.gz</code><br>
+4、<code>cd nginx-1.16.1</code><br>
+5、<code>./configure --prefix=/usr/local/nginx</code>——设置Nginx安装到<code>/usr/local/nginx</code><br>
+6、<code>make &amp;&amp; make install</code>——先编译再安装</p></div></div></div><div class="heading-wrapper"><h2 data-heading="目录结构" class="heading" id="目录结构"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>目录结构</h2><div class="heading-children"><div><ul>
+<li data-line="0">conf/nginx.confnginx：配置文件</li>
+<li data-line="1">html：存放静态文件（html、CSS、Js等）</li>
+<li data-line="2">logs：日志目录，存放日志文件</li>
+<li data-line="3">sbin/nginx：二进制文件，用于启动、停止Nginx服务<br>
+<img alt="image-20230120123902272" src="https://i0.hdslb.com/bfs/article/d1a19bc9186f3190915a3cf55b773256688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></li>
+</ul></div></div></div><div class="heading-wrapper"><h2 data-heading="配置文件结构" class="heading" id="配置文件结构"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>配置文件结构</h2><div class="heading-children"><div><p>Nginx配置文件(conf/nginx.conf)整体分为三部分:</p></div><div><ul>
+<li data-line="0">全局块：和Nginx运行相关的全局配置</li>
+<li data-line="1">events块：和网络连接相关的配置</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>http块：代理、缓存、日志记录、虚拟主机配置
+<ul>
+<li data-line="3">http全局块</li>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Server块
+<ul>
+<li data-line="5">Server全局块</li>
+<li data-line="6">location块</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div><div><p>注意:http块中可以配置多个Server块，每个Server块中可以配置多个location块。</p></div><div><p><img alt="image-20230120133050434" src="https://i0.hdslb.com/bfs/article/92f7d9dbda641f71d1a56be568049004688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="部署静态资源" class="heading" id="部署静态资源">部署静态资源</h1><div class="heading-children"><div><p><mark>Nginx可以作为静态web服务器来部署静态资源。</mark>静态资源指在服务端真实存在并且能够直接展示的一些文件，比如常见的html页面、css文件、js文件、图片、视频等资源。<br>
+<strong>相对于Tomcat，Nginx处理静态资源的能力更加高效，所以在生产环境下，一般都会将静态资源部署到Nginx中。</strong> 将静态资源部署到Nginx非常简单，只需要将文件复制到Nginx安装目录下的html目录中即可。</p></div><div><p><img alt="image-20230120135017649" src="https://i0.hdslb.com/bfs/article/cf61d9b1f8ba6d262b2e4108a9f81107688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h1 data-heading="负载均衡" class="heading" id="负载均衡">负载均衡</h1><div class="heading-children"><div><p><strong>什么是负载均衡</strong></p></div><div><p>早期的网站流量和业务功能都比较简单，单台服务器就可以满足基本需求，但是随着互联网的发展，业务流量越来越大并且业务逻辑也越来越复杂，<strong>单台服务器的性能及单点故障问题</strong>就凸显出来了，因此需要多台服务器组成应用集群,进行性能的水平扩展以及避免单点故障出现。</p></div><div><ul>
+<li data-line="0">应用集群:将同一应用部署到多台机器上，组成应用集群，接收负载均衡器分发的请求，进行业务处理并返回响应数据</li>
+<li data-line="1">负载均衡器:将用户请求根据对应的负载均衡算法分发到应用集群中的一台服务器进行处理</li>
+</ul></div><div><p><img alt="image-20230120145847107" src="https://i0.hdslb.com/bfs/article/58796bc572036933f6d641a980177ee1688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p><strong>配置负载均衡策略</strong></p></div><div><p>使用upstream指令定义一组服务器</p></div><div><p>反向代理使用这一组服务器</p></div><div><p><img alt="image-20230120150014752" src="https://i0.hdslb.com/bfs/article/3c63859ab353524974b34ac2a7f2aafa688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p><strong>默认选用的负载均衡策略是轮询</strong></p></div><div><p><img alt="image-20230120150251598" src="https://i0.hdslb.com/bfs/article/c354d8e791d9c25fa904f1734b9f2171688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div><div><p>举一个根据权重进行负载均衡策略配置的例子</p></div><div><p><img alt="image-20230120150349551" src="https://i0.hdslb.com/bfs/article/101617ac77252c0ed85b2752eba643fd688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h1 data-heading="博客部署案例" class="heading" id="博客部署案例">博客部署案例</h1><div class="heading-children"><div><p>配置文件参考如下：</p></div><div><ul>
+<li data-line="0">指定log文件</li>
+<li data-line="1">80和443端口监听</li>
+<li data-line="2">错误页面重定向</li>
+<li data-line="3">域名、路径服务重定向</li>
+<li data-line="4">SSL证书配置</li>
+<li data-line="5">方向代理请求头、请求参数设置</li>
+</ul></div><div><pre class="language-nginx" tabindex="0"><code class="language-nginx is-loaded">
+<span class="token directive"><span class="token keyword">user</span> nginx</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">worker_processes</span> <span class="token number">1</span></span><span class="token punctuation">;</span>
+
+<span class="token directive"><span class="token keyword">error_log</span> /var/log/nginx/error.log warn</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">pid</span> /var/run/nginx.pid</span><span class="token punctuation">;</span>
+
+
+<span class="token directive"><span class="token keyword">events</span></span> <span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">worker_connections</span> <span class="token number">1024</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">http</span></span> <span class="token punctuation">{</span>
+
+    <span class="token directive"><span class="token keyword">include</span> mime.types</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">default_type</span> application/octet-stream</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">sendfile</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">keepalive_timeout</span> <span class="token number">65</span></span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">client_max_body_size</span> <span class="token number">50m</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">client_body_buffer_size</span> <span class="token number">10m</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">client_header_timeout</span> <span class="token number">1m</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">client_body_timeout</span> <span class="token number">1m</span></span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">gzip</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">gzip_min_length</span> <span class="token number">1k</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">gzip_buffers</span> <span class="token number">4</span> <span class="token number">16k</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">gzip_comp_level</span> <span class="token number">4</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">gzip_types</span> text/plain application/javascript application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">gzip_vary</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+    <span class="token comment"># server {</span>
+    <span class="token comment">#     listen 80 default_server;</span>
+    <span class="token comment">#     server_name _; # 默认服务器块的server_name设置为下划线</span>
+
+    <span class="token comment">#     # 这里可以添加默认的处理逻辑，例如返回一个自定义的错误页面</span>
+    <span class="token comment">#     location / {</span>
+    <span class="token comment">#         root /usr/share/nginx/html/blog;</span>
+    <span class="token comment">#         index index.html index.htm;</span>
+    <span class="token comment">#         try_files $uri $uri/ /index.html;</span>
+    <span class="token comment">#     }</span>
+    <span class="token comment"># }</span>
+    <span class="token comment"># halo博客</span>
+    <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+        <span class="token comment">#   listen 80;</span>
+        <span class="token comment">#   listen [::]:80;</span>
+        <span class="token directive"><span class="token keyword">listen</span> <span class="token number">443</span> ssl</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">server_name</span> cytl.ink</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">client_max_body_size</span> <span class="token number">1024m</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_certificate</span> /etc/nginx/certs/cert.pem</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_certificate_key</span> /etc/nginx/certs/privkey.pem</span><span class="token punctuation">;</span>
+        <span class="token comment"># 如果您的SSL证书链中包含中间证书，而这些中间证书不是由广泛接受的根证书颁发机构（Root Certificate Authority）签发的，使用ssl_trusted_certificate来指定中间证书</span>
+        <span class="token directive"><span class="token keyword">ssl_trusted_certificate</span> /etc/nginx/certs/chain.pem</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_session_timeout</span> <span class="token number">5m</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_protocols</span> TLSv1 TLSv1.1 TLSv1.2</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_prefer_server_ciphers</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+            <span class="token directive"><span class="token keyword">proxy_pass</span> http://XXX:8090</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> HOST <span class="token variable">$host</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Forwarded-Proto <span class="token variable">$scheme</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Real-IP <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Forwarded-For <span class="token variable">$proxy_add_x_forwarded_for</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">listen</span> <span class="token number">443</span> ssl</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">server_name</span> www.cytl.ink</span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">ssl_certificate</span> /etc/nginx/certs/cert.pem</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_certificate_key</span> /etc/nginx/certs/privkey.pem</span><span class="token punctuation">;</span>
+        <span class="token comment"># 如果您的SSL证书链中包含中间证书，而这些中间证书不是由广泛接受的根证书颁发机构（Root Certificate Authority）签发的，使用ssl_trusted_certificate来指定中间证书</span>
+        <span class="token directive"><span class="token keyword">ssl_trusted_certificate</span> /etc/nginx/certs/chain.pem</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_session_timeout</span> <span class="token number">5m</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_protocols</span> TLSv1 TLSv1.1 TLSv1.2</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_prefer_server_ciphers</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+            <span class="token directive"><span class="token keyword">root</span> /usr/share/nginx/html/blog</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">index</span> index.html index.htm</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">try_files</span> <span class="token variable">$uri</span> <span class="token variable">$uri</span>/ /index.html</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment"># location ~ ^/redirect/(.*) {</span>
+        <span class="token comment">#     proxy_pass $1;</span>
+        <span class="token comment">#     proxy_set_header Host $host;</span>
+        <span class="token comment">#     proxy_set_header X-Real-IP $remote_addr;</span>
+        <span class="token comment">#     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+        <span class="token comment"># }</span>
+
+        <span class="token directive"><span class="token keyword">location</span> ^~ /api/</span> <span class="token punctuation">{</span>
+            <span class="token directive"><span class="token keyword">proxy_pass</span> http://XXX:8080/</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$host</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Real-IP <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Forwarded-For <span class="token variable">$proxy_add_x_forwarded_for</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">listen</span> <span class="token number">443</span> ssl</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">server_name</span> admin.cytl.ink</span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">ssl_certificate</span> /etc/nginx/certs/cert.pem</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_certificate_key</span> /etc/nginx/certs/privkey.pem</span><span class="token punctuation">;</span>
+        <span class="token comment"># 如果您的SSL证书链中包含中间证书，而这些中间证书不是由广泛接受的根证书颁发机构（Root Certificate Authority）签发的，使用ssl_trusted_certificate来指定中间证书</span>
+        <span class="token directive"><span class="token keyword">ssl_trusted_certificate</span> /etc/nginx/certs/chain.pem</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_session_timeout</span> <span class="token number">5m</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_protocols</span> TLSv1 TLSv1.1 TLSv1.2</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_prefer_server_ciphers</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+            <span class="token directive"><span class="token keyword">root</span> /usr/share/nginx/html/admin</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">index</span> index.html index.htm</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">try_files</span> <span class="token variable">$uri</span> <span class="token variable">$uri</span>/ /index.html</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token directive"><span class="token keyword">location</span> ^~ /api/</span> <span class="token punctuation">{</span>
+            <span class="token directive"><span class="token keyword">proxy_pass</span> http://XXX:8080/</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$host</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Real-IP <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Forwarded-For <span class="token variable">$proxy_add_x_forwarded_for</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">listen</span> <span class="token number">443</span> ssl</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">server_name</span> talk.cytl.ink</span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">ssl_certificate</span> /etc/nginx/certs/cert.pem</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_certificate_key</span> /etc/nginx/certs/privkey.pem</span><span class="token punctuation">;</span>
+        <span class="token comment"># 如果您的SSL证书链中包含中间证书，而这些中间证书不是由广泛接受的根证书颁发机构（Root Certificate Authority）签发的，使用ssl_trusted_certificate来指定中间证书</span>
+        <span class="token directive"><span class="token keyword">ssl_trusted_certificate</span> /etc/nginx/certs/chain.pem</span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">location</span> /websocket</span> <span class="token punctuation">{</span>
+            <span class="token directive"><span class="token keyword">proxy_pass</span> http://XXX:8080</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_http_version</span> 1.1</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> Upgrade <span class="token variable">$http_upgrade</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> Connection <span class="token string">"Upgrade"</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Real-IP <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+
+    <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">listen</span> <span class="token number">443</span> ssl</span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">add_header</span> <span class="token string">'Access-Control-Allow-Origin'</span> <span class="token string">'https://www.cytl.ink'</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">add_header</span> <span class="token string">'Access-Control-Allow-Methods'</span> *</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">server_name</span> file.cytl.ink</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_certificate</span> /etc/nginx/certs/cert.pem</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_certificate_key</span> /etc/nginx/certs/privkey.pem</span><span class="token punctuation">;</span>
+        <span class="token comment"># 如果您的SSL证书链中包含中间证书，而这些中间证书不是由广泛接受的根证书颁发机构（Root Certificate Authority）签发的，使用ssl_trusted_certificate来指定中间证书</span>
+        <span class="token directive"><span class="token keyword">ssl_trusted_certificate</span> /etc/nginx/certs/chain.pem</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_session_timeout</span> <span class="token number">5m</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_protocols</span> TLSv1 TLSv1.1 TLSv1.2</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">ssl_prefer_server_ciphers</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+            <span class="token directive"><span class="token keyword">root</span> /usr/local/upload</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">server_name</span> www.cytl.ink</span><span class="token punctuation">;</span>
+        <span class="token comment"># 当有HTTP请求到达file.cytl.ink域名时，应该将该请求重定向到相同的URI路径下的HTTPS地址，从而实现了HTTP到HTTPS的重定向。</span>
+        <span class="token directive"><span class="token keyword">rewrite</span> ^(.*)$	https://<span class="token variable">$host</span><span class="token variable">$1</span>	permanent</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">server_name</span> admin.cytl.ink</span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">rewrite</span> ^(.*)$	https://<span class="token variable">$host</span><span class="token variable">$1</span>	permanent</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">server_name</span> file.cytl.ink</span><span class="token punctuation">;</span>
+
+        <span class="token directive"><span class="token keyword">rewrite</span> ^(.*)$	https://<span class="token variable">$host</span><span class="token variable">$1</span>	permanent</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">listen</span> [::]:80</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">server_name</span> cytl.ink</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">rewrite</span> ^(.*)$	https://<span class="token variable">$host</span><span class="token variable">$1</span>	permanent</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h1 data-heading="补充：压缩和限流技巧" class="heading" id="补充：压缩和限流技巧">补充：压缩和限流技巧</h1><div class="heading-children"><div><div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">Note</div></div><div class="callout-content">
+<p>摘抄自：<a data-tooltip-position="top" aria-label="https://www.macrozheng.com/mall/reference/nginx.html#文件压缩" rel="noopener" class="external-link is-unresolved" href="https://www.macrozheng.com/mall/reference/nginx.html#%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9" target="_self">Nginx的这些妙用，你肯定有不知道的！ | mall学习教程 (macrozheng.com)</a></p>
+<p><mark>如果我们租用了一个带宽很低的服务器，网站访问速度会很慢，这时我们可以通过让nginx开启GZIP压缩来提高网站的访问速度。</mark>这里我们以mall的前端项目为例来演示下它的提速效果。</p>
+</div></div></div><div><ul>
+<li data-line="0">
+<p>首先我们对nginx进行限速操作，限制每个连接的访问速度为128K来建立一个比较慢的访问场景；</p>
+</li>
+<li data-line="1">
+<p>修改<code>nginx.conf</code>配置文件，进行限速操作：</p>
+<pre class="language-nginx" tabindex="0"><code class="language-nginx is-loaded"><span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">listen</span>       <span class="token number">80</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">server_name</span>  mall.macrozheng.com</span><span class="token punctuation">;</span>
+    
+    <span class="token directive"><span class="token keyword">limit_rate</span> <span class="token number">128k</span></span><span class="token punctuation">;</span> <span class="token comment">#限制网速为128K</span>
+
+    <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">root</span>   /usr/share/nginx/html/mall</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">index</span>  index.html index.htm</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token directive"><span class="token keyword">error_page</span>   <span class="token number">500</span> <span class="token number">502</span> <span class="token number">503</span> <span class="token number">504</span>  /50x.html</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">location</span> = /50x.html</span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">root</span>   /usr/share/nginx/html</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="22">
+<p>对mall的前端项目<code>mall.macrozheng.com</code>进行访问，我们可以发现网站中有个js文件比较大，需要加载12s：<br>
+<img alt="img" src="https://i0.hdslb.com/bfs/article/f01651448e9478c64013246263318b86688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="25">
+<p>nginx返回请求头信息如下：<br>
+<img alt="img" src="https://i0.hdslb.com/bfs/article/a2f56501f65c2a03eca7ed31e731b057688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="28">
+<p>修改<code>/mydata/nginx/conf</code>目录下的<code>nginx.conf</code>配置文件，开启GZIP压缩；</p>
+<pre class="language-nginx" tabindex="0"><code class="language-nginx is-loaded"><span class="token directive"><span class="token keyword">http</span></span> <span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">gzip</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span> <span class="token comment">#开启gzip</span>
+    <span class="token directive"><span class="token keyword">gzip_disable</span> <span class="token string">"msie6"</span></span><span class="token punctuation">;</span> <span class="token comment">#IE6不使用gzip</span>
+    <span class="token directive"><span class="token keyword">gzip_vary</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span> <span class="token comment">#设置为on会在Header里增加 "Vary: Accept-Encoding"</span>
+    <span class="token directive"><span class="token keyword">gzip_proxied</span> any</span><span class="token punctuation">;</span> <span class="token comment">#代理结果数据的压缩</span>
+    <span class="token directive"><span class="token keyword">gzip_comp_level</span> <span class="token number">6</span></span><span class="token punctuation">;</span> <span class="token comment">#gzip压缩比（1~9），越小压缩效果越差，但是越大处理越慢，所以一般取中间值</span>
+    <span class="token directive"><span class="token keyword">gzip_buffers</span> <span class="token number">16</span> <span class="token number">8k</span></span><span class="token punctuation">;</span> <span class="token comment">#获取多少内存用于缓存压缩结果</span>
+    <span class="token directive"><span class="token keyword">gzip_http_version</span> 1.1</span><span class="token punctuation">;</span> <span class="token comment">#识别http协议的版本</span>
+    <span class="token directive"><span class="token keyword">gzip_min_length</span> <span class="token number">1k</span></span><span class="token punctuation">;</span> <span class="token comment">#设置允许压缩的页面最小字节数，超过1k的文件会被压缩</span>
+    <span class="token directive"><span class="token keyword">gzip_types</span> application/javascript text/css</span><span class="token punctuation">;</span> <span class="token comment">#对特定的MIME类型生效,js和css文件会被压缩</span>
+
+    <span class="token directive"><span class="token keyword">include</span> /etc/nginx/conf.d/*.conf</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">复制</button></pre>
+</li>
+<li data-line="45">
+<p>再次对mall的前端项目<code>mall.macrozheng.com</code>进行访问，我们可以发现js文件已经被压缩，加载时间缩短到3.88s，提速3倍左右：<br>
+<img alt="img" src="https://i0.hdslb.com/bfs/article/da1b41084d743b1c90b5ab994f51fb51688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+<li data-line="48">
+<p>nginx返回请求头中添加了<code>Content-Encoding: gzip</code>的信息：<br>
+<img alt="img" src="https://i0.hdslb.com/bfs/article/f59ccf50fff7afb45604724ec3575049688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p>
+</li>
+</ul></div><div class="mod-footer"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/nginx.html#什么是Nginx" data-path="#什么是Nginx"><div class="tree-item-inner heading-link" heading-name="什么是Nginx">什么是Nginx</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/nginx.html#下载安装" data-path="#下载安装"><div class="tree-item-inner heading-link" heading-name="下载安装">下载安装</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/nginx.html#目录结构" data-path="#目录结构"><div class="tree-item-inner heading-link" heading-name="目录结构">目录结构</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/后端/java/nginx.html#配置文件结构" data-path="#配置文件结构"><div class="tree-item-inner heading-link" heading-name="配置文件结构">配置文件结构</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/nginx.html#部署静态资源" data-path="#部署静态资源"><div class="tree-item-inner heading-link" heading-name="部署静态资源">部署静态资源</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/nginx.html#负载均衡" data-path="#负载均衡"><div class="tree-item-inner heading-link" heading-name="负载均衡">负载均衡</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/nginx.html#博客部署案例" data-path="#博客部署案例"><div class="tree-item-inner heading-link" heading-name="博客部署案例">博客部署案例</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/后端/java/nginx.html#补充：压缩和限流技巧" data-path="#补充：压缩和限流技巧"><div class="tree-item-inner heading-link" heading-name="补充：压缩和限流技巧">补充：压缩和限流技巧</div></a><div class="tree-item-children"></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

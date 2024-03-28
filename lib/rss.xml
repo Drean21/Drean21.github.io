@@ -1,0 +1,693 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[尘影迹痕]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://blog.cytl2.eu.org/</link><image><url>https://blog.cytl2.eu.org/lib/media/favicon.svg</url><title>尘影迹痕</title><link>https://blog.cytl2.eu.org/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 28 Mar 2024 16:59:36 GMT</lastBuildDate><atom:link href="https://blog.cytl2.eu.org/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 28 Mar 2024 16:59:24 GMT</pubDate><copyright><![CDATA[lzy]]></copyright><ttl>60</ttl><dc:creator>lzy</dc:creator><item><title><![CDATA[🏠️欢迎来到 Lzy's Home !]]></title><description><![CDATA[<br>欢迎来到我的空间，我是一个喜欢折腾的家伙，喜欢互联网冲浪🏄‍♂️，有一丢丢的强迫症🎯(●'◡'●)<br>
+将在这里记录我的点滴，我的 <a data-href="笔记迁徙" href="https://blog.cytl2.eu.org/生活/笔记/笔记迁徙.html" class="internal-link" target="_self" rel="noopener">笔记迁徙</a> 之旅的终点；不限于技术，还有生活，持续更新ing......<br>Warning
+⛺️笔记面板和带🔒内容暂时不开放访问🤣
+<br>Multi column
+Blank 浓缩精华：
+<a data-href="🔒面试手册" href="https://blog.cytl2.eu.org/🔒面试手册" class="internal-link is-unresolved" target="_self" rel="noopener">🔒面试手册</a>、<a data-href="行为规约" href="https://blog.cytl2.eu.org/技术/行为规约.html" class="internal-link" target="_self" rel="noopener">行为规约</a>、<a data-href="实战总结" href="https://blog.cytl2.eu.org/技术/浓缩精华/实战总结.html" class="internal-link" target="_self" rel="noopener">实战总结</a>
+技术之旅：
+<a data-href="Web后端开发" href="https://blog.cytl2.eu.org/技术/后端/web后端开发.html" class="internal-link" target="_self" rel="noopener">Web后端开发</a>、<a data-href="Web前端开发" href="https://blog.cytl2.eu.org/技术/前端/web前端开发.html" class="internal-link" target="_self" rel="noopener">Web前端开发</a>
+<a data-href="客户端开发" href="https://blog.cytl2.eu.org/技术/客户端开发/客户端开发.html" class="internal-link" target="_self" rel="noopener">客户端开发</a>、<a data-href="开发利器" href="https://blog.cytl2.eu.org/技术/开发利器/开发利器.html" class="internal-link" target="_self" rel="noopener">开发利器</a>
+<a data-href="技术方案" href="https://blog.cytl2.eu.org/技术/技术方案.html" class="internal-link" target="_self" rel="noopener">技术方案</a>、<a data-href="那年那事" href="https://blog.cytl2.eu.org/技术/踩坑记录/那年那事.html" class="internal-link" target="_self" rel="noopener">那年那事</a>
+<a data-href="灰色领域" href="https://blog.cytl2.eu.org/技术/灰色领域/灰色领域.html" class="internal-link" target="_self" rel="noopener">灰色领域</a>、<a data-href="开源事项" href="https://blog.cytl2.eu.org/技术/开源事项.html" class="internal-link" target="_self" rel="noopener">开源事项</a> Blank <a data-href="驾考之路" href="https://blog.cytl2.eu.org/生活/驾考/驾考之路.html" class="internal-link" target="_self" rel="noopener">驾考之路</a>、<a data-href="🔒中国公考" href="https://blog.cytl2.eu.org/🔒中国公考" class="internal-link is-unresolved" target="_self" rel="noopener">🔒中国公考</a>
+<a data-href="云服务" href="https://blog.cytl2.eu.org/云服务/云服务.html" class="internal-link" target="_self" rel="noopener">云服务</a> 、<a data-href="神软清单" href="https://blog.cytl2.eu.org/生活/分享/神软清单.html" class="internal-link" target="_self" rel="noopener">神软清单</a>
+<a data-href="系统技巧" href="https://blog.cytl2.eu.org/生活/系统技巧.html" class="internal-link" target="_self" rel="noopener">系统技巧</a>、<a data-href="办公技能" href="https://blog.cytl2.eu.org/生活/办公技能.html" class="internal-link" target="_self" rel="noopener">办公技能</a>
+<a data-href="🔒日常穿搭" href="https://blog.cytl2.eu.org/🔒日常穿搭" class="internal-link is-unresolved" target="_self" rel="noopener">🔒日常穿搭</a>、<a data-href="🔒美食之路" href="https://blog.cytl2.eu.org/🔒美食之路" class="internal-link is-unresolved" target="_self" rel="noopener">🔒美食之路</a>
+<a data-href="🔒生活常识" href="https://blog.cytl2.eu.org/🔒生活常识" class="internal-link is-unresolved" target="_self" rel="noopener">🔒生活常识</a>、 <a data-href="🔒小小零钱" href="https://blog.cytl2.eu.org/🔒小小零钱" class="internal-link is-unresolved" target="_self" rel="noopener">🔒小小零钱</a>
+<a data-href="🔒我的图册" href="https://blog.cytl2.eu.org/🔒我的图册" class="internal-link is-unresolved" target="_self" rel="noopener">🔒我的图册</a>、 <a data-href="🔒数据资料" href="https://blog.cytl2.eu.org/🔒数据资料" class="internal-link is-unresolved" target="_self" rel="noopener">🔒数据资料</a> <br><br>二四六1月2月3月4月5月6月7月8月9月10月11月12月lessmore<br><br>
+<br><a data-tooltip-position="top" aria-label="https://github.com/Drean21" rel="noopener" class="external-link is-unresolved" href="https://github.com/Drean21" target="_self">Drean21 (chen ying) (github.com</a>
+<br><a data-tooltip-position="top" aria-label="https://docs.qq.com/doc/DU25zWmZSSmhLd1RH" rel="noopener" class="external-link is-unresolved" href="https://docs.qq.com/doc/DU25zWmZSSmhLd1RH" target="_self">弹幕观影指南 (qq.com)</a>
+]]></description><link>https://blog.cytl2.eu.org/index.html</link><guid isPermaLink="false">index.md</guid><dc:creator><![CDATA[lzy]]></dc:creator><pubDate>Thu, 28 Mar 2024 16:58:22 GMT</pubDate></item><item><title><![CDATA[SQL语法、常见场景及示例]]></title><description><![CDATA[<br><br><br><br>SELECT column1, column2
+FROM table_name;
+复制<br><br>SELECT column1, column2
+FROM table_name
+WHERE condition;
+复制<br><br>SELECT column1, column2
+FROM table_name
+ORDER BY column1 ASC|DESC;
+复制<br><br>SELECT column1, COUNT(*)
+FROM table_name
+GROUP BY column1;
+复制<br><br>SELECT table1.column1, table2.column2
+FROM table1
+JOIN table2 ON table1.key = table2.key;
+复制<br><br>SELECT column1, CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 ELSE default_result END AS new_column
+FROM table;
+复制<br><br>INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+UPDATE table_name SET column1 = value1 WHERE condition;
+DELETE FROM table_name WHERE condition;
+复制<br><br>SELECT SUM(column1), AVG(column2), COUNT(*)
+FROM table_name;
+复制<br><br><br>
+<br>查询每个部门的平均工资，并按平均工资降序排列。
+SELECT department_name, AVG(salary) AS avg_salary
+FROM employees e
+JOIN departments d ON e.department_id = d.department_id
+GROUP BY department_name
+ORDER BY avg_salary DESC;
+复制 <br>查询工资高于平均工资的员工。
+SELECT *
+FROM employees
+WHERE salary &gt; (SELECT AVG(salary) FROM employees);
+复制 <br><br>
+<br>查询每个订单的总金额，并按总金额降序排列。
+SELECT order_id, (SELECT SUM(quantity * unit_price) FROM order_details WHERE order_id = o.order_id) AS total_amount
+FROM orders o
+ORDER BY total_amount DESC;
+复制 <br>查询某个客户的订单总金额。
+SELECT customer_id, SUM(total_amount) AS total_order_amount
+FROM orders
+WHERE customer_id = 1001
+GROUP BY customer_id;
+复制 <br><br>
+<br>查询每个产品的供应商数量，并按供应商数量降序排列。
+SELECT p.product_id, p.product_name, (SELECT COUNT(*) FROM product_suppliers ps WHERE ps.product_id = p.product_id) AS supplier_count
+FROM products p
+ORDER BY supplier_count DESC;
+复制 <br>查询每个产品的供应商信息。
+SELECT p.product_name, s.supplier_name
+FROM products p
+JOIN product_suppliers ps ON p.product_id = ps.product_id
+JOIN suppliers s ON ps.supplier_id = s.supplier_id;
+复制 ]]></description><link>https://blog.cytl2.eu.org/技术/浓缩精华/sql速记.html</link><guid isPermaLink="false">技术/浓缩精华/SQL速记.md</guid><dc:creator><![CDATA[lzy]]></dc:creator><pubDate>Mon, 25 Mar 2024 16:58:49 GMT</pubDate></item><item><title><![CDATA[实战总结]]></title><description><![CDATA[<a class="tag" href="https://blog.cytl2.eu.org/?query=tag:todo/note" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#todo/note</a> <br> <a href="https://blog.cytl2.eu.org?query=tag:todo/note" class="tag is-unresolved" target="_self" rel="noopener" data-href="#todo/note">#todo/note</a> 设计模式、中间件、三方登录服务对接、支付对接、微信公众号能力.etc<br><a data-href="Linux常用命令" href="https://blog.cytl2.eu.org/技术/浓缩精华/linux常用命令.html" class="internal-link" target="_self" rel="noopener">Linux常用命令</a><br><a data-href="Docker常用命令" href="https://blog.cytl2.eu.org/技术/浓缩精华/docker常用命令.html" class="internal-link" target="_self" rel="noopener">Docker常用命令</a><br><a data-href="部署上线" href="https://blog.cytl2.eu.org/技术/浓缩精华/部署上线.html" class="internal-link" target="_self" rel="noopener">部署上线</a><br><a data-href="SQL速记" href="https://blog.cytl2.eu.org/技术/浓缩精华/sql速记.html" class="internal-link" target="_self" rel="noopener">SQL速记</a>]]></description><link>https://blog.cytl2.eu.org/技术/浓缩精华/实战总结.html</link><guid isPermaLink="false">技术/浓缩精华/实战总结.md</guid><dc:creator><![CDATA[lzy]]></dc:creator><pubDate>Mon, 25 Mar 2024 16:58:20 GMT</pubDate></item><item><title><![CDATA[设计模式]]></title><description><![CDATA[<a class="tag" href="https://blog.cytl2.eu.org/?query=tag:todo/note" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#todo/note</a> <br> <a href="https://blog.cytl2.eu.org?query=tag:todo/note" class="tag is-unresolved" target="_self" rel="noopener" data-href="#todo/note">#todo/note</a> <br>设计模式，学了要会用，从知名开源项目中学习设计模式更是事半功倍，提高我们的代码鉴赏能力，比如：<br><a data-tooltip-position="top" aria-label="https://mp.weixin.qq.com/s/hL4KlQzKMAsy2QDyackjww" rel="noopener" class="external-link is-unresolved" href="https://mp.weixin.qq.com/s/hL4KlQzKMAsy2QDyackjww" target="_self">Spring 中经典的 9 种设计模式，打死也要记住啊！ (qq.com)</a>
+<br>MyBatisPlus
+<br>虽有二十三种设计模式，但日常编码常用的就构造器、模板设计方法、策略模式，外加责任链<br>工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一， 这种类型的设计模式属于创建型模式，它的思想是提供一个工厂方法返回对象！可以理解为【代工厂】<br>
+<br>对象通过工厂的方法创建返回，工厂的方法可以为该对象进行加工和数据注入
+<br>可以实现类与类之间的解耦操作（核心思想）
+<br>联想到实际生活，公司会把具体产品类的信息和数据告诉工厂，让工厂去替他们生产出具体的产品而不是自己去生产具体的产品。以电脑产品为例：<br>首先先定义Computer的抽象类
+<br>public abstract class Computer { private String name; private double price; public abstract void start(); public String getName() { return name; } public void setName(String name) { this.name = name; } public double getPrice() { return price; } public void setPrice(double price) { this.price = price; }
+}
+复制<br>现在有两个Mac和Huaiwei品牌的电脑继承和发展了Computer类
+<br>public class Mac extends Computer{ @Override public void start() { System.out.println(getName() + "以非常优雅的方法启动了，展示了一个苹果logo"); }
+} ------------------------------------------------------------------------ public class Huawei extends Computer{ @Override public void start() { System.out.println(getName() + "开机了，展示了华为的菊花图标~~~~"); } }
+复制<br>现在有一家Factory工厂专门为公司生产品牌电脑
+<br>public class FactoryPattern { /** 定义一个方法，创建对象返回 */ public static Computer createComputer(String info){ switch (info){ case "huawei": Computer c = new Huawei(); c.setName("huawei pro 16"); c.setPrice(5999); return c; case "mac": Computer c2 = new Mac(); c2.setName("MacBook pro"); c2.setPrice(11999); return c2; default: return null; } }
+} 复制<br>接下来，不Mac和Huawei公司都来委托Factory工厂帮他们生产电脑
+<br>public class FactoryDemo { public static void main(String[] args) { Computer c1 = FactoryPattern.createComputer("huawei"); c1.start(); Computer c2 = FactoryPattern.createComputer("mac"); c2.start(); }
+}
+复制<br>可以看到多个类之间不在耦合，公司如果对工厂生产的产品不满意只要换更好的工厂即可【只需要修改FactoryPattern类即可】<br>创建一个新类，包装原始类，从而在新类中提升原来类的功能。<br>
+简单来说就是：在加强类中定义抽象父类的实现类，然后调用实现类，并增强功能<br>
+作用： 装饰模式指的是在不改变原类的基础上, 动态地扩展一个类的功能。<br>以IO流为例，模拟其装饰过程<img src="https://i0.hdslb.com/bfs/album/d0587120fad6d995f4f4bb2a76689e205bbc7f8d.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>定义父类。
+<br>/** 共同父类 */
+public abstract class InputStream { public abstract int read(); public abstract int read(byte[] buffer);
+}
+复制<br>定义原始类，继承父类，定义功能。
+<br>/** 原始类 */
+public class FileInputStream extends InputStream{ @Override public int read() { System.out.println("低性能的方式读取了一个字节a"); return 97; } @Override public int read(byte[] buffer) { buffer[0] = 97; buffer[1] = 98; buffer[2] = 99; System.out.println("低性能的方式读取了一个字节数组：" + Arrays.toString(buffer)); return 3; }
+}
+复制<br>定义装饰类，继承父类，包装原始类，增强功能！！
+<br>/** 装饰类：继承InputStream 拓展原始类的功能 */
+public class BufferedInputStream extends InputStream{ private InputStream is; public BufferedInputStream(InputStream is){ this.is = is; } @Override public int read() { System.out.println("提供8KB的缓冲区，提高读数据性能~~~~"); return is.read(); } @Override public int read(byte[] buffer) { System.out.println("提供8KB的缓冲区，提高读数据性能~~~~"); return is.read(buffer); }
+}
+复制<br>@Builder注解通常与Java语言中的Lombok库一起使用。它的作用是简化Java类的构造方法和生成Builder模式的代码。使用@Builder注解，你可以轻松地创建一个具有多个属性的对象，而无需手动编写冗长的构造方法或Builder模式的代码。<br>以下是@Builder注解的一些主要功能和用法：<br>
+自动生成Builder类：当你在类上使用@Builder注解时，Lombok会自动生成一个相应的Builder类，该Builder类包含了类中所有字段的设置方法，使你可以链式调用设置属性的方法。 <br>
+省去构造方法：@Builder注解允许你创建一个对象，只需提供所需属性的值，而不需要编写构造方法。这可以大大简化代码。 <br>
+默认值：你可以在属性上使用@Builder.Default注解来设置默认值，这样在使用Builder创建对象时，如果没有显式设置该属性的值，就会使用默认值。 <br>
+忽略属性：如果你不希望某些属性被Builder设置，可以使用@Builder.Exclude注解来排除这些属性。 <br>示例代码：<br>import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter; @Getter
+@Setter
+@Builder
+public class Person { private String name; private int age; @Builder.Default private String country = "China";
+} // 使用Builder创建对象
+Person person = Person.builder() .name("John") .age(30) .build(); // 使用默认值
+Person defaultPerson = Person.builder() .name("Alice") .build();
+复制<br>总之，@Builder注解是用来简化Java对象的构建过程的工具，特别适用于具有多个属性的类。通过减少样板代码，它可以提高代码的可读性和维护性。<br>定义一组算法类，将每个算法分别封装起来，让它们可以互相替换。策略模式使这些算法在客户端调用它们的时候能够互不影响地变化，客户端代指使用算法的代码。用来消除 if-else、switch 等多重判断的代码，消除 if-else、switch 多重判断 可以有效应对代码的复杂性。<br><img alt="image.png" src="https://i0.hdslb.com/bfs/article/b104575ad2908aac567014e4f7e07153688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+这段代码是能够满足项目中业务需求的，而且很多已上线生产环境的代码也有这类代码。但是，这一段代码存在存在两个弊端：<br>代码的复杂性，正常业务代码逻辑肯定会比这个代码块复杂很多，这也就 导致了 if-else 的分支以及代码数量过多。这种方式可以通过将代码拆分成独立函数或者拆分成类来解决。
+<br>开闭原则，价格优惠肯定会 随着不同的时期作出不同的改变，或许新增、删除或修改。如果在一个函数中修改无疑是件恐怖的事情，想想可能多个开发者分别进行开发，杂乱无章的注释，混乱的代码逻辑等情况十有八九会发生。
+<br>将上述代码块改造为策略设计模式，大致需要三个步骤。<br>定义抽象策略接口，因为业务使用接口而不是具体的实现类的话，便可以灵活的替换不同的策略；
+<br>定义具体策略实现类，实现自抽象策略接口，其内部封装具体的业务实现；
+<br>定义策略工厂，封装创建策略实现（算法），对客户端屏蔽具体的创建细节。
+<br><img src="https://images-machen.oss-cn-beijing.aliyuncs.com/1672473992392-4b6d78d6-47ab-4d98-afe7-110143827b6b.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_59%2Ctext_5pCc77yabmFnZW9mZmVyLmNvbQ%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>目前把抽象策略接口、具体的策略实现类以及策略工厂都已经创建了，现在可以看一下客户端需要如何调用，又是如何对客户端屏蔽具体实现细节的。<br><img src="https://images-machen.oss-cn-beijing.aliyuncs.com/1672474008299-8d04739e-21e7-4c18-bf06-ca39a837ed9b.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_52%2Ctext_5pCc77yabmFnZW9mZmVyLmNvbQ%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>根据代码块图片得知，具体策略类是从策略工厂中获取，确实是取消了 if-else 设计，在工厂中使用 Map 存储策略实现。获取到策略类后执行具体的优惠策略方法就可以获取优惠后的金额。<br>通过分析大家得知，目前这种设计确实将应用代码的复杂性降低了。如果新增一个优惠策略，只需要新增一个策略算法实现类即可。但是，添加一个策略算法实现，意味着需要改动策略工厂中的代码，还是不符合开闭原则。<br>如何完整实现符合开闭原则的策略模式，需要借助 Spring 的帮助，详细案例请继续往下看。<br>最近项目中设计的一个功能用到了策略模式，分为两类角色，笔者负责定义抽象策略接口以及策略工厂，不同的策略算法需要各个业务方去实现，可以联想到上文中的优惠券功能。因为是 Spring 项目，所以都是按照 Spring 的方式进行处理，话不多说，上代码。<br><img src="https://images-machen.oss-cn-beijing.aliyuncs.com/1672474038315-5988975f-07d4-452f-95d9-f8e7921915fe.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_46%2Ctext_5pCc77yabmFnZW9mZmVyLmNvbQ%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>可以看到，比对上面的示例代码，有两处明显的变化：<br>抽象策略接口中，新定义了 mark() 接口，此接口用来标示算法的唯一性；
+<br>具体策略实现类，使用 @Component 修饰，将对象本身交由 Spring 进行管理 。
+<br>小贴士：为了阅读方便，mark() 返回直接使用字符串替代，读者朋友在返回标示时最好使用枚举定义。<br>接下来继续查看抽象策略工厂如何改造，才能满足开闭原则。<br><img src="https://images-machen.oss-cn-beijing.aliyuncs.com/1672474063847-3dacf3d3-dcdc-4219-9b74-47191e535764.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_65%2Ctext_5pCc77yabmFnZW9mZmVyLmNvbQ%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>和之前责任链模式相同 （TODO 添加链接），都是通过 InitializingBean 接口实现中调用 IOC 容器查找对应策略实现，随后将策略实现 mark() 方法返回值作为 key， 策略实现本身作为 value 添加到 Map 容器中等待客户端的调用。<br><img src="https://images-machen.oss-cn-beijing.aliyuncs.com/1672474079146-767a091f-05ec-4dd8-9d3d-379981a8d0bb.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_51%2Ctext_5pCc77yabmFnZW9mZmVyLmNvbQ%3D%3D%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>这里使用的 SpringBoot 测试类，注入策略工厂 Bean，通过策略工厂选择出具体的策略算法类，继而通过算法获取到优惠后的价格。小插曲：如果不想把策略工厂注入 Spring 也可以，实现方法有很多。<br>总结下本小节，我们通过和 Spring 结合的方式，通过策略设计模式对文初的代码块进行了两块优化：应对代码的复杂性，让其满足开闭原则。更具体一些呢就是 通过抽象策略算法类减少代码的复杂性，继而通过 Spring 的一些特性同时满足了开闭原则，现在来了新需求只要添加新的策略类即可，健壮易扩展。<br>模版设计方法实现责任链基础组件
+这段代码定义了一个名为 AbstractChainHandler 的接口，它扩展了 Ordered 接口。这个接口可能是用于实现责任链模式的一个基础框架，它提供了一个处理方法 handler 和一个用于标识组件的方法 mark。 <br>Ordered 接口： <br>Java 8 引入了 Ordered 接口，用于标识有序的元素。实现此接口的类可以提供一个比较方法，用于确定元素之间的顺序。在这个 AbstractChainHandler 接口中，Ordered 接口可能用于定义责任链中处理节点的顺序，以便在处理请求时可以按照特定的顺序执行。 <br>handler 方法： <br>这个方法是责任链中的核心方法，用于执行特定的处理逻辑。传入的参数 requestParam 是对请求数据的封装，可以是任何类型的对象。
+<br>在实现这个方法时，处理节点应该根据需要对 requestParam 进行处理，并可以选择性地将处理结果或者进一步处理的需求传递给链中的下一个节点。 <br>mark 方法： <br>这个方法返回一个字符串，用作责任链组件的标识。这个标识可以用来跟踪链中的不同节点，或者在日志记录和调试时提供额外的信息。<br>
+这个接口的设计允许创建一个由多个处理节点组成的链，每个节点都实现了 AbstractChainHandler 接口。在处理请求时，请求会从链的第一个节点开始，逐个经过每个节点，直到所有节点都处理完毕。<br>
+这种设计模式在需要将请求分发给多个处理者，并且每个处理者都有可能处理请求或者将请求传递给下一个处理者时非常有用。它提供了很高的灵活性和可扩展性，因为你可以轻松地在链中添加或移除处理节点。<br>
+请注意，这段代码只是一个接口定义，并没有提供具体的实现。在实际使用中，你需要为这个接口提供一个或多个实现，并在责任链中按照所需的顺序组合这些处理节点。 <br>public interface AbstractChainHandler&lt;T&gt; extends Ordered { /** * 执行责任链逻辑 * * @param requestParam 责任链执行入参 */ void handler(T requestParam); /** * @return 责任链组件标识 */ String mark();
+} 复制<br>具体的过滤器实现：<br>/** * 购票流程过滤器之验证参数必填 * * @公众号：马丁玩编程，回复：加群，添加马哥微信（备注：12306）获取项目资料 */
+@Component
+public class TrainPurchaseTicketParamNotNullChainHandler implements TrainPurchaseTicketChainFilter&lt;PurchaseTicketReqDTO&gt; { @Override public void handler(PurchaseTicketReqDTO requestParam) { // ...... } @Override public int getOrder() { return 0; }
+} /** * 购票流程过滤器之验证参数是否有效 * 验证参数有效这个流程会大量交互缓存，为了优化性能需要使用 Lua。为了方便大家理解流程，这里使用多次调用缓存 * * @公众号：马丁玩编程，回复：加群，添加马哥微信（备注：12306）获取项目资料 */
+@Component
+@RequiredArgsConstructor
+public class TrainPurchaseTicketParamVerifyChainHandler implements TrainPurchaseTicketChainFilter&lt;PurchaseTicketReqDTO&gt; { private final TrainMapper trainMapper; private final TrainStationMapper trainStationMapper; private final DistributedCache distributedCache; @Override public void handler(PurchaseTicketReqDTO requestParam) { // ...... } @Override public int getOrder() { return 10; }
+} /** * 购票流程过滤器之验证列车站点库存是否充足 * * @公众号：马丁玩编程，回复：加群，添加马哥微信（备注：12306）获取项目资料 */
+@Component
+@RequiredArgsConstructor
+public class TrainPurchaseTicketParamStockChainHandler implements TrainPurchaseTicketChainFilter&lt;PurchaseTicketReqDTO&gt; { private final SeatMarginCacheLoader seatMarginCacheLoader; private final DistributedCache distributedCache; @Override public void handler(PurchaseTicketReqDTO requestParam) { // ...... } @Override public int getOrder() { return 20; }
+} /** * 购票流程过滤器之验证乘客是否重复购买 * * @公众号：马丁玩编程，回复：加群，添加马哥微信（备注：12306）获取项目资料 */
+@Component
+@RequiredArgsConstructor
+public class TrainPurchaseTicketRepeatChainHandler implements TrainPurchaseTicketChainFilter&lt;PurchaseTicketReqDTO&gt; { @Override public void handler(PurchaseTicketReqDTO requestParam) { // ...... } @Override public int getOrder() { return 30; }
+}
+复制<br>购票流程使用过滤器：<br>private final AbstractChainContext&lt;PurchaseTicketReqDTO&gt; purchaseTicketAbstractChainContext; @Override
+@Transactional(rollbackFor = Throwable.class)
+public TicketPurchaseRespDTO purchaseTickets(PurchaseTicketReqDTO requestParam) { // 责任链模式，验证 0：参数必填 1：参数正确性 2：列车车次余量是否充足 3：乘客是否已买当前车次等 purchaseTicketAbstractChainContext.handler(TicketChainMarkEnum.TRAIN_PURCHASE_TICKET_FILTER.name(), requestParam); // ......
+}
+复制<br>购票责任链实现原理：<br>为起到标识特定子业务线的效果，增设一层Handler 接口的子接口。
+<br>一条业务线内，可能有多个 Handler 执行各种各样的校验任务：编写对应 Handler 实现类。
+<br>多个实现类需要一个容器组织起来：编写 Context 类容纳若干实现类，并提供一个 HashMap 供外界按需取用 Handler。
+<br>/** * 抽象责任链上下文 * * @公众号：马丁玩编程，回复：加群，添加马哥微信（备注：12306）获取项目资料 */
+public final class AbstractChainContext&lt;T&gt; implements CommandLineRunner { private final Map&lt;String, List&lt;AbstractChainHandler&gt;&gt; abstractChainHandlerContainer = new HashMap&lt;&gt;(); /** * 责任链组件执行 * * @param mark 责任链组件标识 * @param requestParam 请求参数 */ public void handler(String mark, T requestParam) { List&lt;AbstractChainHandler&gt; abstractChainHandlers = abstractChainHandlerContainer.get(mark); if (CollectionUtils.isEmpty(abstractChainHandlers)) { throw new RuntimeException(String.format("[%s] Chain of Responsibility ID is undefined.", mark)); } abstractChainHandlers.forEach(each -&gt; each.handler(requestParam)); } @Override public void run(String... args) throws Exception { Map&lt;String, AbstractChainHandler&gt; chainFilterMap = ApplicationContextHolder .getBeansOfType(AbstractChainHandler.class); chainFilterMap.forEach((beanName, bean) -&gt; { List&lt;AbstractChainHandler&gt; abstractChainHandlers = abstractChainHandlerContainer.get(bean.mark()); if (CollectionUtils.isEmpty(abstractChainHandlers)) { abstractChainHandlers = new ArrayList(); } abstractChainHandlers.add(bean); List&lt;AbstractChainHandler&gt; actualAbstractChainHandlers = abstractChainHandlers.stream() .sorted(Comparator.comparing(Ordered::getOrder)) .collect(Collectors.toList()); abstractChainHandlerContainer.put(bean.mark(), actualAbstractChainHandlers); }); }
+}
+复制]]></description><link>https://blog.cytl2.eu.org/技术/后端/java/设计模式.html</link><guid isPermaLink="false">技术/后端/Java/设计模式.md</guid><dc:creator><![CDATA[lzy]]></dc:creator><pubDate>Mon, 25 Mar 2024 02:40:49 GMT</pubDate><enclosure url="https://i0.hdslb.com/bfs/album/d0587120fad6d995f4f4bb2a76689e205bbc7f8d.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://i0.hdslb.com/bfs/album/d0587120fad6d995f4f4bb2a76689e205bbc7f8d.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[应用聚汇]]></title><description><![CDATA[<br><br> <br>解压缩：<a data-tooltip-position="top" aria-label="https://sparanoid.com/lab/7z/" rel="noopener" class="external-link is-unresolved" href="https://sparanoid.com/lab/7z/" target="_self">7-Zip 官方中文网站 (sparanoid.com)</a>
+<br>阅读器： <br>清爽、强大：<a data-tooltip-position="top" aria-label="https://www.pdfgear.com/zh/" rel="noopener" class="external-link is-unresolved" href="https://www.pdfgear.com/zh/" target="_self">PDFgear - 将易于使用的PDF软件带给大众</a>
+<br> <br>播放器： <br>超强解码：<a data-tooltip-position="top" aria-label="http://www.potplayercn.com/download" rel="noopener" class="external-link is-unresolved" href="http://www.potplayercn.com/download" target="_self">PotPlayer下载 - PotPlayer中文网 (potplayercn.com)</a> <br>录屏： <br>重量级，支持直播流，支持后台窗口录制：<a data-tooltip-position="top" aria-label="https://obsproject.com/welcome" rel="noopener" class="external-link is-unresolved" href="https://obsproject.com/welcome" target="_self">Welcome | OBS (obsproject.com)</a>
+<br>开源轻量，有免安装版，支持键盘录制：<a data-tooltip-position="top" aria-label="https://github.com/MathewSachin/Captura" rel="noopener" class="external-link is-unresolved" href="https://github.com/MathewSachin/Captura" target="_self">MathewSachin/Captura: Capture Screen, Audio, Cursor, Mouse Clicks and Keystrokes (github.com)</a> <br>截图： <br>程序员经典：<a data-tooltip-position="top" aria-label="https://zh.snipaste.com/" rel="noopener" class="external-link is-unresolved" href="https://zh.snipaste.com/" target="_self">Snipaste - 截图 + 贴图</a>
+<br>超级整合，全新时代，集齐QQ、微信、Snipaste等主流截图工具的所有优点：<a data-tooltip-position="top" aria-label="https://txc.qq.com/products/614512/" rel="noopener" class="external-link is-unresolved" href="https://txc.qq.com/products/614512/" target="_self">PixPin (qq.com)</a> <br>图床： <br>PicGo：<a data-tooltip-position="top" aria-label="https://picgo.github.io/PicGo-Doc/zh/" rel="noopener" class="external-link is-unresolved" href="https://picgo.github.io/PicGo-Doc/zh/" target="_self">PicGo</a> <br>下载： <br>IDM：最强经典下载工具，除了不支持磁力种子，以及部分m3u8受保护资源不支持下载。推荐俄罗斯大神版 <br>动态壁纸： <br>非常轻巧，才200多KB：<a data-tooltip-position="top" aria-label="https://github.com/he55/DreamScene2" rel="noopener" class="external-link is-unresolved" href="https://github.com/he55/DreamScene2" target="_self">he55/DreamScene2: 一个小而快并且功能强大的 Windows 动态桌面软件 (github.com)</a> <br>远程控制： <br>ToDesk：<a data-tooltip-position="top" aria-label="https://www.todesk.com/?lang=zh" rel="noopener" class="external-link is-unresolved" href="https://www.todesk.com/?lang=zh" target="_self">ToDesk远程桌面软件-免费安全流畅的远程连接电脑手机</a>
+<br>Rustdesk：最强开源，干净利索，<a data-tooltip-position="top" aria-label="https://github.com/rustdesk/rustdesk/releases" rel="noopener" class="external-link is-unresolved" href="https://github.com/rustdesk/rustdesk/releases" target="_self">Releases · rustdesk/rustdesk (github.com)</a> <br>扶梯： <br>v2rayN：<a data-tooltip-position="top" aria-label="https://github.com/2dust/v2rayN/releases" rel="noopener" class="external-link is-unresolved" href="https://github.com/2dust/v2rayN/releases" target="_self">Releases · 2dust/v2rayN (github.com)</a> <br>系统工具： <br>鼠标特效：<a data-tooltip-position="top" aria-label="https://github.com/cuiliang/ClickShow" rel="noopener" class="external-link is-unresolved" href="https://github.com/cuiliang/ClickShow" target="_self">cuiliang/ClickShow: 鼠标点击特效 (github.com)</a>
+<br>硬盘存储分析：<a data-tooltip-position="top" aria-label="https://diskanalyzer.com/download#updates" rel="noopener" class="external-link is-unresolved" href="https://diskanalyzer.com/download#updates" target="_self">Download WizTree (diskanalyzer.com)</a>
+<br>删除文件和文件夹，无视占用：<a data-tooltip-position="top" aria-label="https://github.com/differentrain/Delapp" rel="noopener" class="external-link is-unresolved" href="https://github.com/differentrain/Delapp" target="_self">differentrain/Delapp: A simple tool to delete files or folders in Windows (github.com)</a>
+<br>系统装机：<a data-tooltip-position="top" aria-label="https://www.wepe.com.cn/download.html" rel="noopener" class="external-link is-unresolved" href="https://www.wepe.com.cn/download.html" target="_self">微PE工具箱 - 下载 (wepe.com.cn)</a> <br>内含多种系统级别工具，比如DiskGenius分区助手 <br>修改文件时间戳属性：<a data-tooltip-position="top" aria-label="https://www.softwareok.com/?Download=NewFileTime" rel="noopener" class="external-link is-unresolved" href="https://www.softwareok.com/?Download=NewFileTime" target="_self">NewFileTime 7.16 Download (softwareok.com)</a> <br><a data-tooltip-position="top" aria-label="https://haikuoshijie.cn/archives/fang-yuan-ying-shi-chang-jian-wen-ti" rel="noopener" class="external-link is-unresolved" href="https://haikuoshijie.cn/archives/fang-yuan-ying-shi-chang-jian-wen-ti" target="_self">海阔视界</a>（心中永远的第一）：一款安卓端“写源神器”，封装了Java实现的JS引擎，封装多种组件，API接口，使用JS这种大众化的脚本语言就能实现一个简单的“小程序”，实现自定义脚本，甚至可以使用dex引入一定的Java语法扩展，社区充满活力，作者更新勤快
+<br>安卓端非常棒的文件管理器，同时可以解包apk重新签名等多种玩机操作：<a data-tooltip-position="top" aria-label="https://mt2.cn/" rel="noopener" class="external-link is-unresolved" href="https://mt2.cn/" target="_self">MT管理器 (mt2.cn)</a> <br>前端本地OCR：<a data-tooltip-position="top" aria-label="https://pearocr.com/#/" rel="noopener" class="external-link is-unresolved" href="https://pearocr.com/#/" target="_self">PearOCR，在线图片转文字，免费OCR，在线图片文字提取，本地运算，无上传</a>
+<br>在线绘图UML、用例、时序等：<a data-tooltip-position="top" aria-label="https://app.diagrams.net/" rel="noopener" class="external-link is-unresolved" href="https://app.diagrams.net/" target="_self">未命名绘图 - draw.io (diagrams.net)</a>
+<br>在线Emoj表情检索：<a data-tooltip-position="top" aria-label="https://www.emojiall.com/zh-hans" rel="noopener" class="external-link is-unresolved" href="https://www.emojiall.com/zh-hans" target="_self">Emoji大全 | Emoji表情符号词典 📓 | EmojiAll中文官方网站</a><br>
+4. 同步收费，还行<a data-tooltip-position="top" aria-label="https://www.neat-reader.cn/" rel="noopener" class="external-link is-unresolved" href="https://www.neat-reader.cn/" target="_self">EPUB阅读器 | TXT阅读器 | Neat Reader | 超赞的全平台电子书阅读器，全球百万用户共同的选择 (neat-reader.cn)</a>
+<br>开源的epub阅读器，支持同步：<a data-tooltip-position="top" aria-label="https://www.flowoss.com/zh-CN" rel="noopener" class="external-link is-unresolved" href="https://www.flowoss.com/zh-CN" target="_self">Flow - 在线 EPUB 阅读器 (flowoss.com)</a> <br>浏览器最强的影音嗅探插件，还支持录屏、缓存提取等多种手段：<a data-tooltip-position="top" aria-label="https://chromewebstore.google.com/detail/猫抓/jfedfbgedapdagkghmgibemcoggfppbb" rel="noopener" class="external-link is-unresolved" href="https://chromewebstore.google.com/detail/%E7%8C%AB%E6%8A%93/jfedfbgedapdagkghmgibemcoggfppbb" target="_self">猫抓 (google.com)</a>
+<br>FeHelper(前端助手)，支持常见编解码，JSON解析，可插拔式设计导入社区插件丰富功能：<a data-tooltip-position="top" aria-label="https://microsoftedge.microsoft.com/addons/detail/fehelper前端助手/feolnkbgcbjmamimpfcnklggdcbgakhe" rel="noopener" class="external-link is-unresolved" href="https://microsoftedge.microsoft.com/addons/detail/fehelper%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8B/feolnkbgcbjmamimpfcnklggdcbgakhe" target="_self">FeHelper(前端助手) - Microsoft Edge Addons</a>
+<br>UA修改：<a data-tooltip-position="top" aria-label="https://chromewebstore.google.com/detail/random-user-agent-switche/einpaelgookohagofgnnkcfjbkkgepnp" rel="noopener" class="external-link is-unresolved" href="https://chromewebstore.google.com/detail/random-user-agent-switche/einpaelgookohagofgnnkcfjbkkgepnp" target="_self">Random User-Agent (Switcher) (google.com)</a>
+<br>沉浸式翻译，仅此一家：<a data-tooltip-position="top" aria-label="https://chromewebstore.google.com/detail/沉浸式翻译-双语对照网页翻译-pdf文档翻译/bpoadfkcbjbfhfodiogcnhhhpibjhbnh" rel="noopener" class="external-link is-unresolved" href="https://chromewebstore.google.com/detail/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91-%E5%8F%8C%E8%AF%AD%E5%AF%B9%E7%85%A7%E7%BD%91%E9%A1%B5%E7%BF%BB%E8%AF%91-pdf%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91/bpoadfkcbjbfhfodiogcnhhhpibjhbnh" target="_self">沉浸式翻译: 双语对照网页翻译 &amp; PDF文档翻译 (google.com)</a>
+<br>元素定位神器，精准分析iframe嵌套：<a data-tooltip-position="top" aria-label="https://chromewebstore.google.com/detail/ranorex-selocity/ocgghcnnjekfpbmafindjmijdpopafoe" rel="noopener" class="external-link is-unresolved" href="https://chromewebstore.google.com/detail/ranorex-selocity/ocgghcnnjekfpbmafindjmijdpopafoe" target="_self">Ranorex Selocity (google.com)</a>
+<br>红猴（油猴增强）：<a data-tooltip-position="top" aria-label="https://microsoftedge.microsoft.com/addons/detail/篡改猴测试版/fcmfnpggmnlmfebfghbfnillijihnkoh" rel="noopener" class="external-link is-unresolved" href="https://microsoftedge.microsoft.com/addons/detail/%E7%AF%A1%E6%94%B9%E7%8C%B4%E6%B5%8B%E8%AF%95%E7%89%88/fcmfnpggmnlmfebfghbfnillijihnkoh" target="_self">篡改猴测试版 - Microsoft Edge Addons</a> <br>计时掌控器，网页全局任意倍速，但会导致部分网站无法正常加载：<a data-tooltip-position="top" aria-label="https://timer.palerock.cn/" rel="noopener" class="external-link is-unresolved" href="https://timer.palerock.cn/" target="_self">计时器掌控者 | 苍石居 (palerock.cn)</a>
+<br>在线看百度网盘视频，独一份了： <a data-tooltip-position="top" aria-label="https://scriptcat.org/zh-CN/script-show-page/340" rel="noopener" class="external-link is-unresolved" href="https://scriptcat.org/zh-CN/script-show-page/340" target="_self">BD网盘视频播放器 (scriptcat.org)</a> <br><br><br>个人觉得这个子系统真的很nice，有一些只有安卓端的神软都能很好的在上面运行，而无需使用其他第三方的游戏用的虚拟机软件了<br>
+这是一个绿色提取，免安装，还有多种打包版本可选（是否包含亚马逊云商店、谷歌商店、面具）<br><a class="auto-card-link-card is-unresolved" href="https://github.com/MustardChef/WSABuilds" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>GitHub - MustardChef/WSABuilds: Run Windows Subsystem For Android on your Windows 10 and Windows 11 PC using prebuilt binaries with Google Play Store (MindTheGapps) and/or Magisk or KernelSU (root solutions) built in.Run Windows Subsystem For Android on your Windows 10 and Windows 11 PC using prebuilt binaries with Google Play Store (MindTheGapps) and/or Magisk or KernelSU (root solutions) built in. - GitHub -...<img class="auto-card-link-favicon is-unresolved" src="https://github.githubassets.com/favicons/favicon.svg" target="_self">github.com<img class="auto-card-link-thumbnail is-unresolved" src="https://opengraph.githubassets.com/716d2399ba1cf16d7167e31d5a73977ae0e6b308057cb9807f970e88a86e22de/MustardChef/WSABuilds" draggable="false" target="_self"><br><br><a class="auto-card-link-card is-unresolved" href="https://gitee.com/itexp/gogogo" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>学渣集中营/GoGoGo一个基于 Android 调试 API + 百度地图实现的虚拟定位工具，并且同时实现了一个可以自由移动的摇杆gitee.com<img class="auto-card-link-thumbnail is-unresolved" src="https://portrait.gitee.com/uploads/avatars/namespace/1919/5759900_itexp_1648942371.png" draggable="false" target="_self"><br>一款开源的模拟定位软件，名叫 “影梭” ，使用非常简单，无需root，地图上找到定位的点，然后点击启动模拟即可（前提是开启开发者模式，赋予相关权限，赋予位置模拟权限）<br><img alt="image.png" src="https://i0.hdslb.com/bfs/article/d55bb28aa4eae571cd5d4f6c8498dbac688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>但一般来说，有一些特殊的软件可能检测的到，更何况连Root都没有<br>
+有一个最简单的解决方法可以一试：虚拟机套娃。在安卓虚拟机隔离环境里边安装“影梭”和要模拟位置的app。<br>
+已在win11安卓子系统测试，在WAS的高级设置中把本地网络访问打开，然后打开win主机上的位置权限和赋予AWS读取位置的权限即可<br>
+<img alt="image.png" src="https://i0.hdslb.com/bfs/article/f339dbefa2cebf3dc46da6d8adaf2ad8688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br><br>Tip
+好久不用了，WSA+海阔视界足以秒杀市面99%软件
+<br><a class="auto-card-link-card is-unresolved" href="https://www.dandanplay.com/" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>弹弹play - 全功能“本地视频+弹幕”播放器弹弹play是一款能够播放本地视频的弹幕播放器。本地弹幕播放器，硬盘弹幕播放器，离线弹幕播放器，桌面弹幕播放器www.dandanplay.com<br>支持多平台，当然Win端是支持最好，功能最多的<br>
+可以直接通过官网连接获取弹幕，支持腾讯、爱奇艺、优酷 、B站等<br>
+建立有自己的弹幕库，通过md5种子磁力等方式传播，存储海外番剧弹幕<br><br><a class="auto-card-link-card is-unresolved" href="https://reqable.com/zh-CN/" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>Reqable = Fiddler + Charles + Postman，网络抓包和API测试一站化解决方案，全平台支持HTTP1、HTTP2和HTTP3(QUIC)。Reqable = Fiddler + Charles + Postman，网络抓包和API测试一站化解决方案，全平台支持HTTP1、HTTP2和HTTP3(QUIC)。<img class="auto-card-link-favicon is-unresolved" src="https://reqable.com/zh-CN/img/favicon.ico" target="_self">reqable.com<img class="auto-card-link-thumbnail is-unresolved" src="https://reqable.com/zh-CN/img/reqable-social-card.webp" draggable="false" target="_self"><br>支持多平台，UI可以，其他也没啥问题，基本满足<br>如若要抓包安卓端app有vpn基础鉴别的，可能需要更专业，但不管怎样，路由器抓包可以克服所有困难。<br>fiddler：<br>
+<br>[<a data-tooltip-position="top" aria-label="https://www.52pojie.cn/thread-1587591-1-1.html" rel="noopener" class="external-link is-unresolved" href="https://www.52pojie.cn/thread-1587591-1-1.html" target="_self">资源求助] 求一份好用的fiddler中文版 - 『悬赏问答区』 - 吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn</a>
+<br><a data-tooltip-position="top" aria-label="https://www.bilibili.com/video/BV1vM4y1V78M?p=1&amp;vd_source=60cd820d66490f513305005717358b72" rel="noopener" class="external-link is-unresolved" href="https://www.bilibili.com/video/BV1vM4y1V78M?p=1&amp;vd_source=60cd820d66490f513305005717358b72" target="_self">Fiddler实战1-fiddler的下载与安装_哔哩哔哩_bilibili</a>
+<br><br>
+<br>
+壁纸： <br><a data-tooltip-position="top" aria-label="https://wallhaven.cc/" rel="noopener" class="external-link is-unresolved" href="https://wallhaven.cc/" target="_self">Awesome Wallpapers - wallhaven.cc</a>
+<br><a data-tooltip-position="top" aria-label="https://unsplash.com/" rel="noopener" class="external-link is-unresolved" href="https://unsplash.com/" target="_self">Beautiful Free Images &amp; Pictures | Unsplash</a> <br>
+动态壁纸：（B站也有很多不错的视频可以当做壁纸喔） <br><a data-tooltip-position="top" aria-label="https://zhutix.com/animated/" rel="noopener" class="external-link is-unresolved" href="https://zhutix.com/animated/" target="_self">动态壁纸 - 动态桌面 - 视频壁纸 - 致美化 - 漫锋网 (zhutix.com)</a>
+<br><a data-tooltip-position="top" aria-label="https://www.livepaper.cn/" rel="noopener" class="external-link is-unresolved" href="https://www.livepaper.cn/" target="_self">动态壁纸-番茄动态壁纸 (livepaper.cn)</a>
+<br><a data-tooltip-position="top" aria-label="https://www.shadertoy.com/browse" rel="noopener" class="external-link is-unresolved" href="https://www.shadertoy.com/browse" target="_self">Browse (1) - Shadertoy BETA</a>
+<br><a data-tooltip-position="top" aria-label="https://www.youtube.com/@HD_wallpaper" rel="noopener" class="external-link is-unresolved" href="https://www.youtube.com/@HD_wallpaper" target="_self">高清电脑桌面壁纸</a> <br>
+软件分享： <br>小众软件，分享论坛，开发者自荐：<a data-tooltip-position="top" aria-label="https://meta.appinn.net/" rel="noopener" class="external-link is-unresolved" href="https://meta.appinn.net/" target="_self">小众软件官方论坛 - 小众软件 (appinn.net)</a>
+<br><a data-tooltip-position="top" aria-label="https://reqable.com/zh-CN/" rel="noopener" class="external-link is-unresolved" href="https://reqable.com/zh-CN/" target="_self">Fetching Data#ad02</a>：<a data-tooltip-position="top" aria-label="https://apkpure.com/cn/" rel="noopener" class="external-link is-unresolved" href="https://apkpure.com/cn/" target="_self">在APKPure使用免费在线APK下载器下载APK到安卓</a>
+<br>破软： <br><a data-tooltip-position="top" aria-label="https://www.lxapk.com/" rel="noopener" class="external-link is-unresolved" href="https://www.lxapk.com/" target="_self">乐享网-乐于分享，收获快乐！ (lxapk.com)</a>
+<br><a data-tooltip-position="top" aria-label="https://www.ghxi.com/" rel="noopener" class="external-link is-unresolved" href="https://www.ghxi.com/" target="_self">果核剥壳 - 互联网的净土 (ghxi.com)</a>
+<br><a data-tooltip-position="top" aria-label="https://6yso.com/" rel="noopener" class="external-link is-unresolved" href="https://6yso.com/" target="_self">六音软件永久地址发布页，收藏我回家不迷路！ (6yso.com)</a>
+<br><a data-tooltip-position="top" aria-label="https://www.fy6b.com/" rel="noopener" class="external-link is-unresolved" href="https://www.fy6b.com/" target="_self">枫音应用 - 专注分享免费、绿色、无毒无广的实用软件！ (fy6b.com)</a>
+<br><a data-tooltip-position="top" aria-label="https://www.ypojie.com/" rel="noopener" class="external-link is-unresolved" href="https://www.ypojie.com/" target="_self">易破解 - 给你所需要的内容 (ypojie.com)</a>
+<br>国外站点：<a data-tooltip-position="top" aria-label="https://br0wsers.com/" rel="noopener" class="external-link is-unresolved" href="https://br0wsers.com/" target="_self">Br0wsers.com</a>
+<br>公众号：软件管家（常用的办公软件）
+<br>论坛： <br><a data-tooltip-position="top" aria-label="https://www.52pojie.cn/" rel="noopener" class="external-link is-unresolved" href="https://www.52pojie.cn/" target="_self">【新提醒】吾爱破解 - LCG - LSG|安卓破解|病毒分析|www.52pojie.cn</a>
+<br>俄国：<a data-tooltip-position="top" aria-label="https://rutracker.org/forum/index.php" rel="noopener" class="external-link is-unresolved" href="https://rutracker.org/forum/index.php" target="_self">RuTracker.org</a> <br>
+资源引擎： <br>论坛，全： <a data-tooltip-position="top" aria-label="http://wpfx.link/" rel="noopener" class="external-link is-unresolved" href="http://wpfx.link/" target="_self">网盘分享永久地址发布页WPFX.LINK</a>
+<br>百度影视资源：<a data-tooltip-position="top" aria-label="https://www.xinjuc.com/" rel="noopener" class="external-link is-unresolved" href="https://www.xinjuc.com/" target="_self">新剧坊 - 一个网盘资源分享小站 (xinjuc.com)</a>
+<br>南风引擎：<a data-tooltip-position="top" aria-label="http://w.2249-y.cn/app/index.html?id=191201nf" rel="noopener" class="external-link is-unresolved" href="http://w.2249-y.cn/app/index.html?id=191201nf" target="_self">牢记地址：hm118.cn (2249-y.cn)</a>
+<br>天翼资源：<a data-tooltip-position="top" aria-label="https://www.leijing.xyz/" rel="noopener" class="external-link is-unresolved" href="https://www.leijing.xyz/" target="_self">雷鲸小站-天翼云盘交流站 (leijing.xyz)</a>
+<br>tg搜索：<a data-tooltip-position="top" aria-label="https://meow.tg/" rel="noopener" class="external-link is-unresolved" href="https://meow.tg/" target="_self">Meow.TG-做最懂你的TG搜索</a>
+<br>盘他（活了很久确实不错）：<a data-tooltip-position="top" aria-label="https://www.panothers.com/" rel="noopener" class="external-link is-unresolved" href="https://www.panothers.com/" target="_self">盘他一下 (panothers.com)</a> <br>
+书籍： <br>全球最大图书馆，多次被封，依旧坚挺：<a rel="noopener" class="external-link is-unresolved" href="https://zh.z-library.se/" target="_self">https://zh.z-library.se/</a> <br><br>国家级，合同示范，回写合同了吧！<br><a class="auto-card-link-card is-unresolved" href="https://cont.12315.cn/" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-host"><span></span></div></div></a>首页 - 合同示范文本库 - 国家市场监督管理总局cont.12315.cn<br><br>绘画：<br>
+<br>有这位Up在都不是问题：<br>
+<a data-tooltip-position="top" aria-label="https://space.bilibili.com/12566101?spm_id_from=333.999.0.0" rel="noopener" class="external-link is-unresolved" href="https://space.bilibili.com/12566101?spm_id_from=333.999.0.0" target="_self">秋葉aaaki的个人空间-秋葉aaaki个人主页-哔哩哔哩视频 (bilibili.com)</a><br>
+音视频：
+<br>每天免费额度，生成GIF动效图：<a data-tooltip-position="top" aria-label="https://www.stablevideo.com/" rel="noopener" class="external-link is-unresolved" href="https://www.stablevideo.com/" target="_self">Stable Video | Generate Videos with AI</a>
+<br>对话模型：<br>
+<br>OpenAI经典ChatGPT：<a rel="noopener" class="external-link is-unresolved" href="https://chat.openai.com/chat" target="_self">https://chat.openai.com/chat</a>
+<br>字节海外版暂无限制，功能强大不止对话：<a data-tooltip-position="top" aria-label="https://www.coze.com" rel="noopener" class="external-link is-unresolved" href="https://www.coze.com" target="_self">Bots - Coze</a>
+<br>微软newBing，适合最新资讯：<a data-tooltip-position="top" aria-label="https://copilot.microsoft.com/" rel="noopener" class="external-link is-unresolved" href="https://copilot.microsoft.com/" target="_self">Copilot (microsoft.com)</a>
+<br>国内清华大佬的模型，适合长文本处理，适配国内社区圈：<a data-tooltip-position="top" aria-label="https://kimi.moonshot.cn/" rel="noopener" class="external-link is-unresolved" href="https://kimi.moonshot.cn/" target="_self">Kimi.ai - 帮你看更大的世界 (moonshot.cn)</a>
+<br>ChatGPT的API稳定运行，较为古老的开源UI：<a data-tooltip-position="top" aria-label="https://chat18.aichatos.xyz/#/chat" rel="noopener" class="external-link is-unresolved" href="https://chat18.aichatos.xyz/#/chat" target="_self">AIchatOS</a>
+<br>公益共享，潘多拉延伸，高仿官网：<a data-tooltip-position="top" aria-label="https://share.wendaalpha.net/?model=gpt-4" rel="noopener" class="external-link is-unresolved" href="https://share.wendaalpha.net/?model=gpt-4" target="_self">ChatGPT (wendaalpha.net)</a>
+<br>公益共享，普通UI，实际体验并不好，上下文可能不连续：<a data-tooltip-position="top" aria-label="http://free01.xyz/" rel="noopener" class="external-link is-unresolved" href="http://free01.xyz/" target="_self">ლ(ٱ٥ٱლ) (free01.xyz)</a>
+<br>曾经很好用，现在每天限制额度了而且额度很少：<a data-tooltip-position="top" aria-label="https://poe.com/ChatGPT" rel="noopener" class="external-link is-unresolved" href="https://poe.com/ChatGPT" target="_self">Poe - ChatGPT</a>
+<br><br>Tip
+好久不用了，不如直接使用 <a data-href="CloudFlare#海外中转" href="https://blog.cytl2.eu.org/云服务/cloudflare.html#海外中转" class="internal-link" target="_self" rel="noopener">CloudFlare &gt; 海外中转</a>！
+<br>vpngate是一个由日本筑波大学发起和建设的学术项目，它能够将使用客户端的每一台电脑和设备变成可连接的vpn设备，因此它实时动态更新的节点，在我了解它至今都已经过去了4、5年的时间，不可谓不稳定，不过有一点就是身在天国即便是镜像网站一般也无法访问，客户端经常遇到刷新节点列表失败的情况。对此，我们可以为vpngate客户端设置代理<br>简单的方法就是下载并安装v-2rayN客户端，导入vmess链接，获得海外节点<br>
+之后设置Http代理模式和允许来自局域网的连接<br>
+然后在vpngate中设置代理（地址+端口，用户密码如果设置了就加没有就不填），之后就可以通过代理刷新最新的节点列表，也可以通过代理连接vpngate节点<br><br>为什么下载并安装v-2rayN客户端，导入vmess链接已经获得海外节点还要使用vpngate呢？好问题！因为vpngate节点实时稳定，可选择地区更多，质量比我的vmess节点更好！<br>
+但是呢也有个问题就是，这样子做的话就是二次代理！<br>二次代理的速率通常取决于中间代理服务器的带宽和性能，以及源服务器和终端设备之间的网络延迟和带宽。如果中间代理服务器的带宽和性能非常好，可以快速处理和转发数据请求，那么二次代理的速率就会比较快。但如果中间代理服务器的带宽和性能较差，或者网络延迟较高，那么二次代理的速率就会受到限制。此外，如果源服务器或终端设备的带宽或处理能力受到限制，也可能会影响二次代理的速率。<br>所以说如果要保证速率的话，可以通过代理获取到最新节点列表后手动切换回直连来连接节点以发挥自身的最大宽带优势（注意了，代理可以连接的节点不代表你可以直连）<br>
+根据不同的地区，能够直连的节点也不一样，但基本上会呈现规律，比如在我所在的地区，韩国和朝鲜是最容易直连的节点<br>最后一点值得注意的是：首选TCP连接，如果失败可以切换UDP（尤其连接人数比较多的时候可以大胆尝试）]]></description><link>https://blog.cytl2.eu.org/生活/分享/神软清单.html</link><guid isPermaLink="false">生活/分享/神软清单.md</guid><dc:creator><![CDATA[lzy]]></dc:creator><pubDate>Sun, 24 Mar 2024 15:41:31 GMT</pubDate><enclosure url="https://github.githubassets.com/favicons/favicon.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://github.githubassets.com/favicons/favicon.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[什么是版本控制]]></title><description><![CDATA[<br><br>在开发中借助版本控制可以实现以下作用<br>
+<br>备份
+<br>代码还原
+<br>协同开发
+<br>追溯问题代码的编写人和编写时间
+<br>版本控制器方式<br>
+<br>集中式版本控制工具<br>
+集中式版本控制工具，版本库是集中存放在中央服务器的，team里每个人work时从中央服务器下载代码，是必须联网才能工作，局域网或互联网。个人修改后然后提交到中央版本库。举例：SVN和CVS 【淘汰】
+<br>分布式版本控制工具<br>
+分布式版本控制系统没有“中央服务器”，每个人的电脑上都是一个完整的版本库，这样工作的时候，无需要联网了，因为版本库就在你自己的电脑上。多人协作只需要各自的修改推送给对方，就能互相看到对方的修改了。举例：Git
+<br><br>SVN和CVS是集中式版本控制工具，他们需要借助中心服务器，一旦中心服务器崩了那么就玩完，而Git是分布式的,Git不需要有中心服务器，我们每台电脑拥有的东西都是一样的。<br>
+我们使用Git并且有中心服务器，仅仅是为了方便交换大家的修改，但是这个服务器的地位和我们每个人的PC是一样的。<br>
+我们可以把它当做一个开发者的pc就可以就是为了大家代码容易交流不关机用的。没有它大家一样可以工作，只不过“交换”修改不方便而已。 <br><br><br>直接从官网下载，改一下路径确认安装即可。若桌面右键有下面两个命令即为安装成功<br>
+<br>Git GUI：Git提供的图形界面工具
+<br>Git Bash：Git提供的命令行工具——类似一个极简的Linux命令行窗口
+<br>Tip
+Git Bash窗口中不能使用Ctrl+C和Ctrl+V，选中内容就会自动复制，右键可以粘贴（有快捷键Ctrl+Insert替代）
+<br>当安装Git后首先要做的事情是设置用户名称和email地址。这是非常重要的，因为每次Git提交都会使用该用户信息<br><br>
+<br>
+打开Git Bash <br>
+设置用户信息
+git config --global user.name “itcast”
+git config --global user.email “hello@itcast.cn”
+复制 <br>
+查看配置信息——设置完后可以使用下面的命令进行验证
+git config --global user.name
+git config --global user.email
+复制 <br><br>有些常用的指令参数非常多，每次都要输入好多参数，我们可以使用别名。最简单的配置方式如下：<br>
+<br>
+打开用户目录，创建 .bashrc 文件<br>
+部分windows系统不允许用户创建点号开头的文件，可以打开Git Bash,执行 touch ~/.bashrc <br>
+在 .bashrc 文件中输入如下内容
+#用于输出git提交日志 alias git-log='git log --pretty=oneline --all --graph --abbrev-commit' #用于输出当前目录所有文件及基本信息 alias ll='ls -al'
+复制 <br>
+打开gitBash，执行 source ~/.bashrc <br><br>较为通用的方案<br>
+<br>
+打开GitBash执行下面命令
+git config --global core.quotepath false
+复制 <br>
+${git_home}/etc/bash.bashrc 文件最后加入下面两行
+${git_home}即你Git的安装根目录
+export LANG="zh_CN.UTF-8" export LC_ALL="zh_CN.UTF-8"
+复制 <br><br>先初始化一个本地仓库：随意创建一个文件夹，在文件夹内右键打开GitBash并执行命令git init，如果创建成功后可在文件夹下看到隐藏的.git目录。初始化仓库后的这一个文件夹内除了.git目录外的所有区域就是工作区，即平时存放项目代码的地方。<br>Git工作目录下对于文件的修改(增加、删除、更新)会存在几个状态，这些修改的状态会随着我们执行Git的命令而发生变化。<br>命令来控制这些状态之间的转换：<br>
+<br>git add (工作区 --&gt; 暂存区) git add .添加所有文件、文件夹和子文件夹，包括.gitignore和以点开头的任何其他内容；
+<br>git commit (暂存区 --&gt; 本地仓库)
+<br><img src="https://pic.imgdb.cn/item/63206dd416f2c2beb1a68dcb.jpg" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br><br><br>前面我们已经知道了Git中存在两种类型的仓库，即本地仓库和远程仓库。那么我们如何搭建Git远程仓库呢？我们可以借助互联网上提供的一些代码托管服务来实现，其中比较常用的有GitHub、码云、GitLab等。<br>
+<br>
+GitHub（ 地址：<a rel="noopener" class="external-link is-unresolved" href="https://github.com/" target="_self">https://github.com/</a> ）是一个面向开源及私有软件项目的托管平台，因为只支持Git 作为唯一的版本库格式进行托管，故名GitHub <br>
+码云（地址： <a rel="noopener" class="external-link is-unresolved" href="https://gitee.com/" target="_self">https://gitee.com/</a> ）是国内的一个代码托管平台，由于服务器在国内，所以相比于 GitHub，码云速度会更快 <br>
+GitLab （地址： <a rel="noopener" class="external-link is-unresolved" href="https://about.gitlab.com/" target="_self">https://about.gitlab.com/</a> ）是一个用于仓库管理系统的开源项目，使用Git作为代码管理工具，并在此基础上搭建起来的web服务，一般用于在企业、学校等内部网络搭建git私服。 <br><br>以码云为例，先创建账号，创建账号后<br><br><img src="https://pic.imgdb.cn/item/63217ae216f2c2beb19cbbb8.jpg" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+可以勾选gitigrove模板为java或者说具体的一门语言，那么就会自动生成一份
+<br>仓库创建完成后可以看到仓库地址，如下图所示:<br><img alt="img" src="https://img-blog.csdnimg.cn/0589c5dce4d14a6cb34f6d9041e76a20.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br><br>优质文档：<a data-tooltip-position="top" aria-label="https://www.codenong.com/cs106367959/" rel="noopener" class="external-link is-unresolved" href="https://www.codenong.com/cs106367959/" target="_self">ssh获取公钥,绑定gitlab,ssh-keygen -t rsa命令详解 | 码农家园 (codenong.com)</a><br>ssh-keygen -t rsa -b 4096 -C “<a data-tooltip-position="top" aria-label="mailto:2065777804@qq.com" rel="noopener" class="external-link is-unresolved" href="https://blog.cytl2.eu.org/mailto:2065777804@qq.com" target="_self">2065777804@qq.com</a>”<br>可以指定生成的文件夹名：/c/Users/cy/.ssh/shareGroop，生成多个不重复的公钥。<br>cat ~/.ssh/shareGroop.pub<br><br>要想将在本地将仓库推送上去就需要进行身份的认证，有账号密码登录（一般不用）、SSH、Token等。此处以SSH公钥为例<br>所谓公钥就是在自己本地生成一个Git公钥来作为身份标识再将这个公钥放进Git远程仓库里，这样在本地仓库访问远程仓库域名的时候远程仓库就会从公钥比对来判断来客的身份<br>
+<br>
+生成SSH公钥 <br>ssh-keygen -t rsa
+<br>不断回车 <br>如果公钥已经存在，则自动覆盖 <br>
+获取公钥 <br>cat ~/.ssh/id_rsa.pub <br>
+Gitee设置账户共公钥
+<img src="https://pic.imgdb.cn/item/63217bf116f2c2beb19df130.jpg" referrerpolicy="no-referrer" target="_self" class="is-unresolved"> <br>
+验证是否配置成功 <br>ssh -T git@gitee.com <br><br>当成功与远程仓库连接后会在计算机本地生成凭证<br><img alt="image-20230115143934740" src="https://i0.hdslb.com/bfs/album/070cf66bebc90fe1d21030f26d782efe671b082e.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br><br>此操作是先初始化本地库，然后与已创建的远程库进行对接。<br>git remote add &lt;远端名称&gt; &lt;仓库地址&gt;
+复制<br>
+<br>远端名称：默认是origin，取决于远端服务器设置
+<br>仓库地址：从远端服务器获取此url
+<br>例如：<br>git remote add origin git@gitee.com:czbk_zhang_meng/git_test.git
+复制<br><br>git remote
+复制<br><br>git push [-f] [--set-upstream] [远端名称] [本地分支名][:远端分支名]
+复制<br>
+<br>
+如果远程分支名和本地分支名称相同，则可以只写本地分支 本来是：git push origin master ：master 表示将本地仓库的master分支提交到远程仓库的master分支 <br>git push origin master 这里表示将本地仓库当前master分支的内容推到远程仓库上面去 <br>
+-f 表示强制覆盖 公司的GatLab一般禁用了这个权限 <br>
+–set-upstream 推送到远端的同时并且建立起和远端分支的关联关系。 <br>git push --set-upstream origin master:master <br>
+如果当前分支已经和远端分支关联，则可以省略分支名和远端名。 <br>
+手动书写完整的命令是一个好习惯（第一次进行配置，之后默认就是上次的关联）
+<br>在远程仓库即可查看到我们提交的仓库内容<br>初次推送事项<br>主要是两个方面本地仓库未有提交记录；远程仓库还没有初始化<br>
+<br>
+<a data-tooltip-position="top" aria-label="https://blog.csdn.net/wenb1bai/article/details/89363711" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/wenb1bai/article/details/89363711" target="_self">错误error: src refspec master does not match any. error: failed to push some refs to</a> <br>
+<a data-tooltip-position="top" aria-label="https://blog.csdn.net/tree_ifconfig/article/details/81557091?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-81557091-blog-79916474.pc_relevant_multi_platform_whitelistv6&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-81557091-blog-79916474.pc_relevant_multi_platform_whitelistv6&amp;utm_relevant_index=2" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/tree_ifconfig/article/details/81557091?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-81557091-blog-79916474.pc_relevant_multi_platform_whitelistv6&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-81557091-blog-79916474.pc_relevant_multi_platform_whitelistv6&amp;utm_relevant_index=2" target="_self">Git之The authenticity of host 'github.com (13.250.177.223)' can't be established问题</a> <br><br>有些时候本地仓库提交管理混乱，需要从远程仓库强制拉取，以刷新本地仓库，覆盖所有add和commit操作。可执行以下代码：<br>git fetch --all git reset --hard origin/master git pull
+复制<br>这和前面的强制推送差不多<br><br>
+<br>查看关联关系我们可以使用 git branch -vv 命令
+<br><br>如果已经有一个远端仓库，我们可以直接clone到本地。<br>
+<br>命令: git clone &lt;仓库路径&gt; [本地目录] <br>本地目录可以省略，会自动生成一个目录，就是SSH后面那部分 <br>不同的主机都把修改完了版本资源放在远程仓库上，然后其他人都是克隆，这样就可以实现不同主机之间的数据同步了，数据都是一样的<br>克隆一般只会执行一次，就是在你进去公司的时候，别人提交了以后，我们不需要去克隆整个仓库，仓库是很大的，克隆也需要花很多时间，所以要去远程仓库中抓取我们要的版本信息，就是那些别人新增加的提交<br><br>Warning
+只执行抓取命令 git fetch，本地仓库是没有远程仓库来的内容的
+<br>远程分支和本地的分支一样，我们可以进行merge操作，只是需要先把远端仓库里的更新都下载到本地，再进行操作。<br>
+<br>
+抓取 命令：git fetch [remote name] [branch name] <br>抓取指令就是将仓库里的更新都抓取到本地，不会进行合并，不合并本地仓库就是没有更新，此时还没有拿到远程仓库的内容，合并后才会拿到更新的内容
+<br>如果不指定远端名称和分支名，则抓取所有分支。 <br>
+拉取 命令：git pull [remote name] [branch name] <br>拉取指令就是将远端仓库的修改拉到本地并自动进行合并，等同于fetch+merge
+<br>如果不指定远端名称和分支名，则抓取所有并更新当前分支。 <br>所以我们一般先执行拉取命令，然后执行git pull<br>
+因为我们此时我们获取到的是远程仓库的版本更新，但是我们本地的版本不是最新的，也就是说此时我们本地和远程仓库不是同步的，所以我们要将远端拿到的修改合并到本地仓库的master上，使得本地的版本修改变为最新的<br><br>我们要更新远程仓库的资源时，先要获取此时远程仓库的资源后，在合并到自己的master分支中，然后再上传到远程仓库上<br>在一段时间，A、B用户修改了同一个文件，且修改了同一行位置的代码，此时会发生合并冲突。<br>A用户在本地修改代码后优先推送到远程仓库，此时B用户在本地修订代码，提交到本地仓库后，也需要<br>推送到远程仓库，此时B用户晚于A用户，故需要先拉取远程仓库的提交，经过合并后才能推送到远端分支,如下图所示。<br><img src="https://pic.imgdb.cn/item/6322790016f2c2beb17b564c.jpg" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>在B用户拉取代码时，因为A、B用户同一段时间修改了同一个文件的相同位置代码，故会发生合并冲突。就是b在更新一个资源之前，有一个a在b之前率先改掉了这个资源，此时就会出现分支冲突的问题，git不知道是要取a修改的值，还是b修改的值，此时就要我们手动去对应文件里去修改，到底要保留哪一个。远程分支也是分支，所以合并时冲突的解决方式也和解决本地分支冲突相同相同，在此不再赘述<br><br>作用：查看修改的状态（暂存区、工作区）<br>git status
+复制<br>Git文件状态标志： <br>A: 本地新增的文件（服务器上没有） <br>C: 文件的一个新拷贝 <br>D: 本地删除的文件（服务器上还在） <br>M: 文件的内容或者mode被修改了 <br>R: 文件名被修改了 <br>T: 文件的类型被修改了 <br>U: 文件没有被合并（需要完成合并才能进行提交） <br>X: 未知状态（很可能是遇到了git的bug，可以向git提交bug report） <br><br>作用：添加工作区一个或多个文件的修改到暂存区<br>命令形式：git add 单个文件名|通配符<br>git add file.txt # 添加单个文件
+git add . # 将所有修改加入暂存区
+复制<br><br>作用：提交暂存区内容到本地仓库的当前分支<br>命令形式：git commit -m ‘注释内容’<br>git commit -m "XXX update"
+复制<br><br>配置的别名git-log就包含了这些参数，所以后续可以直接使用指令 git-log<br>作用:查看提交记录<br>命令形式：git log [option] 或者 git-log<br>
+<br>—all 显示所有分支
+<br>—pretty=oneline 将提交信息显示为一行
+<br>—abbrev-commit 使得输出的commitId更简短
+<br>—graph 以图的形式显示
+<br><br>作用：版本切换<br>命令形式：<br>git reset --hard commitID # commitID 可以使用 git-log 或 git log 指令查看
+复制<br>每一次提交文件都会生成一个唯一的ID，我们就是通过这个ID进行回退版本。当然上面的git-log（这是我们配置的指令别名其实是加了多个限制条件来优化结果的log命令）和git log只能看到未清除的历史记录，那么如何查看已经删除的记录？<br>git reflog：这个指令可以看到已经删除的提交记录<br>我们可以在reflog里面知道删除文件的id，我们可以直接使用命令：<br>
+git reset --hard commitID 还原<br>所以git reset --hard commitID既可以做版本回退，也可以做版本还原（找回删除的记录）<br><br>标签操作（相当于快照，给某个时间点的状态手动打上标签）<br>
+<br>列出已有的标签 :git tag
+<br>创建标签:git tag [name]
+<br>将标签推送至远程仓库:git push [shortName] [name]
+<br>检出标签:检出的时候需要创建一个新的分支来记录 <br>git checkout -b [branch] [name] <br><br>一般我们总会有些文件无需纳入Git 的管理，也不希望它们总出现在未跟踪文件列表。 通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。 在这种情况下，我们可以在工作目录中创建一个名为 .gitignore 的文件（文件名称固定），列出要忽略的文件模式（语法像正则，也支持路径）<br><br>几乎所有的版本控制系统都以某种形式支持分支。 使用分支意味着你可以把你的工作从开发主线上分离<br>开来进行重大的Bug修改、开发新的功能，以免影响开发主线。master是我们的主线<br>每个人开发的那一部分就是一个分支，HEAD指的就是当前分支，使得每个人的开发互不影响，在每个人都开发完后就将所有的代码汇总到一起，此时就要执行分支的合并操作,一般是将其他分支的修改合并到master主分支<br>工作区只能在一个分支工作，每个分支存放的文件或者资源是不一样的，就相当于不同的文件夹<br><br>git branch
+复制<br><br>git branch 分支名
+复制<br><br>git checkout 分支名
+复制<br>我们还可以直接切换到一个不存在的分支（创建并切换）：<br>git checkout -b 分支名
+复制<br><br>一个分支上的提交可以合并到另一个分支<br>git merge 分支名
+复制<br>该项职责由git管理员来完成。例如当开发分支Develop上的所有功能已经完成时，需要合并到master上，此时：在本地创建dev分支并与远程dev分支对应<br>git checkout -b dev origin/dev
+复制<br>切换到master分支<br>git checkout master
+复制<br>本地的dev合并到master上（遇到冲突解决完后再次提交）<br>git merge dev
+复制<br>推送到远程的master上（执行这项操作时，需要有操作远程master分支的权限）<br><img src="https://i0.hdslb.com/bfs/article/f771f9fc3bb333ee9eab73d9c207e773688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>git push origin master
+复制<br>
+<br>释放权限：
+<br><img src="https://i0.hdslb.com/bfs/article/b14b243f671f661804ee88a736bac4ec688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+<br>操作结果：
+<br><img src="https://i0.hdslb.com/bfs/article/25c3a3ebbb0dbd39af11184d18793734688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br><br>参考文档：<a data-tooltip-position="top" aria-label="https://blog.csdn.net/mengltx/article/details/89643370" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/mengltx/article/details/89643370" target="_self">git 快进式合并</a><br>其实说白了，分支的修改类似一个链表，我们追求让它倾向于线性结构。假设我们原来有两个分支的初始状态相同，其中一个分支完成了很多修改，而另一个分支没有进行任何修改的时候，我们可以直接让另一个分支的指针指向最新修改的版本，从而让两个分支回归“线性”<br><br>不能删除当前分支，只能删除其他分支<br>git branch -d 分支名 # 删除分支时，需要做各种检查（智能提示防止误删，一般是提到了暂存区但没有提交的内容）
+git branch -D 分支名 # 不做任何检查，强制删除
+复制<br><br>当两个分支上对文件的修改可能会存在冲突，例如同时修改了同一个文件的同一行，这时就需要手动解决冲突，如下图所示：<br><img src="https://pic.imgdb.cn/item/63214b8116f2c2beb16ba3ea.jpg" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+<br>
+第一个count值表示的是当前分支修改的值 <br>
+第二个count值是在dev分支修改的值 <br>解决冲突步骤如下：<br>
+<br>处理文件中冲突的地方
+<br>将解决完冲突的文件加入暂存区(add)
+<br>提交到仓库(commit)
+<br>解决冲突后git-log查看记录：可以看到发生冲突的合并版本也会被记录<br><img src="https://pic.imgdb.cn/item/63216d4516f2c2beb18cde9a.jpg" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br><br>几乎所有的版本控制系统都以某种形式支持分支。 使用分支意味着你可以把你的工作从开发主线上分离<br>开来进行重大的Bug修改、开发新的功能，以免影响开发主线。<br>在开发中，一般有如下分支使用原则与流程：<br>
+<br>
+master （生产） 分支<br>
+线上分支，主分支，中小规模项目作为线上运行的应用对应的分支——经测试无误后发布的稳定版本供用户使用； <br>
+develop（开发）分支<br>
+是从master创建的分支，一般作为开发部门的主要开发分支，如果没有其他并行开发不同期上线要求，都可以在此版本进行开发，阶段开发完成后，需要是合并到master分支,准备上线。 <br> 例如我们要开发新功能，我们要可以在develop分支上在建一个分支，新功能一般叫做feature分支，开发完以后在合并到 develop分支上面去，而不是直接提交到master分支，最后项目做完了develop再合并到master分支上<br>develop和master分支是不可删除的<br>
+<br>
+feature/xxxx分支（用完可删）<br>
+从develop创建的分支，一般是同期并行开发，但不同期上线时创建的分支，分支上的研发任务完成后合并到develop分支，用完后可删除。 <br>
+hotfifix/xxxx分支<br>
+从master派生的分支，一般作为线上bug修复使用，修复测试完成后需要合并到master、test、develop分支。因为主分支线上代码存在bug，那么作为开发分支肯定也有相同的bug那么hotfifix分支修改bug后必然要合并到主分支的同时也要合并到开发分支来修复bug代码 <br>
+还有一些其他分支，在此不再详述，例如test分支（用于代码测试）、pre分支（预上线分支）等等。 <br><img src="https://pic.imgdb.cn/item/63214e7e16f2c2beb16e9525.jpg" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br><br>简要小结，推荐使用场景： <br>往公共分支上合代码的时候，推荐使用merge。
+<br>拉公共分支最新代码的时候，推荐使用rebase，也就是git pull -r或git pull --rebase，但有个缺点就是rebase以后我就不知道我的当前分支最早是从哪个分支拉出来的了，因为基底变了嘛。 <br><br>HEAD 指向当前所在的分支，类似一个活动的指针，表示一个「引用」。<br>HEAD 既可以指向「当前分支」的最新 commit，也可以指向历史中的某一次 commit (「分离头指针」的情况)。归根结底，HEAD 指向的就是某个提交点。<br>当我们做分支切换时，HEAD 会跟着切换到对应分支。<br><br>假如有一个场景：有两个分支，master 分支和 feature 分支。现在，feautre 分支需要合并回 master 分支。<br><img src="https://kisugitakumi.oss-cn-chengdu.aliyuncs.com/img11/image-20220228134116327.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>fast-forward 合并方式是条件允许的情况，通过将 master 分支的 HEAD 位置移动到 feature 分支的最新提交点上，这样就实现了快速合并。这种情况，是不会新生成 commit 的。（快进模式）<br>git checkout master # 先切换到master分支
+git merge feature # 将feature分支合并到当前分支上（master）
+复制<br><img src="https://kisugitakumi.oss-cn-chengdu.aliyuncs.com/img11/image-20220228134238702.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>--no-ff 的方式进行合并，master 分支就会新生成一次提交记录。<br>
+<img src="https://kisugitakumi.oss-cn-chengdu.aliyuncs.com/img11/image-20220228134456687.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>git checkout master # 先切换到master分支
+git merge --no-ff feature # 将feature分支合并到当前分支上（master）
+复制<br>如果条件满足时，merge 默认采用的 fast-forward 方式进行合并，除非你显示的加上 --no-ff 选项；而条件不满足时，merge 也是无法使用 fast-forward 合并成功的！<br><br>git merge 操作是区分上下文的。当前分支始终是目标分支，其他一个或多个分支始终合并到当前分支。这个注意点记住了，方便记忆！所以，当需要将某个分支合并到目标分支时，需要先切到目标分支上。<br>快进模式能够进行的条件是：源分支和目标分支之间没有分叉。 下图则是无法通过 HEAD 的快速移动实现分支的合并。<br><img src="https://kisugitakumi.oss-cn-chengdu.aliyuncs.com/img11/image-20220228135612743.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>如果执行合并操作，默认会尝试 fast-forward 的方式进行合并，但是因为分叉了，所以此时会采用 no-ff 的方式进行合并，有新的 commit 生成了。最终的结果图如下：<br>git checkout master # 先切换到目标分支
+git merge feature
+复制<br><img src="https://kisugitakumi.oss-cn-chengdu.aliyuncs.com/img11/image-20220228135749975.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br><br>rebase 合并往往又被称为 「变基」。这里的「基」就是一个「基点」、「起点」的意思。git rebase 命令通常称为向前移植（forward porting）。<br>「变基」就是改变当前分支的起点。注意，是当前分支！ rebase 命令后面紧接着的就是「基分支」。与merge操作相反。<br>
+<br>变基前：
+<br><img src="https://kisugitakumi.oss-cn-chengdu.aliyuncs.com/img11/image-20220228140250490.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+<br>执行命令：
+<br>git checkout feature # 切换到当前分支，或待变基分支
+git rebase master # 变基 # 可合并为下面的语句
+git rebase master feature
+复制<br>
+<br>变基后：
+<br><img src="https://kisugitakumi.oss-cn-chengdu.aliyuncs.com/img11/image-20220228140717295.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>解释：rebase，变基，可以直接理解为改变基底。feature分支是基于master分支的B拉出来的分支，feature的基底是B。 而master在B之后有新的提交，就相当于此时要用master上新的提交来作为feature分支的新基底。实际操作为把B之后feature的提交存下来，然后删掉原来这些提交，再找到master的最新提交位置，把存下来的提交再接上去（新节点新commit id），如此feature分支的基底就相当于变成了E而不是原来的B了。（注意，如果master上在B以后没有新提交，那么就还是用原来的B作为基，rebase操作相当于无效，此时和git merge就基本没区别了，差异只在于git merge会多一条记录Merge操作的提交记录），图示：<br><img src="https://kisugitakumi.oss-cn-chengdu.aliyuncs.com/img11/image-20220228144950474.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>从Develop分支分出两个分支，分属两个人员进行开发。F1分支开发完毕后，push到总分支。F2分支开发到F2_5时需要拉取最新代码。<br>
+<br>
+如果F2分支采用git pull拉取最新代码： <br>
+F1分支的视角（F1分支的commit记录）：
+<img src="https://kisugitakumi.oss-cn-chengdu.aliyuncs.com/img11/image-20220228145053996.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"> <br>
+F2分支的视角：这将会把F1分支的修改直接拉下来于本地代码merge，且产生一个commit F2_5，也就是merge commit。
+<img src="https://kisugitakumi.oss-cn-chengdu.aliyuncs.com/img11/image-20220228145053996.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"> <br>
+如果F2分支采用git pull --rebase 拉取最新代码： <br>F1分支视角不变
+<br>F2分支视角： <br><img src="https://kisugitakumi.oss-cn-chengdu.aliyuncs.com/img11/image-20220228150132439.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">]]></description><link>https://blog.cytl2.eu.org/技术/分布式版本控制：git.html</link><guid isPermaLink="false">技术/分布式版本控制：Git.md</guid><dc:creator><![CDATA[lzy]]></dc:creator><pubDate>Sun, 24 Mar 2024 09:32:54 GMT</pubDate><enclosure url="https://pic.imgdb.cn/item/63206dd416f2c2beb1a68dcb.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src="https://pic.imgdb.cn/item/63206dd416f2c2beb1a68dcb.jpg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Replit容器]]></title><description><![CDATA[<br>免费容器，功能非常全面<br>目前最新版加入了物理关闭机制，必须页面登录状态并且打开机器运行否则关闭<br>目前主要可以用来使用搭建节点【容易被封号，不要直接copy，最好从仓库下载源码再上传上去，相对不容易被抓到和封号】<br>
+<br>
+<a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=p1G_yLCcIq0" rel="noopener" class="external-link is-unresolved" href="https://www.youtube.com/watch?v=p1G_yLCcIq0" target="_self">Replit搭建xray免费节点教程2024年大更新：支持argo固定临时双隧道，优选IP，四类搭建方式，一键五协议共存(vless、vmess、trojan、shadowsocks、socks5) - YouTube</a> <br>
+<a data-tooltip-position="top" aria-label="https://github.com/yonggekkk/Replit-Xray" rel="noopener" class="external-link is-unresolved" href="https://github.com/yonggekkk/Replit-Xray" target="_self">yonggekkk/Replit-Xray: Replit容器部署xray代理，支持argo固定隧道与临时隧道，自定义伪装网页，一键五协议共存，支持搭建vless、vmess、trojan、shadowsocks、socks5 (github.com)</a> <br>（建议自己在secret中添加UUID参数）<br>当然也可以用来干其他的，比如就有人用来搭建弹幕解析服务]]></description><link>https://blog.cytl2.eu.org/云服务/replit容器.html</link><guid isPermaLink="false">云服务/Replit容器.md</guid><dc:creator><![CDATA[lzy]]></dc:creator><pubDate>Sun, 24 Mar 2024 09:32:45 GMT</pubDate></item><item><title><![CDATA[部署静态服务]]></title><description><![CDATA[<br><br>使用works提供的KV作为数据库<br>使用cloudfare缓存html来降低KV的读写<br>所有的html页面均为缓存，可以达到静态博客的速度<br>唯一瓶颈是workers的日访问量是10万（免费）<br>1G的存储空间<br>worker里边存放的是js<br>那么静态页面html放哪里？——CloudFlare有一个模块Page专门放置静态页面（可以连接GitHub也可以自己上传）<br>其实CLoudFlare就是worker和Page构成了两大核心<br>Page的使用就更简单了，把静态页面等相关代码打包上传即可，当然也可以链接GitHub存储库，实现简单的CI/CD <br><br><br>利用CLoudFlare的CDN实现VPN的作用<br>首先使用别人已经搭建好的worker代码直接拿来使用搭建<br>开源地址：<a data-tooltip-position="top" aria-label="https://github.com/3Kmfi6HP/EDtunnel" rel="noopener" class="external-link is-unresolved" href="https://github.com/3Kmfi6HP/EDtunnel" target="_self">3Kmfi6HP/EDtunnel：使用 Cloudflare 页面和无服务器工作器来实现 VLESS 协议 --- 3Kmfi6HP/EDtunnel: Use Cloudflare pages and worker serverless to implement VLESS protocol (github.com)</a><br>建议使用自定义域更稳定的访问到worker<br>然后配置反代域名或者反代ip，注意端口（自己优选反代ip替换）<br>常用反代cf域名 <br>edgetunnel.anycast.eu.org
+cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org
+cdn-b100.xn--b6gac.eu.org
+cdn.anycast.eu.org
+cdn-all.xijingping.link
+复制<br>另外，只是单纯上网的话，啊里的反代就挺好：香港、日本<br>const proxyIPs = ['achk.cloudflarest.link','jp.cloudflarest.link'];
+复制<br>能解锁GPT等网站的优质IP（荷兰）<br>const proxyIPs = ['146.70.175.116','146.70.175.112','146.70.175.101','146.70.175.111','146.70.175.104'];
+复制<br>ip地址查询 <a data-tooltip-position="top" aria-label="https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbWQ3TjBCYkt5ajg3cFNNRkFENkxnZ2xBQkV0d3xBQ3Jtc0ttWjlPbVZ6UnhxalRQYmJNNkFuYzdEM2dVVEZLUWZ2ZlIyYXhIckJ4aEY2d2FBNVZyMkdPU3hNZ1hRakdOOHBFbW5YTGo2Ynk1TUJSSnhmVlZxSDJsUm9xYkFlM0t0WElMZ3lKUzNKR3o0Y3Zfb2NpVQ&amp;q=https%3A%2F%2Fipdata.co%2F&amp;v=elmApX3BTx4" rel="noopener" class="external-link is-unresolved" href="https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbWQ3TjBCYkt5ajg3cFNNRkFENkxnZ2xBQkV0d3xBQ3Jtc0ttWjlPbVZ6UnhxalRQYmJNNkFuYzdEM2dVVEZLUWZ2ZlIyYXhIckJ4aEY2d2FBNVZyMkdPU3hNZ1hRakdOOHBFbW5YTGo2Ynk1TUJSSnhmVlZxSDJsUm9xYkFlM0t0WElMZ3lKUzNKR3o0Y3Zfb2NpVQ&amp;q=https%3A%2F%2Fipdata.co%2F&amp;v=elmApX3BTx4" target="_self">https://ipdata.co/</a> <a data-tooltip-position="top" aria-label="https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa1I4eDh2ODNMUEotWkkxWm5SdG1mNmVYOXFid3xBQ3Jtc0ttWnIxeHNZZGk4ZlBLa3A1T2pORFpYa01tMk53UkpWblRzNVpvSlFRYlhxSWhjYU9tVkNmdW5rWE5sTFVnNmpvRHJLbTRGMHg5dGFPZVNKMWFaemlILVFsLUtnNkZYNmlNQUg4N0xPbEFCQ0ZqZTdTTQ&amp;q=https%3A%2F%2Fip.gs%2F&amp;v=elmApX3BTx4" rel="noopener" class="external-link is-unresolved" href="https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa1I4eDh2ODNMUEotWkkxWm5SdG1mNmVYOXFid3xBQ3Jtc0ttWnIxeHNZZGk4ZlBLa3A1T2pORFpYa01tMk53UkpWblRzNVpvSlFRYlhxSWhjYU9tVkNmdW5rWE5sTFVnNmpvRHJLbTRGMHg5dGFPZVNKMWFaemlILVFsLUtnNkZYNmlNQUg4N0xPbEFCQ0ZqZTdTTQ&amp;q=https%3A%2F%2Fip.gs%2F&amp;v=elmApX3BTx4" target="_self">https://ip.gs/</a> <br>fofa官网 <a data-tooltip-position="top" aria-label="https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbVZaQW1yZzQ3UHZBVUZuN0FWMmhNdUNWNDh1Z3xBQ3Jtc0ttRkFuQ1h2aElVX1VoNWF4NHd6OVFGczVobThVSFMwY1NvR3BCaS11a1NfekZRYXNwUlROb200Vl85NXRQWW1HeTd1dTlET0V2cXFHNFp3NTVSMnB6akI5czFKNm43dExzQjhVRVNvSnduaGFIWkF4TQ&amp;q=https%3A%2F%2Ffofa.info%2F&amp;v=elmApX3BTx4" rel="noopener" class="external-link is-unresolved" href="https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbVZaQW1yZzQ3UHZBVUZuN0FWMmhNdUNWNDh1Z3xBQ3Jtc0ttRkFuQ1h2aElVX1VoNWF4NHd6OVFGczVobThVSFMwY1NvR3BCaS11a1NfekZRYXNwUlROb200Vl85NXRQWW1HeTd1dTlET0V2cXFHNFp3NTVSMnB6akI5czFKNm43dExzQjhVRVNvSnduaGFIWkF4TQ&amp;q=https%3A%2F%2Ffofa.info%2F&amp;v=elmApX3BTx4" target="_self">https://fofa.info/</a> <br>筛选语句：
+server=="cloudflare" &amp;&amp; port=="80" &amp;&amp; country=="NL" &amp;&amp; city=="Amsterdam"
+复制<br>补充：脚本中使用政府网站来伪装对非法路径请求的回应<br>const hostnames = ['www.fmprc.gov.cn', 'www.xuexi.cn', 'www.gov.cn', 'mail.gov.cn', 'www.mofcom.gov.cn', 'www.gfbzb.gov.cn', 'www.miit.gov.cn', 'www.12377.cn'];
+复制<br>建议改一下比如：<br>const hostnames = ['ipdata.co'];
+复制<br><br>关于优选cdn-ip和优选反代ip：<br>cdn ip 是cloudflare的边缘节点ip，反代ip是反代了cdn节点的ip<br>
+<br>
+填写在v2rayN的ip和使用的端口是从本地测试能连通CloudFlare网络服务的优选反代ip测试 <br>
+填写在worker脚本中的ip则是从谷歌测试【使用了CLoudFlare体系的网站，cdn-ip（能不能解锁gpt看的还是worker中的cdn-ip） <br><img alt="image-20240201214908202" src="https://i0.hdslb.com/bfs/article/a247007360b69e881d976f59ab9befcc688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>小结：只要worker中的ip段能够访问解锁就可以了外面填的反代ip决定自己常规的ip，也是连接到CloudFlare边缘节点的跳板<br>
+（正常情况下我们一般很难直连CloudFlare网络，我们必选优选ip访问，之后再通过指定cdn-ip边缘访问节点去访问我们想要解锁的网站）<br>使用CloudFlare，它的边缘ip一般是就近分配，我们需要优选让我们畅通它的服务和指定ip区域<br>他有一些ip段，对应有不同的地区编码<br>地区编码： 不太准，只能说大范围都是<br>
+<br>
+132203——北美、香港、新加坡 <br>
+31898——北美、欧洲、韩国等 <br>
+45102——亚洲（日本、香港、新加坡） <br>亚洲的基本都能正常，但它的地区会被open-ai拉黑<br>如何优选：<br>参考：<a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=ojGojtF8sW8" rel="noopener" class="external-link is-unresolved" href="https://www.youtube.com/watch?v=ojGojtF8sW8" target="_self">4]将Cloudflare中的IP固定！保持中转IP与CDN IP同一地区，让workers反代CDN的vless节点更稳定，海量中转IP及CDN IP供你选择，解锁GPT及奈飞等流媒体，免费VPN - YouTube</a><br>一、如果获取CF中转IP(即反代IP)<br>1、<a data-tooltip-position="top" aria-label="http://zip.baipiao.eu.org/" rel="noopener" class="external-link is-unresolved" href="http://zip.baipiao.eu.org/" target="_self">zip.baipiao.eu.org</a><br>2、电报机器人：<a data-tooltip-position="top" aria-label="https://t.me/cf_push" rel="noopener" class="external-link is-unresolved" href="https://t.me/cf_push" target="_self">@cf_push</a><br>3、合并多个txt文档技巧：新建txt文件，输入type *.txt&gt;&gt;all.txt，重命名格式为.bat后，运行。自动合并生成。<br>4、文本排重工具：<a rel="noopener" class="external-link is-unresolved" href="https://www.toolhelper.cn/Char/TextFilter" target="_self">https://www.toolhelper.cn/Char/TextFilter</a><br>5、在线批量IP地理位置查找工具：<a rel="noopener" class="external-link is-unresolved" href="https://reallyfreegeoip.org/bulk" target="_self">https://reallyfreegeoip.org/bulk</a><br>6、利用“CloudflareSpeedTest”工具来测速（参数见项目地址）:<a rel="noopener" class="external-link is-unresolved" href="https://github.com/XIU2/CloudflareSpeedTest" target="_self">https://github.com/XIU2/CloudflareSpeedTest</a><br>7、在该软件当时文件栏上输出：cmd，回车键<br>8.1、直接软件测：CloudflareST.exe -tll 40 -tl 200 -f 文件名.txt（下载速度测不了）<br>8.2、有测速地址：CloudflareST.exe -url https://down.heleguo.top/download/300MB.zip -tl 200 -sl 5 -tlr 0.2 -f 文件名.txt<br>表示启动cloudflare工具，利用<a data-tooltip-position="top" aria-label="https://down.heleguo.top/download/300MB.zip测速地址测速。tll延迟下限是40，tl延迟上限是200，sl最低速度5M，tlr丢包率小于0.2，-f表示针对文件名.txt文件内IP测速。" rel="noopener" class="external-link is-unresolved" href="https://down.heleguo.top/download/300MB.zip%E6%B5%8B%E9%80%9F%E5%9C%B0%E5%9D%80%E6%B5%8B%E9%80%9F%E3%80%82tll%E5%BB%B6%E8%BF%9F%E4%B8%8B%E9%99%90%E6%98%AF40%EF%BC%8Ctl%E5%BB%B6%E8%BF%9F%E4%B8%8A%E9%99%90%E6%98%AF200%EF%BC%8Csl%E6%9C%80%E4%BD%8E%E9%80%9F%E5%BA%A65M%EF%BC%8Ctlr%E4%B8%A2%E5%8C%85%E7%8E%87%E5%B0%8F%E4%BA%8E0.2%EF%BC%8C-f%E8%A1%A8%E7%A4%BA%E9%92%88%E5%AF%B9%E6%96%87%E4%BB%B6%E5%90%8D.txt%E6%96%87%E4%BB%B6%E5%86%85IP%E6%B5%8B%E9%80%9F%E3%80%82" target="_self">https://down.heleguo.top/download/300MB.zip测速地址测速。tll延迟下限是40，tl延迟上限是200，sl最低速度5M，tlr丢包率小于0.2，-f表示针对文件名.txt文件内IP测速。</a><br>参数设置请看这里：<a rel="noopener" class="external-link is-unresolved" href="https://github.com/XIU2/CloudflareSpeedTest#-cmd-%E5%B8%A6%E5%8F%82%E6%95%B0%E8%BF%90%E8%A1%8C-cloudflarest" target="_self">https://github.com/XIU2/CloudflareSpeedTest#-cmd-%E5%B8%A6%E5%8F%82%E6%95%B0%E8%BF%90%E8%A1%8C-cloudflarest</a><br>查找更多测速地址：<a rel="noopener" class="external-link is-unresolved" href="https://github.com/XIU2/CloudflareSpeedTest/issues/168" target="_self">https://github.com/XIU2/CloudflareSpeedTest/issues/168</a><br>二、如何获取CF的CDN IP<br>1、<a rel="noopener" class="external-link is-unresolved" href="https://stock.hostmonit.com/CloudFlareYes" target="_self">https://stock.hostmonit.com/CloudFlareYes</a><br>2、<a rel="noopener" class="external-link is-unresolved" href="http://ip.flares.cloud/" target="_self">http://ip.flares.cloud/</a><br>3、<a rel="noopener" class="external-link is-unresolved" href="https://github.com/hello-earth/cloudflare-better-ip/tree/main/cloudflare" target="_self">https://github.com/hello-earth/cloudflare-better-ip/tree/main/cloudflare</a><br>4、better-cloudflare-ip（本地优选）<br>5、CloudflareSpeedTest（本地优选）<br>6、<a rel="noopener" class="external-link is-unresolved" href="https://fofa.info/" target="_self">https://fofa.info/</a><br>打开fofa网站搜索：server="cloudflare" &amp;&amp; country="US" &amp;&amp; city="Chicago" &amp;&amp; port="443"<br>意思是筛选CF的CDN IP，国家是美国，地区是芝加哥，端口443<br>7、利用“CloudflareSpeedTest”工具来测速<br>三、查当前IP地址及测速<br>1、查IP：<a rel="noopener" class="external-link is-unresolved" href="https://ip.gs/" target="_self">https://ip.gs/</a><br>2、查IP纯净度：<a rel="noopener" class="external-link is-unresolved" href="https://scamalytics.com/" target="_self">https://scamalytics.com/</a><br>3、测速度：<a rel="noopener" class="external-link is-unresolved" href="https://www.speedtest.net/" target="_self">https://www.speedtest.net/</a><br>附：有方法限定自己的优选域名防止乱跳<br><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=ngiXH9YuByQ" rel="noopener" class="external-link is-unresolved" href="https://www.youtube.com/watch?v=ngiXH9YuByQ" target="_self">【免费科学上网-3】CF-CDN-IP优选、CF反代IP优选，创建自己的优选域名，锁住IP区域，优化科学上网环境 (youtube.com)</a><br><br>使用Cloudflare的Workers实现简单的反向代理是相对容易的。Workers提供了JavaScript代码的执行环境，您可以使用它来修改传入的请求并将其转发到目标网址。上述提供的代码示例演示了如何捕获传入请求事件，修改请求的URL，并使用fetch函数将修改后的请求发送到目标网址。通过配置Cloudflare的路由，您可以将特定的源路径映射到相应的Worker，从而实现反向代理的功能。<br>然而，需要注意的是，这只是一个简单的示例，适合于基本的反向代理需求。在实际应用中，还可能需要处理更多的情况，如处理各种HTTP方法、处理请求和响应的头部、处理错误等。此外，如果目标网址使用HTTPS，您可能需要在Worker中执行SSL/TLS终止，以确保安全连接。<br>如果您的需求更加复杂或有特定的安全需求，可能需要编写更复杂的代码来处理各种场景。Cloudflare的Workers文档提供了更详细的信息和示例，供您参考和扩展。<br><br>要使用Cloudflare的Workers来实现将访问<a data-tooltip-position="top" aria-label="https://fd.cy.com/dasd转发到www.Abc.com/dasd，您可以按照以下步骤操作：" rel="noopener" class="external-link is-unresolved" href="https://fd.cy.com/dasd%E8%BD%AC%E5%8F%91%E5%88%B0www.Abc.com/dasd%EF%BC%8C%E6%82%A8%E5%8F%AF%E4%BB%A5%E6%8C%89%E7%85%A7%E4%BB%A5%E4%B8%8B%E6%AD%A5%E9%AA%A4%E6%93%8D%E4%BD%9C%EF%BC%9A" target="_self">https://fd.cy.com/dasd转发到www.Abc.com/dasd，您可以按照以下步骤操作：</a><br>
+<br>
+登录到Cloudflare账户并打开Cloudflare Workers控制台。 <br>
+创建一个新的Worker：点击"Create a Worker"（创建一个Worker）按钮。 <br>
+输入Worker代码：在Worker编辑器中，输入以下代码： <br>addEventListener('fetch', event =&gt; { event.respondWith(handleRequest(event.request))
+}) async function handleRequest(request) { const url = new URL(request.url) // 修改目标URL的主机名和路径 url.hostname = 'www.Abc.com' url.pathname = '/dasd' // 构造新的请求 const modifiedRequest = new Request(url.toString(), { method: request.method, headers: request.headers, body: request.body, redirect: 'manual' // 禁用自动重定向 }) // 发起新的请求并返回响应 const response = await fetch(modifiedRequest) return response
+}
+复制<br>
+<br>
+部署Worker：点击"Save and Deploy"（保存并部署）按钮，将Worker部署到Cloudflare的全球边缘网络。 <br>
+配置路由：在Cloudflare Workers控制台的左侧导航栏，选择"Routes"（路由）选项卡。点击"Add Route"（添加路由）按钮。 <br>
+配置源路径和目标Worker：在路由配置中，输入源路径为https://fd.cy.com/*，并选择刚刚创建的Worker作为目标。 <br>
+保存路由配置：点击"Save"（保存）按钮，使路由配置生效。 <br>现在，当有人访问<a data-tooltip-position="top" aria-label="https://fd.cy.com/dasd时，Cloudflare的Worker将会将请求转发到www.Abc.com/dasd，并返回相应的响应。" rel="noopener" class="external-link is-unresolved" href="https://fd.cy.com/dasd%E6%97%B6%EF%BC%8CCloudflare%E7%9A%84Worker%E5%B0%86%E4%BC%9A%E5%B0%86%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E5%88%B0www.Abc.com/dasd%EF%BC%8C%E5%B9%B6%E8%BF%94%E5%9B%9E%E7%9B%B8%E5%BA%94%E7%9A%84%E5%93%8D%E5%BA%94%E3%80%82" target="_self">https://fd.cy.com/dasd时，Cloudflare的Worker将会将请求转发到www.Abc.com/dasd，并返回相应的响应。</a><br><br>案例扩展<br>我们使用response.headers.get('Content-Type')获取原始响应的内容类型，并根据内容类型来选择相应的处理逻辑。<br>addEventListener('fetch', event =&gt; { event.respondWith(handleRequest(event.request))
+}) async function handleRequest(request) { const url = new URL(request.url) // 修改目标URL的主机名和路径 url.hostname = 'www.Abc.com' url.pathname = url.pathname.substring(1) // 移除斜杠 // 构造新的请求 const modifiedRequest = new Request(url.toString(), { method: request.method, headers: request.headers, body: request.body, redirect: 'manual' // 禁用自动重定向 }) // 发起新的请求并返回响应 const response = await fetch(modifiedRequest) // 检查原始请求的内容类型 const contentType = response.headers.get('Content-Type') // 根据内容类型进行适当的处理 if (contentType &amp;&amp; contentType.startsWith('video/')) { // 如果是视频内容，可以直接返回响应 return response } else { // 对于其他内容类型，可以根据需求进行处理 const body = await response.text() return new Response(body, response) }
+}
+复制<br>在上述代码中，我们使用contentType.startsWith('video/')来判断内容类型是否以video/开头，以确定是否为视频内容。如果是视频内容，直接返回原始响应；如果不是视频内容，则将原始响应的主体作为文本进行返回。<br>这样修改后的代码将根据请求的内容类型自动进行反向代理，只有当内容类型为视频时才返回原始响应，其他内容类型将被作为文本返回。<br><br><a data-tooltip-position="top" aria-label="https://cloud.tencent.com/developer/article/1948285" rel="noopener" class="external-link is-unresolved" href="https://cloud.tencent.com/developer/article/1948285" target="_self">【教程】几行代码轻松利用 Cloudflare Worker 搭建镜像网站！-腾讯云开发者社区-腾讯云 (tencent.com)</a><br><br><a data-tooltip-position="top" aria-label="https://blog.ichr.me/post/cloudflare-cdn-optimize/" rel="noopener" class="external-link is-unresolved" href="https://blog.ichr.me/post/cloudflare-cdn-optimize/" target="_self">Cloudflare 指定 CDN 节点与缓存配置 | ChrAlpha's Blog</a>]]></description><link>https://blog.cytl2.eu.org/云服务/cloudflare.html</link><guid isPermaLink="false">云服务/CloudFlare.md</guid><dc:creator><![CDATA[lzy]]></dc:creator><pubDate>Sun, 24 Mar 2024 09:32:43 GMT</pubDate><enclosure url="https://i0.hdslb.com/bfs/article/a247007360b69e881d976f59ab9befcc688545001.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://i0.hdslb.com/bfs/article/a247007360b69e881d976f59ab9befcc688545001.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[句柄工具解锁占用]]></title><description><![CDATA[<br><br>你是否经常遇见Win10 操作无法完成 ，因为其中的文件夹或文件已在另一程序中打开！无法删除文件，该怎么办呢？遇到这样的情况我们可以通过下面方法来解决。 <br>1、按下【ctrl+alt+del】打开任务管理器，依次点击打开：性能 - 打开资源监视器- CPU, 关联的句柄 里输入部分/全部 文件名，搜索完就可在下面的搜索结果<br>
+<img src="https://img2018.cnblogs.com/blog/820961/201903/820961-20190322223117028-1267791028.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>2、然后在里面中看到占用当前文件的所有进程，右键可一键结束进程，解决文件占用！！<br><br>Win系统自带，可以实现简易的定时任务，比如启动某个程序，执行某个脚本，使用方法可以参考<br>
+<a data-href="开发利器#Navicat Premium 16" href="https://blog.cytl2.eu.org/技术/开发利器/开发利器.html#Navicat_Premium_16" class="internal-link" target="_self" rel="noopener">开发利器 &gt; Navicat Premium 16</a><br><br>Note
+在Windows操作系统中： <br>系统屏幕缩放：这个设置允许用户根据自己的视觉偏好调整屏幕上所有元素的大小。例如，你可以将显示设置调整为125%，这会使得所有应用程序和界面元素变大25%。<br> <br>文字缩放：这个选项专门针对文本大小进行调整，而不会影响其他界面元素的大小。<br> <br>DPI：DPI代表“每英寸点数”，它是一个衡量打印分辨率的单位，但在显示设置中也用来描述屏幕的像素密度。在Windows中，更改DPI设置可以影响屏幕上文本和图像的清晰度。 <br>高DPI显示器（如4K屏幕）在不进行适当缩放的情况下可能会导致文本和图标过小，难以阅读。但是，缩放也可能引起一些问题，比如应用程序界面模糊或者大小不一致。这是因为并非所有应用程序都能很好地适应高DPI设置和屏幕缩放。<br>
+一般建议使用系统提供的推荐缩放就能够很好的满足我们的感官了（但有一些软件对这部分的兼容不太好）<br>
+之前曾经修改过DPI，导致系统的屏幕显示出了问题，部分软件正常，部分系统组件和软件显示不正常。这里记录下解决办法：<br>
+首先，win系统搜索DPI，<br>
+<img alt="image.png" src="https://i0.hdslb.com/bfs/article/63e33b9a6c926682df2274901f2e9369688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>修正屏幕总体显示比例：勾选推荐<br>
+<img alt="image.png" src="https://i0.hdslb.com/bfs/article/5ba760a67a4c8ab6ae0eb6d09c3ac62c688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+修正字体缩放：<br>
+<img alt="image.png" src="https://i0.hdslb.com/bfs/article/097e6765c29a0a1bff5fa466e7b1f204688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br><br>每次通过程序面板打开cmd窗口，还需要手动切换到工作目录？<br>
+其实可以很简单的：<br>
+<br>在文件系统直接进入到要打开的项目所在工作目录
+<br>在地址栏输入cmd
+<br>回车，即可弹出cmd窗口并自动切换路径状态为当前目录
+<br>是不是很便捷，别急，还有更好用的小技巧，比如这个项目我想要使用vscode打开，只需要在弹出的cmd窗口输入code .即可。注意不要关闭cmd窗口，不然打开的vscode也会被同步关闭，<br>
+不仅仅是vscode，idea之类的也可以对应的是idea .，只要你往系统环境变量中添加了它的可执行路径！<br><br>有时候，因为一些特殊的原因如果自动获取DNS可能会出现无法上网的情况<br>
+所以我选择手动指定DNS：<br>
+<br>打开网络适配器设置页面【win11和win10界面不一样，自行探索打开方式】
+<br>选择你使用的网络适配器
+<br>双击协议版本
+<br>选择指定DNS地址并填写，常见的DNS服务：<br>
+- 啊里：<br>
+- 223.6.6.6<br>
+- 223.5.5.5（备选）<br>
+最后注意，WiFi网络的注意事项：在连接WiFi的属性中配置<br>
+<a data-tooltip-position="top" aria-label="https://blog.csdn.net/Fuwtiaok/article/details/131261382#:~:text=防止DNS再次被覆盖%2F恢复。 打开WiFi，点击设置所连网络的属性。 编辑ip分配：自动分配DHCP改成手动 -,打开IPv4开关 - 键入需要DNS地址。 3. 把WIFI断开重连，以及关机后再开机，查看DNS都没有再变回去了。" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/Fuwtiaok/article/details/131261382#:~:text=%E9%98%B2%E6%AD%A2DNS%E5%86%8D%E6%AC%A1%E8%A2%AB%E8%A6%86%E7%9B%96%2F%E6%81%A2%E5%A4%8D%E3%80%82%20%E6%89%93%E5%BC%80WiFi%EF%BC%8C%E7%82%B9%E5%87%BB%E8%AE%BE%E7%BD%AE%E6%89%80%E8%BF%9E%E7%BD%91%E7%BB%9C%E7%9A%84%E5%B1%9E%E6%80%A7%E3%80%82%20%E7%BC%96%E8%BE%91ip%E5%88%86%E9%85%8D%EF%BC%9A%E8%87%AA%E5%8A%A8%E5%88%86%E9%85%8DDHCP%E6%94%B9%E6%88%90%E6%89%8B%E5%8A%A8%20-,%E6%89%93%E5%BC%80IPv4%E5%BC%80%E5%85%B3%20-%20%E9%94%AE%E5%85%A5%E9%9C%80%E8%A6%81DNS%E5%9C%B0%E5%9D%80%E3%80%82%203.%20%E6%8A%8AWIFI%E6%96%AD%E5%BC%80%E9%87%8D%E8%BF%9E%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%85%B3%E6%9C%BA%E5%90%8E%E5%86%8D%E5%BC%80%E6%9C%BA%EF%BC%8C%E6%9F%A5%E7%9C%8BDNS%E9%83%BD%E6%B2%A1%E6%9C%89%E5%86%8D%E5%8F%98%E5%9B%9E%E5%8E%BB%E4%BA%86%E3%80%82" target="_self">关于internet设置改完DNS又总是自动恢复的问题。改了dns为什么又恢复了原dns-CSDN博客</a>
+<br><br><br>step:<br>
+​	1. 制作微软官方系统PE盘: <a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/78326370" rel="noopener" class="external-link is-unresolved" href="https://zhuanlan.zhihu.com/p/78326370" target="_self">【技术】Win10系统U盘启动盘制作教程（重装系统必备） - 知乎 (zhihu.com)</a><br>
+<br>通过PE重装系统（可以选择只重置系统盘）
+<br>当然更推荐自己备份
+<br>恢复常用软件、系统设置和备份清单
+<br>Tip:进入BIOS界面方法大全<br>
+<br>
+开机启动，快速按系统厂家预置的快捷键 <br>
+win10预装系统，更新和安全——恢复——高级启动 <br>
+取卡针轻点针孔使弹起【针对部分厂家笔记本，个人的最终尝试方案】 <br>若3步下来依旧无效请送修<br>技巧详解
+先查自己电脑品牌进入BIOS界面的启动热键，一般为F2，del，F12键，在电脑开机品牌logo的界面也可以看到启动热键。然后按下开机键后迅速敲击启动热键。
+开机状态进bios界面
+1、win+i快捷键打开设置窗口，选择更新和安全
+2、选择恢复，点击高级启动下的立即重新启动按钮
+3、重启进入此界面，选择疑难解答
+4、选择高级选项
+5、选择UEFI固件设置，如果没有之一选项就选择启动设置重启电脑
+6、点击重启后即可进入BIOS界面。
+以上就是win10进入bios的设置啦，
+<br><br>如果电脑是正常可以启动的话，直接搜更改高级启动项重启即可以U盘启动<br>官网：<a data-tooltip-position="top" aria-label="https://www.wepe.com.cn/download.html" rel="noopener" class="external-link is-unresolved" href="https://www.wepe.com.cn/download.html" target="_self">微PE工具箱 - 下载 (wepe.com.cn)</a><br><br>
+<br>备份D盘关键软件——新环境里只需要保证盘符路径一致即可正常启动。（部分特殊软件有注册表的重新安装即可~，以及部分环境变量重新配置）
+<br>或者借助dis++软件进行备份
+<br>利用U盘制作一个启动盘/第二Linux系统
+<br><br>系统电脑第一次分区直接在win系统自带的工具就能完成，但有很多限制比如只能合并相邻分区，在后续分区之后占用很难还原，需要借助一些第三方工具，比如DiskGenius，像这类经典工具在PE启动盘中都有内置<br>Warning
+一定要注意，win11家庭版预装系统可能默认把磁盘保护锁开启，搜设备加密设置关闭：BitLocker ，具体百度，秘钥从设备第一次登录的微软邮箱账号获取。
+<br><a data-tooltip-position="top" aria-label="https://www.bilibili.com/video/BV1nH4y1S7oF/?spm_id_from=333.999.0.0&amp;vd_source=60cd820d66490f513305005717358b72" rel="noopener" class="external-link is-unresolved" href="https://www.bilibili.com/video/BV1nH4y1S7oF/?spm_id_from=333.999.0.0&amp;vd_source=60cd820d66490f513305005717358b72" target="_self">怎么把C盘空间扩大？只需一招教你扩容C盘空间不足问题 简单易操作 支持Win11/Win10/Win7系统_哔哩哔哩_bilibili</a><br><br>比如桌面、比如回收站<br>
+<img src="https://i0.hdslb.com/bfs/article/5a47bf2e885fa014ba5945d2e33b95ca688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br><br>你是否时常被win自带的防火墙、杀毒软件defender困扰？我就是，下载的软件、压缩包老是报有毒然后自作主张的给删了。直接关了吧又不太好，就让他开着咯，但是我又不想被他打搅，所以我们可以在病毒和威胁防护中-管理设置的排除项页面添加排除目录，位于这个目录下的内容他就不会去烦你了。<br>
+<img alt="image.png" src="https://i0.hdslb.com/bfs/article/092eefffb95f60ea35437fa58c654b53688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br><img alt="image.png" src="https://i0.hdslb.com/bfs/article/65a1e9617495648db6b74d9cfe04a1ff688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>还可以把实时保护关闭。<br><br>虽然之前都知道有一些现成的软件可以实现，比如前段时间比较火Alist，但其实Win系统本身就自带有挂载的功能<br><img alt="image.png" src="https://i0.hdslb.com/bfs/article/ad1eb8c0ad2e87e3a30bee4cb69db063688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>以WebDav为例，只需要依次输入服务器地址、用户以及密码就可以了<br><br>在 Windows 系统中，您可以使用 Win + .（句号）或 Win + ;（分号）组合键来打开表情符号面板，从而插入您想要的表情符号。这些表情符号将以字体形式呈现，而不是像图片那样显示。<br><br><br>比如csv打开中文乱码（其实从某种意义上都算得上微软Excel的bug了吧，因为同样的csv在WPS是可以正常打开显示的）<br>那么有什么方法快速解决呢？<br>
+记事本打开，另存为，选择编码格式为utf-8 BOM 这样Excel就能正常打开了z<br><br>
+可能还有人不知道这个快捷键是啥，那么我普及一下，这是一个win自带的系统剪切板管理，可以显示最近的多条剪切板记录
+<br>如果在“设置—系统—剪贴板”中已经开启，但还是用不了，直接重启资源管理器。步骤如下：<br>1.先打开随便打开一个资源管理器窗口，任务栏快捷键或者直接点开我的电脑都行。<br>2.在任务栏空白处右键选择任务管理器（或者ctrl+alt+del大法）。<br>3.在任务管理器中寻找资源管理器，右键—重新启动，等待启动完成，即可使用。<br>或者懂电脑的直接CMD命令：taskkill /f /im explorer.exe &amp; start explorer.exe<br><br><a data-tooltip-position="top" aria-label="https://www.pianshen.com/article/23911237620/" rel="noopener" class="external-link is-unresolved" href="https://www.pianshen.com/article/23911237620/" target="_self">windows-10 改变 添加path环境变量 为表格样式 - 程序员大本营 (pianshen.com)</a><br>
+Windows-10 有时候配置Path环境变量时会变成 Windows-7 配置Path的样子，非常不方便
+<br><img alt="mark" src="https://i0.hdslb.com/bfs/article/37ebdb710a4ef47aa1c9b77f52bb3534688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+这时我们只需要把&nbsp;%SystemRoot%;&nbsp;这个加在&nbsp;path变量值&nbsp;的开头，然后确定
+<br><img alt="mark" src="https://i0.hdslb.com/bfs/article/65ec4c6cac6846a877eba4eb20ae3504688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+再打开Path就会变成表格样式了
+<br><img alt="mark" src="https://i0.hdslb.com/bfs/article/aa94bb36ee14df364d12d2f5636d7e0c688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved">]]></description><link>https://blog.cytl2.eu.org/生活/系统技巧.html</link><guid isPermaLink="false">生活/系统技巧.md</guid><dc:creator><![CDATA[lzy]]></dc:creator><pubDate>Sun, 24 Mar 2024 07:42:05 GMT</pubDate><enclosure url="https://img2018.cnblogs.com/blog/820961/201903/820961-20190322223117028-1267791028.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://img2018.cnblogs.com/blog/820961/201903/820961-20190322223117028-1267791028.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[那些坑]]></title><description><![CDATA[<br><br><br>；留点心吧
+其实不止啊里，以前在用npm、pip这些包管理工具也是有遇到类似的情况的，国内的镜像源还有清华、淘宝等，总之留点心吧，他们可能把非常古老的版本当做最新的拉下来然后启动出现一堆Bug，参考原文：<a data-tooltip-position="top" aria-label="https://blog.csdn.net/weixin_45149481/article/details/136528377" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/weixin_45149481/article/details/136528377" target="_self">docker运行cloudflare报错：Incorrect Usage: flag provided but not defined: -token_cloudflared</a>
+<br>使用CloudFlare的Tunnels隧道服务的时候，使用docker启动cloudflare时发现一直起不来，查看日志发现报错：Incorrect Usage: flag provided but not defined: -token<br>最后在官方issue：<a data-tooltip-position="top" aria-label="https://github.com/cloudflare/cloudflared/issues/743" rel="noopener" class="external-link is-unresolved" href="https://github.com/cloudflare/cloudflared/issues/743" target="_self">🐛错误用法：提供标志但未定义：-token · Issue #743 · cloudflare/cloudflared --- 🐛Incorrect Usage: flag provided but not defined: -token · Issue #743 · cloudflare/cloudflared (github.com)</a>发现了问题所在<br>原因：因为阿里源的问题（可能的原因之一）<br>
+解决：使用特定版本代替latest，如2023.5.0-amd64。如docker run cloudflare/cloudflared:2023.5.0-amd64 tunnel --no-autoupdate run --token XXX<br>
+当然也可以删除阿里源（这样可能比较慢，得用科学上网）<br><br>有时候想要将多个微服务，聚合成一个服务以一个Jar包进行启动，同时又加上了一堆VM参数，这会导致最终启动程序的命令行过长，导致IDEA结束（据说，该问题仅 Windows 系统电脑会出现）那如何解决？<br>解决思路
+可以使用 JAR 清单中的 Main-Class 属性来指定 Java 应用程序的入口点，并且可以在 JAR 清单中添加其他自定义属性，包括命令行参数。通过将长命令写入 Manifest.txt 文件，并在 JAR 清单中引用该文件，可以实现在启动应用程序时读取并执行该命令。
+以下是一个示例，演示如何在 JAR 清单中引用 Manifest.txt 文件，并指定应用程序的入口点（Main-Class）： <br>
+创建 Manifest.txt 文件，将您的长命令写入其中。假设您的命令是启动一个 Java 程序，命令行参数是 -Xmx512m -jar MyApp.jar，则 Manifest.txt 可能如下所示：
+Main-Class: com.example.MyMainClass
+Command-Line-Args: -Xmx512m -jar MyApp.jar
+复制 <br>
+使用 jar 命令创建 JAR 文件，并指定 Manifest.txt 作为 JAR 清单：
+jar cmf Manifest.txt MyApp.jar com/*
+复制 <br>
+然后，您可以使用以下命令来启动应用程序：
+java -jar MyApp.jar
+复制
+在这种情况下，Java 虚拟机将读取 JAR 清单中的 Main-Class 属性，并执行该类的 main 方法。您的应用程序可以在启动时读取 Manifest.txt 文件中的 Command-Line-Args 属性，并将其解析为命令行参数。 <br>IDEA只要选择缩短命令行的方式为JAR manifest即可，具体步骤如下：<br>1）打开服务控制器。<br>
+选择聚合服务 AggregationServiceApplication，点击 Modify options，点击 shorten command line。<br>
+<img alt="image.png" src="https://i0.hdslb.com/bfs/article/77976dacc5d6ac820dedfba73fc2b173688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>选择 JAR manifest，问题解决。<br>
+<img alt="image.png" src="https://i0.hdslb.com/bfs/article/5104ae444bfa17dcaa4b927d375641a9688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br><br><br>@RequiredArgsConstructor
+public class OrderServiceImpl implements OrderService { private final OrderMapper orderMapper; private final OrderItemMapper orderItemMapper; .......
+}
+复制<br>@RequiredArgsConstructor 是 Lombok 提供的一个注解，用于自动生成一个包含所有被 final 修饰的成员变量的构造函数，同时也会生成一个不带参数的构造函数。也就是Spring的构造器注入，在需要引入很多SpringBoot的Bean对象的时候，这种实现方法无疑优雅很多<br><br><a data-href="Nginx#补充：压缩和限流技巧" href="https://blog.cytl2.eu.org/技术/后端/java/nginx.html#补充：压缩和限流技巧" class="internal-link" target="_self" rel="noopener">Nginx &gt; 补充：压缩和限流技巧</a><br><br>参考：<a data-tooltip-position="top" aria-label="https://juejin.cn/post/7111912514744500238" rel="noopener" class="external-link is-unresolved" href="https://juejin.cn/post/7111912514744500238" target="_self">【踩坑日记】使用公网ip向nacos注册服务 - 掘金 (juejin.cn)</a><br>核心代码：<br> location = /getIp{ return 200 "$remote_addr"; } 复制<br><br>Tip
+我买的服务器是2核4G，但运行两个微服务一段时间后直接死机了，。而且实际发现能用内存只有3.65G左右，这简直了。原来腾讯云服务器会启动kdump功能，为了出错后方便分析错误，但我不需要啊，我要内存！参考文章：<a data-tooltip-position="top" aria-label="https://cloud.tencent.com/developer/article/2381722" rel="noopener" class="external-link is-unresolved" href="https://cloud.tencent.com/developer/article/2381722" target="_self">解决云服务器开机后，内存与实际不符的问题-腾讯云开发者社区-腾讯云 (tencent.com)</a>
+<br>首先，确保你了解Kdump的作用和重要性。Kdump是一种用于捕获Linux内核崩溃时的内存转储的机制，它可以帮助分析系统崩溃的原因。如果你决定关闭Kdump，确保你能接受在系统出现严重问题时无法获取详细的内存转储信息。<br>下面是你可以采取的步骤：<br>
+<br>
+查看当前Kdump配置： 运行以下命令来查看当前系统中Kdump的配置： cat /etc/default/grub
+复制
+确保其中是否有crashkernel参数，以及其设置的值。 <br>
+调整Kdump内存大小： 如果你希望调整Kdump所需的内存大小，你可以编辑/etc/default/grub文件，并修改crashkernel参数的值。例如，如果你希望将内存大小调整为较小的值，可以将其设为crashkernel=64M。
+请注意，调整内存大小可能会影响Kdump的有效性。确保你对此有所了解，并根据实际情况进行调整。 <br>
+更新GRUB配置： 完成调整后，运行以下命令来更新GRUB的配置文件：
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+复制 <br>
+重启服务器： 重启服务器以使新的GRUB配置生效：
+sudo reboot
+复制 <br>
+验证Kdump状态： 在服务器重新启动后，验证Kdump是否已成功关闭或内存大小是否已调整：
+sudo systemctl status kdump.service
+复制 <br>通过以上步骤，你可以调整Kdump所需的内存大小，甚至关闭Kdump功能。请确保你理解这些操作的影响，并根据实际需要进行调整。<br><br>Java调用第三方程序：`Java.lang.ProcessBuilder<br><br>IDEA配置VM参数覆盖配置文件启动服务<br><br><br>近期接手一个需求，需求转成代码实现就是需要在一个接口实现很多参数传递的同时加上文件上传<br>
+原先问题的接口展示和故障说明：<br>@PostMapping ("/create") public ApiResultBean postTest(HttpServletRequest request, @RequestBody PayOrderCreateReqDto payOrderCreateReqDto, @RequestParam (value = "applyFiles") MultipartFile applyFiles
+复制<br>这是一个简单的接口，接收一个body参数和一个文件参数，但是在前端调用的时候，报错如下： org.springframework.web.multipart.MultipartException: Current request is not a multipart request这个错误的意思是说，当前的请求不是一个multipart请求，也就是说，springboot无法识别这个请求的类型，无法正确地解析参数。<br>问题原因分析:为什么会出现这个问题呢？我们先来看一下springboot是如何处理参数的。springboot提供了几种常用的注解来接收参数，如下：<br>
+<br>@RequestParam：用来接收普通的请求参数，如url中的query参数，或者表单中的键值对参数。
+<br>@PathVariable：用来接收路径中的参数，如/user/{id}中的id参数。
+<br>@RequestHeader：用来接收请求头中的参数，如Cookie，User-Agent等。
+<br>@CookieValue：用来接收Cookie中的参数，相当于@RequestHeader("Cookie")。
+<br>@RequestBody：用来接收请求体中的参数，一般用于接收json，xml等格式的数据，需要指定consumes属性来指明数据类型。<br> <br>那么，MultipartFile是属于哪种参数呢？ 答案是，它既不属于请求参数，也不属于请求体，而是属于请求的一部分，需要通过流的方式来获取。MultipartFile实际上是springmvc对文件上传的一个封装，它包含了文件的名字，类型，大小，内容等信息，可以通过transferTo，getInputStream，getBytes等方法来操作文件。 那么，既然MultipartFile是请求的一部分，为什么不能和@RequestBody一起使用呢？ 这是因为，当我们使用@RequestBody的时候，springboot会使用HttpMessageConverter接口的实现类来转换请求体中的数据，比如MappingJackson2HttpMessageConverter，GsonHttpMessageConverter等，这些转换器会将请求体中的数据转换成对应的对象，比如json转成java对象，xml转成java对象等。而这个转换的过程，会导致请求体中的数据流被读取，从而导致无法再次读取请求体中的其他数据，比如文件数据。 所以，当我们同时使用@RequestBody和@RequestParam来接收文件时，就会出现上面的错误，因为springboot无法再从请求体中获取文件数据。<br>问题解决方案：既然我们知道了问题的原因，那么解决方案就很简单了，就是避免同时使用@RequestBody和@RequestParam来接收文件，而是使用其他的方式来接收参数和文件。这里介绍两种比较简单的方式：<br>
+<br>
+方式一：使用多个@RequestParam来接收参数和文件：这种方式是最简单的，就是将所有的参数都用@RequestParam来接收，不使用@RequestBody，这样就可以避免请求体中的数据流被读取的问题。代码如下：
+@PostMapping ("/create") public ApiResultBean postTest(HttpServletRequest request, @RequestParam (value = "applyFiles") MultipartFile applyFiles
+复制
+这种方式的优点是简单，缺点是如果参数比较多，就会显得很冗余，而且需要手动将参数转换成对象，比较麻烦。 <br>
+方式二：使用json字符串和@RequestParam来接收参数和文件：这种方式是在方式一的基础上做了一些改进，就是将参数封装成一个json字符串，然后用@RequestParam来接收，然后再用gson等工具将json字符串转换成对象，这样就可以避免参数过多的问题，也可以避免请求体中的数据流被读取的问题。代码如下：
+@PostMapping ("/create") public ApiResultBean postTest(HttpServletRequest request, @RequestParam (value = "dtoJson") String payOrderCreateReqDto, @RequestParam (value = "applyFiles") MultipartFile applyFiles PayOrderCreateReqDto toDto = gson.fromJson (payOrderCreateReqDto,PayOrderCreateReqDto.class);
+复制
+这种方式的优点是可以减少参数的数量，缺点是需要手动将json字符串转换成对象，而且需要前端配合将参数转换成json字符串。 <br><br>Tip
+增删注解的时候可以通过查看类结构代码来发现比较方便观察类属性和方法的变化
+<br>场景：使用@AllArgsConstructor注解的时候无参构造方法消失了 <br>
+<br>
+@Data注解默认提供无参构造 <br>
+如若需要有参构造则使用：@AllArgsConstructor <br>
+但这会导致无参构造覆盖消失，解决办法末尾再追加`@NoArgsConstructor <br>
+所以最终结果就是：
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class BaiDuTranslationVO extends Result { @ExcelProperty("序号") private int id; @ExcelProperty("文本") private String text; @ExcelProperty("翻译") private String trans;
+}
+复制 <br><br>数据库中的null不等于任何值，包括自身，mp的eq传null底层会把sql写成where username=null，所以获取不到值，正确的查询语法只能用：<br>where username is null
+复制<br>代码里面的话mp则要写成wrapper.isNull(username)<br><br>Abstract
+别看图片的大小不大，但实际上他是位存储，当加载进内存的时候会将其展开，一不小心就超过你的内存限制了
+<br>触发场景：海阔视界-图片读取（小棉袄debug）<br><img alt="image.png" src="https://i0.hdslb.com/bfs/article/fbf57b89d8ec1794d1b4b9dda10197ab688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br><br>原文：<a data-tooltip-position="top" aria-label="https://blog.csdn.net/weixin_46816552/article/details/125397297" rel="noopener" class="external-link is-unresolved" href="https://blog.csdn.net/weixin_46816552/article/details/125397297" target="_self">本地仓库已经有对应的依赖，但是idea识别不到，maven爆红_idea不从本地仓库-CSDN博客</a><br>
+结论：_remote.repositories的作用是当maven本地仓库缓存了jar/pom的情况下修改了maven的配置文件(settings.xml)后依然会去远程仓库获取。所以我们要做的就是：<br>
+删掉对应仓库坐标中的_remote.repositories文件即可！！！<br>
+清除_remote.repositories文件的脚本<br>set REPOSITORY_PATH=D:\JavaStudy\soft\MavenData\RepositoryData\repository
+rem searching...
+for /f "delims=" %%i in ('dir /b /s "%REPOSITORY_PATH%\*_remote.repositories*"') do ( del /s /q %%i
+)
+rem finished
+pause
+复制<br>拷贝以上代码块，修改本地仓库地址后，存在txt文本文档里面，然后修改文档后缀为.bat<br>
+如此，双击该脚本文件即可删除仓库中所有_remote.repositories文件<br><br><br>触发场景：Selenium启动浏览器时出现中断，怀疑是驱动问题<br>
+有些语句在debug正常执行 在启动模式就有问题和异常 实在找不到解决方法和原因的话，就在这个有问题的语句块上套一层try{}...catch{}，就能执行通过了，。 但程序也的确会走入到catch中，但又不会影响后续的执行，这才是最神奇的！感觉就是怪！<br><br><br>所有的增强行为都是通过代理对象实现的，所以失效的原因也大抵如是<br>如果在微服务项目中使用@Transactional注解，那么它通常用于确保单个服务内的数据一致性。在微服务架构中，每个服务通常都有自己的数据库，因此@Transactional注解的作用范围被限制在服务内部的事务管理。<br>在微服务环境中，即使服务之间是独立的，每个服务内部仍然可能存在需要事务管理的情况，例如：<br>
+<br>在同一个服务中，需要对多个数据库操作进行原子性管理，确保这些操作要么全部成功，要么全部失败。
+<br>服务内部的方法调用可能涉及到对多个数据库表的更新，需要保证这些更新的原子性。
+<br>在这种情况下，@Transactional注解仍然是有用的，因为它可以确保服务内部的数据一致性。然而，它不适用于跨服务的事务管理，因为跨服务的事务涉及到多个独立的数据<br><br>这两者其实是两个概念！<br>
+敏感信息包括但不限于手机号码、身份证号、银行卡号等，这些信息泄露可能导致用户个人信息的滥用、身份盗用等严重问题。脱敏是一种常用的保护用户隐私的方式，它的目的是减少潜在的风险，同时保持一定的用户信息可读性。<br>
+而加密则是真的加密存储在数据库里边密文了，读取的时候必须通过秘钥和特定算法解密<br>
+（有很多现成的ORM框架都支持字段配置加解密规则）<br>
+至于数据脱敏有两种可选方案：<br>
+<br>AOP+自定义注解（比较重量级，而且涉及反射性能会差一些，而且需要做的工作很多）
+<br>在 SpringMVC 返回数据时，通过默认的 Jackson 序列化器进行指定，替换为咱们已经包装后的序列化器，这样就能依赖现有解决方案，降低技术复杂度。<br>
+一般，接口和实体对应的有返回真实数据也有返回脱敏结果的接口，实体里边包含真实和脱敏字段按需返回
+]]></description><link>https://blog.cytl2.eu.org/技术/踩坑记录/那年那事.html</link><guid isPermaLink="false">技术/踩坑记录/那年那事.md</guid><dc:creator><![CDATA[lzy]]></dc:creator><pubDate>Sun, 24 Mar 2024 06:59:47 GMT</pubDate><enclosure url="https://i0.hdslb.com/bfs/article/77976dacc5d6ac820dedfba73fc2b173688545001.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://i0.hdslb.com/bfs/article/77976dacc5d6ac820dedfba73fc2b173688545001.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[后端]]></title><description><![CDATA[<br>Quote
+代码注重质量，规范让世界更加美好
+<br><br><br>最大的好处，我能感受到的就是Git提交避免过多因为换行之类导致的冲突<br>检查代码是否存在格式问题，以及格式化代码。<br><a class="auto-card-link-card is-unresolved" href="https://github.com/diffplug/spotless" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>GitHub - diffplug/spotless: Keep your code spotlessKeep your code spotless. Contribute to diffplug/spotless development by creating an account on GitHub.<img class="auto-card-link-favicon is-unresolved" src="https://github.githubassets.com/favicons/favicon.svg" target="_self">github.com<img class="auto-card-link-thumbnail is-unresolved" src="https://opengraph.githubassets.com/f76703180074199e8adcba98ffa7723cb02c5863be0db913c0cc282ae1f3d285/diffplug/spotless" draggable="false" target="_self"><br><br>
+<br>个人不喜欢太多的注释，要的是干净，像什么作者、日期通通不要，毕竟使用Git管理了，这些都是可追溯的
+<br>接口中定义的方法添加注释，接口的方法实现不加
+<br><br>Warning
+实体类尽量不要复用，相关业务都创建相应的业务实体，解耦合，不要想着偷懒
+<br>个人见解，不同公司不同团队都有自己的习惯
+一开始接触的是dao，但其实这是一个泛的概念，它泛指数据库层，其下就可以命名为DO类（和下方谈及的BO类同义），我认为实体类（entity）指代的更广，泛指所有的实体类
+<br>它可以对应一个entity包，包下放置和数据库相关的所有实体类（entity），包括：业务实体BO/数据库实体DO、前端模型VO、数据传输对象DTO<br>
+<br>业务数据和处理（业务层中各种对象类型中间状态的转换需求）模型：BO（Business Object）是指业务对象，用于表示业务领域中的实体或概念，通常与业务逻辑紧密相关。BO包含了业务数据和操作方法，用于封装业务逻辑和数据处理。<br>
+（）
+<br>前端数据展示模型（接口响应结果模型）：VO（Value Object）是指值对象，用于表示一组相关数据的集合，通常用于数据传输和展示。VO的属性通常是只读的，不包含业务逻辑，主要用于数据的传递和展示，以提高系统性能和可维护性。
+<br>后端接收请求参数模型：DTO（Data Transfer Object）是数据传输对象，用于在不同层之间传输数据。DTO通常用于将多个实体或概念的数据进行整合，以减少网络通信次数和数据传输量。DTO负责封装数据，而不包含业务逻辑。
+<br><br><a data-href="体会数据库建模" href="https://blog.cytl2.eu.org/技术/后端/java/体会数据库建模.html" class="internal-link" target="_self" rel="noopener">体会数据库建模</a><br><br>
+<br>统一异常处理
+<br>统一响应格式
+<br>统一字面值常量
+<br>封装静态工具类
+<br>统一序列化处理： <br>敏感信息 <br><br>严格执行，不然的话，容易足蓝打水一场空呜呜呜！<br>有一件应该也不能忽视的习惯，那就是先写Demo<br>也就是说使用新技术、新方案的时候，引入依赖包整合之后先别急着去写业务代码，先去写个demo，emm可以当成单元测试吧<br>就是先写个示例看看是否整合成功了，环境是否有了？是否能实现我想要的效果？比如说FFmpeg转码，那我随便导入一个小视频，看看是否能正常转换各种编码，能才继续开始写业务逻辑<br><br>代码的开放性（Open/Closed Principle，OCP）是SOLID原则中的一个重要原则，它是由Robert C. Martin（又称Uncle Bob）提出的。这个原则的核心思想是软件实体（类、模块、函数等）应该对扩展开放，对修改封闭。<br>
+具体来说，这意味着你应当能够扩展一个实体的行为，而不是修改它。这样做的好处是，当你在不修改已有代码的情况下添加新功能时，你不会引入新的错误或破坏现有的功能。<br>
+一些符合开闭性原则的做法，例如：<br>
+<br>责任链模式：通过使用责任链模式来验证注册用户请求参数，你可以轻松地添加新的验证规则，而不需要修改现有的验证类。新的验证类可以作为链条中的一个新环节添加。<br>
+总的来说，开闭性原则鼓励你设计出更加灵活和可维护的代码，这样可以更容易地应对未来的变化。
+<br><br>Warning
+记录分支的管理方式，一个标准的参考，具体情况具体分析。而且下方图示，其实遗漏了一个中间分支的存在，也就是dev“开发分支”
+<br>项目大致的一个Git版控流程基础版本：<br><img alt="image.png" src="https://i0.hdslb.com/bfs/article/2f891713f9c17d1e143fbc796c616721688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>
+<br>master分支检出一个release版本分支 <br>如果是第一次，应该检出dev开发分支 <br>基于release分支检出dev分支，根据开发的功能模块开发人员再检出多个feature分支
+<br>各个feature分支的功能代码编写完成后merge合并到dev、release版本分支
+<br>当release分支开发完成功能趋于稳定，检出一个sit分支用来测试
+<br>当测试分支无误后，就是一个版本开发完毕之时就将当前的release分支merge合并到master分支
+<br>此时一个master分支就将是最新的分支代码，一般来说就是稳定运行的线上版本
+<br>当运行分支出现bug漏洞我们需要紧急修复就从master分支检出一个hotfix分支对bug做修复，修复代码后同样检出sit分支用做测试，测试无误后再合并到master分支
+<br>当需要版本迭代更新则再从master分支检出新的release分支，流程同上。
+<br>关于分支的命名和含义：<br>
+<br>release : 每次有新迭代版本开发(可跟随tapd迭代周期版本)，都需要从 master 分支中检出一个 release 分支,用作当前迭代的版本分支,命名规则为 release/迭代版本号 , 例如,当前迭代的版本为v2.0,那么用于开发当前迭代的分支命名为: release/v2.0 。release分支只接受 feature的合并请求。
+<br>feature : 迭代需求开发分支，按功能点建立不同的功能分支，从 release 分支检出。命名规则 feature/需求版本号/功能名称 , 如：当前迭代有两个功能点分配给到两个不同研发人员，分别检出feature/v2.0/test1，feature/v2.0/test2。
+<br>hotfix ：紧急bug修复分支，有需要时才新建。该分支是基于 master 分支创建的，开发人员在 hotfix 分支修改代码，开发完后需要合并回 sit 和 master 分支，同时在 master 上打一个 tag 。命名规则: hotfix/版本号/bug 名称
+<br>sit ：测试环境分支，只接受 feature ，hotfix， release 分支的合并。研发内测联调通过后，由研发人员将自己的 feature 分支或 hotfix 分支代码合并到 sit 。该分支对应测试环境，测试人员的专用测试环境。
+<br>dev ：开发环境，参考sit环境，可选分支（还是那句话看情况，他是否可选基本代表了两种分支管理的方案和流程）。
+<br>uat ：预发布环境，只接受 hotfix 、release 分支的代码合并。（给客户演示用的beta版本，不是所有项目都有的）
+<br>demo：演示环境也可以使用该分支
+<br>master ：主分支，稳定版本代码分支，对外可随时编译发布的分支，只接受 hotfix 、release 分支的代码合并，由研发负责人负责合并。该分支对应生产环境，用于构建部署到生产环境。
+<br>可参考的项目分支管理结构：<br>每类分支是个文件夹下面按版本号再拆分，版本号下面是具体的feature<br><img alt="image.png" src="https://cdn.nlark.com/yuque/0/2023/png/21381672/1698223940032-766dbc87-d0db-408a-b70b-9294d70e9d89.png#averageHue=%232d3237&amp;clientId=ud6785400-ff37-4&amp;from=paste&amp;height=669&amp;id=u28f0ade5&amp;originHeight=836&amp;originWidth=744&amp;originalType=binary&amp;ratio=1.25&amp;rotation=0&amp;showTitle=false&amp;size=107882&amp;status=done&amp;style=none&amp;taskId=ub455c322-85bd-408f-9c95-69f0e16e282&amp;title=&amp;width=595.2" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>版本命名规则：<br>版本格式：v（小写）主版本号.次版本号.修订号，版本号递增规则如下：<br>
+从v1.0到v2.0：产品有一些质的飞跃；<br>
+从v2.0到v2.1：产品有大的变动，但没有质的飞跃；<br>
+从v2.1到v2.1.1：产品有变动，但没有大的变动；例如修复了线上某个bug。<br>标签命名规则：<br>每次发布生产(master)，都需要为master打一个tag，方便线上回滚,tag命名与版本迭代保持一致。<br>git tag -a v1.0 -m "v1.0需求开发"
+复制]]></description><link>https://blog.cytl2.eu.org/技术/行为规约.html</link><guid isPermaLink="false">技术/行为规约.md</guid><dc:creator><![CDATA[lzy]]></dc:creator><pubDate>Sun, 24 Mar 2024 04:25:40 GMT</pubDate><enclosure url="https://github.githubassets.com/favicons/favicon.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://github.githubassets.com/favicons/favicon.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[非银流水线上导入之缓存优化]]></title><description><![CDATA[<a class="tag" href="https://blog.cytl2.eu.org/?query=tag:todo/note" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#todo/note</a> <br> <a href="https://blog.cytl2.eu.org?query=tag:todo/note" class="tag is-unresolved" target="_self" rel="noopener" data-href="#todo/note">#todo/note</a> <br>混存的根本目的还是为了减少打到数据库的请求，至于起到多大的作用看场景，以及你的数据库的数据是不是海量，海量的数据库查询一次数据耗时是很长的，请求多了就更甚，所以建立缓存只要命中那么就是对数据库负担很好的一次减轻！<br><img alt="图层 0" src="https://i0.hdslb.com/bfs/article/ed4076d1066ee7d8026597300af5bf69688545001.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"><br>因为12306铁路购票系统的线路和票基本上是固定的，因为铁路就只有那么多，而且线路基本上也是固定的，涉及的搜索场景也不需要分词所以不需要使用<a data-href="Elasticsearch" href="https://blog.cytl2.eu.org/技术/后端/java/elasticsearch.html" class="internal-link" target="_self" rel="noopener">Elasticsearch</a>这个内存资源大户来做所谓分布式搜索，Redis基于内存也足够搜索使用！<br>设计合理的JSON结构存储登录设备信息，但每次只能有一个处于激活状态（被踢下线）<br>启动的时候缓存（加分布式锁避免多次性能损耗）<br>
+如果项目中使用了 XXL-Job 等分布式定时任务框架，可以直接使用定时任务解决缓存预热。<br>请求布隆过滤器和缓存空值判断会向 Redis 发起两次网络 IO，如果想优化的话，可以使用管道或者 Lua 命令来提高性能。<br>import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisCallback;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Service;
+import java.util.List; @Service
+public class RedisService { @Autowired private RedisTemplate&lt;String, String&gt; redisTemplate; public void batchSetKeyValuePairs() { redisTemplate.executePipelined((RedisCallback&lt;Object&gt;) connection -&gt; { for (int i = 0; i &lt; 100; i++) { String key = "key_" + i; String value = "value_" + i; connection.set(key.getBytes(), value.getBytes()); } return null; }); }
+}
+复制<br>在这个示例中，我们创建了一个RedisService服务类，使用RedisTemplate来执行管道操作。batchSetKeyValuePairs方法使用executePipelined方法来执行Redis管道操作。在管道内部，我们循环设置100个键值对，然后一次性将它们发送到Redis服务器。<br>请确保在Spring Boot应用程序的配置文件中正确配置了Redis连接信息，以便RedisTemplate能够连接到Redis服务器。<br>希望这个示例能够帮助你在Spring Boot应用程序中优化Redis的批量访问性能！]]></description><link>https://blog.cytl2.eu.org/技术/后端/java/缓存的实际应用.html</link><guid isPermaLink="false">技术/后端/Java/缓存的实际应用.md</guid><dc:creator><![CDATA[lzy]]></dc:creator><pubDate>Tue, 19 Mar 2024 17:35:09 GMT</pubDate><enclosure url="https://i0.hdslb.com/bfs/article/ed4076d1066ee7d8026597300af5bf69688545001.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://i0.hdslb.com/bfs/article/ed4076d1066ee7d8026597300af5bf69688545001.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[官方服务API对接]]></title><description><![CDATA[<br><br><br>Tip
+登录看似简单实则学问很大，不仅仅是自己设计个简单的数据库表来完成账号注册和登录就完事了，还可以延伸到权限认证（动态路由）、登录续期、设备ip限制、三方登录对接、单点登录等问题
+<br>目前基本上都是基于OAuth2协议，流程基本一样，小而美的开源SDK，集成了市面上基本所有的第三方授权登录：<br><a class="auto-card-link-card is-unresolved" href="https://gitee.com/justauth" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>justauth: 小而全而美的第三方登录开源组件。目前已支持Github、Gitee、微博、钉钉、百度、Coding、腾讯云开发者平台、OSChina、支付宝、QQ、微信、淘宝、Google、Facebook、抖音、领英、小米、微软、今日头条、Teambition、StackOverflow、Pinterest、人人、华为、企业微信、酷家乐、Gitlab、美团、饿了么和推特等第三方平台的授权登录。 Login, so easy!小而全而美的第三方登录开源组件。目前已支持Github、Gitee、微博、钉钉、百度、Coding、腾讯云开发者平台、OSChina、支付宝、QQ、微信、淘宝、Google、Facebook、抖音、领英、小米、微软、今日头条、Teambition、StackOverflow、Pinterest、人人、华为、企业微信、酷家乐、Gitlab、美团、饿了么和推特等第三方平台的授权登录。 Login, so easy!gitee.com<img class="auto-card-link-thumbnail is-unresolved" src="https://gitee.com/static/images/logo_themecolor.png" draggable="false" target="_self"><br>有些三方登录的申请和授权会比较麻烦，可以直接参考justauth官方文档：<a data-tooltip-position="top" aria-label="https://www.justauth.cn/" rel="noopener" class="external-link is-unresolved" href="https://www.justauth.cn/" target="_self">JustAuth</a><br>
+可以尝试免签方案：<a data-tooltip-position="top" aria-label="https://uniqueker.top/index.html" rel="noopener" class="external-link is-unresolved" href="https://uniqueker.top/index.html" target="_self">水滴聚合登录官网 - QQ\微信\Google免签约快捷登录API接口 (uniqueker.top)</a><br>权限校验则有：轻量的Sa-Token，复杂的SpringSecurity<br><a class="auto-card-link-card is-unresolved" href="https://sa-token.cc/doc.html#/start/example" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>Sa-TokenSa-Token是一个java权限认证框架，功能全面，上手简单，登录认证、权限认证、Session会话、踢人下线、账号封禁、集成Redis、前后端分离、分布式会话、微服务网关鉴权、单点登录、OAuth2.0、临时Token验证、记住我模式、模拟他人账号、临时身份切换、多账号体系、注解式鉴权、路由拦截式鉴权、花式token、自动续签、同端互斥登录、会话治理、密码加密、jwt集成、Spring集成、WebFlux集成...，有了sa-token，你所有的权限认证问题，都不再是问题sa-token.cc<br><br>一个专门针对微信服务封装的SDK开源库<br><a class="auto-card-link-card is-unresolved" href="https://github.com/Wechat-Group/WxJava" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>GitHub - Wechat-Group/WxJava: 微信开发 Java SDK ，支持包括微信支付，开放平台，小程序，企业微信，视频号，公众号等的后端开发微信开发 Java SDK ，支持包括微信支付，开放平台，小程序，企业微信，视频号，公众号等的后端开发 - Wechat-Group/WxJava<img class="auto-card-link-favicon is-unresolved" src="https://github.githubassets.com/favicons/favicon.svg" target="_self">github.com<img class="auto-card-link-thumbnail is-unresolved" src="https://repository-images.githubusercontent.com/49122742/1a65d480-d489-11e9-9aca-4eb0aa3c2c8d" draggable="false" target="_self"><br><br>支付宝：在众多支付手段中支付宝应该算是比较友好的了，因为他提供有支付沙盒环境，调试好后直接更换接口就可以直接搞掂了。参考：<a data-tooltip-position="top" aria-label="https://mp.weixin.qq.com/s/hghbAf9MM9LIPggrkA-3wg" rel="noopener" class="external-link is-unresolved" href="https://mp.weixin.qq.com/s/hghbAf9MM9LIPggrkA-3wg" target="_self">SpringBoot 集成支付宝支付，看这篇就够了 (qq.com)</a><br>微信支付：参见上方WxJava<br><br><br>Git版本控制：<br><a class="auto-card-link-card is-unresolved" href="https://about.gitlab.com/" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>The most-comprehensive AI-powered DevSecOps platformFrom planning to production, bring teams together in one application. Ship secure code more efficiently to deliver value faster.<img class="auto-card-link-favicon is-unresolved" src="https://about.gitlab.com/nuxt-images/ico/favicon-192x192.png?cache=2022041" target="_self">about.gitlab.com<img class="auto-card-link-thumbnail is-unresolved" src="https://about.gitlab.com/nuxt-images/open-graph/open-graph-gitlab.png" draggable="false" target="_self"><br>GitLab社区版默认启动核心数+1，会占用大量内存<br>
+编辑gitlab配置文件/etc/gitlab/gitlab.rb，取消注释修改以下<br>unicorn['worker_processes'] = 2
+复制<br>保存退出执行gitlab-ctl reconfigure使其生效<br>
+注意：此值最小值是2，如果设置成1，服务器可能会卡死。<br>Maven私服：<br>
+Nexus：Sonatype公司的一款maven私服产品<br><a class="auto-card-link-card is-unresolved" href="https://help.sonatype.com/en/download.html" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-host"><span></span></div></div></a>Download<img class="auto-card-link-favicon is-unresolved" src="https://help.sonatype.com/favicon.ico" target="_self">help.sonatype.com<br>可以参考：<a data-href="Maven进阶#6、私服" href="https://blog.cytl2.eu.org/技术/后端/java/maven进阶.html#6、私服" class="internal-link" target="_self" rel="noopener">Maven进阶 &gt; 6、私服</a><br><br>最著名的是若依，低代码快速搭建前后端。但老实说若依的代码质量，emm，而且虽然一直在更新，但有些技术栈其实挺旧的，下面这个RuoYi-Vue-Plus是基于若依不断发展并最终替换所有原初技术栈，迭代最新的技术栈，保持最新主流，也非常适合用来学习各种最新技术。<br><a class="auto-card-link-card is-unresolved" href="https://gitee.com/dromara/RuoYi-Vue-Plus" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>dromara/RuoYi-Vue-Plus后台管理系统 重写RuoYi-Vue所有功能 集成 Sa-Token、Mybatis-Plus、Jackson、SpringDoc、Hutool、OSS 定期同步gitee.com<img class="auto-card-link-thumbnail is-unresolved" src="https://foruda.gitee.com/avatar/1664439580221599999/5162368_dromara_1664439580.png" draggable="false" target="_self"><br><br>个人感觉都不太好用，代码耦合太高<br>
+<br>YAPI：<a data-tooltip-position="top" aria-label="https://www.bilibili.com/video/BV13a411q753?p=186&amp;vd_source=60cd820d66490f513305005717358b72" rel="noopener" class="external-link is-unresolved" href="https://www.bilibili.com/video/BV13a411q753?p=186&amp;vd_source=60cd820d66490f513305005717358b72" target="_self">项目优化Day3-03-YApi<em></em>哔哩哔哩_bilibili</a>介绍&amp;使用前后端分离开发的协助工具——设计统一接口规范（项目经理用的多）、支持导出和导入文档。类似工具很多，但YAPI是开源在GitHub上的，可商业私人部署
+<br>Swagger：<a data-tooltip-position="top" aria-label="https://www.bilibili.com/video/BV13a411q753?p=187&amp;vd_source=60cd820d66490f513305005717358b72" rel="noopener" class="external-link is-unresolved" href="https://www.bilibili.com/video/BV13a411q753?p=187&amp;vd_source=60cd820d66490f513305005717358b72" target="_self">项目优化Day3-04-Swagger<em></em>哔哩哔哩_bilibili</a>介绍&amp;使用方式&amp;查看接口文档<br>
+通过写好的后端代码生成接口文档——供后来者查阅，可通过不同的注解来备注接口的相应信息
+<br>可以试试基于JavaDoc的Api-fox这样的接口调试工具来生成文档<br><br>可以使用托管的，七牛、头条之类的，这是自建<br>去中心化的轻量、强大的分布式文件系统，基本上实现了Elastaticsearch的分片集群特点能够做到：备选结点、自动故障转移等特性<br>要求保证必须有大于1/2的存活结点才能上传否则不能上传，（但能够下载），这种机制保证数据安全，还有文件恢复算法<br><a class="auto-card-link-card is-unresolved" href="https://github.com/minio/minio" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>GitHub - minio/minio: The Object Store for AI Data InfrastructureThe Object Store for AI Data Infrastructure. Contribute to minio/minio development by creating an account on GitHub.<img class="auto-card-link-favicon is-unresolved" src="https://github.githubassets.com/favicons/favicon.svg" target="_self">github.com<img class="auto-card-link-thumbnail is-unresolved" src="https://repository-images.githubusercontent.com/29261473/ff41a900-6bfa-11e9-95fe-aa27fe8b337b" draggable="false" target="_self"><br>文件上传和下载接口设计：
+前端携带md5，上传时临时分块以便实现断点续传 <br>文件是否已存在 <br>检查Minnio
+<br>检查数据库 <br>文件分块存不存在 <br>检查Minnio（因为分块信息不会存入数据库） <br>下载分块
+<br>合并分块：无论是下载分块还是合并分块都是在服务器端创建临时文件来执行操作，为了避免冲突要使用工具类生成前后缀保证唯一性
+<br>校验分块
+<br>将合并后的文件上传到文件系统
+<br>将文件信息入库保存
+<br>根据md5值存储文件目录 <br>因为如果大量文件都在同一目录下的话会很影响IO的效率，所以此处我们不选择年月日格式来创建目录
+<br>我们在此处取md5的第一位为第一层目录，第二位为第二层目录，第三层目录是md5命名，分块存储在第三层目录下的chunk文件夹内。当然这个目录规律由我们来定，只要合理 <br><br>自己用的话，Github的Action也可以了<br>
+轻量级 gitea 就行, 也不用上云，甚至直接使用CloudFlare提供的Page、Vercel等第三方服务也基本够用。其实可以更本质一点，无非两种方案：<br>
+<br>
+定期轮询：编写一个shell脚本来监听GitHub仓库的新推送并执行部署命令，您可以使用Git的钩子功能。具体来说，您可以使用post-receive钩子，它在每次成功的推送到仓库后触发。以下是一个基本的shell脚本示例，它将在新的推送到达时执行部署命令：
+#!/bin/bash # 保存最新的提交到一个变量中
+LATEST_COMMIT=$(git rev-parse HEAD) # 检查是否有新的推送
+git fetch origin main if [[ $(git rev-parse HEAD) != $LATEST_COMMIT ]]; then echo "检测到新的推送，正在部署..." # 在这里执行您的部署命令 # 例如：./deploy.sh
+fi
+复制
+这个脚本首先定义了一个变量LATEST_COMMIT来存储当前的最新提交。然后，它使用git fetch来更新本地仓库的信息，并检查是否有新的提交。如果有新的推送，它将执行部署命令。<br>
+请注意，这个脚本需要定期运行，例如可以通过cron任务来实现。 <br>
+仓库事件推送：自己写了一些 shell ，gitea 收到 events 就发 webhooks ，nc 监听端口，收到指定 http 的 hook 就执行 shell 编译打包部署。以Github为例：要设置GitHub仓库的Webhook，你需要在仓库的设置页面中找到Webhook选项，并添加一个新的Webhook。在添加Webhook时，你需要提供一个Payload URL，即你的服务器的地址，GitHub会向该地址发送HTTP请求。你还可以选择要监听的事件类型（例如代码推送、Issues创建等），以及是否要触发SSL验证等选项。<br>
+一旦设置完成，当你的GitHub仓库中发生指定的事件时，GitHub会向你的服务器发送HTTP请求，你可以在服务器上编写相应的脚本来处理这些请求，例如进行持续集成、自动部署等操作。需要注意的是，你的服务器必须能够被公网访问，并且能够处理来自GitHub的HTTP请求。你可以使用类似于nc（Netcat）等工具来监听并处理这些请求。 <br>kubernetes（K8S），太重，依赖Docker、K8S生态，不太适合个人使用<br><a class="auto-card-link-card is-unresolved" href="https://www.bilibili.com/video/BV1uF411Q7hD/?spm_id_from=333.999.0.0&amp;vd_source=60cd820d66490f513305005717358b72" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>【整整300集】字节跳动196小时讲完的kubernetes（k8s）教程，让你自学k8s少走99%的弯路！（k8s教程/k8s部署/k8s安装/k8s实战）_哔哩哔哩_bilibili【整整300集】字节跳动196小时讲完的kubernetes（k8s）教程，让你自学k8s少走99%的弯路！（k8s教程/k8s部署/k8s安装/k8s实战）共计83条视频，包括：100秒带你弄懂什么是kubernetes、1.01-k8s课程结构介绍、1.02-k8s有用吗等，UP主更多精彩视频，请关注UP账号。www.bilibili.com<img class="auto-card-link-thumbnail is-unresolved" src="https://i0.hdslb.com/bfs/archive/6ac1f2b8002b56e9f826220bcf18076705b062bd.png@100w_100h_1c.png" draggable="false" target="_self"><br>公司内网可以采取的方案：<br><a class="auto-card-link-card is-unresolved" href="https://www.bilibili.com/video/BV16u4y1H7TV/?p=1&amp;spm_id_from=pageDriver&amp;vd_source=60cd820d66490f513305005717358b72" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>给自己的镜像容器一个家: 基于Harbor自建Docker私有镜像仓库，Gitlab CI/CD更丝滑_哔哩哔哩_bilibili建议配合图文进行操作： https://www.mintimate.cn/2023/11/26/GuideToHostPrivateDockerCenter云原生技术倍受重视，大家也更关注应用的容器化、分布式的部署，通过云原生技术自动化软件录制、测试、发布与部署流程非常方便。当然，使用云原生技术，拥有一个容器镜像中心非常关键。本次教程，就教大家如何借助Harbor，搭建一个自己的镜像中心，拉取、发, 视频播放量 5369、弹幕量 26、点赞数 154、投硬币枚数 60、收藏人数 398、转发人数 23, 视频作者 Mintimate, 作者简介 我们也不知道，这样做冷门教程并用爱发电能持续多久……好在，总算帮到一些人:) QQ：198330181 接受付费辅助和商务合作^_^ ，相关视频：我的Docker应用大赏，Docker 1小时快速上手教程，无废话纯干货，最强内网主页Homepage，Docker怎么玩？10分钟快速了解~NAS玩法不用愁 | 花墨世界，Docker详解，7分钟学会，安装部署Harbor镜像仓库，docker私有仓库的搭建，2024最新青龙面板安装|Docker安装青龙面板，JD自动签到，青龙面板搭建 ，每天自动做任务领取京豆，操作简单&amp;设置简单，非常适合有软路由和服务器&amp;vps的，Podman 教學 - 取代 Docker 的明日之星!? 入門|介紹|教學|教程|Docker|Podman，【Vagrant快速入门】让虚拟机像容器一样方便！www.bilibili.com<img class="auto-card-link-thumbnail is-unresolved" src="https://i1.hdslb.com/bfs/archive/192a0cc1433694d476293ef745c05611a666072b.jpg@100w_100h_1c.png" draggable="false" target="_self"><br><br><br>Info
+实习公司项目采取的管理方式，敏捷开发
+<br>敏捷开发参考流程：<a rel="noopener" class="external-link is-unresolved" href="https://www.tapd.cn/home/solution/tapdpro" target="_self">https://www.tapd.cn/home/solution/tapdpro</a><br>
+TAPD是一种常用的敏捷软件开发方法论，它代表了"Team, Artifact, Process, and Domain"这四个关键组成部分。TAPD的目标是通过团队协作、良好的工作成果管理、规范的工作流程和深入理解项目领域来提高软件开发效率和质量。<br>
+<br>Team（团队）：TAPD注重建设高效的团队，鼓励跨职能团队合作，注重沟通与协作，并为团队提供必要的支持与资源。
+<br>Artifact（工作成果）：TAPD强调对软件开发过程中产生的各类工作成果进行有效管理，包括需求文档、设计文档、测试用例、源代码等。
+<br>Process（工作流程）：TAPD倡导规范、透明的工作流程，包括项目计划、需求分析、开发、测试、发布等环节，通过清晰的任务分配、迭代式的开发等方式提高开发效率。
+<br>Domain（项目领域）：TAPD认为深入理解项目领域对于软件开发至关重要，开发团队应该具备足够的领域知识，根据实际需求来制定相应的开发策略和方案。<br>
+总之，TAPD是一种注重团队协作、工作成果管理、工作流程规范和项目领域理解的敏捷软件开发方法论。它可以帮助团队提高开发效率，降低项目风险，并提供高质量的软件产品。 而腾讯就有现成的产品：<a data-tooltip-position="top" aria-label="https://www.tapd.cn/official/select_version" rel="noopener" class="external-link is-unresolved" href="https://www.tapd.cn/official/select_version" target="_self"><strong></strong></a>腾讯敏捷产品研发平台
+<br>这是项目进度的管理方式，代码提交可以使用Git/SVN等，提交时携带TAPD平台任务的源码关键字<br><br><br><a class="auto-card-link-card is-unresolved" href="https://mp.weixin.qq.com/s?__biz=MzU1Nzg4NjgyMw==&amp;mid=2247515742&amp;idx=1&amp;sn=3046c9e2f03b54806e31c7b1a8bf0834&amp;chksm=fc2c0256cb5b8b40d988613d20edc8675f39065f756c88812f7018c5bdddc699a66a15a13f2f&amp;scene=132&amp;exptype=timeline_recommend_article_extendread_samebiz#wechat_redirect" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>基于 SpringBoot 实现实时消息推送，这里有7种解决方案！7种实现web实时消息推送的方案。mp.weixin.qq.com<img class="auto-card-link-thumbnail is-unresolved" src="https://mmbiz.qpic.cn/mmbiz_jpg/CKvMdchsUwkKraEEW9Y1Vick7IVb2cbXsnMic4ibNY83qNpMBFxEy69yXPKphz6Ko4tOnJjz2pcDicOxKBedDlIKog/0?wx_fmt=jpeg" draggable="false" target="_self"><br><br>
+<br>可以操控Excel、Word、PDF等办公软件的库，粒度细较为底层：<a data-tooltip-position="top" aria-label="https://poi.apache.org/" rel="noopener" class="external-link is-unresolved" href="https://poi.apache.org/" target="_self">Apache POI - the Java API for Microsoft Documents</a>
+<br>阿里巴巴开源的用于Excel高效批量读取和写入的框架，简单易用，但不像POI那样细粒度控制，像单元格合并之类的操作就不支持：<a data-tooltip-position="top" aria-label="https://easyexcel.opensource.alibaba.com/" rel="noopener" class="external-link is-unresolved" href="https://easyexcel.opensource.alibaba.com/" target="_self">EasyExcel官方文档 - 基于Java的Excel处理工具 | Easy Excel (alibaba.com)</a>
+<br><br>前端库：Echarts，用于完成前端各种酷炫的表格展示<br><a class="auto-card-link-card is-unresolved" href="https://echarts.apache.org/examples/zh/index.html" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>Examples - Apache EChartsApache ECharts，一款基于JavaScript的数据可视化图表库，提供直观，生动，可交互，可个性化定制的数据可视化图表。echarts.apache.org<br><br><a class="auto-card-link-card is-unresolved" href="https://github.com/alibaba/DataX/tree/master" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>GitHub - alibaba/DataX: DataX是阿里云DataWorks数据集成的开源版本。DataX是阿里云DataWorks数据集成的开源版本。. Contribute to alibaba/DataX development by creating an account on GitHub.<img class="auto-card-link-favicon is-unresolved" src="https://github.githubassets.com/favicons/favicon.svg" target="_self">github.com<img class="auto-card-link-thumbnail is-unresolved" src="https://opengraph.githubassets.com/320639878fc7bcd9b0598f040ecfa253eea4d98ebc0a9ea059c46be9323617d1/alibaba/DataX" draggable="false" target="_self"><br><br><a class="auto-card-link-card is-unresolved" href="https://hippo4j.cn/zh/docs/user_docs/user_guide/framework/" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>架构设计 | Hippo4j简单来说，Hippo4j 从部署的角度上分为两种角色：Server 端和 Client 端。<img class="auto-card-link-favicon is-unresolved" src="https://hippo4j.cn/zh/img/hippo4j_favicon.ico" target="_self">hippo4j.cn<br><br>Tip <br>定时任务用得好，万物皆扫表。
+<br>开玩笑的，不过根据业务具体情况的确可以这么干，MQ都不需要上！ <br>比较经典的Xxl-Job：（很久不更新了）<br><a class="auto-card-link-card is-unresolved" href="https://www.xuxueli.com/xxl-job/" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>分布式任务调度平台XXL-JOBXXL-JOB是一个轻量级分布式任务调度平台，其核心设计目标是开发迅速、学习简单、轻量级、易扩展。现已开放源代码并接入多家公司线上产品线，开箱即用。<img class="auto-card-link-favicon is-unresolved" src="https://blog.cytl2.eu.org/favicon.i" target="_self">www.xuxueli.com<br>目前比较火热的PowerJob：（持续更新迭代，就功能而言更加强大）<br><a class="auto-card-link-card is-unresolved" href="https://github.com/PowerJob/PowerJob" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>GitHub - PowerJob/PowerJob: Enterprise job scheduling middleware with distributed computing ability.Enterprise job scheduling middleware with distributed computing ability. - PowerJob/PowerJob<img class="auto-card-link-favicon is-unresolved" src="https://github.githubassets.com/favicons/favicon.svg" target="_self">github.com<img class="auto-card-link-thumbnail is-unresolved" src="https://repository-images.githubusercontent.com/247659028/f2dff300-af57-11ea-9a3b-6f70aecd9d62" draggable="false" target="_self"><br><br><a data-href="日志框架之Logback的使用与详细配置" href="https://blog.cytl2.eu.org/技术/后端/java/日志框架之logback的使用与详细配置.html" class="internal-link" target="_self" rel="noopener">日志框架之Logback的使用与详细配置</a><br>xxl-job的日志解决方案
+你可能还在程序里使用xxl-job提供的日志记录类来写日志，传给rpa调度器？<br>
+No！No！No！这一点也不优雅。有一个很好的解决方案，那就是：比如在xxl-job任务调度器上定义一个名为cmd的执行器。他怎么做呢？调度器启动扫描注册的任务执行器去执行他的时候 <br>xxl-job会启动一个新的进程去执行
+<br>读取这个进程对象
+<br>逐行读取对象的控制台日志
+<br>然后使用xxl-job的xxlJobHepper去传递这些日志<br>
+这样你压根不用管自定义Job里边怎么去写日志<br>
+你正常使用System.plint.out、log就行不用使用xxlJobHelper对象传日志了<br>
+解放自己，参见xxl-job魔改（公司），admin的模块去看 <br><br><a class="auto-card-link-card is-unresolved" href="http://mp.weixin.qq.com/s?__biz=MzI4Njg5MDA5NA==&amp;mid=2247510745&amp;idx=1&amp;sn=6882080d5246806de743d89855eb9100&amp;chksm=ebd4ebd8dca362ced60dd262fed974f43aba6bbbfeb353097c0cff72a8f6b22c9ddf43fc4be7&amp;mpshare=1&amp;scene=24&amp;srcid=0319QUJLd8xcJNETyXyz0VXB&amp;sharer_shareinfo=262ae734a4ea51d65768f3a0e4543cd1&amp;sharer_shareinfo_first=03ee1cc9eaeb34f869d994e591af0036#rd" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>40张图看懂分布式追踪系统正文共： 7473字 33图 预计阅读时间： 19分钟mp.weixin.qq.com<img class="auto-card-link-thumbnail is-unresolved" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2BGWl1qPxib0waicBsTTiaYBqibHTNEwwicVsDyRx6Tl6XTLJMckVGg1GGiaJ4aHmauiacSs3ybTX4rSjndtNpwtUbFZQ/0?wx_fmt=jpeg" draggable="false" target="_self"><br><br><br>开源的论坛程序，UI还不错，docker直接部署<br><a class="auto-card-link-card is-unresolved" href="https://github.com/discourse/discourse" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>GitHub - discourse/discourse: A platform for community discussion. Free, open, simple.A platform for community discussion. Free, open, simple. - discourse/discourse<img class="auto-card-link-favicon is-unresolved" src="https://github.githubassets.com/favicons/favicon.svg" target="_self">github.com<img class="auto-card-link-thumbnail is-unresolved" src="https://opengraph.githubassets.com/7a95736470fb94cddc6ea49cda5138758d61d80b3ae3bf57a47ece007f1699c0/discourse/discourse" draggable="false" target="_self"><br><br>碎念念
+静态博客很好，但我们也需要评论、访问计数呀，那怎么做呢？
+<br>如果只是个人使用的小站系统只是想提供一个交流的地方的话我们可以使用giscus，一个免费的评论系统，无需设计数据库表，适合简单的留言和收集需求<br><a class="auto-card-link-card is-unresolved" href="https://giscus.app/zh-CN" target="_self"><div class="auto-card-link-main"><div class="auto-card-link-title"></div><div class="auto-card-link-description"></div><div class="auto-card-link-host"><span></span></div></div></a>giscusA comments widget built on GitHub Discussions.<img class="auto-card-link-favicon is-unresolved" src="https://giscus.app/favicon.ico" target="_self">giscus.app<img class="auto-card-link-thumbnail is-unresolved" src="https://opengraph.githubassets.com/4f866d5b634e7cd5422af77f8dbfb6d48dd288b7c5c18326544c1973210320ed/giscus/giscus" draggable="false" target="_self"><br>访问计数：<br>
+<a data-tooltip-position="top" aria-label="https://ibruce.info/2015/04/04/busuanzi/" rel="noopener" class="external-link is-unresolved" href="https://ibruce.info/2015/04/04/busuanzi/" target="_self">不蒜子 | 不如 (ibruce.info)</a><br><br><br>]]></description><link>https://blog.cytl2.eu.org/技术/技术方案.html</link><guid isPermaLink="false">技术/技术方案.md</guid><dc:creator><![CDATA[lzy]]></dc:creator><pubDate>Tue, 19 Mar 2024 16:00:21 GMT</pubDate><enclosure url="https://gitee.com/static/images/logo_themecolor.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://gitee.com/static/images/logo_themecolor.png"&gt;&lt;/figure&gt;</content:encoded></item></channel></rss>

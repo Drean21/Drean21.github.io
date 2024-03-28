@@ -1,0 +1,255 @@
+<!DOCTYPE html> <html><head>
+<title>响应式API？你对ref和reative的认知差太远了</title>
+<base href="../../..">
+<meta id="root-path" root-path="../../..">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8">
+<meta name="description" content="尘影迹痕 - 响应式API？你对ref和reative的认知差太远了">
+<meta property="og:title" content="响应式API？你对ref和reative的认知差太远了">
+<meta property="og:description" content="尘影迹痕 - 响应式API？你对ref和reative的认知差太远了">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.cytl2.eu.org/技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html">
+<meta property="og:image" content="https://article.biliimg.com/bfs/article/4895efe8bfb18197ed9609245858ef84ec02e61a.png">
+<meta property="og:site_name" content="尘影迹痕">
+<meta name="author" content="lzy"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.cytl2.eu.org/lib/rss.xml"><include src="lib/html/custom-head-content.html"></include><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.svg"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript><link rel="preload" href="lib/styles/snippets.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/snippets.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6):has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(const t of e){let e=t.getAttribute("src");try{const o=await fetch(e);if(!o.ok){console.log("Could not include file: "+e),t?.remove();continue}let l=await o.text(),n=document.createRange().createContextualFragment(l),c=Array.from(n.children);for(let e of c)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);t.before(n),t.remove(),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script></head><body class="publish css-settings-manager theme-light show-inline-title h2-underline tbMH-yuan tbMH-qk tbMH-ds-cg tbMH-kd-ncc-jy is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="ref和reactive都是响应式编程API"><p>ref和reactive都是响应式编程API</p></h1><div class="heading-wrapper"><div class="heading-children"><div><p><code>ref</code>和<code>reactive</code>都是Vue3中用于响应式编程的API。</p></div><div><p><code>ref</code>是用来为一个基本类型的值或对象创建一个响应式引用（Reactive Reference），它将值包装成一个响应式对象，并提供了一些便捷的方法来访问和修改这个响应式对象的值。例如，可以使用<code>ref</code>来创建一个响应式的数字或字符串：</p></div><div><pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> ref <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'vue'</span>
+
+<span class="token keyword">const</span> count <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> message <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token string">'Hello, world!'</span><span class="token punctuation">)</span>
+
+</code><button class="copy-code-button">复制</button></pre></div><div><p>上面的代码中，<code>ref</code>分别将数字<code>0</code>和字符串<code>'Hello, world!'</code>包装成了响应式对象，并分别赋值给了<code>count</code>和<code>message</code>变量。可以使用<code>.value</code>属性来访问和修改这些响应式对象的值：</p></div><div><pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>count<span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">)</span>  <span class="token comment">// 0</span>
+count<span class="token punctuation">.</span><span class="token property-access">value</span><span class="token operator">++</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>count<span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">)</span>  <span class="token comment">// 1</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>message<span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">)</span>  <span class="token comment">// 'Hello, world!'</span>
+message<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">=</span> <span class="token string">'Hello, Vue3!'</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>message<span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">)</span>  <span class="token comment">// 'Hello, Vue3!'</span>
+
+</code><button class="copy-code-button">复制</button></pre></div><div><p>可以看到，通过<code>.value</code>属性，可以访问和修改<code>count</code>和<code>message</code>变量所包装的响应式对象的值。</p></div><div><p><code>reactive</code>则是用来创建一个响应式的普通对象（Reactive Object），它会将对象中的所有属性都转化为响应式属性，并且在属性值发生变化时会自动更新视图。例如：</p></div><div><pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> reactive <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'vue'</span>
+
+<span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token function">reactive</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Alice'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">20</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code><button class="copy-code-button">复制</button></pre></div><div><p>上面的代码中，<code>reactive</code>将一个普通的JavaScript对象转化为了响应式对象，并将这个响应式对象赋值给了<code>user</code>变量。可以像普通对象一样访问和修改<code>user</code>变量中的属性：</p></div><div><pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span>  <span class="token comment">// 'Alice'</span>
+user<span class="token punctuation">.</span><span class="token property-access">age</span><span class="token operator">++</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token property-access">age</span><span class="token punctuation">)</span>  <span class="token comment">// 21</span>
+
+</code><button class="copy-code-button">复制</button></pre></div><div><p>但是，不同于普通对象，当<code>user</code>变量中的属性值发生变化时，相关的视图会自动更新。例如，在Vue3的模板中可以这样使用<code>user</code>变量：</p></div><div><pre class="language-html" tabindex="0"><code class="language-html is-loaded"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Name: {{ user.name }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Age: {{ user.age }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> reactive <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'vue'</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token punctuation">{</span>
+  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token function">reactive</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Alice'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">20</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword control-flow">return</span> <span class="token punctuation">{</span> user <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+</code><button class="copy-code-button">复制</button></pre></div><div><p>这样，当<code>user</code>变量中的属性值发生变化时，模板中相应的数据会自动更新，从而实现了响应式更新的效果。</p></div></div></div><div class="heading-wrapper"><h1 data-heading="ref和reative你知道怎么选择吗？！⭐️" class="heading" id="ref和reative你知道怎么选择吗？！⭐️">ref和reative你知道怎么选择吗？！⭐️</h1><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="我碰到的问题" class="heading" id="我碰到的问题"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>我碰到的问题</h2><div class="heading-children"><div><p>我在写案例的时候发现好像如果使用ref在父子组件中传递属性的时候，如果在页面执行修改操作数据校验会正常执行，但是如果执行新增操作的时候，数据校验就失效了；但是使用reative在父子组件中传递属性却没有这个问题</p></div></div></div><div class="heading-wrapper"><h2 data-heading="ref和reactive的差异详解⭐️" class="heading" id="ref和reactive的差异详解⭐️"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>ref和reactive的差异详解⭐️</h2><div class="heading-children"><div><p><code>ref</code> 和 <code>reactive</code> 在父子组件中传递属性时的差异，是因为它们的响应式系统的实现方式不同。</p></div><div><p><code>ref</code> 创建的响应式数据是一个包装对象，包含一个值属性和多个方法，当我们访问 <code>ref</code> 创建的响应式数据时，实际上是访问这个包装对象的值属性，而这个值属性是一个普通的数据类型，例如字符串、数字、对象等，而不是一个真正的对象或数组。因此，当我们通过 <code>ref</code> 创建一个响应式对象或数组时，在子组件中访问时需要通过 <code>$refs</code> 属性来访问这个对象或数组，而不是直接在子组件中访问。</p></div><div><p>当我们在父组件中使用 <code>ref</code> 创建一个响应式对象或数组时，需要注意以下几点：</p></div><div><ul>
+<li data-line="0">在父组件中，通过 <code>ref</code> 函数创建响应式对象或数组，并且需要添加 <code>ref</code> 修饰符。</li>
+<li data-line="1">在子组件中，通过 <code>props</code> 接收父组件传递的 <code>ref</code> 属性时，需要添加 <code>ref</code> 修饰符，并且可以通过 <code>$refs</code> 属性来访问这个响应式对象或数组。</li>
+</ul></div><div><p>在执行新增操作时，可能会修改响应式对象或数组的长度或者增加新的属性，而这些操作对于 <code>ref</code> 创建的响应式对象或数组来说是不能被监听到的，因此数据校验可能会失效。</p></div><div><p>相比之下，<code>reactive</code> 创建的响应式对象或数组是一个真正的对象或数组，它的每一个属性或元素都可以被监听到。在父组件中使用 <code>reactive</code> 创建一个响应式对象或数组时，不需要添加任何修饰符，直接通过 <code>props</code> 将它传递给子组件即可，而在子组件中访问时也可以直接使用。</p></div></div></div><div class="heading-wrapper"><h2 data-heading="问题结论" class="heading" id="问题结论"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>问题结论</h2><div class="heading-children"><div><p>因此，在父子组件中传递响应式属性时，如果需要对响应式对象或数组进行修改操作，建议使用 <code>reactive</code> 来创建响应式对象或数组，并传递给子组件，这样可以保证数据的正确性。</p></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="响应式数据的更新问题⭐️" class="heading" id="响应式数据的更新问题⭐️">响应式数据的更新问题⭐️</h1><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="问题和原因" class="heading" id="问题和原因"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>问题和原因</h2><div class="heading-children"><div><p> Vue 的响应式系统是基于 Object.defineProperty 这个 API 来实现的。这个 API 只能拦截到对象的 get 和 set 操作，而不能拦截对象属性的直接赋值操作。所以如果直接给 reactive 对象的属性赋值，Vue 是无法感知这个属性的变化的，也就无法更新视图。</p></div><div><p>而使用 Object.assign() 这个方法，则相当于通过逐个赋值的方式，将一个普通对象的属性复制到 reactive 对象中，这样 Vue 就可以监听到属性的变化，从而能够正常地更新视图。</p></div><div><p>在普通的对象中，属性的赋值确实是通过 set 操作完成的。但是在 Vue 的响应式系统中，它使用了 ES6 的 Proxy 对象来实现双向绑定，所以如果直接给响应式对象的属性赋值，Vue 无法检测到属性的变化，因为在赋值的时候，并没有触发 Proxy 的 set 操作。而通过 Object.assign() 等方法，Vue 可以监测到对象的变化并进行更新。</p></div><div><p><code>&lt;script setup&gt; </code>中使用的变量都是通过 ref 或 reactive 创建的响应式对象，因此在修改这些响应式对象的属性时，需要使用 Vue 提供的 API 来确保属性修改的响应性。</p></div><div><blockquote>
+<p>比如Vue3还提供了一个<code>reset</code> 函数会重置一个响应式对象，恢复其初始值。这个过程不会破坏响应式绑定关系，如果只是恢复初始值可以直接使用它，但注意<code>reset</code> 函数不会直接清空对象，而是将对象重置为初始化时的状态。因此，如果您的对象没有提供初始化值， <code>reset</code> 函数将不会生效。此外reset位于Vue的其他模块中而不能像ref等方法直接从Vue中导入；<br>
+当然如果是具体的整个对象修改还是要用到Object.assign()。</p>
+</blockquote></div></div></div><div class="heading-wrapper"><h2 data-heading="更新响应式数据记住这些" class="heading" id="更新响应式数据记住这些"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>更新响应式数据记住这些</h2><div class="heading-children"><div><p>更新响应式数据时需要注意以下几点：</p></div><div><ol>
+<li data-line="0">在 setup 函数外部修改响应式数据不会触发组件的重新渲染，需要使用 Vue 提供的 API 进行修改；</li>
+<li data-line="1">对象属性的赋值需要使用 <code>Object.assign()</code> 或者 <code>Vue.set()</code>，否则 Vue 无法检测到属性的变化；</li>
+<li data-line="2">数组元素的修改需要使用数组的内置方法或者 <code>Vue.set()</code> 进行修改。</li>
+</ol></div><div><p>例如：</p></div><div><pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> ref<span class="token punctuation">,</span> reactive<span class="token punctuation">,</span> watch <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'vue'</span>
+
+<span class="token keyword">const</span> count <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 在 setup 函数外部修改 count 不会触发组件的重新渲染</span>
+count<span class="token punctuation">.</span><span class="token property-access">value</span><span class="token operator">++</span>
+
+<span class="token comment">// 使用 watch 监听 count 的变化</span>
+<span class="token function">watch</span><span class="token punctuation">(</span>count<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">newCount<span class="token punctuation">,</span> oldCount</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">count 从 </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>oldCount<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> 变成了 </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>newCount<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 使用 Vue 提供的 API 修改 count，会触发组件的重新渲染</span>
+count<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">=</span> <span class="token number">1</span>
+
+<span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token function">reactive</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Tom'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">18</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 对象属性的赋值需要使用 Object.assign 或者 Vue.set</span>
+<span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">assign</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 数组元素的修改需要使用数组的内置方法或者 Vue.set</span>
+<span class="token keyword">const</span> list <span class="token operator">=</span> <span class="token function">reactive</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+list<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">4</span> <span class="token comment">// 不会触发重新渲染</span>
+list<span class="token punctuation">.</span><span class="token method function property-access">splice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token comment">// 会触发重新渲染</span>
+</code><button class="copy-code-button">复制</button></pre></div></div></div><div class="heading-wrapper"><h2 data-heading="小结" class="heading" id="小结"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>小结</h2><div class="heading-children"><div><p>在其他地方，如果需要使用双向绑定，可以使用 v-model，否则可以使用 v-bind 直接赋值。在非 <code>&lt;script setup&gt;</code> 的 <code>&lt;script&gt; </code>中，也可以通过 Vue 提供的 API，例如 <code>this.$set</code> 和 <code>this.$watch</code>等来实现响应式的属性修改。</p></div><div><ul>
+<li data-line="0">
+<p>其实不是完全没有机会使用直接赋值，只是需要注意在使用响应式对象时，直接赋值可能导致数据变化时视图无法更新的情况。而使用双向绑定或者通过Vue提供的修改方式（如<code>Vue.set()</code>或<code>this.$set()</code>）可以保证数据变化时视图的更新。</p>
+</li>
+<li data-line="2">
+<p>在一些简单的场景中，直接赋值可能会更加方便，但需要注意数据变化时是否需要更新视图。而在复杂的场景中，建议使用Vue提供的响应式对象，以确保数据和视图的同步更新。</p>
+</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="ref访问DOM元素或组件实例" class="heading" id="ref访问DOM元素或组件实例">ref访问DOM元素或组件实例</h1><div class="heading-children"><div class="heading-wrapper"><h2 data-heading="ref可以用于访问组件内的DOM元素" class="heading" id="ref可以用于访问组件内的DOM元素"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>ref可以用于访问组件内的DOM元素</h2><div class="heading-children"><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div ref="myDiv"&gt;Hello World!&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { ref, onMounted } from 'vue'
+
+export default {
+  setup() {
+    const myDiv = ref(null)
+
+    onMounted(() =&gt; {
+      console.log(myDiv.value) // 输出DOM元素
+    })
+
+    return {
+      myDiv
+    }
+  }
+}
+&lt;/script&gt;
+
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在上面的例子中，我们使用<code>ref</code>创建了一个引用<code>myDiv</code>，并将其绑定到模板中的一个<code>&lt;div&gt;;</code>元素上。在<code>onMounted</code>生命周期钩子函数中，我们可以通过访问<code>myDiv.value</code>属性获取到该DOM元素。</p></div><div><p><strong>Tip：</strong> 我们可以通过指定泛型的方式来指定类型推断的结果避免得到一个“any”而没有代码提示的情况，如下：</p></div><div><p><img alt="image-20230331221124777" src="https://article.biliimg.com/bfs/article/4895efe8bfb18197ed9609245858ef84ec02e61a.png" referrerpolicy="no-referrer" target="_self" class="is-unresolved"></p></div></div></div><div class="heading-wrapper"><h2 data-heading="ref可以用于访问组件实例" class="heading" id="ref可以用于访问组件实例"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>ref可以用于访问组件实例</h2><div class="heading-children"><div><p>一个访问组件实例的例子：</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div&gt;
+    &lt;button @click="increment"&gt;Increment&lt;/button&gt;
+    &lt;p&gt;Count: {{ count }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { defineComponent, ref } from 'vue'
+
+export default defineComponent({
+  setup() {
+    const count = ref(0)
+    const increment = () =&gt; {
+      count.value++
+    }
+
+    // 将组件实例保存到 ref 中
+    const componentInstance = ref(null)
+    const saveComponentInstance = (instance) =&gt; {
+      componentInstance.value = instance
+    }
+
+    // 在 mounted 生命周期钩子中访问组件实例
+    onMounted(() =&gt; {
+      console.log(componentInstance.value) // 输出组件实例
+    })
+
+    return {
+      count,
+      increment,
+      saveComponentInstance
+    }
+  }
+})
+&lt;/script&gt;
+
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在上面的例子中，我们创建了一个保存组件实例的 ref <code>componentInstance</code>，并在组件的 <code>setup()</code> 函数中定义了一个函数 <code>saveComponentInstance</code>，用来将组件实例保存到 <code>componentInstance</code> 中。在模板中，我们使用 <code>v-bind</code> 指令将 <code>saveComponentInstance</code> 函数传递给子组件，并将子组件的实例作为参数传递给该函数。这样，我们就能够在 <code>mounted</code> 生命周期钩子中访问组件实例了。</p></div><div><blockquote>
+<p>Tip：  在Vue中，每个组件实例都是一个对象，其中包含了该组件的状态、属性、生命周期方法等信息。在这个例子中，我们将子组件的实例作为参数传递给 <code>saveComponentInstance</code> 函数，实际上就是将这个组件实例对象保存到 <code>componentInstance</code> ref 中。因此，<code>instance</code> 参数就是子组件的实例对象。</p>
+</blockquote></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="ref和reative自定义响应式组件" class="heading" id="ref和reative自定义响应式组件">ref和reative自定义响应式组件</h1><div class="heading-children"><div><blockquote>
+<p>我们都知道Vue3强调的理念就是组件化开发而且也提供了很多内置的组件但我们往往需要使用自定义的组件来满足我们的需求，而ref和reative就能够用来自定义响应式组件，其实前面在组件定义结构一文中的代码案例就已经开始涉及了该部分内容</p>
+</blockquote></div><div><p>在Vue 3中，我们可以使用 <code>ref</code> 和 <code>reactive</code> 来定义自定义响应式组件。</p></div><div><p>下面是一个使用 <code>ref</code> 和 <code>reactive</code> 定义自定义响应式组件的例子：</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;Count: {{ count }}&lt;/p&gt;
+    &lt;button @click="increment"&gt;Increment&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { defineComponent, ref, reactive } from 'vue'
+
+export default defineComponent({
+  setup() {
+    // 使用 ref 定义 count 变量
+    const count = ref(0)
+
+    // 使用 reactive 定义状态对象
+    const state = reactive({
+      message: 'Hello Vue 3!'
+    })
+
+    // 定义 increment 函数来增加 count 变量的值
+    const increment = () =&gt; {
+      count.value++
+    }
+
+    return {
+      count,
+      state,
+      increment
+    }
+  }
+})
+&lt;/script&gt;
+
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在上面的例子中，我们使用 <code>ref</code> 来定义 <code>count</code> 变量，并使用 <code>reactive</code> 来定义一个状态对象 <code>state</code>，该对象包含了一个 <code>message</code> 属性。在组件的 <code>setup()</code> 函数中，我们还定义了一个 <code>increment</code> 函数，该函数用来增加 <code>count</code> 变量的值。</p></div><div><p>在模板中，我们可以直接使用 <code>count</code> 变量和 <code>state.message</code> 属性，而无需使用 <code>value</code> 属性来访问它们。这是因为在模板中，Vue 3会自动地将 <code>ref</code> 和 <code>reactive</code> 的值解包并响应式地渲染它们的值。</p></div><div><p>总的来说，使用 <code>ref</code> 和 <code>reactive</code> 可以让我们更方便地定义自定义响应式组件，并可以避免在模板中使用 <code>value</code> 属性的繁琐操作。</p></div><div class="heading-wrapper"><h2 data-heading="defineComponent标识自定义组件" class="heading" id="defineComponent标识自定义组件"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>defineComponent标识自定义组件</h2><div class="heading-children"><div><p><strong>Human:</strong><br>
+？？？你说的模板是什么？还有这上面怎么就是自定义组件了呢？啥是自定义组件</p></div><div><hr></div><div><p><strong>Assistant:</strong></p></div><div><p>这里的模板指的是Vue组件中的模板部分，用来渲染组件的内容。</p></div><div><p>至于自定义组件，指的是开发者自己编写的组件，通常用来封装一些特定的功能或界面元素。在Vue中，自定义组件可以使用 defineComponent 方法来进行定义。</p></div><div><p>至于自定义组件，指的是开发者自己编写的组件，通常用来封装一些特定的功能或界面元素。在Vue中，自定义组件可以使用 <code>defineComponent</code> 方法来进行定义。</p></div><div><p>以下是一个使用 <code>defineComponent</code> 定义的自定义组件示例：</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;Count: {{ count }}&lt;/p&gt;
+    &lt;button @click="increment"&gt;Increment&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { defineComponent, ref } from 'vue'
+
+export default defineComponent({
+  name: 'MyComponent', // 组件名
+  props: {
+    msg: String // 组件属性
+  },
+  setup(props) {
+    // 使用 ref 定义 count 变量
+    const count = ref(0)
+
+    // 定义 increment 函数来增加 count 变量的值
+    const increment = () =&gt; {
+      count.value++
+    }
+
+    return {
+      count,
+      increment
+    }
+  }
+})
+&lt;/script&gt;
+
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在上面的例子中，我们使用 <code>defineComponent</code> 方法来定义一个名为 <code>MyComponent</code> 的组件，并通过 <code>props</code> 属性定义了一个名为 <code>msg</code> 的组件属性。在组件的 <code>setup()</code> 函数中，我们使用 <code>ref</code> 来定义 <code>count</code> 变量，并定义了一个 <code>increment</code> 函数用来增加 <code>count</code> 变量的值。</p></div></div></div><div class="heading-wrapper"><h2 data-heading="如何理解模板" class="heading" id="如何理解模板"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>如何理解模板</h2><div class="heading-children"><div><p>最后，我们将组件的模板部分放在 <code>&lt;template&gt;</code> 标签中，用来渲染组件的内容。我们也可以在其他组件中使用该自定义组件，例如：</p></div><div><pre class="language-vue" tabindex="0"><code class="language-vue is-loaded">&lt;template&gt;
+  &lt;div&gt;
+    &lt;my-component msg="Hello"&gt;&lt;/my-component&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import MyComponent from './MyComponent.vue'
+
+export default {
+  components: {
+    MyComponent
+  }
+}
+&lt;/script&gt;
+
+</code><button class="copy-code-button">复制</button></pre></div><div><p>在上面的例子中，我们将 <code>MyComponent</code> 自定义组件引入到了当前组件中，并通过 <code>msg</code> 属性向 <code>MyComponent</code> 传递了一个字符串。</p></div></div></div></div></div><div class="heading-wrapper"><h1 data-heading="待处理" class="heading" id="待处理">待处理</h1><div class="heading-children"><div><p><a data-tooltip-position="top" aria-label="https://www.jianshu.com/p/623c8b009a85" rel="noopener" class="external-link is-unresolved" href="https://www.jianshu.com/p/623c8b009a85" target="_self">vue中ref的作用 - 简书 (jianshu.com)</a></p></div><div class="mod-footer"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="outline-tree tree-container"><div class="tree-item nav-folder mod-root" data-depth="0"><div class="tree-item-self nav-folder-title"><div class="tree-item-inner nav-folder-title-content">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item-children nav-folder-children"><div class="nav-folder-spacer"></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#ref和reactive都是响应式编程API" data-path="#ref和reactive都是响应式编程API"><div class="tree-item-inner heading-link" heading-name="ref和reactive都是响应式编程API">ref和reactive都是响应式编程API</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#ref和reative你知道怎么选择吗？！⭐️" data-path="#ref和reative你知道怎么选择吗？！⭐️"><div class="tree-item-inner heading-link" heading-name="ref和reative你知道怎么选择吗？！⭐️">ref和reative你知道怎么选择吗？！⭐️</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#我碰到的问题" data-path="#我碰到的问题"><div class="tree-item-inner heading-link" heading-name="我碰到的问题">我碰到的问题</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#ref和reactive的差异详解⭐️" data-path="#ref和reactive的差异详解⭐️"><div class="tree-item-inner heading-link" heading-name="ref和reactive的差异详解⭐️">ref和reactive的差异详解⭐️</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#问题结论" data-path="#问题结论"><div class="tree-item-inner heading-link" heading-name="问题结论">问题结论</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#响应式数据的更新问题⭐️" data-path="#响应式数据的更新问题⭐️"><div class="tree-item-inner heading-link" heading-name="响应式数据的更新问题⭐️">响应式数据的更新问题⭐️</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#问题和原因" data-path="#问题和原因"><div class="tree-item-inner heading-link" heading-name="问题和原因">问题和原因</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#更新响应式数据记住这些" data-path="#更新响应式数据记住这些"><div class="tree-item-inner heading-link" heading-name="更新响应式数据记住这些">更新响应式数据记住这些</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#小结" data-path="#小结"><div class="tree-item-inner heading-link" heading-name="小结">小结</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#ref访问DOM元素或组件实例" data-path="#ref访问DOM元素或组件实例"><div class="tree-item-inner heading-link" heading-name="ref访问DOM元素或组件实例">ref访问DOM元素或组件实例</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#ref可以用于访问组件内的DOM元素" data-path="#ref可以用于访问组件内的DOM元素"><div class="tree-item-inner heading-link" heading-name="ref可以用于访问组件内的DOM元素">ref可以用于访问组件内的DOM元素</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#ref可以用于访问组件实例" data-path="#ref可以用于访问组件实例"><div class="tree-item-inner heading-link" heading-name="ref可以用于访问组件实例">ref可以用于访问组件实例</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#ref和reative自定义响应式组件" data-path="#ref和reative自定义响应式组件"><div class="tree-item-inner heading-link" heading-name="ref和reative自定义响应式组件">ref和reative自定义响应式组件</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#defineComponent标识自定义组件" data-path="#defineComponent标识自定义组件"><div class="tree-item-inner heading-link" heading-name="defineComponent标识自定义组件">defineComponent标识自定义组件</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#如何理解模板" data-path="#如何理解模板"><div class="tree-item-inner heading-link" heading-name="如何理解模板">如何理解模板</div></a><div class="tree-item-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-item-self is-clickable" href="技术/前端/vue/响应式api？你对ref和reative的认知差太远了.html#待处理" data-path="#待处理"><div class="tree-item-inner heading-link" heading-name="待处理">待处理</div></a><div class="tree-item-children"></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>
